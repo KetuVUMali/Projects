@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+
+        JavaScript Promise (Easy Explanation)
+        - A Promise is a special object in JavaScript.
+        - It helps you handle things that take time, like loading data.
+        - A Promise can be in one of three states:
+            1. pending: still waiting for the result.
+            2. fulfilled: finished successfully.
+            3. rejected: something went wrong.
+        - You use .then() to do something when it finishes successfully.
+        - You use .catch() to handle errors if something goes wrong.
+
+        Example
+                let p = new Promise(function(resolve, reject) {
+                // doing something that takes time, like loading a file
+                let fileLoaded = true; // this is just an example
+                if (fileLoaded) {
+                    resolve("File loaded successfully!"); // promise fulfilled
+                } else {
+                    reject("Error loading file."); // promise rejected
+                }
+                });
+
+                p.then(function(message) {
+                console.log(message); // "File loaded successfully!"
+                }).catch(function(error) {
+                console.log(error); // "Error loading file."
+                });
+
+                
+    </pre>
+    
+</body>
+
+        <script>
+
+                let p = new Promise(function(resolve,reject){
+                    let num1 = 10, num2=20;
+                    let sum = num1 + num2;
+                    if(sum){
+                        //success
+                        resolve(sum);
+                    }
+                    else{
+                        //reject
+                        reject(error);
+                    }
+                })
+
+                p.then(function(result){
+                    console.log(result);
+                })
+
+
+
+
+
+
+
+                let x = new Promise(function(resolve,reject){
+                    let num1 = 10, num2=20;
+                    let sum = num1 + num2;
+                    if(sum>50){
+                        //success
+                        resolve(sum);
+                    }
+                    else{
+                        //reject
+                        reject("Sum Is Not Greater Than 50");
+                    }
+                })
+
+                x.then(function(result){
+                    console.log(result);
+                })
+
+
+
+
+                let z = new Promise(function(resolve,reject){
+                    let num1 = 10, num2=20;
+                    let sum = num1 + num2;
+                    if(sum>10){
+                        //success
+                        resolve(sum);
+                    }
+                    else{
+                        //reject
+                        reject("Sum Is Not Greater Than 50");
+                    }
+                })
+
+                // z.then(function(result){
+                //     console.log(result);
+                // })
+
+                // Resolve Promis using async & await 
+                async function getresult() {                // create async function
+                    let result= await p;
+                    console.log(result);
+                }
+                getresult();                                // fun call
+
+        </script>
+</html>

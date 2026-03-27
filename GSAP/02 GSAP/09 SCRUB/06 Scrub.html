@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  height: 300vh;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background: orange;
+  margin: 200px auto;
+}
+</style>
+</head>
+<body>
+
+<div class="box"></div>
+
+<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+const tl = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".box",
+    start: "top center",
+    end: "bottom top",
+    scrub: 1
+  }
+});
+
+tl.to(".box", { x: 200 })
+  .to(".box", { rotate: 180 })
+  .to(".box", { scale: 1.5 });
+</script>
+
+<pre>
+    🧠 Explanation
+
+            Scroll controls entire timeline:
+                First scroll → move
+                Next scroll → rotate
+                Next scroll → scale
+                🎯 Used in story-telling websites
+</pre>
+
+</body>
+</html>

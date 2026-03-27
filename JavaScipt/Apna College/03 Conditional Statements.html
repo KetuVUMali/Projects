@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        Conditional Statements : Means that we can execute a block of code based on a condition. 
+                                 It is used to perform different actions based on different conditions.
+                                 Used to make decisions in code.
+
+        Types of Conditional Statements :
+            1. if statement : It is used to execute a block of code if a specified condition is true.
+            2. if...else statement : It is used to execute a block of code if a specified condition is true, and another block of code if the condition is false.
+            3. if...else if...else statement : It is used to execute one block of code among multiple blocks of code based on different conditions.
+            4. switch statement : It is used to perform different actions based on different conditions.
+
+        Syntax :
+            if(condition)
+                {
+                    // code to be executed if condition is true
+                }
+            else
+                {
+                    // code to be executed if condition is false
+                }
+    </pre>
+    <script>
+        // 1. if statement
+            let age = 18;
+            if(age >= 18)
+                {
+                    console.log("You are eligible to vote.");
+                }
+
+            let num = 5;
+            if(num % 2 == 0)
+                {
+                    console.log("Number is even.");
+                }
+
+            let color;
+            if(theme == 'dark')
+                {
+                    color = 'black';
+                }
+            if(theme == 'light')
+                {
+                    color = 'white';
+                }
+
+        // 2. if...else statement
+            let number = 10;
+            if(number % 2 == 0)
+                {
+                    console.log("Number is even.");
+                }
+            else
+                {
+                    console.log("Number is odd.");
+                }
+
+        // 3. if...else if...else statement
+            let marks = 85;
+            if(marks >= 90)
+                {
+                    console.log("Grade A");
+                }
+            else if(marks >= 80)
+                {
+                    console.log("Grade B");
+                }
+            else if(marks >= 70)
+                {
+                    console.log("Grade C");
+                }
+            else
+                {
+                    console.log("Grade D");
+                }
+
+        // 4. switch statement
+            let day = 3;
+            switch(day)
+                {
+                    case 1:
+                        console.log("Monday");
+                        break;
+                    case 2:
+                        console.log("Tuesday");
+                        break;
+                    case 3:
+                        console.log("Wednesday");
+                        break;
+                    case 4:
+                        console.log("Thursday");
+                        break;
+                    case 5:
+                        console.log("Friday");
+                        break;
+                    case 6:
+                        console.log("Saturday");
+                        break;
+                    case 7:
+                        console.log("Sunday");
+                        break;
+                    default:
+                        console.log("Invalid day");
+                }
+    </script>   
+
+    <pre>
+        Ternary Operator : It is a shorthand for the if...else statement. 
+                            It is used to assign a value to a variable based on a condition.
+
+        Syntax :
+            condition ? expression1 : expression2;
+
+        Example :
+            1. Check if a number is even or odd using ternary operator
+            let num = 5;
+            let message = num % 2 == 0 ? "Number is even." : "Number is odd.";
+            console.log(message);
+
+            2. Check if a person is eligible to vote using ternary operator
+            let age = 18;
+            let message = age >= 18 ? "You are eligible to vote." : "You are not eligible to vote.";
+            console.log(message);
+    </pre>
+
+    <script>
+        // 1. Check if a number is even or odd using ternary operator
+            let num0 = 5;
+            let message0 = num0 % 2 == 0 ? "Number is even." : "Number is odd.";
+            console.log(message0);
+
+        // 2. Check if a person is eligible to vote using ternary operator
+            let age0 = 18;
+            let message1 = age0 >= 18 ? "You are eligible to vote." : "You are not eligible to vote.";
+            console.log(message1);
+    </script>
+
+
+<pre>
+        Logical Operators : It is used to combine multiple conditions. 
+                            It returns a boolean value based on the evaluation of the conditions.
+
+        Types of Logical Operators :
+            1. AND (&&) :  It returns true if both conditions are true, otherwise it returns false.
+            2. OR (||)  :  It returns true if at least one condition is true, otherwise it returns false.
+            3. NOT (!)  :  It returns true if the condition is false, and false if the condition is true.
+    </script>
+
+    <script>
+        // 1. Check if a number is between 1 and 10 using logical operators
+            let num1 = 5;
+            if(num1 > 1 && num1 < 10)
+                {
+                    console.log("Number is between 1 and 10.");
+                }
+
+        // 2. Check if a person is eligible to vote or not using logical operators
+            let age1 = 18;
+            if(age1 >= 18 || age1 < 0)
+                {
+                    console.log("You are eligible to vote.");
+                }
+            else
+                {
+                    console.log("You are not eligible to vote.");
+                }
+
+        // 3. Check if a number is not even using logical operators
+            let num2 = 5;
+            if(!(num2 % 2 == 0))
+                {
+                    console.log("Number is not even.");
+                }
+    </script>
+
+    <script>
+        let theme = 'dark';
+        let colors;
+        // 1. if statement : It is used to execute a block of code if a specified condition is true.
+                if (theme === 'dark') 
+                    {
+                        colors = 'black';
+                    }
+                if (theme === 'light') 
+                    {
+                        colors = 'white';
+                    }
+
+                console.log(colors);
+
+        // 2. if...else statement : It is used to execute a block of code if  a specified condition is true, and another block of code if the condition is false.
+                if (theme === 'dark') 
+                    {
+                        colors = 'black';
+                    } 
+                else 
+                    {
+                        colors = 'white';
+                    }
+
+                console.log(colors);
+                    
+        // 3. if...else if...else statement : It is used to execute one block of code among multiple blocks of code based on different conditions.
+                if (theme === 'dark') 
+                    {
+                        colors = 'black';
+                    } 
+                else if (theme === 'light') 
+                    {
+                        colors = 'white';
+                    } 
+                else 
+                    {
+                        colors = 'gray';
+                    }
+
+                console.log(colors);
+
+        // 4. switch statement : It is used to perform different actions based on different conditions.
+                switch (theme) 
+                    {
+                        case 'dark':
+                            colors = 'black';
+                            break;
+                        case 'light':
+                            colors = 'white';
+                            break;
+                        default:
+                            colors = 'gray';
+                    }
+
+                console.log(colors);
+    </script>
+
+    <script>
+        // Real-World Example
+            // 1. User Role Access Control using switch statement
+            let userRole = 'admin';
+            let accessLevel;
+
+            switch (userRole) 
+                {
+                    case 'admin':
+                        accessLevel = 'full';
+                        break;
+                    case 'editor':
+                        accessLevel = 'partial';
+                        break;
+                    case 'viewer':
+                        accessLevel = 'read-only';
+                        break;
+                    default:
+                        accessLevel = 'no access';
+                }
+
+            console.log(`User Role: ${userRole}, Access Level: ${accessLevel}`);
+
+
+        // 2. Temperature Check using if...else if...else statement
+            let temperature = 30;
+            let weather;
+
+            if (temperature > 30) 
+                {
+                    weather = 'Hot';
+                } 
+            else if (temperature >= 20 && temperature <= 30) 
+                {
+                    weather = 'Warm';
+                } 
+            else 
+                {
+                    weather = 'Cold';
+                }
+
+            console.log(`Temperature: ${temperature}°C, Weather: ${weather}`);
+
+        // 3. Login Authentication using if...else statement
+            let username = 'user1';
+            let password = 'password123';
+
+            if (username === 'user1' && password === 'password123') 
+                {
+                    console.log('Login successful');
+                } 
+            else 
+                {
+                    console.log('Invalid username or password');
+                }
+
+    </script>
+
+    <script>
+         var a = prompt("ENter a no : ",);      // prompt() function is used to take input from the user. It returns a string value.
+         a = Number.parseInt(a);                // Number.parseInt() function is used to convert a string value to an integer value. It takes a string as an argument and returns an integer value.
+            if(a % 2 == 0)
+                {
+                    console.log("Even");
+                }
+            else
+                {
+                    console.log("Odd");
+                }
+
+            // Note : prompt() → always string
+            //        Use Number(), parseInt(), etc for conversion
+
+    </script>
+</pre>
+</body>
+</html>

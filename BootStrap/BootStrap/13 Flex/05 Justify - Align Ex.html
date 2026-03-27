@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bootstrap Flex Real World Examples</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        padding: 20px;
+        background: #f1f3f5;
+        font-family: Arial;
+      }
+      h1,
+      h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .demo-container {
+        border: 2px dashed #6c757d;
+        background: #ffffff;
+        padding: 15px;
+        margin-bottom: 50px;
+        min-height: 180px;
+        display: flex; /* important for all examples */
+      }
+
+      .item {
+        background: #0d6efd;
+        color: white;
+        padding: 15px 20px;
+        margin: 5px;
+        border-radius: 6px;
+        text-align: center;
+        font-weight: 500;
+      }
+
+      .h-sm {
+        height: 50px;
+      }
+      .h-md {
+        height: 80px;
+      }
+      .h-lg {
+        height: 120px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Bootstrap Flex: Real-World Combined Examples</h1>
+
+    <pre>
+📌 FLEX RULES
+- d-flex is mandatory
+- justify-content → main axis (horizontal by default)
+- align-items     → cross axis (vertical by default)
+- flex-direction can change axis (row / column)
+</pre
+    >
+
+    <hr />
+
+    <!-- ================================================= -->
+    <h2>Example 1: Centered Profile Section</h2>
+    <pre>
+Scenario:
+- Profile image + text (vertical center)
+- Horizontal center in page
+Classes:
+- justify-content-center
+- align-items-center
+</pre
+    >
+
+    <div class="demo-container justify-content-center align-items-center">
+      <div class="item h-lg">Profile Image</div>
+      <div class="item h-md">Username</div>
+      <div class="item h-sm">Role</div>
+    </div>
+
+    <hr />
+
+    <!-- ================================================= -->
+    <h2>Example 2: Navbar Layout</h2>
+    <pre>
+Scenario:
+- Left logo, middle menu, right buttons
+- Items aligned vertically in center
+Classes:
+- justify-content-between
+- align-items-center
+</pre
+    >
+
+    <div class="demo-container justify-content-between align-items-center">
+      <div class="item h-md">Logo</div>
+      <div class="item h-md">Menu</div>
+      <div class="item h-md">Login / Signup</div>
+    </div>
+
+    <hr />
+
+    <!-- ================================================= -->
+    <h2>Example 3: Footer Links (flex-column + center)</h2>
+    <pre>
+Scenario:
+- Footer items stacked vertically
+- Items horizontally centered
+Classes:
+- flex-column
+- justify-content-center → vertical centering
+- align-items-center → horizontal centering
+</pre
+    >
+
+    <div
+      class="demo-container flex-column justify-content-center align-items-center"
+    >
+      <div class="item h-sm">Contact Us</div>
+      <div class="item h-sm">Privacy Policy</div>
+      <div class="item h-sm">Terms of Service</div>
+    </div>
+
+    <hr />
+
+    <h2 style="text-align: center">✅ Real World Examples Complete</h2>
+
+    <pre>
+✅ Key Learnings:
+1. Main axis → justify-content
+2. Cross axis → align-items
+3. flex-direction changes axes
+4. Combine both for layout control
+5. Works in almost all layouts: navbars, profile cards, footer, etc.
+</pre
+    >
+  </body>
+</html>

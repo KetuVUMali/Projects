@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .box {
+            width: 120px;
+            height: 120px;
+            background: green;
+            margin: 60px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box"></div>
+
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+    <script>
+        gsap.to(".box", {
+            rotate: 360,
+            scale: 2.5,
+            duration: 4
+        });
+    </script>
+
+    <h3> Rotate + Scale </h3>
+    <pre>
+        Explanation:
+            gsap.to() → GSAP method to animate to specified properties
+            .box is selected
+            rotate: 360 → rotates box 360 degrees
+            scale: 2.5 → scales box to 2.5 times its size
+            duration: 4 → animation takes 4 seconds
+
+    </pre>
+    <pre>
+        Explanation :
+                Rotate full circle
+                Scale up
+                Smooth animation
+                Perfect for icons, logos
+    </pre>
+
+</body>
+
+</html>

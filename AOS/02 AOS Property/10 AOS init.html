@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AOS – Combining Properties (Master Guide)</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- AOS CSS -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<style>
+  body {
+    background:#f4f6f9;
+  }
+  section {
+    padding:140px 0;
+    border-bottom:1px solid #ccc;
+  }
+  h2 {
+    text-align:center;
+    font-weight:bold;
+    margin-bottom:10px;
+  }
+  .note {
+    max-width:900px;
+    margin:0 auto 40px;
+    text-align:center;
+    font-size:15px;
+    color:#444;
+  }
+  .box {
+    background:#0d6efd;
+    color:white;
+    padding:45px;
+    border-radius:8px;
+    text-align:center;
+    font-size:18px;
+    margin-bottom:30px;
+  }
+  .green{background:#198754;}
+  .dark{background:#212529;}
+  .orange{background:#fd7e14;}
+  .purple{background:#6f42c1;}
+  .red{background:#dc3545;}
+</style>
+</head>
+
+<body>
+
+<!-- =====================================================
+ BASIC IDEA
+===================================================== -->
+<section>
+<div class="container">
+<h2>Why Combine AOS Properties?</h2>
+<p class="note">
+AOS becomes powerful when properties work together.<br><br>
+Example:<br>
+Animation type + delay + duration + once + mirror + anchor placement<br><br>
+This controls <b>WHEN</b>, <b>HOW</b> and <b>HOW MANY TIMES</b> animation happens.
+</p>
+<div class="box dark">
+Scroll slowly & observe timing carefully
+</div>
+</div>
+</section>
+
+<!-- =====================================================
+ SCENARIO 1: HERO SECTION (PERFECT COMBINATION)
+===================================================== -->
+<section>
+<div class="container">
+<h2>Hero Section (Best Practice)</h2>
+<p class="note">
+Hero should animate early, smoothly, and only once.
+</p>
+
+<div class="box green"
+  data-aos="fade-up"
+  data-aos-duration="1200"
+  data-aos-delay="200"
+  data-aos-easing="ease-out-cubic"
+  data-aos-once="true"
+  data-aos-mirror="false"
+  data-aos-anchor-placement="top-center"
+>
+Hero Heading – Professional Animation
+</div>
+</div>
+</section>
+
+<!-- =====================================================
+ SCENARIO 2: CONTENT TEXT (SAFE & CLEAN)
+===================================================== -->
+<section>
+<div class="container">
+<h2>Content Section (Reading Text)</h2>
+<p class="note">
+Text must not distract users.
+</p>
+
+<div class="box dark"
+  data-aos="fade-up"
+  data-aos-duration="800"
+  data-aos-delay="0"
+  data-aos-once="true"
+  data-aos-mirror="false"
+>
+Content appears smoothly once
+</div>
+</div>
+</section>
+
+<!-- =====================================================
+ SCENARIO 3: SERVICE CARDS (STAGGER EFFECT)
+===================================================== -->
+<section>
+<div class="container">
+<h2>Service Cards (Delay + Once)</h2>
+<p class="note">
+Cards appear one by one to guide user attention.
+</p>
+
+<div class="row">
+<div class="col-md-4">
+<div class="box"
+  data-aos="zoom-in"
+  data-aos-delay="0"
+  data-aos-duration="700"
+  data-aos-once="true"
+>
+Service One
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="box"
+  data-aos="zoom-in"
+  data-aos-delay="200"
+  data-aos-duration="700"
+  data-aos-once="true"
+>
+Service Two
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="box"
+  data-aos="zoom-in"
+  data-aos-delay="400"
+  data-aos-duration="700"
+  data-aos-once="true"
+>
+Service Three
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- =====================================================
+ SCENARIO 4: TIMELINE (MIRROR ENABLED)
+===================================================== -->
+<section>
+<div class="container">
+<h2>Timeline / Story Section</h2>
+<p class="note">
+Timeline can animate on scroll down & up.
+</p>
+
+<div class="box purple"
+  data-aos="fade-right"
+  data-aos-mirror="true"
+  data-aos-duration="900"
+  data-aos-anchor-placement="center-bottom"
+>
+Timeline Step 1
+</div>
+
+<div class="box purple"
+  data-aos="fade-left"
+  data-aos-mirror="true"
+  data-aos-duration="900"
+  data-aos-anchor-placement="center-bottom"
+>
+Timeline Step 2
+</div>
+</div>
+</section>
+
+<!-- =====================================================
+ SCENARIO 5: CTA SECTION (CENTER FOCUS)
+===================================================== -->
+<section>
+<div class="container">
+<h2>Call To Action (High Focus)</h2>
+<p class="note">
+CTA must animate at exact center for attention.
+</p>
+
+<div class="box orange"
+  data-aos="zoom-in"
+  data-aos-duration="1000"
+  data-aos-easing="ease-in-out"
+  data-aos-anchor-placement="center-center"
+  data-aos-once="true"
+>
+Start Your Free Trial
+</div>
+</div>
+</section>
+
+<!-- =====================================================
+ SCENARIO 6: DASHBOARD (REPEAT OK)
+===================================================== -->
+<section>
+<div class="container">
+<h2>Dashboard Widgets</h2>
+<p class="note">
+Repeated animation gives scroll feedback.
+</p>
+
+<div class="box dark"
+  data-aos="fade-up"
+  data-aos-once="false"
+  data-aos-mirror="true"
+  data-aos-duration="700"
+>
+Dashboard Widget
+</div>
+</div>
+</section>
+
+<!-- =====================================================
+ SCENARIO 7: BAD COMBINATION (LEARNING)
+===================================================== -->
+<section>
+<div class="container">
+<h2>Bad Combination Example</h2>
+<p class="note">
+Too many repeated animations on content = bad UX.
+</p>
+
+<div class="box red"
+  data-aos="fade-up"
+  data-aos-once="false"
+  data-aos-mirror="true"
+  data-aos-duration="400"
+>
+❌ Avoid this in real projects
+</div>
+</div>
+</section>
+
+<!-- =====================================================
+ AOS INIT
+===================================================== -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init({
+  offset:120,
+  easing:'ease-in-out',
+  once:true,
+  mirror:false
+});
+</script>
+
+</body>
+</html>

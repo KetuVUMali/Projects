@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar AOS</title>
+    <!-- Remix Icon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* overflow: hidden; */
+            font-family:'Times New Roman', Times, serif;
+        }
+
+        html, body{
+            height: 100%;
+            width: 100;
+        }
+
+        body{
+            overflow-x: hidden;
+        }
+
+        #main{
+            height: 100%;
+            width: 100%;
+            background-image: url(https://images.pexels.com/photos/531972/pexels-photo-531972.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+            background-size: cover;
+            background-position: center;
+        }
+
+        #nav{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 40px 50px;
+            color: white;
+        }
+
+        #nav h2{
+            font-size: 30px;
+        }
+
+        #nav i{
+            font-size: 30px;
+            font-weight: 800;
+            cursor: pointer;
+        }
+
+        #full{
+            height: 100%;
+            width: 40%;
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.466);
+            top: 0;
+            /* right: 0; */
+            right: -40%;    /* as per width then hide it and call on click */
+            backdrop-filter: blur(10px);
+            padding: 150px 60px;
+        }
+
+        #full h4{
+            font-size: 50px;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        #full i{
+            position: absolute;
+            top: 5%;
+            right: 10px;
+            background-color: #fff;
+            border-radius: 50%;
+            padding: 5px;
+            font-weight: 600;
+            font-size: 25px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <!-- Header Nav -->
+        <div id="nav">
+            <h2>Jay Hind</h2>
+            <i class="ri-menu-3-fill"></i>
+        </div>
+        <!-- Sidebar -->
+        <div id="full">
+            <h4>Work</h4>
+            <h4>About</h4>
+            <h4>Services</h4>
+            <h4>Courses</h4>
+            <h4>Contanct Us</h4>
+            <i class="ri-close-fill"></i>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+    <script>
+        // TimeLine create for sidebar
+        var tl = gsap.timeline();
+
+        // Side Bar Animation
+        tl.to("#full",{
+            right:0, // -40% counter
+            duration:0.6,
+        })
+
+        // Menu Animation
+        tl.from("#full h4",{
+            x:150,
+            duration:0.7,
+            stagger:0.28,
+            opacity:0
+        })
+
+        tl.from("#full i",{
+            opacity:0
+        })
+
+
+        // Time line controll by play, pause, reverse
+
+
+
+    </script>
+</html>

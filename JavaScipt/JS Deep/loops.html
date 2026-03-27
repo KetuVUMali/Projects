@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> Loops </title>
+</head>
+<body>
+	<h2> Loops </h2>
+
+	<script type="text/javascript">
+		
+		// For Loop
+			  for(let i=1 ; i<=5 ; i++)
+			    {
+			    	console.log("For Loop Iteration :",i);
+			    }
+
+		// While Loop
+				console.log("");
+			   let count=0;
+			   while(count<=3)
+			   {
+			   	console.log("While Loop Iteration :",count);
+			   	count++;
+			   }
+			   	/*
+				   //Infinite Loop
+				      while(true)
+				    { 
+				    	console.log("While Loop Iteration :",count);
+				   	    count++;
+				     }
+			    */
+
+		// Do While Loop
+				console.log("");
+			   let doWhileloop=0;
+			      do{
+			      	  console.log("Do While Loop Iteration :",doWhileloop);
+			      	  doWhileloop++;
+			        }while(doWhileloop<=3);
+
+
+		// For In Loop (Iterable object - Arrays)
+					// all entries show
+					// obj
+					console.log("");
+			        console.log("");
+			        let person={
+			        			  name:"Ketu",
+			        			  age:23,
+			        			  job:"Developer"
+			                    };
+
+			        for(let mali in person)
+			          {
+			          	console.log("For In Loop _ key :",mali," value :",person[mali]);
+			          }
+
+		// For Of Loop (Iterate obj - Arrays)(one by one access ele)
+					  // Array
+					console.log("");
+			          let colors=["red","green","blue"];
+
+			          for(let colur of colors)
+			          	 {
+			          	 	console.log("For Of Loop - Color:",colur);
+			          	 }
+
+		// Break Statement (break loop6543543 
+					console.log("");
+			       for (let i=1; i<=5; i++)
+			          {
+			          	if(i==3)
+			          	  {
+			          	  	console.log("Break Statement - Loop is terminated at iteration 3")
+			          	  	break;
+			          	  }
+			          	  console.log("Break Statement - Iteration :",i);
+			          }  
+
+		// Continue Statement (skip that no of excution)
+					console.log("");
+					for(let i=1; i<=5; i++)
+				    	{
+						  if(i==3)
+						    {
+						    	console.log("**Continue Statement - Skipping iteration 3");
+						    	continue;
+						    }
+						    console.log("Continue Statement - Iteration :",i);
+					    }
+
+
+	</script>
+
+</body>
+</html>

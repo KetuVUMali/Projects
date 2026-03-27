@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,body{
+            height: 100%;
+            width: 100%;
+        }
+
+        
+/* Flex Use */
+        .parent2{
+            height: 500px;
+            width: 100%;
+            background-color: lightblue;
+            display: flex;                  /* Flex Use */
+            align-items: center;            /* Y-Axis alienment (Cross axix) */
+            justify-content: space-evenly;        /* X-Axis alienment equal space */
+        }
+
+        .child3{
+            height: 200px;
+            width: 200px;
+            background-color: crimson;
+            border: 2px solid black;
+        }
+        .child4{
+            height: 200px;
+            width: 200px;
+            background-color: rgb(82, 70, 220);
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Display:Flex; => Use More to make responsive design.  </h1>
+    <h2>Take automatic size(Shrink)/flexical Box</h2>
+    <h4>Shrink => Chipakne 🙏</h4>
+    <div class="parent2">
+        <div class="child3"></div>
+        <div class="child4"></div>
+    </div>
+
+    <br> <br> <br> <br> <hr><br> <br><br>
+
+    
+    
+    <br> <br> <br> <br> <hr><br> <br><br>
+
+    <style>
+         .parent3{
+            height: 500px;
+            width: 100%;
+            background-color: lightblue;
+            display: flex;                  /* Flex Use */
+            align-items: center;            /* Y-Axis alienment  */
+            justify-content: space-evenly;        /* X-Axis alienment take same space to every ele */
+            flex-wrap: wrap;                /* Avoid Shrink and make proper */
+        }
+
+        .child5{
+            height: 200px;
+            width: 200px;
+            background-color: crimson;
+            border: 2px solid black;
+        }
+        .child6{
+            height: 200px;
+            width: 200px;
+            background-color: rgb(82, 70, 220);
+            border: 2px solid black;
+        }
+        .child7{
+            height: 200px;
+            width: 200px;
+            background-color: rgb(40, 156, 82);
+            border: 2px solid black;
+        }
+        .child8{
+            height: 200px;
+            width: 200px;
+            background-color: rgb(211, 223, 52);
+            border: 2px solid black;
+        }
+    </style>
+    <h2>Take avoid automatic size(Shrink)/flexical Box</h2>
+    <h3> flex-wrap: wrap; </h3>
+    <div class="parent3">
+        <div class="child5"></div>
+        <div class="child6"></div>
+    </div>
+
+            <br> <hr><br>
+
+    <div class="parent3">
+        <div class="child5"></div>
+        <div class="child6"></div>
+        <div class="child7"></div>
+    </div>
+
+            <br> <hr><br>
+
+    <div class="parent3">
+        <div class="child5"></div>
+        <div class="child6"></div>
+        <div class="child7"></div>
+        <div class="child8"></div>
+    </div>
+</body>
+</html>

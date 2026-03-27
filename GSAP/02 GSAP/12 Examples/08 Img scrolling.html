@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Genesis Animation</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Arial, Helvetica, sans-serif;
+overflow-x:hidden;
+background:#000;
+color:#fff;
+}
+
+/* Sections */
+section{
+width:100%;
+height:100vh;
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
+overflow:hidden;
+}
+
+/* Section 1 */
+.hero{
+background:url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee") center/cover no-repeat;
+flex-direction:column;
+text-align:center;
+padding:40px;
+}
+.hero h1{
+font-size:8vw;
+}
+.hero p{
+max-width:600px;
+margin-top:20px;
+}
+
+/* Section 2 */
+.about{
+background:#1d2944;
+display:flex;
+gap:50px;
+padding:0 10%;
+}
+.about img{
+width:40%;
+border-radius:10px;
+}
+.about h2{
+font-size:4vw;
+}
+
+/* Section 3 */
+.sticky{
+height:400vh;
+}
+.sticky-inner{
+position:sticky;
+top:0;
+height:100vh;
+overflow:hidden;
+}
+
+.layer{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+}
+.layer img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.copy{
+position:absolute;
+bottom:10%;
+left:50%;
+transform:translateX(-50%) rotateY(90deg);
+font-size:3vw;
+text-align:center;
+}
+
+/* Section 4 */
+.flip-section{
+background:#111;
+flex-direction:column;
+}
+.flip-box{
+width:300px;
+height:200px;
+perspective:1000px;
+}
+.flip-inner{
+width:100%;
+height:100%;
+position:relative;
+transform-style:preserve-3d;
+transition:1s;
+}
+.flip-front,
+.flip-back{
+position:absolute;
+width:100%;
+height:100%;
+backface-visibility:hidden;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:30px;
+background:#333;
+}
+.flip-back{
+transform:rotateY(180deg);
+background:#667e74;
+}
+
+/* Section 5 */
+.final{
+background:url("https://images.unsplash.com/photo-1492724441997-5dc865305da7") center/cover no-repeat;
+font-size:5vw;
+}
+</style>
+</head>
+<body>
+
+<!-- Section 1 -->
+<section class="hero">
+<h1>Genesis</h1>
+<p>Scroll down to experience full cinematic animation</p>
+</section>
+
+<!-- Section 2 -->
+<section class="about">
+<img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470">
+<h2>Universal Movement</h2>
+</section>
+
+<!-- Section 3 -->
+<section class="sticky">
+<div class="sticky-inner">
+
+<div class="layer img1">
+<img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e">
+</div>
+
+<div class="layer img2">
+<img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429">
+</div>
+
+<div class="layer img3">
+<img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7">
+</div>
+
+<div class="copy">Multiversal Awakening</div>
+
+</div>
+</section>
+
+<!-- Section 4 -->
+<section class="flip-section">
+<h2>Final Revelation</h2>
+<div class="flip-box">
+<div class="flip-inner" id="flipCard">
+<div class="flip-front">Scroll</div>
+<div class="flip-back">Unlocked</div>
+</div>
+</div>
+</section>
+
+<!-- Section 5 -->
+<section class="final">
+Infinity
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+/* SECTION 3 PIN */
+gsap.to(".sticky-inner",{
+scrollTrigger:{
+trigger:".sticky",
+start:"top top",
+end:"bottom bottom",
+scrub:true,
+pin:true
+}
+});
+
+/* IMAGE 1 SCALE */
+gsap.to(".img1 img",{
+scale:1.3,
+scrollTrigger:{
+trigger:".sticky",
+start:"top top",
+end:"+=100%",
+scrub:true
+}
+});
+
+/* IMAGE 2 REVEAL */
+gsap.from(".img2 img",{
+opacity:0,
+scale:1.5,
+scrollTrigger:{
+trigger:".sticky",
+start:"+=100%",
+end:"+=100%",
+scrub:true
+}
+});
+
+/* IMAGE 3 REVEAL */
+gsap.from(".img3 img",{
+opacity:0,
+scale:2,
+scrollTrigger:{
+trigger:".sticky",
+start:"+=200%",
+end:"+=100%",
+scrub:true
+}
+});
+
+/* COPY FLIP */
+gsap.to(".copy",{
+rotateY:0,
+scrollTrigger:{
+trigger:".sticky",
+start:"+=250%",
+end:"+=100%",
+scrub:true
+}
+});
+
+/* SECTION 4 FLIP */
+gsap.to("#flipCard",{
+rotateY:180,
+scrollTrigger:{
+trigger:".flip-section",
+start:"top center",
+end:"bottom center",
+scrub:true
+}
+});
+</script>
+
+</body>
+</html>

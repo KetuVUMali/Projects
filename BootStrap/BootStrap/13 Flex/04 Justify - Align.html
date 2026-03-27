@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>justify-content vs align-items (Master Program)</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        .demo-box {
+            border: 3px dashed #6c757d;
+            height: 220px;
+            padding: 10px;
+            margin-bottom: 50px;
+            background: #f8f9fa;
+        }
+
+        .item {
+            background: #0d6efd;
+            color: white;
+            padding: 10px;
+            margin: 5px;
+            width: 110px;
+            text-align: center;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+
+        .h-sm {
+            height: 40px;
+        }
+
+        .h-md {
+            height: 80px;
+        }
+
+        .h-lg {
+            height: 120px;
+        }
+    </style>
+</head>
+
+<body class="p-4">
+
+    <h1 class="text-center mb-4">justify-content vs align-items (Deep Logic)</h1>
+
+    <pre>
+        RULE 1: d-flex is mandatory
+        RULE 2: justify-content → MAIN AXIS
+        RULE 3: align-items     → CROSS AXIS
+        RULE 4: Axis depends on flex-direction
+    </pre>
+    <pre>
+        flex-direction: row; (default behavior of d-flex class)
+            
+            Main Axis  → Horizontal (left ↔ right)   :  It controls HOW FLEX ITEMS MOVE ALONG THE MAIN AXIS
+                All classes : horizontal movement
+                            justify-content-start : align left
+                            justify-content-center : align center
+                            justify-content-end : align right
+                            justify-content-between : distribute space between items
+                            justify-content-around : distribute space around items
+                            justify-content-evenly : distribute space evenly between items
+            
+            Cross Axis → Vertical   (top ↕ bottom)   :  It controls HOW FLEX ITEMS MOVE ALONG THE CROSS AXIS
+                All classes : Vertical movement
+                            align-items-start   : align top
+                            align-items-center  : align center
+                            align-items-end     : align bottom
+                            align-items-baseline : align text baseline
+                            align-items-stretch : stretch to fill container
+    </pre>
+
+    <hr>
+
+    <!-- ================================================= -->
+    <h2>STEP 1️⃣ : Only justify-content (Horizontal movement)</h2>
+
+    <pre>
+justify-content-center
+→ moves items LEFT ↔ RIGHT
+</pre>
+
+    <div class="demo-box d-flex justify-content-center">
+        <div class="item h-sm">Small</div>
+        <div class="item h-md">Medium</div>
+        <div class="item h-lg">Large</div>
+    </div>
+
+    <hr>
+
+    <!-- ================================================= -->
+    <h2>STEP 2️⃣ : Only align-items (Vertical movement)</h2>
+
+    <pre>
+align-items-center
+→ moves items TOP ↕ BOTTOM
+</pre>
+
+    <div class="demo-box d-flex align-items-center">
+        <div class="item h-sm">Small</div>
+        <div class="item h-md">Medium</div>
+        <div class="item h-lg">Large</div>
+    </div>
+
+    <hr>
+
+    <!-- ================================================= -->
+    <h2>STEP 3️⃣ : justify-content + align-items (MOST COMMON REAL USE)</h2>
+
+    <pre>
+justify-content-center → horizontal center
+align-items-center     → vertical center
+</pre>
+
+    <div class="demo-box d-flex justify-content-center align-items-center">
+        <div class="item h-sm">A</div>
+        <div class="item h-md">B</div>
+        <div class="item h-lg">C</div>
+    </div>
+
+    <hr>
+
+    <!-- ================================================= -->
+    <h2>STEP 4️⃣ : Space distribution (justify-content-between)</h2>
+
+    <pre>
+justify-content-between
+→ first item at start
+→ last item at end
+</pre>
+
+    <div class="demo-box d-flex justify-content-between align-items-center">
+        <div class="item h-md">Left</div>
+        <div class="item h-md">Center</div>
+        <div class="item h-md">Right</div>
+    </div>
+
+    <hr>
+
+    <!-- ================================================= -->
+    <h2>STEP 5️⃣ : Bottom aligned content (footer logic)</h2>
+
+    <pre>
+align-items-end
+→ all items move to bottom
+</pre>
+
+    <div class="demo-box d-flex justify-content-center align-items-end">
+        <div class="item h-sm">One</div>
+        <div class="item h-md">Two</div>
+    </div>
+
+    <hr>
+
+    <!-- ================================================= -->
+    <h2>STEP 6️⃣ : Axis change using flex-column</h2>
+
+    <pre>
+flex-column changes AXIS:
+
+justify-content → vertical
+align-items     → horizontal
+</pre>
+
+    <div class="demo-box d-flex flex-column justify-content-center align-items-center">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+    </div>
+
+    <hr>
+
+    <!-- ================================================= -->
+    <h2>STEP 7️⃣ : Real-life CARD center example</h2>
+
+    <pre>
+Most common interview + project example
+</pre>
+
+    <div class="demo-box d-flex justify-content-center align-items-center">
+        <div class="item h-md">Image</div>
+        <div class="item h-md">Text</div>
+    </div>
+
+    <hr>
+
+    <h2 class="text-center">✅ FLEX AXIS LOGIC = CLEARED FOREVER</h2>
+
+</body>
+
+</html>

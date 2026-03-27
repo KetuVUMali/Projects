@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> clearTimeout() </title>
+</head>
+<body>
+
+	<pre>
+		-The clearTimeout() method clears a timer set set with the setTimer() method.
+
+		- The id value return by setTimeout() is used as parameter for the clearTimeout() method.
+
+		- setTimeout() :=>  myVar = setTimeout("function",millisecond);
+
+		- clearTimeout(myVar);
+
+		- clearTimeout(myVar);
+
+		- stop to any process before complete.
+
+		- Used to stop setInterval()
+
+	</pre>
+
+	<button onclick="start()">Start</button>
+
+	<button onclick="stop()">Stop</button>
+
+
+</body>
+
+	<script type="text/javascript">
+	
+		var my;		
+		function start()
+			{
+				my = setTimeout(
+									function()
+									{
+										document.write("<h1>Ketan</h1>")
+									},
+									5000
+								);
+			}
+
+		function stop()
+			{
+				clearTimeout(my);
+				alert("Stop Operation");
+			}
+		
+	</script>
+</html>

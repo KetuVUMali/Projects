@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Clouser </title>
+</head>
+<body>
+    
+    <h3>
+        A fun  which *returns* (inside) another fun and use parent fun var.
+        a function inside another function is called Clouser.
+        in child fun is called Clouser. 
+        ex. counter() function.
+
+    </h3>
+</body>
+
+    <script>
+
+
+            // 1. 
+                function counter()
+                {
+                    var count=0;
+                    return function()
+                    {
+                        count++;
+                        console.log(count);
+                    }
+                }
+                var fun = counter();
+                fun();
+                fun();
+
+
+
+            // 2. 
+                function abc()                          // Parent fun
+                {
+                    var a=10;                           // par var*
+                    return function()                   // child fun*
+                    {
+                        console.log(a);                 // access parent var**
+                    }
+                }
+                let k=abc();
+                k();
+
+
+                // 3.
+
+                function xyz()                          // Parent fun
+                {
+                    var a=3;
+                    console.log(" #XYZ ");              
+                     function demo()                   // child fun*
+                    {
+                        console.log(a);                 // access parent var**
+                        console.log(" #demo "); 
+                    }
+                }
+               xyz();
+               
+
+
+    </script>
+</html>

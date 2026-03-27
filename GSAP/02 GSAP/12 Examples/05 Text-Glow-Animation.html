@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:sans-serif;
+        }
+        .container1, .container2{
+            height:100vh;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+        .container2{
+            gap:30px;
+            background-color:black;
+        }
+        .char{
+            font-size:60px;
+            font-weight:bold;
+            text-transform:uppercase;
+            color:rgba(255,255,255,0.1)
+        }
+        p{
+            font-size:60px;
+            font-weight:bold;
+            text-transform:uppercase;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container1">
+        <p>Scroll Down</p>
+    </div>
+
+    <div class="container2">
+        <div class="word">
+            <span class="char">A</span>
+            <span class="char">N</span>
+            <span class="char">I</span>
+            <span class="char">M</span>
+            <span class="char">A</span>
+            <span class="char">T</span>
+            <span class="char">I</span>
+            <span class="char">O</span>
+            <span class="char">N</span>            
+        </div>
+        <div class="word">
+            <span class="char">B</span>
+            <span class="char">Y</span>           
+        </div>
+        <div class="word">
+            <span class="char">Y</span>
+            <span class="char">O</span>
+            <span class="char">U</span>
+            <span class="char">T</span>
+            <span class="char">U</span>
+            <span class="char">B</span>
+            <span class="char">E</span>              
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+    <script>
+        gsap.to('.char',{
+                          color:'white',   // color change
+                          // dealy:2,
+                          stagger:
+                                    {
+                                        from:'random',      // from random display
+                                       // from:center       // from start anime display
+                                       amount:1             
+                                    },
+                          scrollTrigger :{
+                                            trigger:'.container2',
+                                            start:'-30% top', 
+                                            markers:true,
+                                            scrub:true,
+                                            end:'+=200',
+                                        } 
+        })
+    </script>
+</body>
+</html>

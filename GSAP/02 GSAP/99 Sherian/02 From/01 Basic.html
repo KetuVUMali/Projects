@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <pre>
+
+        // From : Final Position To Initial Position Perform   (Original -> Initial Position)
+                 : Opposite of To 
+                Animated Position      From        Initial Position
+                    A < ------------------------------------ B
+                                    
+
+        // Syntax : 
+                    gsap.from( target, { Properties } );
+                    Where,
+                        gsap.from    : GSAP FROM Animation Method
+                        target       : Element CSS Selector to be Animated
+                        Properties   : Animation Properties Object to Define Animation Type & Values
+
+        
+        // Example : 
+                    gsap.from(".box", {                             // Element to be Animated
+                        x: -200,                                    // Target Position X Axis: -200px
+                        y: -200,                                    // Target Position Y Axis: -200px
+                        opacity: 0,                                 // Target Opacity: 0
+                        rotation: 360,                              // Rotate Animation 360 Degree
+                        duration: 1,                                // Animation Duration: 1 Second
+                        delay: 1                                    // Animation Delay: 1 Second    
+                    });
+
+
+        Note : 
+              1. X & Y Axis Position Change Based On Element Original Position
+                Both take Positive & Negative Values to Move Element in Different Directions
+
+            
+              2. Make Animation as Short as Possible.
+                Avoid Long Animations.
+
+
+                                  Element
+                To -->----------------------------------<-- From
+                Initial Position                       Final Position
+
+            
+
+        
+    </pre>
+</body>
+</html>

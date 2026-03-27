@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        Array :
+                Collection of multiple values in one variable.
+                Arrays are used to store multiple values in a single variable.
+
+                Why Array?
+                            Store multiple values and Easy loop & manage.
+                            Used in: Lists, API data, Tables, UI rendering.
+
+                How to create Array?
+                            1. Using Array Literal (most common)
+                                let arr = [1, "name", 3, true, 5];
+                            2. Using Array Constructor
+                                let arr = new Array(1, "name", 3, true, 5);
+
+                Accessing Array Elements:
+                            let arr = [10, 20, 30, 40, 50];
+                            console.log(arr[0]);    // 10
+                            console.log(arr[1]);    // 20
+                            console.log(arr[2]);    // 30
+                            console.log(arr[3]);    // 40
+                            console.log(arr[4]);    // 50
+                            console.log(arr[5]);    // undefined
+                            console.log(arr[-1]);   // undefined
+
+                Array Length:
+                            let arr = [10, 20, 30, 40, 50];
+                            console.log(arr.length);    // 5
+
+                Array Mutability:
+                            let arr = [10, 20, 30];
+                            arr[0] = 100;       // Modifying first element
+                            console.log(arr);   // [100, 20, 30]
+
+                        // String is immutable, Array is mutable
+                            let str = "Hello";
+                            str[0] = "h";       // Does not change the string
+                            console.log(str);   // "Hello"
+    </pre>
+
+    <pre>
+            // 1. Loop Array using for loop
+                let arr = [10, 20, 30, 40, 50];
+                
+                // for loop
+                    for (let i = 0; i < arr.length; i++) {
+                        console.log(arr[i]);
+                    }                                               // 10 20 30 40 50
+                
+                // for...of loop
+                    for (let element of arr) {
+                        console.log(element);
+                    }                                               // 10 20 30 40 50
+
+                // forEach method
+                    arr.forEach(function(element) {
+                        console.log(element);
+                    });                                             // 10 20 30 40 50
+
+                // ForEach with arrow function
+                    arr.forEach(element => console.log(element));   // 10 20 30 40 50
+
+                // for...in loop (not recommended for arrays)
+                    for (let index in arr) {
+                        console.log(arr[index]);
+                    }                                               // 10 20 30 40 50
+
+                // while loop
+                    let i = 0;
+                    while (i < arr.length) {
+                        console.log(arr[i]);
+                        i++;
+                    }                                               // 10 20 30 40 50
+
+
+            //2. Average of Array:                         Total sum of array / Number of elements in array = Average
+                let arr = [10, 20, 30, 40, 50];
+                let sum = 0;
+                for (let i = 0; i < arr.length; i++) {
+                    sum += arr[i];
+                }
+                let average = sum / arr.length;
+                console.log(average);   // 30
+
+
+            //3. Max value of Array:
+                let arr = [10, 20, 30, 40, 50];
+                let max = arr[0];
+                for (let i = 1; i < arr.length; i++) {
+                    if (arr[i] > max) {
+                        max = arr[i];
+                    }
+                }
+                console.log(max);   // 50
+
+            // 4. Min value of Array:
+                let arr = [10, 20, 30, 40, 50];
+                let min = arr[0];
+                for (let i = 1; i < arr.length; i++) {
+                    if (arr[i] < min) {
+                        min = arr[i];
+                    }
+                }
+                console.log(min);   // 10
+
+            // 5. Reverse Array:
+                let arr = [10, 20, 30, 40, 50];
+                let reversedArr = [];
+                for (let i = arr.length - 1; i >= 0; i--) {
+                    reversedArr.push(arr[i]);
+                }
+                console.log(reversedArr);   // [50, 40, 30, 20, 10]
+
+            // 7. Remove Duplicates from Array:
+                let arr = [10, 20, 30, 20, 40, 10, 50];
+                let uniqueArr = [];
+                for (let i = 0; i < arr.length; i++) {
+                    if (!uniqueArr.includes(arr[i])) {
+                        uniqueArr.push(arr[i]);
+                    }
+                }
+                console.log(uniqueArr);   // [10, 20, 30, 40, 50]
+
+            // 8. Sum of Array:
+                let arr = [10, 20, 30, 40, 50];
+
+                // for loop:
+                    let sum = 0;
+                    for (let i = 0; i < arr.length; i++) {
+                        sum += arr[i];
+                    }
+                    console.log(sum);   // 150 
+
+                // for ...of loop:
+                    let sum = 0;
+                    for (let element of arr) {
+                        sum += element;
+                    }
+                    console.log(sum);   // 150
+
+                // forEach method:
+                    let sum = 0;
+                    arr.forEach(function(element) {
+                        sum += element;
+                    });
+                    console.log(sum);   // 150
+
+            // 9. Calculate Final Price after Discount: Total Prices 10% discount 
+                   let arr = [10, 20, 30, 40, 50];
+                    sum = 0;
+
+                    for (let i = 0; i < arr.length; i++) {
+                        sum = sum + arr[i];                     // Calculate the sum of all prices
+                    }
+
+                    let discount = sum * 10 / 100;              // Calculate 10% discount on the total sum
+                    let finalPrice = sum - discount; 
+
+            // 10. Each price after discount:
+                    let arr = [10, 20, 30, 40, 50];
+                    let discountedPrices = [];
+                // 1.
+                    for (let i = 0; i < arr.length; i++) {
+                        let discount = arr[i] * 10 / 100;           // 10% discount on each price
+                        let finalPrice = arr[i] - discount;         // Final price after discount
+                        discountedPrices.push(finalPrice);          // Add the discounted price to the new array
+                    }
+                    console.log(discountedPrices);   // [9, 18, 27, 36, 45]
+
+                // 2.
+                    let arr = [10, 20, 30, 40, 50];
+                    let discountFactor = 0.9;               // 10% off = 90% of original
+
+                    for (let i = 0; i < arr.length; i++) {
+                        let finalPrice = arr[i] * discountFactor;
+                        console.log(`₹${arr[i]} → ₹${finalPrice}`);
+                    }
+
+                // 3. 
+                    let arr = [10, 20, 30, 40, 50];
+                    for (let i = 0; i < arr.length; i++) {
+                        let finalPrice = arr[i] * 0.9;      // 10% off
+                        console.log(`Original: ₹${arr[i]}, Discounted: ₹${finalPrice}`);
+                    }
+
+                // 4. 
+                    let item = [10, 20, 30, 40, 50];
+                    for (let i = 0; i < item.length; i++) {
+                        let offer = item[i] / 10;           // 10% of original price
+                        item[i] = item[i] - offer;          // Update the specific element
+                    }
+                    console.log(item);// [9, 18, 27, 36, 45]
+
+            // 9. Array Methods:
+                    let arr = [10, 20, 30, 40, 50];
+
+                    // push() - Add element to end of array
+                        arr.push(60);
+                        console.log(arr);   // [10, 20, 30, 40, 50, 60]
+
+                    // pop() - Remove last element from array
+                        arr.pop();
+                        console.log(arr);   // [10, 20, 30, 40, 50]
+
+                    // unshift() - Add element to beginning of array
+                        arr.unshift(0);
+                        console.log(arr);   // [0, 10, 20, 30, 40, 50]
+
+                    // shift() - Remove first element from array
+                        arr.shift();
+                        console.log(arr);   // [10, 20, 30, 40, 50]
+
+                    // indexOf() - Find index of first occurrence of element
+                        console.log(arr.indexOf(30));    // 2
+
+                    // includes() - Check if array contains an element
+                        console.log(arr.includes(20));   // true
+                        console.log(arr.includes(60));   // false
+
+                    // slice() - Extract a portion of the array    
+                        let arr = [10, 20, 30, 40, 50];
+                        let slicedArr = arr.slice(1, 4);
+                        console.log(slicedArr);          // [20, 30, 40]
+
+
+                    // splice() - Add/remove elements at specific index                
+                        splice(add, remove, item1, item2, ...) - Modify array by adding/removing elements at specific index
+                        splice(index, deleteCount, item1, item2, ...) - Remove elements starting from index and add new items at that index
+                        splice(index, deleteCount) - Remove elements starting from index
+                        splice is change the original array, slice is not change the original array
+                        
+                        let arr = [10, 20, 30, 40, 50];
+                        arr.splice(2, 1);               // Remove one element at index 2
+                        console.log(arr);               // [10, 20, 40, 50]
+
+                        arr.splice(2, 0, 30);           // Add element 30 at index 2
+                        console.log(arr);               // [10, 20, 30, 40, 50] 
+
+                    // reverse() - Reverse the order of elements in the array
+                        arr.reverse();
+                        console.log(arr);               // [50, 40, 30, 20, 10]
+
+                    // sort() - Sort the elements of the array
+                        arr.sort();
+                        console.log(arr);               // [10, 20, 30, 40, 50]
+
+                    // concat() - Merge two or more arrays
+                        let arr1 = [1, 2, 3];
+                        let arr2 = [4, 5, 6];
+                        let mergedArr = arr1.concat(arr2);
+                        console.log(mergedArr);         // [1, 2, 3, 4, 5, 6]
+
+                    // ... spread operator - Merge arrays
+                        let arr1 = [1, 2, 3];
+                        let arr2 = [4, 5, 6];
+                        let mergedArr = [...arr1, ...arr2];
+                        console.log(mergedArr);         // [1, 2, 3, 4, 5, 6]
+
+                        // concat() & spread difference:
+                            concat() :creates a new array (Does NOT change original array), 
+                            Spread opc : Expands elements of an array (Can be used to create a new array or modify existing array)
+
+
+                    // join() - Join all elements of the array into a string
+                        let arr = [10, 20, 30];
+                        let joinedString = arr.join(", ");
+                        console.log(joinedString);      // "10, 20, 30"
+
+                    // toString() - Convert array to string
+                        let arr = [10, 20, 30];
+                        let str = arr.toString();
+                        console.log(str);               // "10,20,30"
+
+                    // split() - Split a string into an array
+                        let str = "10, 20, 30";
+                        let splitArr = str.split(", ");
+                        console.log(splitArr);          // ["10", "20", "30"]
+
+                    
+                
+
+    </pre>
+
+</body>
+</html>

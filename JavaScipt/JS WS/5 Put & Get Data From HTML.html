@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Put & Get Data From HTML Element</title>
+	</head>
+	<body>
+
+		<section>
+			<h1> Put & Get Data From HTML Element </h1>
+			<h3> JS DOM Function </h3>
+			<h2> DOM :- Document Object Model </h2>
+		</section>
+
+		<section>
+			<h5>1  .getElementById() </h5>		<!-- .getElementById()  -->
+			<br>
+			<h6>i.  to get data </h6>
+			
+				<div id="main0" id="idcss">
+					Welcome To Home
+				</div>
+				
+				<div id="main1" class="idcss">
+					Welcome To Home
+				</div>
+			<br>
+			<h6>ii.  to put data </h6>
+				<div id="main2" class="idcss">
+					Welcome To Home
+				</div>
+		</section>
+		<script type="text/javascript">
+			
+			console.log("1 .getElementById()")
+			// document.getElementById()
+				// to Get Data
+					console.log("i.  to get data");
+					var x = document.getElementById("demo");
+					console.log(x);											// null
+
+					var y = document.getElementById("main1");
+					console.log(y);											// <div id="main1" class="idcss"> Welcome To Home </div>
+
+					var y = document.getElementById("main1").innerHTML;
+					console.log(y); 										// Welcome To Home
+
+					var y = document.getElementById("main1").textContent;
+					console.log(y); 										//  Welcome To Home
+
+						// var y = document.querySelector("#main1").textContent;
+						// console.log(y); 		//  Welcome To Home
+
+				// to Put Data
+				    // Replace privious HTML Data or Ele 
+					console.log(" ");
+					console.log("ii. to put data");
+					document.getElementById("main2").innerHTML = "<i><b> Hello  <b> </i>";
+
+					// var a = document.getElementById("main2");
+					//a.innerHTML = "<i> Hello </i>";
+		</script>
+ 
+
+		<section>
+			<hr>
+			<h5>2  .getElementsByClassName() </h5>		<!-- .getElementsByClassName()[]  -->
+			<br>
+			<h6>i.  to get data </h6>
+				<div class="demo" class="classcss">
+					1.Welcome To Home
+				</div>     							<!--class demo 0 index no-->
+				<div class="demo" class="classcss">
+					2.Hellow..!
+				</div>      						<!-- class demo 1 index no -->
+
+				<br>
+			<h6>i.  to put data </h6>
+				<div class="demo" class="classcss">
+					3.Welcome To Home
+				</div>     							<!-- class demo 2 index no-->
+				<div class="demo" class="classcss">
+					4.Hellow
+				</div> 								<!-- class demo 3 index no -->
+			
+		</section>
+		<script type="text/javascript">
+				// to Get Data
+					 console.log(x);									// null
+					 var x = document.getElementsByClassName("demo");
+					 console.log(x);									// HTMLCollection(4) [div.demo, div.demo, div.demo, div.demo]
+
+					 // to put value class through alert box 
+					 // 0 is div index no
+					 // 1 is div index no
+					 // index no. throught we traget particular/specific div 
+					 var x = document.getElementsByClassName("demo")[0].innerHTML;  
+					 alert(x);
+					 console.log(x);												// 1.Welcome To Home
+
+					 var x = document.getElementsByClassName("demo")[1].innerHTML;  
+					 alert(x);
+
+				// to Put Data
+				    // replace privious HTML data
+					 document.getElementsByClassName("demo")[2].innerHTML = "4...Hellow";  
+					
+					 document.getElementsByClassName("demo")[3].innerHTML = "3...Welcome To Home";
+					 
+			</script>
+ 			
+
+
+
+
+
+			<hr>
+			<h1 id="idx" class="class" name="name"  > Demo................... </h1>
+			<script type="text/javascript">
+          
+				var a = document.getElementById('idx').innerHTML;
+				console.log(a);										// Demo...................
+
+				var b = document.getElementById('idx').innerText;
+    			console.log(b);                                    // Demo...................
+			
+				var c = document.getElementById('idx').outerHTML;
+				console.log(c);                                    // <h1 id="id" class="class" name="name"> Demo................... </h1>
+			
+				var d = document.getElementById('idx').textContent;
+				console.log(d);                                     // Demo...................
+			
+				var e = document.getElementById('idx').outerText;
+				console.log(e);                                     // Demo...................
+			
+				var f = document.getElementById('idx').value;
+				console.log(f);                                     // undefined
+			
+				var g = document.getElementById('idx').values;
+				console.log(g);                                     // undefined
+			
+						
+			
+			</script>
+		
+
+	</body>
+
+		
+		
+</html>

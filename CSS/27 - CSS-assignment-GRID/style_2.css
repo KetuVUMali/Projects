@@ -1,0 +1,25 @@
+.container {
+  background-color: rgb(163, 37, 37);
+  padding: 1rem;
+  height: 80vh;
+  display: grid;
+  grid-template-columns: 47.5% 25% 25%;
+  gap: 1rem;
+}
+.box {
+  color: blue;
+  font-size: 25px;
+  /* width: 8rem;
+    height: 8rem; */
+  background-color: greenyellow;
+}
+#box10 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 5;
+}
+#box7 {
+  grid-column: 3/4;
+  grid-row: 1/7;
+}

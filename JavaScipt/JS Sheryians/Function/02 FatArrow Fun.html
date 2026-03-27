@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FatnArrow functions</title>
+</head>
+<body>
+    <pre>
+            Why Use Arrow Functions?
+                ✅ Shorter and cleaner code
+                ✅ No need for the function keyword
+                ✅ Automatically binds 'this' (important for objects & event handlers)
+
+
+            When to Use Arrow Functions?
+                ✔ When using short and simple functions
+                ✔ When you don't need this binding
+                ✔ When working with array methods like map(), filter(), reduce()
+
+            When NOT to Use Arrow Functions?
+                ❌ When you need this to refer to a specific object (e.g., in class methods)
+                ❌ When defining a method inside an object (this won't work properly)
+                ❌ When using as a constructor function (new won’t work)
+
+
+            🚀 Arrow functions make JavaScript functions shorter and cleaner. 
+                They are useful for callbacks, array methods, and maintaining this scope in objects. 
+                However, they are not suitable for all cases, especially when you need this to refer to a specific object.
+    </pre>
+</body>
+
+<script>
+
+        // 1. Fat Arow Fun
+            var a=()=>{
+                console.log(" 1. Fat Arow Fun");
+            };
+            console.log(a);
+
+
+        // 2. fat arrow fun with para
+            var b=(x,y)=>{
+                console.log(" 2. Fat Arow Fun with para");
+                console.log(x+y);
+            };
+            console.log(b(10,20));
+
+
+        // 3. Fat Arow Fun with implicite return
+            var c = () => [];
+            var d = c();
+
+            var e = () => [true];
+            var f = e();
+        
+
+        // 4. 
+            var g = () => 122222 + 200 + "Demo";
+            var h=g();
+            console.log(h);
+</script>
+</html>

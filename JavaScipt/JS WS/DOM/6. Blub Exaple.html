@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Blub Exaple </title>
+	<style type="text/css">
+		h1
+		{
+			font-size: 70px;
+		}
+
+		#bulb
+		{
+			height: 300px;
+			width:300px;
+			border-radius: 50%;
+			border: 4px solid #000;
+			/*background-color: yellow;*/
+		}
+
+		button
+		{
+			padding: 10px 20px;
+			font-size: 20px;
+			margin: 80px;
+		}
+	</style>
+</head>
+<body>
+	<h1> DOM </h1>
+	<h4> Document Object Model </h4>
+	
+	<div id="bulb"> </div>
+
+	<button> On </button>
+
+	
+</body>
+	<script type="text/javascript">
+		// Select Element (CSS)
+		var k = document.querySelector("#bulb");
+
+		// Select Button  (Tag)
+		var b = document.querySelector("button");
+
+			// Event Listener  
+			// b.addEventListener("click",function()
+			// 	{
+			// 		k.style.backgroundColor = "yellow";
+			// 		console.log("clicked");
+			// 	})
+
+		// bulb on off System
+
+		var flag = 0;
+		b.addEventListener("click",function()
+			 	{
+			 		if (flag % 2 ==0) 
+			 			{
+			 				k.style.backgroundColor = "yellow";
+			 				flag++;
+			 			}
+			 		else
+				 		{
+				 			bulb.style.backgroundColor = "transparent";	
+				 			flag++;
+				 		}
+					console.log("Flag Value :",flag)
+				 })
+
+
+		
+	</script>
+</html>

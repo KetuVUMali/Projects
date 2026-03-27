@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box {
+  width: 100px;
+  height: 100px;
+  background: crimson;
+  margin: 40px;
+}
+</style>
+</head>
+<body>
+
+<div class="box"></div>
+<p id="msg"></p>
+
+<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+<script>
+gsap.to(".box", {
+  x: 200,
+  duration: 2,
+  onStart: () => {
+    document.getElementById("msg").innerText = "Animation Started!";
+  }
+});
+</script>
+<div>
+    <pre>
+        Show message when animation starts.
+        
+        
+        
+        🧠 What is happening?
+            Animation starts
+            onStart function runs immediately
+            Message updates
+            👉 Used for loaders, UI state changes
+    </pre>
+    <pre>
+        📌 onStart
+            Runs when the animation starts.
+            Example:
+                onStart: () => console.log("Started")
+    </pre>
+</div>
+
+</body>
+</html>

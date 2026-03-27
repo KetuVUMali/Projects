@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Event</title>
+</head>
+<body>
+    Custom Event means user-define events <br>
+    ex. demo, hii, bye, user <br>
+
+    <br>
+    Predefine event ex. click, dbclick, mouse, keybord, etc
+    <br>
+    <div id="parent">
+        <button id="play">Play</button>
+        <button id="pause">Pause</button>
+    </div>
+</body>
+
+<script>
+
+        // 1. Syntax
+            var var_name = new Event ("Custom_Event_Name");
+
+
+        // 2. 
+            //make event
+            // attach event 
+            // dispach event from dom 
+
+                const demo = new Event ("demo");
+                document.querySelector("button").addEventListner("demo", function(){
+                                                                                    alert("Demo Event Activate");
+                                                                                })
+                
+                document.querySelector("button").dispatchEvent("demo");
+
+</script>
+</html>

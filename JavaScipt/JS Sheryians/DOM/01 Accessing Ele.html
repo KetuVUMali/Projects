@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Dom Ele</title>
+</head>
+<body>
+    <pre>
+        Access Dom Ele :
+        1.document.getElementById
+        2.document.getElementByClassName
+        3.document.getElementByTagName
+
+
+        Single Property For All
+        ** document.querySelector **
+            var var_name = document.querySelector("Ele_Type");
+
+
+        1.Id        =       document.querySelector('#id_name');
+        2.Class     =       document.querySelector(".Class_name");
+        3.Tag       =       document.querySelector("Tag_Name");
+        
+    </pre>
+
+    <h1 id="h1"> First </h1>
+    <h2 class="h2"> Second </h2>
+    <h3> Third </h3>
+</body>
+
+<script>
+
+        // 1 Access Ele or selection
+
+            var a = document.querySelector('#h1');
+            var b = document.querySelector('.h2');
+            var c = document.querySelector('h3');     // when multiple h3 present that time first h3 excute
+
+            console.log(a);
+            console.log(b);
+            console.log(c);
+</script>
+</html>

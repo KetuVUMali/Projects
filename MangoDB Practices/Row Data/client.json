@@ -1,0 +1,45 @@
+[
+    {
+      "_id": 1,
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "age": 30,
+      "hobbies": ["reading", "coding", "traveling"],
+      "status": "active",
+      "createdAt": "2024-12-17T10:00:00Z",
+      "location": { "type": "Point", "coordinates": [-73.935242, 40.730610] },
+      "purchases": [
+        { "item": "Laptop", "price": 1200 },
+        { "item": "Phone", "price": 800 }
+      ]
+    },
+    {
+      "_id": 2,
+      "name": "Jane Smith",
+      "email": "jane.smith@example.com",
+      "age": 25,
+      "hobbies": ["painting", "yoga"],
+      "status": "inactive",
+      "createdAt": "2024-12-16T15:30:00Z",
+      "location": { "type": "Point", "coordinates": [-118.243683, 34.052235] },
+      "purchases": [
+        { "item": "Tablet", "price": 300 },
+        { "item": "Headphones", "price": 150 }
+      ]
+    },
+    {
+      "_id": 3,
+      "name": "Michael Johnson",
+      "email": "michael.johnson@example.com",
+      "age": 40,
+      "hobbies": ["hiking", "golf"],
+      "status": "active",
+      "createdAt": "2024-12-15T12:45:00Z",
+      "location": { "type": "Point", "coordinates": [-122.332071, 47.606209] },
+      "purchases": [
+        { "item": "Camera", "price": 600 },
+        { "item": "Smartwatch", "price": 200 }
+      ]
+    }
+  ]
+  

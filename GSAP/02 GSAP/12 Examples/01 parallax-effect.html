@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parallax Effect</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:sans-serif;
+}
+
+body{
+    overflow-x:hidden;
+}
+
+/* Sections */
+section{
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+}
+
+/* Hero Section */
+.hero{
+    background:black;
+    color:white;
+    overflow:hidden;
+}
+
+.hero h1{
+    font-size:4rem;
+    text-transform:uppercase;
+    position:relative;
+    z-index:2;
+    text-align:center;
+}
+
+/* Second Section */
+.second{
+    background:white;
+    color:black;
+}
+
+.second h2{
+    font-size:3rem;
+}
+
+/* Images */
+.img{
+    position:absolute;
+    background-size:cover;
+    background-position:center;
+    border-radius:12px;
+    transition:transform 0.1s linear;
+}
+
+/* Individual Image Styling */
+.goku-img{
+    width:300px;
+    height:200px;
+    background-image:url("https://img.freepik.com/free-photo/serene-sunset-reflection_23-2152017124.jpg?w=740");
+    top:20%;
+    left:10%;
+    transform:rotate(5deg);
+}
+
+.luffy-img{
+    width:200px;
+    height:250px;
+    background-image:url("https://img.freepik.com/free-photo/anime-moon-landscape_23-2151645913.jpg?w=740");
+    bottom:15%;
+    right:10%;
+    transform:rotate(-5deg);
+}
+
+.naruto-img{
+    width:250px;
+    height:150px;
+    background-image:url("https://img.freepik.com/premium-photo/enchanting-sunset-reflection-serene-nature-scene-with-silhouette-autumn-leaves_1222123-3069.jpg?w=740");
+    top:60%;
+    left:40%;
+    transform:rotate(3deg);
+}
+
+/* Responsive */
+@media(max-width:768px){
+    .hero h1{
+        font-size:2rem;
+        text-align:center;
+        padding:0 20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+    <h1>This is a Parallax Effect</h1>
+    <div class="img goku-img"></div>
+    <div class="img luffy-img"></div>
+    <div class="img naruto-img"></div>
+</section>
+
+<section class="second">
+    <h2>Scroll Down to See the Effect</h2>
+</section>
+
+<!-- GSAP ScrollTrigger Effect -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    // Register the ScrollTrigger plugin with GSAP
+        gsap.registerPlugin(ScrollTrigger);
+
+    // 
+        gsap.to(".naruto-img", {
+            y:-500,                // load page go upside
+            scale:1.5,              // go up that time change size
+            scrollTrigger: {        // ScrollTrigger configuration                
+                trigger: ".hero",       // trigger the animation when the .hero section is in view
+                start: "top top",       // animation starts when the top of the .hero section hits the top of the viewport
+                end: "bottom top",      // animation ends when the bottom of the .hero section hits the top of the viewport
+                scrub: true,            // Scroll Screen based animation perform or working.
+                // markers:true            // Display markers for debugging the start and end points of the animation
+            }
+        }); 
+
+        gsap.to(".goku-img", {
+            y:-300,
+            scale:1.2,
+            scrollTrigger: {
+                trigger: ".hero",
+                start: "top top",
+                end: "bottom top",
+                scrub: true,
+                // markers:true
+            }
+        });
+
+        gsap.to(".luffy-img", {
+            y:-200,
+            scale:1.1,
+            scrollTrigger: {
+                trigger: ".hero",
+                start: "top top",
+                end: "bottom top",
+                scrub: true,
+                // markers:true
+            }
+        }); 
+    
+
+</script>
+
+
+<!-- Normal Scroll Effect
+<script>
+window.addEventListener("scroll", function() {
+    const scrollY = window.scrollY;
+
+    document.querySelector(".goku-img").style.transform =
+        `translateY(${scrollY * 0.3}px) rotate(5deg)`;
+
+    document.querySelector(".luffy-img").style.transform =
+        `translateY(${scrollY * 0.5}px) rotate(-5deg)`;
+
+    document.querySelector(".naruto-img").style.transform =
+        `translateY(${scrollY * 0.2}px) rotate(3deg)`;
+}); -->
+</script>
+
+</body>
+</html>

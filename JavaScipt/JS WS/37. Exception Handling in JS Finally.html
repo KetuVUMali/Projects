@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> 37. Exception Handling in JS Finally </title>
+</head>
+<body>
+	<h1>Exception Handling Finally </h1>
+
+	<pre>
+		Finally :
+
+		        - Execute after try - catch block.
+
+		        - finally block are always excute.
+		        	(its not dependances upon try & catch block.)
+
+		        - Error present or not present finally block are always excute.
+	</pre>
+
+    <h1>Please Enter A Number Between 5 & 10</h1>
+    <br>
+    <input type="text" name="" id="num">
+    <br>
+    <button onclick="test()">Click</button>
+    <br>
+    <h1 id="res"></h1>
+
+    <script type="text/javascript">
+        function test() 
+        {
+            var num = document.getElementById('num').value;
+
+            try {
+	                if (isNaN(num)) 
+	                    {
+	                        throw "This is not a number";
+	                    } 
+	                else 
+	                	{
+		                    if (num < 5 || num > 10) 
+		                        {
+		                          throw "The number is out of Range";
+		                        } 
+		                    else 
+		                        {
+		                            throw " ";
+		                    	    }
+	               		 }
+            	} 
+            	catch (errorMessage) 
+            	{
+               		 document.getElementById("res").innerText = errorMessage;
+            	}
+            	finally
+            		{
+            			document.getElementById('num').value = "";   // to clear input box value 
+            		}
+        }
+    </script>
+
+</body>
+	<script type="text/javascript">
+		
+	</script>
+</html>

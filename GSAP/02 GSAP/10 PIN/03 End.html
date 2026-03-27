@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  height: 300vh;
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+  background: teal;
+  margin: 100px auto;
+}
+</style>
+</head>
+<body>
+
+<div class="box"></div>
+
+<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+ScrollTrigger.create({
+  trigger: ".box",
+  start: "top top",
+  end: "+=300",
+  pin: true
+});
+</script>
+<div>
+    <pre>
+        Pin element only for some scroll distance
+    </pre>
+    <pre>
+        Pin a box for 300px while scrolling.
+
+        🧠 Explanation :
+                Page scrolls normally
+                    When .box reaches top of screen
+                    It gets pinned (fixed)
+                    It stays fixed for 300px of scrolling
+                    After that, it unpins and scroll continues
+    </pre>
+    <pre>
+        🧠 Explanation
+                Box pins at top
+                Stays pinned for 300px scroll
+                After that → unpins and scroll continues
+                👉 Used when you want temporary sticky behavior
+    </pre>
+</div>
+
+</body>
+</html>

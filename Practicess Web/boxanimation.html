@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Box Animation</title>
+	<style type="text/css">
+		.boxout{/*out side box*/
+
+			height: 600px;
+			width: 600px;
+			border:10px double black;
+			margin: auto;
+			position: relative;
+
+		}
+		.boxin{/*Inside Box1 Animation*/
+				height: 200px;
+				width: 200px;
+				background:red;
+				border: 2px solid black;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				animation-name: boxin;
+				animation-duration: 5s;
+				/*animation-delay: 5s;*/
+		}
+		
+		
+		.boxinnn{/*Inside Box2 Animation*/
+				height: 200px;
+				width: 200px;
+				background:red;
+				border: 2px solid black;
+				position: absolute;
+				top: 400px;
+				left: 400px;
+				animation-name: boxinnn;
+				animation-duration: 5s;
+				/*animation-delay: 5s;*/
+		}
+		@keyframes boxin{
+			0%{
+				top: 00px;
+				left: 00px;
+				background: red;
+			  }
+			25%{
+				top:0px;
+				left:400px;
+				background: yellow;
+			   }
+			50%{
+				top: 400px;
+				left: 400px;
+				background: blue;
+			  }
+		   75%{
+				top: 400px;
+				left: 00px;
+				background: green;
+			  }
+			 100%{
+				top: 00px;
+				left: 00px;
+				background: pink;
+			  }
+		}
+		
+		@keyframes boxinnn{
+			0%{
+				top: 400px;
+				left: 400px;
+				background: red;
+			  }
+			25%{
+				top:400px;
+				left:00px;
+				background: yellow;
+			   }
+			50%{
+				top: 00px;
+				left: 00px;
+				background: blue;
+			  }
+		   75%{
+				top: 00px;
+				left: 400px;
+				background: green;
+			  }
+			 100%{
+				top: 400px;
+				left: 400px;
+				background: pink;
+			  }
+		}
+	</style>
+</head>
+<body>
+
+	<div class="boxout">
+		<div class="boxin"></div>
+		<div class="boxinn"></div>
+		<div class="boxinnn"></div>
+	</div>
+
+</body>
+</html>

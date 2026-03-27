@@ -1,0 +1,24 @@
+{
+  "student": [
+    {
+      "id": "1249",
+      "name": "Ketan Mali",
+      "age": 24,
+      "dob": "03/12/2001",
+      "mob": "70338249592",
+      "emailID": "jobforketan@gmail.com"
+    },
+    {
+      "name": "Jaiminkumar Sonavane",
+      "id": "c9ea"
+    },
+    {
+      "id": "828e",
+      "name": "Harshal Rajput",
+      "age": 26,
+      "dob": "10/06/2000",
+      "mob": "7385633113",
+      "emailID": "harshalpatil@gmail.com"
+    }
+  ]
+}

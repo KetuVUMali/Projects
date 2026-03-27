@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  height: 200vh;
+}
+
+.image {
+  width: 200px;
+  height: 200px;
+  background: green;
+  margin: 200px auto;
+}
+</style>
+</head>
+<body>
+
+<div class="image"></div>
+
+<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.to(".image", {
+  scale: 2,
+  scrollTrigger: {
+    trigger: ".image",
+    start: "top center",
+    end: "bottom top",
+    scrub: 1
+  }
+});
+</script>
+
+<div>
+    <pre>
+        🧠 Explanation :
+                Scroll down → image scales up
+                Scroll up → image scales down
+                Smooth scaling effect tied to scroll position
+    </pre>
+    <pre>
+        🧠 Explanation
+                Image grows as you scroll
+                Reverse when scrolling up
+                Used in hero banners
+    </pre>
+</div>
+
+</body>
+</html>
+

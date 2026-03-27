@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> DOM </title>
+</head>
+<body>
+
+	<h1> DOM Open() & Close() </h1>
+	<pre>
+			
+
+			- open new popup window / webpage. 
+			- link on to button, image, etc
+			- like anker (blank) tag.
+	</pre>
+
+	<button onclick="openwin()"> Open </button>
+
+	<button onclick="closewin()"> Close</button>
+
+</body>
+	<script type="text/javascript">
+		var win;
+
+		function openwin()
+			{
+				win = window.open("https://en.wikipedia.org/wiki/JavaScript","width=500px;","height=500px;");
+			}
+
+
+		function closewin()
+			{
+				win.close();
+			}
+
+	</script>
+</html>

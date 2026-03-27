@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Operator </title>
+</head>
+<body>
+	<h1> Operator </h1>
+
+		<p> An operator is Symbol that tell compiler which arithmetic or logical operation to be performed between the respective operands</p>
+		<p>operator perform operation between two operand / operands</p>
+
+		<h4> Type Of Opc </h4>
+		1. Arithmetic Opc <br>
+		2. Logical Opc (Human Logic)<br>
+		3. Ternary Opc <br>
+		4. Assienment Opc<br>
+		5. Comparision Opc  (comaprison between two items)<br>
+		6. Bitwise Opc </br><br><br>
+
+		<div class="demo">
+		
+		</div>
+				<div class="demo">
+		
+		</div>
+
+		<pre>
+			operator is a special symbol used to perform operations on operands.
+			2 + 3 = 5
+			+ , = is an operator that performs addition, and 2, 3 and 5 are operands. 
+		</pre>
+
+
+</body>
+
+		<script type="text/javascript">
+			// Arithmetic Opc :
+			console.log("1. Arithmetic Opc : ");
+				let a=10;
+				let b=5;
+				let sum=a+b;
+				let diff=a-b;
+				let pro=a*b;
+				let quo=a/b;
+				let rem=a%b;
+				console.log("Sum :",sum);				// 15
+				console.log("Difference :",diff);		// 5 
+				console.log("Product :",pro);			// 50
+				console.log("Quotient :",quo);			// 2
+				console.log("Remainder :",rem);			// 0
+
+
+				console.log()
+				console.log("a"-1)						// NaN
+				console.log(10-'b')						// NaN
+				console.log("a"+1)						// a1
+				console.log("a"-"v")					// NaN
+				console.log("a"+"v")					// av
+				console.log(1-10)						// -9
+				console.log(10-1)						// 9
+
+
+
+			// Assienment Opc 
+			console.log(" 2.Assienment Opc :");
+				let x=10;
+				let y=10;
+				x+=5    //x = x + 5
+				y-=5    //y = y - 5
+				console.log("Updated x :",x);			// 15
+				console.log("Upadated y :",y);			// 5
+
+
+			//Comaprision Opc
+			// o/p in True False
+			console.log("3. Comaprision Opc");
+				let p=10;
+				let q=20;	
+				let EqualTo = p==q;
+				let NotEqualTo = p!=q;
+				let GreaterThanEqual = p>=q;
+				let LessThanEqual = p<=q;
+				console.log("EqualTo :",EqualTo);						// false
+				console.log("NotEqualTo :",NotEqualTo);					// true
+				console.log("GreaterThanEqual :",GreaterThanEqual);		// false
+				console.log("LessThanEqual :",LessThanEqual);			// true
+
+				console.log("");
+				// Check Same Or Not Only
+				console.log(2 == 2);			// true
+				console.log(2=="2");			// true (== only check value same or not; not check data type)
+				console.log("2" == 2);			// true
+
+				console.log("");
+				// === Check Same Or Not With Equal Data Types
+				console.log(2 === 2);			// true
+				console.log(2==="2");			// false
+				console.log("2" === 2);			// false
+				console.log("");
+
+				var g, h, j, k, l=20, m=30;
+				
+				h = (l != m);					// value check only
+				console.log("H : ",h); 			// true
+
+				g = (l !== m);					// same as = & == 
+				console.log("G : ",g);			// true
+
+				// h = l !=== m; 				// !=== is not a valid operator in JavaScript,then code throws an error
+				// console.log("H : ",h);
+
+				j = (l==m);				
+				console.log("J : ",j);			// false   val check
+				k = (l===m);
+				console.log("K : ",k);			// false	val with data type check
+
+
+				var first, first1 , second = 2, third = "2", fourth;
+				first = second != third;			// != is check only value same or not  (== like)
+				console.log(first);					// false
+
+				first1  = second !== third;			// !== check same value and DT  (=== like)
+				console.log("first1 : ",first1);				// true
+
+				// fourth = second !=== third;       !=== operator, which is not valid in JavaScript
+				// console.log(fourth);
+				
+				
+
+
+
+			//String Opc
+			console.log("4.String Concate");
+				let fs="ketu";
+				let ls="mali";
+					let fn= fs + " " + ls;
+					console.log("Full Name :",fn);		// ketu mali
+
+
+
+
+			//Logical Opc
+			console.log("5. Logical Opc :");
+				let isAdult=true;
+				let hasLicense=false;
+					let canDrive = isAdult && hasLicense;  //AND T T = T      	FF TF FT = FALSE
+					let canVote = isAdult || hasLicense;   //OR F F = F		TT TF FT = TRUE
+					let isNotAdult = !isAdult;				// Reverse (Not) o/p
+					console.log("Can Drive : ",canDrive);		// false
+					console.log("Can Vote : ",canVote);			// true
+					console.log("Is Not Adult : ",isNotAdult);	// false
+
+
+
+			//Ternary Opc
+			console.log("6. Ternary Opc : ");
+					let isRaining = true;
+					let umbrella = isRaining ? "Grab an umbrella" : "No need to umbrella";
+						console.log(umbrella);	//Grab an umbrella
+
+					let res = 2>1 ? "Write" : "Wrong";
+					console.log(res);			// Write
+
+
+			//7. Increment Decrement Opc
+			console.log("7. Increment Decrement Opc");
+				var c=10;
+				c++;
+				var d=10;
+				d--;
+				console.log(c);
+				console.log(d);
+
+				document.write(" Inc  Dec Opc ");
+				document.getElementsByClassName("demo")[0].innerHTML = c;
+				document.getElementsByClassName("demo")[1].innerHTML = d;
+
+
+			// Spread Opc
+				// ...
+				var a1 = ["A", "B", "C"];
+				var a2 = ["D", "E", "F"];
+				var a3 = a1 + a2;
+				console.log(a3);		// A,B,CD,E,F
+				var a4 = [...a1,...a2];
+				console.log(a4);		// A,B,C,D,E,F
+
+
+		</script>
+</html>

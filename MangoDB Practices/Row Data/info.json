@@ -1,0 +1,27 @@
+[
+    {
+      "_id": 1,
+      "name": "John Doe",
+      "age": 25,
+      "email": "john.doe@example.com",
+      "hobbies": ["reading", "coding", "traveling"],
+      "address": { "city": "New York", "state": "NY", "zip": "10001" }
+    },
+    {
+      "_id": 2,
+      "name": "Jane Smith",
+      "age": 30,
+      "email": "jane.smith@example.com",
+      "hobbies": ["baking", "yoga", "painting"],
+      "address": { "city": "Los Angeles", "state": "CA", "zip": "90001" }
+    },
+    {
+      "_id": 3,
+      "name": "Michael Johnson",
+      "age": 35,
+      "email": "michael.johnson@example.com",
+      "hobbies": ["gaming", "cycling", "music"],
+      "address": { "city": "Chicago", "state": "IL", "zip": "60601" }
+    }
+  ]
+  

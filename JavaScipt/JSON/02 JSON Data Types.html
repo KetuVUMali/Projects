@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Data Type</title>
+</head>
+<body>
+
+    <pre>
+        Valid Data Types
+            In JSON, values must be one of the following data types:
+                                                                    a string
+                                                                    a number
+                                                                    an object (JSON object)
+                                                                    an array
+                                                                    a boolean
+                                                                    null    
+
+
+        
+         JSON values cannot be one of the following data types:
+                                                                a function
+                                                                a date
+                                                                undefined
+    </pre>
+    
+</body>
+
+    <script>
+            // JSON String 
+                // Strings in JSON must be written in double quotes.
+                String = {"name":"John"}
+                console.log(String);
+
+            // JSON Numbers
+                // Numbers in JSON must be an integer or a floating point.
+                Number = {"age":30}
+                console.log(Number);
+
+
+            // JSON Objects
+                // Values in JSON can be objects.
+                Object = '{"employee":{"name":"John", "age":30, "city":"New York"} }'
+                console.log(Object);
+
+
+            // JSON Arrays
+                // Values in JSON can be arrays.
+                Array = '{ "employees":["John", "Anna", "Peter"] }'
+                console.log(Array);
+
+
+            // JSON Booleans
+                //Values in JSON can be true/false.
+                Boolean = {"sale":true, "demand":false}
+                console.log(Boolean);
+
+
+            // JSON null
+                // Values in JSON can be null.
+                Null = {"middlename":null}
+                console.log(Null);
+    </script>
+</html>

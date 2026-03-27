@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>GSAP Stagger Basic</title>
+    <style>
+        .item {
+            width: 120px;
+            height: 40px;
+            background: #4CAF50;
+            color: white;
+            margin: 10px;
+            line-height: 40px;
+            text-align: center;
+            font-family: Arial;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+    <div class="item">Item 4</div>
+
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+    <script>
+        gsap.from(".item", {
+            y: 50,
+            opacity: 0,
+            duration: 0.5,
+            stagger: 0.2
+        });
+    </script>
+    <div>
+        <h2>GSAP Stagger Basic Example</h2>
+        <p>
+            Animate multiple elements one by one with same animation.</p>
+        <p>This example demonstrates a simple GSAP stagger animation where multiple items animate one after another with
+            a delay.</p>
+        <ul>
+            <li>Each item starts 0.2 seconds after the previous one.</li>
+            <li>Items move up 50px and fade in over 0.5 seconds.</li>
+        </ul>
+        <p>This showcases how to create staggered animations using GSAP for a sequential effect.</p>
+    </div>
+    <div>
+        <pre>
+    🧠 Explanation (Step-by-step)
+                    Select all .item elements
+                    Animate from y:50 and opacity:0
+                    Stagger each animation by 0.2s
+                    Each animation lasts 0.5s
+                    Creates a sequential entrance effect
+    </pre>
+    </div>
+    <div>
+        <pre>
+        gsap.from(".item", {
+                        y: 50,
+                        opacity: 0,
+                        duration: 0.5,       // Each animation lasts 0.5 seconds
+                        stagger: 0.2        // Stagger start times by 0.2 seconds
+                        });
+
+        
+
+    </pre>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  height: 200vh;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background: red;
+  margin: 100px auto;
+}
+</style>
+</head>
+<body>
+
+<div class="box"></div>
+<p id="status"></p>
+
+<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.to(".box", {
+  x: 200,
+  scrollTrigger: {
+    trigger: ".box",
+    start: "top center",
+    end: "bottom top",
+    scrub: true,
+    onEnter: () => document.getElementById("status").innerText = "Entered",
+    onLeave: () => document.getElementById("status").innerText = "Left",
+    onEnterBack: () => document.getElementById("status").innerText = "Enter Back",
+    onLeaveBack: () => document.getElementById("status").innerText = "Leave Back"
+  }
+});
+</script>
+<div>
+    <pre>
+        Detect scroll events.
+
+                    
+            🧠 Explanation
+
+            Scroll down → callbacks fire
+            Scroll up → reverse callbacks fire
+
+            Used in:
+                Section tracking
+                Navbar highlights    
+        </pre>
+</div>
+
+</body>
+</html>

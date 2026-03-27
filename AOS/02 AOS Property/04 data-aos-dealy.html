@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>AOS Delay – Real World Concepts</title>
+
+    <!-- Bootstrap CSS (used in real company projects) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f4f6f8;
+        }
+
+        section {
+            padding: 90px 0;
+        }
+
+        .box {
+            background: #0d6efd;
+            color: white;
+            padding: 35px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .green {
+            background: #198754;
+        }
+
+        .dark {
+            background: #212529;
+        }
+
+        .note {
+            text-align: center;
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 35px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =====================================================
+     SCENARIO 1: BASIC UNDERSTANDING OF data-aos-delay
+     ===================================================== -->
+    <section>
+        <div class="container">
+            <h2>Basic Delay Concept</h2>
+            <p class="note">
+                <b>data-aos-delay</b> means:
+                <br>
+                "Wait for some time AFTER element becomes visible,
+                then start animation."
+                <br><br>
+                Time unit = milliseconds (ms)
+            </p>
+
+            <!-- No delay -->
+            <div class="box" data-aos="fade-up">
+                No Delay (Starts immediately)
+            </div>
+
+            <!-- 300ms delay -->
+            <div class="box" data-aos="fade-up" data-aos-delay="300">
+                300ms Delay (Starts after 0.3 sec)
+            </div>
+
+            <!-- 600ms delay -->
+            <div class="box" data-aos="fade-up" data-aos-delay="600">
+                600ms Delay (Starts after 0.6 sec)
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =====================================================
+     SCENARIO 2: HERO SECTION TEXT FLOW
+     ===================================================== -->
+    <section>
+        <div class="container">
+            <h2>Hero Section – Text Flow Animation</h2>
+            <p class="note">
+                In real websites, Hero section text should appear
+                in reading order:
+                <br>
+                Heading → Subheading → Button
+            </p>
+
+            <!-- Heading -->
+            <div class="box" data-aos="fade-up" data-aos-delay="0">
+                Hero Heading (0ms delay)
+            </div>
+
+            <!-- Subheading -->
+            <div class="box" data-aos="fade-up" data-aos-delay="200">
+                Hero Subheading (200ms delay)
+            </div>
+
+            <!-- Button -->
+            <div class="box green" data-aos="fade-up" data-aos-delay="400">
+                Call To Action Button (400ms delay)
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =====================================================
+     SCENARIO 3: SERVICES / FEATURES CARDS (MOST IMPORTANT)
+     ===================================================== -->
+    <section>
+        <div class="container">
+            <h2>Services Cards – Stagger Effect</h2>
+            <p class="note">
+                This is the MOST COMMON real-world usage of
+                <b>data-aos-delay</b>.
+                <br>
+                Cards should NOT animate together.
+                They should appear one by one.
+            </p>
+
+            <div class="row">
+                <!-- Card 1 -->
+                <div class="col-md-4">
+                    <div class="box" data-aos="fade-up" data-aos-delay="0">
+                        Service Card 1 (0ms)
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-md-4">
+                    <div class="box" data-aos="fade-up" data-aos-delay="200">
+                        Service Card 2 (200ms)
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col-md-4">
+                    <div class="box" data-aos="fade-up" data-aos-delay="400">
+                        Service Card 3 (400ms)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =====================================================
+     SCENARIO 4: IMAGE + TEXT COMBINATION
+     ===================================================== -->
+    <section>
+        <div class="container">
+            <h2>Image & Text Sync Animation</h2>
+            <p class="note">
+                Common layout:
+                Image first → then explanation text.
+                Delay helps user focus step by step.
+            </p>
+
+            <!-- Image -->
+            <div class="box dark" data-aos="zoom-in" data-aos-delay="0">
+                Image / Illustration (0ms)
+            </div>
+
+            <!-- Text -->
+            <div class="box" data-aos="fade-left" data-aos-delay="300">
+                Description Text (300ms)
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =====================================================
+     SCENARIO 5: TESTIMONIALS / REVIEWS
+     ===================================================== -->
+    <section>
+        <div class="container">
+            <h2>Testimonials – Gentle Entry</h2>
+            <p class="note">
+                Testimonials must feel calm & trustworthy.
+                Slight delay avoids sudden appearance.
+            </p>
+
+            <div class="box green" data-aos="fade-right" data-aos-delay="200">
+                Customer Review Card
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =====================================================
+     SCENARIO 6: STATISTICS / COUNTERS
+     ===================================================== -->
+    <section>
+        <div class="container">
+            <h2>Statistics / Counters Section</h2>
+            <p class="note">
+                Numbers should appear step-by-step
+                so user can read them clearly.
+            </p>
+
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="box" data-aos="fade-up" data-aos-delay="0">
+                        10+ Years
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="box" data-aos="fade-up" data-aos-delay="150">
+                        500+ Clients
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="box" data-aos="fade-up" data-aos-delay="300">
+                        1200+ Projects
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="box" data-aos="fade-up" data-aos-delay="450">
+                        24/7 Support
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =====================================================
+     SCENARIO 7: BAD PRACTICE (ONLY FOR LEARNING)
+     ===================================================== -->
+    <section>
+        <div class="container">
+            <h2>Too Much Delay – Avoid This</h2>
+            <p class="note">
+                Very high delay makes UI feel broken.
+                This example is ONLY to understand limits.
+            </p>
+
+            <div class="box dark" data-aos="fade-up" data-aos-delay="2000">
+                2000ms Delay (❌ Bad UX)
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =====================================================
+     AOS JS INITIALIZATION
+     ===================================================== -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+        /*
+          Global AOS settings
+          Used in real company projects
+        */
+        AOS.init({
+            duration: 900,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 120
+        });
+    </script>
+
+</body>
+
+</html>

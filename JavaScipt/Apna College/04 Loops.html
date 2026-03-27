@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <pre>
+        Loops :
+            Loop are used to execute a piece of code again & again.
+            Loop are used to execute a block of code repeatedly until a specified condition is true. 
+            There are several types of loops in JavaScript, including:
+            1.For loop
+            2.While loop
+            3.Do-while loop
+
+
+            1. For loop :
+                The for loop is used to execute a block of code a specific number of times. 
+                It consists of three parts: initialization, condition, and increment/decrement.
+
+                Syntax:
+                    for (initialization; condition; increment/decrement) {
+                        // code to be executed
+                    }
+
+                Example:
+                    for (let i = 0; i < 5; i++) {
+                        console.log(i);
+                    }
+
+
+            2. While loop :
+                The while loop is used to execute a block of code as long as a specified condition is true. 
+                It consists of a condition and a block of code.
+
+                Syntax:
+                    intialization of var;
+                    while (condition) {
+                        // code to be executed
+                        increment/decrement of var;
+                    }
+
+                Example:
+                    let i = 0;
+                    while (i < 5) {
+                        console.log(i);
+                        i++;
+                    }
+
+            3. Do-while loop :
+                The do-while loop is similar to the while loop, but it guarantees that the block of code will be executed at least once, even if the condition is false.
+                Syntax:
+                    do {
+                        // code to be executed
+                    } while (condition);
+
+                Example:
+                    let i = 0;
+                    do {
+                        console.log(i);
+                        i++;
+                    } while (i < 5);
+
+    </pre>
+
+    <pre>
+        Simple program :
+        1. Print numbers from 1 to 10 using a for loop:
+            for (let i = 1; i <= 10; i++) {
+                console.log(i);
+            }
+
+        2. Print the first 10 even numbers using a while loop:
+            let count = 0;
+            let num = 0;
+            while (count < 10) {
+                console.log(num);
+                num += 2;
+                count++;
+            }
+
+        3. Print the first 10 odd numbers using a do-while loop:
+            let count = 0;
+            let num = 1;
+            do {
+                console.log(num);
+                num += 2;
+                count++;
+            } while (count < 10);
+
+    </pre>
+
+    <pre>
+        Extra Loop :
+        1. For-in loop :
+        2. For-of loop
+        3. Nested loop
+        4. Infinite loop
+        5. Break and continue statements
+        
+
+        1. For-in loop : Objects
+            The for-in loop is used to iterate over the properties of an object. 
+            It iterates over the keys of the object and executes a block of code for each key.
+
+            Syntax:
+                for (let variable in object) {   // object is predefined var
+                    // code to be executed
+                }
+            Example:
+                const person = { name: "John", age: 30, city: "New York" };
+                for (let key in person) {
+                    console.log(key + ": " + person[key]);     // person[key] is used to access the value of the property using the key
+
+                    console.log(key);                           // only key will be printed : name, age, city
+                    console.log(person[key]);                   // only value will be printed : John, 30, New York
+                    console.log(key + ": " + person[key]);      // key and value will be printed : name: John, age: 30, city: New York
+                }
+
+                
+
+        2. For-of loop : Arrays and Strings
+            The for-of loop is used to iterate over the values of an iterable object, such as an array or a string.
+            Syntax:
+                for (et variable of iterable) {    // iterable can be an array or a string var
+                    // code to be executed
+                }   
+            Example:
+                Array : size of array is 5 but index is 0 to 4
+                    const numbers = [1, 2, 3, 4, 5];
+                    for (let num of numbers) {
+                        console.log(num);
+                    }
+
+                String : size of string is 5 but index is 0 to 4
+                    const str = "Hello";
+                    for (let char of str) {
+                        console.log(char);
+                    }
+
+        3. Nested loop : 
+            A nested loop is a loop that is contained within another loop.
+            Syntax :
+                for (initialization; condition; increment/decrement) {
+                    // code to be executed
+                    for (initialization; condition; increment/decrement) {
+                        // code to be executed
+                    }
+                }
+
+            Example:
+                for (let i = 1; i <= 3; i++) {
+                    for (let j = 1; j <= 3; j++) {
+                        console.log(i + " " + j);
+                    }
+                }
+
+        4. Infinite loop :
+            An infinite loop is a loop that never terminates/ends.
+            Syntax:
+                while (true) {
+                    // code to be executed
+                }
+
+            Example:
+                while (true) {
+                    console.log("Infinite Loop Iteration");
+                }
+
+                for( let i=0; i>=0; i++ ) {
+                    console.log("Infinite Loop Iteration");
+                }
+            
+        5. Break and continue statements :
+            The break statement is used to exit a loop prematurely, while the continue statement is used to skip the current iteration of a loop and move to the next iteration.
+            Syntax:
+                // Break statement : (stop loop) 
+                for (let i = 1; i <= 10; i++) {
+                    if (i === 5) {
+                        break; // Exit the loop when i is 5
+                    }
+                    console.log(i);
+                }
+
+                // Continue statement : (skip current iteration/value)
+                for (let i = 1; i <= 10; i++) {
+                    if (i === 5) {
+                        continue; // Skip the current iteration when i is 5
+                    }
+                    console.log(i);
+                }
+
+            Example:
+                for (let i = 1; i <= 10; i++) {
+                    if (i === 5) {
+                        break; // Exit the loop when i is 5
+                    }
+                    console.log(i);
+                }
+                console.log("Loop terminated.");
+
+                for (let i = 1; i <= 10; i++) {
+                    if (i === 5) {
+                        continue; // Skip the current iteration when i is 5
+                    }
+                    console.log(i);
+                }
+                console.log("Loop terminated.");
+            
+    </pre>
+
+    <pre>
+        1. 1 to n number sum :
+            let n = 10;             // You can change this value to calculate the sum up to a different number
+            let sum = 0;
+            for (let i = 1; i <= n; i++) {
+                sum += i;                   // sum = sum + i;
+            }
+            console.log("The sum of numbers from 1 to " + n + " is: " + sum);
+
+        2. Table of a number :
+            let num = 5;            // You can change this value to generate the table for a different number
+            console.log("Table of " + num + ":");
+            for (let i = 1; i <= 10; i++) {
+                console.log(num + " x " + i + " = " + (num * i));           // num * i is the result of multiplying num by i
+            }
+
+        3. Find string length without using length property :
+            let str = "Hello, World!";     // You can change this value to calculate the length of a different string
+            let length = 0;
+            for (let char of str) {
+                length++;                   // length = length + 1;
+            }
+            console.log("The length of the string is: " + length);
+
+        4. Array sum :
+            let numbers = [1, 2, 3, 4, 5];   // You can change this array to calculate the sum of different numbers
+            let sum = 0;
+            for (let num of numbers) {
+                sum += num;                   // sum = sum + num;
+            }
+            console.log("The sum of the array is: " + sum);
+
+        5. Reverse a string :
+            let str = "Hello, World!";     // You can change this value to reverse a different string
+            let reversedStr = "";
+            for (let i = str.length - 1; i >= 0; i--) {             // str.length - 1 gives the index of the last character in the string, and i-- decrements the index to move backwards through the string.
+                reversedStr += str[i];      // reversedStr = reversedStr + str[i];
+            }
+            console.log("The reversed string is: " + reversedStr);
+         
+    </pre>
+    
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursor Program</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        } 
+
+        html, body{
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        #main{
+            height: 100%;
+            width: 100%;
+            background-color: black;
+        }
+        #cursor{
+            height: 20px;
+            width: 20px;
+            background-color: white;
+            border-radius: 50%;
+            position: fixed;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="cursor"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+<script>
+    var main = document.querySelector('#main');
+    var cursor = document.querySelector('#cursor');
+
+    main.addEventListener('mousemove', function(dets){
+        gsap.to(cursor, {
+            duration: 1,
+            x: dets.clientX,
+            y: dets.clientY,
+            ease: "back.out"
+        });
+    });
+</script>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+
+         Data Types in JS
+             1. Primitive Data Types
+             2. Non-Primitive Data Types
+
+         1. Primitive Data Types
+             1. String      : "" or ''
+
+             2. Number      : 123, 3.14, -5, etc.
+
+             3. Boolean     : true or false
+
+             4. Null        : You are intentionally saying: "this value is empty"
+                               let a = null;
+                               console.log(a); // null   
+                               // "Is variable me abhi koi value nahi hai"
+                               // Value not assigned but we are saying that this variable is empty.
+
+             5. Undefined   : A variable is declared but value is not assigned yet
+                               let a;
+                               console.log(a); // undefined               
+                               // "Value abhi tak diya nahi hai"
+                               // JS automatically assigns undefined to uninitialized variables
+
+             6. Symbol      : unique values used as identifiers
+                              Symbol always creates unique values
+
+             7. BigInt      : used to store very large integers.
+                              number ends with "n" to denote BigInt, e.g., 12345678901234567890n
+                              
+                              Rule 1: Cannot mix Number & BigInt
+                              let a = 10n;  let b = 5;
+                              console.log(a + b);      // ❌ Error    (Error : TypeError: Cannot mix BigInt and other types, use explicit conversions)
+                              console.log(a + BigInt(b)); // 15n  
+
+                              Rule 2:  BigInt only supports integers not decimals
+                              let a = 10.99n;    ❌ Error        (Error : SyntaxError: Invalid or unexpected token )
+                              let b = 11n;       // Valid BigInt   
+                                                                    
+
+         2. Non-Primitive Data Types
+             1. Object      : Object is a collection of key-value pairs, can hold multiple data types and can be modified after creation
+                              Obj : let user = { name: "Ketan", age: 25 };
+                              Access : 1. Dot Notation :     console.log(user.name);              // Ketan
+                                       2. Bracket Notation : console.log(user["age"]);            // 25
+                              Add / Update   :  user.name = "Ketan";
+                                                user["age"] = 26;
+                              Delete         :  delete user.name;
+                                                delete user["age"];
+                            
+
+             2. Array       : Array is a collection of multiple values stored in a single variable.
+                                let arr = [1, "hello", true, null, undefined, { name: "Ketan" }, [1, 2, 3]];
+                                Access : console.log(arr[0]); // 1
+                                         console.log(arr[1]); // "hello"
+                                         console.log(arr[5].name); // "Ketan"
+                                         console.log(arr[6][1]); // 2
+                                Add / Update   : arr.push("new value");   // Add at end
+                                                    arr[0] = 100;          // Update index 0
+                                Delete         : delete arr[1];            // Deletes element but does not change length (arr[1] becomes undefined)
+                                                    arr.splice(1, 1);      // Removes element and shifts remaining elements left (arr[1] is removed and arr[2] becomes new arr[1])
+
+             3. Function    : a block of code that performs a particular task.
+                              function greet(name) {
+                                  return "Hello, " + name + "!";
+                              }
+                              console.log(greet("Ketan"));                  // "Hello, Ketan!"   
+
+             4. Date        : used to work with dates and times.
+                              let date = new Date();
+                              console.log(date);                            // current date and time
+                              let specificDate = new Date("2024-01-01");
+                              console.log(specificDate);                    // January 1, 2024
+
+             5. Map         : collection of key-value pairs where keys can be of any type and maintains insertion order
+                              let map = new Map();
+                              map.set("name", "Ketan");
+                              map.set(1, "one");
+                              console.log(map.get("name"));     // "Ketan"
+                              console.log(map.get(1));          // "one"
+                              map.delete("name");
+                              console.log(map.has("name"));     // false
+                              console.log(map.size);            // 1
+
+             6. Set         : collection of unique values, can hold any type of value and does not maintain order
+                                let set = new Set();
+                                set.add(1);
+                                set.add("hello");
+                                set.add(1);                         // duplicate, will not be added
+                                console.log(set.has(1));            // true
+                                console.log(set.has("hello"));      // true
+                                console.log(set.size);              // 2
+                                set.delete(1);
+                                console.log(set.has(1));            // false
+                                console.log(set.size);              // 1
+
+
+             Note : const value not change but const object key value we can change.    
+</pre>
+            <pre>
+			    Var Name : 
+						| Style        | Example    | Use                     |
+                        | ------------ | ---------- | ---------------------   |
+                        | Camel Case   | fullName   | ✅ JS variables        |
+                        | Snake Case   | full_name  | DB / Python             |
+                        | Kebab Case   | full-name  | ❌ not in JS variables |
+                        | Pascal Case  | FullName   | Classes / React         |
+
+			</pre>
+
+
+		<pre>
+			Var :  Var can be re-declared & up dated. A global scope var. 
+					var name = 'demo';  ✅ allowed
+					var name = "one";   ✅ allowed
+
+			let : Var cannot be re-declared but can be updated. A block{fun} scope var.
+					let age = 20;
+					let age = 22;  ❌ error
+					age = 22;      ✅ allowed
+					age = 50;      ✅ allowed
+
+			const : var cannot be re-declared or updated. A block {fun} scope var.
+					const no = 20; 
+					const no = 25;  ❌ error
+					no = 23;        ❌ error
+		</pre>
+
+
+        <pre>
+            Var :  It is function scoped, NOT purely global.
+             
+                1.
+                    function test() {
+                                var x = 10;
+                                console.log(x); // 10
+                            }
+                    console.log(x); // ❌ error (function scope)
+                2.
+                    if (true) {
+                                var y = 20;
+                            }
+                    console.log(y); // ✅ works (this is problem)
+                3. Hoisting : var is hoisted to the top of the scope
+                        console.log(a); // undefined
+                        var a = 10;
+                    
+        </pre>
+        <pre>
+            let : It is block scoped, does not allow redeclaration but allows reassignment.
+                
+                1.
+                    function test() {
+                                let x = 10;
+                                console.log(x); // 10
+                            }
+                    console.log(x); // ❌ error (block scope)
+                2.
+                    if (true) {
+                                let y = 20;
+                            }
+                    console.log(y); // ❌ error (block scope)
+
+                    👉 let respects {} block
+                3. Hoisting
+                    console.log(b); // ❌ error
+                    let b = 10;
+        </pre>
+        <pre>
+            const : It is block scoped, does not allow redeclaration or reassignment.
+                    const variable reference cannot change, but object/array inside can change.
+                
+                1.
+                    function test() {
+                                const x = 10;
+                                console.log(x); // 10
+                            }
+                    console.log(x); // ❌ error (block scope)
+                2.
+                    if (true) {
+                                const y = 20;
+                            }
+                    console.log(y); // ❌ error (block scope)
+
+                    👉 const respects {} bloc
+
+                3. 
+                    const user = { name: "Ketan" };
+                        user = { name: "Rahul" };  // ❌ Not allowed 
+                        user.name = "Mali";   // ✅ Allowed  
+
+                4. Hoisting
+                    console.log(b); // ❌ error
+                    const b = 10;
+                            
+        </pre>
+
+
+		let a; var b;     -> console    ->  undefine (means var declare only)
+
+		const c;  ->  cant not be undefine. if value not assign then error occured.
+
+
+
+            
+
+            JS is dynamic typed language means in any var we can story/update any type value.
+			<pre>
+				fullName = "Ketan Mali";
+				fullName = 25;
+				fullName = true;
+
+				In Js any var we can add any kind of var value or update. We Can store direct value.
+				This feature are restricted in other programming languages like java, ts, etc.
+				TS is super set of JS (Advanced Version).
+				TS is typed based language means var strictly follow single data type when we create it.
+
+			</pre>
+
+</body>
+</html>

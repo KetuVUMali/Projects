@@ -1,0 +1,22 @@
+<p>property-binding works!</p>
+<h1>2. Property Binding</h1>
+
+<h1 [innerHTML]="message" ></h1>
+ <!-- <h1> {{message }}</h1> -->
+ <h1 [innerText]="message" ></h1>
+
+ <h1 [innerText]="message" [classList]="ClassList"></h1>
+
+ <h2 [id]="getID()">Hii</h2>
+
+<h1 [innerText]="headig" [title]="message"></h1>
+
+<h3 [title]="h3title">{{title}} (On Mouse for title)</h3>
+<h3 [title]="title2" [innerText]="innerTextVar">{{title}}</h3>
+<h3 [title]="title3" [innerHTML]="innerTextVar">{{title}}</h3>
+<br><br>
+<input type="text" name="uname" value="{{uname}}" disabled="{{diable}}" >
+<br>boolean value<br>
+<input type="text" name="uname" [value]="uname" [disabled]="diable">
+<br>
+<br>

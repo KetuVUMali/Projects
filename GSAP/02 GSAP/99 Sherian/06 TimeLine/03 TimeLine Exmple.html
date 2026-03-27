@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{            
+            width: 100px;
+            height: 100px;
+            background-color: rgb(0, 4, 255);
+        }
+        .box2{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(0, 255, 0);
+        }
+        .box3{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(255, 153, 0);
+        }
+    </style>
+    
+</head>
+<body>
+<h3>Without Time Line </h3>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        var tl = gsap.timeline();
+        tl.to(".box1", {
+            x: 1200,
+            rotate:360,
+            backgroundColor:"blue",
+            borderRadius:"50%",
+            duration:  1.5,                       
+            delay: 1
+        });
+        tl.to(".box2", {
+            x: 1200,
+            rotate:360,
+            backgroundColor:"blue",
+            borderRadius:"50%",
+            duration:  1.5,   
+        });
+        tl.to(".box3", {
+            x: 1200,
+            rotate:360,
+            backgroundColor:"blue",
+            borderRadius:"50%",
+            duration:  1.5,   
+        });
+    </script>
+
+
+<pre>
+    This is TimeLine Example : 
+            In this example we have three boxes and we have to move all boxes at the same time.
+            We can use TimeLine to move all boxes at the same time.
+
+            One complete after one complete.
+            No delay we wont to handle
+
+</pre>
+</body>
+</html>

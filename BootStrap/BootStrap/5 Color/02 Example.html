@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bootstrap Colors – Complete Guide</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="p-4">
+    <h1 class="text-center mb-4">Bootstrap Colors – Complete Concepts</h1>
+
+    <pre>
+📌 Bootstrap color utilities are used for:
+✔ Text colors
+✔ Background colors
+✔ Links
+✔ Opacity
+✔ Alerts, buttons, badges, etc.
+
+📌 Bootstrap uses semantic color names (meaning-based).
+</pre
+    >
+
+    <hr />
+
+    <!-- ================================================= -->
+    <h2>1️⃣ Text Colors</h2>
+
+    <pre>
+Classes:
+.text-primary
+.text-secondary
+.text-success
+.text-danger
+.text-warning
+.text-info
+.text-light
+.text-dark
+.text-muted
+.text-body
+.text-white
+</pre
+    >
+
+    <p class="text-primary">Primary text</p>
+    <p class="text-secondary">Secondary text</p>
+    <p class="text-success">Success text</p>
+    <p class="text-danger">Danger text</p>
+    <p class="text-warning">Warning text</p>
+    <p class="text-info">Info text</p>
+    <p class="text-dark">Dark text</p>
+    <p class="text-muted">Muted text</p>
+    <p class="text-body">Body default text</p>
+    <p class="text-white bg-dark p-2">White text on dark background</p>
+
+    <hr />
+
+    <!-- ================================================= -->
+    <h2>2️⃣ Background Colors</h2>
+
+    <pre>
+Classes:
+.bg-primary
+.bg-secondary
+.bg-success
+.bg-danger
+.bg-warning
+.bg-info
+.bg-light
+.bg-dark
+.bg-white
+.bg-transparent
+</pre    >
+  <div class='container row g-2'>
+    
+  
+<div class="p-3 mb-2 bg-primary text-white">Primary background</div>
+<div class="p-3 mb-2 bg-success text-white">Success background</div>
+<div class="p-3 mb-2 bg-danger text-white">Danger background</div>
+<div class="p-3 mb-2 bg-warning text-dark">Warning background</div>
+<div class="p-3 mb-2 bg-info text-dark">Info background</div>
+<div class="p-3 mb-2 bg-light text-dark">Light background</div>
+<div class="p-3 mb-2 bg-dark text-white">Dark background</div>
+<div class="p-3 mb-2 bg-transparent border">Transparent background</div>
+</div>
+    <hr />
+
+    <!-- ================================================= -->
+    <h2>3️⃣ Colored Links</h2>
+
+    <pre>
+Link color classes:
+.link-primary
+.link-secondary
+.link-success
+.link-danger
+.link-warning
+.link-info
+.link-dark
+.link-light
+
+Hover effect included automatically
+</pre
+    >
+
+    <p>
+      <a href="#" class="link-primary">Primary link</a> |
+      <a href="#" class="link-success">Success link</a> |
+      <a href="#" class="link-danger">Danger link</a> |
+      <a href="#" class="link-warning">Warning link</a> |
+      <a href="#" class="link-info">Info link</a> |
+      <a href="#" class="link-dark">Dark link</a>
+    </p>
+
+    <div class="bg-dark p-3">
+      <a href="#" class="link-light">Light link on dark background</a>
+    </div>
+
+    <hr />
+
+    <!-- ================================================= -->
+    <h2>4️⃣ Text + Background Combination (Real-World)</h2>
+
+    <pre>
+Rule:
+✔ Light text on dark background
+✔ Dark text on light background
+✔ Ensure readability & contrast
+</pre
+    >
+
+    <div class="p-3 bg-primary text-white">Login Successful</div>
+    <div class="p-3 bg-danger text-white">Error: Something went wrong</div>
+    <div class="p-3 bg-warning text-dark">Warning: Check input</div>
+    <div class="p-3 bg-success text-white">Payment Completed</div>
+
+    <hr />
+
+    <!-- ================================================= -->
+    <h2>5️⃣ Color Opacity</h2>
+
+    <pre>
+Classes:
+.text-opacity-25
+.text-opacity-50
+.text-opacity-75
+
+.bg-opacity-10
+.bg-opacity-25
+.bg-opacity-50
+.bg-opacity-75
+</pre
+    >
+
+    <p class="text-primary text-opacity-25">Primary text 25% opacity</p>
+    <p class="text-primary text-opacity-50">Primary text 50% opacity</p>
+    <p class="text-primary text-opacity-75">Primary text 75% opacity</p>
+
+    <div class="p-3 bg-success bg-opacity-25">Success bg 25% opacity</div>
+    <div class="p-3 bg-success bg-opacity-50">Success bg 50% opacity</div>
+    <div class="p-3 bg-success bg-opacity-75">Success bg 75% opacity</div>
+
+    <hr />
+
+    <!-- ================================================= -->
+    <h2>6️⃣ Reset Color</h2>
+
+    <pre>
+Class:
+.text-reset
+Removes inherited color from parent
+</pre
+    >
+
+    <div class="text-danger">
+      Parent is red →
+      <a href="#" class="text-reset">This link is reset to default color</a>
+    </div>
+
+    <hr />
+
+    <!-- ================================================= -->
+    <h2>7️⃣ Color with Typography (Common Use)</h2>
+
+    <pre>
+Used in:
+✔ Headings
+✔ Paragraphs
+✔ Labels
+✔ Status text
+</pre
+    >
+
+    <h2 class="text-primary">Dashboard</h2>
+    <p class="text-muted">Last updated 5 minutes ago</p>
+    <p class="text-success fw-bold">Status: Active</p>
+    <p class="text-danger fw-bold">Status: Inactive</p>
+
+    <hr />
+
+    <!-- ================================================= -->
+    <h2>8️⃣ Accessibility & Rules</h2>
+
+    <pre>
+✔ Always ensure enough contrast
+✔ Avoid light text on light background
+✔ Use semantic colors:
+   success → green
+   danger → red
+   warning → yellow
+   info → blue
+✔ Important for screen readers & UX
+</pre>
+
+    <hr />
+
+    
+  </body>
+</html>

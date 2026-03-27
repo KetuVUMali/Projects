@@ -1,0 +1,101 @@
+<h1>----------------------------- Basic Signals -------------------------------------</h1>
+
+<h3> Normal Property {{x}}</h3>
+
+<h2> Signals</h2>
+<h3>{{value()}}</h3>
+
+<br><br><br>
+
+<h3>Signal : {{values()}}</h3>
+<button (click)="values.set(20)" > Change Signal </button>
+<br>
+<h3>Property : {{x}}</h3>
+<button (click)="x=20" > Change Property </button>
+
+
+
+<br><br><br>
+
+<h1>Counter: {{ count() }}</h1>
+<button (click)="increment()">+</button>
+<button (click)="decrement()">-</button>
+
+<br><br><br>
+
+
+<h3>{{svalue()}}</h3>
+<button (click)="updatesValue()"> Increase </button>
+<button (click)="reset()" > Reset </button>
+<button (click)="decrementValue()"> Decrease </button>
+
+<br><br><br>
+<h3>---------------------------- Data Type With Signals ---------------------------- </h3>
+<br>
+
+<h2>Data : {{data()}}</h2>
+<button (click)="updateData()">Data</button>
+
+<br><br>
+
+<h2>Data2 : {{data2()}}</h2>
+<button (click)="updateData2()">Data2</button>
+
+<br><br>
+
+<h2>Data3 : {{data3()}}</h2>
+<button (click)="updateData3()">data3</button>
+
+<br><br>
+
+<h1>1. Computed Signal</h1>
+    <h4> Simple Computed Ex</h4>
+        <h2>Data4 : {{data4()}}</h2>
+        <button (click)="updateData4()">Computed Signal</button>
+    
+    <h4> Compute Value Change </h4>
+        <h2>Countx: {{ countx() }}</h2>
+        <h2>Double Countx: {{ doubleCount() }}</h2>
+        <button (click)="incrementx()">Increment</button>
+        
+        <br><br>
+        <h2>C : {{c()}}</h2>
+        <button (click)="UpdateComputed()"> Change </button>
+
+<br><br>
+
+<h1>2. Writable Signal</h1>
+<h2>Data5 : {{data5()}}</h2>
+<button (click)="updateData5()">Writable Signal</button>
+
+
+<br><br><br>
+<h3>---------------------------- Effects ---------------------------- </h3>
+<br>
+
+
+<h3>Counting : {{counting()}}</h3>
+<button (click)="updateCount()"> Inc </button>
+<h3 [innerHTML]="counting()"></h3>
+
+<br><br>
+
+@if (display) {
+    <div style="background-color: blueviolet; width: 100px; height: 100px; "></div>
+}
+<button (click)="toggle()"> Toggle </button>
+
+<br><br><br>
+
+<h3>DisplayValue : {{displayValue()}}</h3>
+@if (display2) {
+    <div style="background-color: blueviolet; width: 100px; height: 100px; "></div>
+}
+<button (click)="toggle2()"> Toggle2 </button>
+
+
+
+
+
+
+

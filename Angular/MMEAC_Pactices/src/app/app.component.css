@@ -1,0 +1,8 @@
+/* app component CSS */
+nav a{
+    margin: 3px;
+    text-decoration: none;
+    color: red;
+    padding-right: 17px;
+    font-size: larger;
+}

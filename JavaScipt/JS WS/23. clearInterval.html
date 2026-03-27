@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> clearInterval() </title>
+</head>
+<body>
+
+
+</body>
+
+	<body>
+		<pre>
+			- The clearInterval() method clear a timer set with the setInterval() method.
+
+			- to stop SetInterval  at perticular time.
+			- clearInterval() use to counter setInterval() at any time.
+
+			- The ID value returnd by setinterval() is used as the parameter for the clearInterval() method.
+
+			- myVar = setInterval("function",milliseconds);
+
+			- clearInterval(myVar) 
+		</pre>
+		<h1>Stop Watch </h1>
+
+		<h1 id="h1"></h1>
+
+		<button onclick="stop()"> Stop Count </button>
+		
+	</body>
+
+	<script type="text/javascript">
+		 // Number Counting.
+		 // fuction work as loop. 
+		var my = setInterval(count,1000);  //1 second
+
+		var c = 0;
+		function count()
+			{
+				document.getElementById('h1').innerText = c;
+				console.log(c);
+				c++; 
+			}
+
+		function stop()
+			{
+				clearInterval(my);
+			}
+	</script>
+</html>

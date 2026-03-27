@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>GSAP FromTo</title>
+<style>
+    .div1 {
+      height: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .box {
+      width: 100px;
+      height: 100px;
+      background: #f97316;
+    }
+</style>
+</head>
+<body>
+ 
+    <div class="div1">
+        <div class="box"></div>
+    </div>
+
+ 
+<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+ 
+<script>
+  gsap.from(
+    ".box",
+    { scale: 2, duration: 3 , rotate:0}
+  );
+</script>
+
+<br><br><br>
+<h4> Animation position To Reverse Intial Position </h4>
+<pre>
+    Explanation:
+        gsap.from() → GSAP method to animate from specified properties to specified properties
+        .box is selected
+        { scale: 2, duration: 3 , rotate:0} → animates to scale 2 and rotation 0 degrees over 3 seconds
+</pre>
+<br><br><br>
+<pre>
+    Explanation : 
+                    Box starts small and rotated
+                    Grows larger and straightens out
+                    Used for attention-grabbing animations  
+</pre>
+ 
+</body>
+</html>

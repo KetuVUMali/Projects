@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    a {
+      text-decoration: none;
+      color: black;
+      position: relative;
+      font-size: 20px;
+    }
+
+    a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 100%;
+      height: 3px;
+      background: blue;
+      border-radius: 40px;
+    }
+  </style>
+</head>
+<body>
+
+<a href="#">Hover Me</a>
+
+</body>
+</html>
+<pre>
+🔍 Explanation (Step-by-Step)
+    text-decoration: none → remove default underline
+    position: relative → parent for absolute child
+    a::after → create fake element after link text
+    content: "" → required to show element
+    position: absolute → position relative to parent
+    left: 0; bottom: -5px → place below text
+    width: 100% → full width of link
+    height: 3px → thickness of underline
+    background: blue → color of underline
+    border-radius: 40px → rounded edges of underline
+
+    Because underline comes after text naturally.
+
+</pre>
+
+
+</pre>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>15 : 11 : 15
+<html>
+<head>
+	<title> 35. Exception Handling in JS </title>
+</head>
+<body>
+	<h1> Exception Handling </h1>
+	<pre>
+		 Exception :
+		 			1. Exception is abnormal Condition.
+
+		 			2. Exception means handle error
+
+		 			3. Exception handling is a process or method used for handling the abnormal ststements in the code and executing them.
+
+		 			4. Try, Catch, throw, finally are used.
+
+
+
+		
+				try{ } : 
+						 -The code which needs possible error testing is kept within the try block.
+
+						 - In case any error occure in this try block then it pass catch{} block for handle error.
+
+
+				catch{ } : 
+						  - This block handle the error.
+
+
+				syntax : 
+								try
+									{
+										//
+									}
+								catch(error)
+									{
+										//
+									}
+
+
+
+	</pre>
+
+	<button onclick="test()"> Test </button>
+	<h1 id="res"></h1>
+
+	<button onclick="test2()"> Test2 </button>
+	<h1 id="res2"></h1>
+
+</body>
+	<script type="text/javascript">
+		function test() 
+			{
+				try
+					{
+						alertk("Hello");    //error create     (Speling Mistake)
+					}
+				catch(err)
+					{
+						document.getElementById('res').innerText = err;
+						console.log(err);
+					}
+			}
+	</script>
+
+	<script type="text/javascript">
+		function test2() 
+			{
+				try
+					{
+						var number = 5;
+						var x = number.toupperCase();		// error genrate string fun toupperCase()  NAN
+						alert(x);
+					}
+				catch(mess)
+					{
+						document.getElementById('res2').innerText = mess;
+						console.log(mess);
+					}
+			}
+	</script>
+</html>  

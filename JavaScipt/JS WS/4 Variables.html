@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Variables </title>
+</head>
+<body>
+
+	<h1> Variables </h1>
+	<p>
+		1. Variables are Containers which holds reusable data.
+		<br>
+		2. It is basic unit of Storage in program
+		<br>
+		The Value stored in a variable,which we can be changed it when during program execution / running .
+	</p>
+<pre>
+			Keywords			 Scope					Redefine
+		
+		1.   var 				Function 				  Yes
+		2.   let				block 					  Yes
+		3.  const 				block 					  No
+</pre>
+
+</body>
+
+		<script type="text/javascript">
+			// Variable
+				// Variable Rule:
+					// var name Always only Start with letter(char) or Underscore .
+					// var name not start with digit, special symbol , etc..
+					// var is Case Sensitive.
+					// var contains char,number,underscore,$ only but start with letter.
+					// keyword is not allow to use as variables.
+
+
+			    // Three Types of Var
+					// 1. var  :  always var value changeable.
+					// 2. let  :  var value not changeable at block Scope Base
+					// 3. const : Fix var value not change.
+
+			    // 1. var declare (Hosting)
+			       console.log("1. var declare");
+			       var demo;			     	// undefine
+			       console.log(demo);  			// O/P not show because var is Empty (undefine)
+
+			    // 2. var initialise 
+			       console.log("2. Variable Initi");
+			       var demo1 = "Ketu";			
+			       console.log(demo1); 			// Ketu
+
+
+			     // 3. Var Override
+			        console.log("3. Variable Override")
+			        var name = "Ketu";
+			        console.log("name : ", name);		// Ketu
+			        var name = "Mali";
+			        console.log("name : ", name);		// Mali
+
+
+			      // 4. Var are Case Sensitive
+			      	 console.log("4. Variable CaseSensitive");
+			         var name = "H1";
+			         console.log("name : ", name);		//name : H1
+			         var Name = "H2";
+			         console.log("Name : ", Name);		//Name : H2
+			         var NAme = "H3";
+			         console.log("NAme : ", Name);		//NAme : H3
+
+
+			       // 5.Error
+			          // All JS Error show in Console Area
+			          console.log(" ");
+			          console.log("6. JS Error Show In Console Area");			// JS Message Show In Console Area
+					  console.warn("6. JS Error Show In Console Area");			// JS Warning Show In Console Area
+					  console.error("6. JS Error Show In Console Area");		// JS Error Show In Console Area
+			          console.log(" ");
+						
+
+
+		        // Types Of Variable 
+
+		        // i. Local : limitation ,   used in particular section (if we declared any var in any function that var range is set to only that particular function. )
+
+		        // ii. Global :No limitations , we use this var overall page. This var declared out side of function. 
+
+
+		             //
+
+
+
+				 // 7.var keyword through create variable.
+					// The var statement declares a function-scoped or globally-scoped variable
+					// one variable we use multiple time assigns to value.
+					    console.log("7. var Variable");
+						var age=25;										
+						console.log("Var outside block Age:",age);			// 25
+						if(true)
+						{
+							var age=30;     //reassigns age to var 
+							console.log("Var inside block -Age:",age);		// 30
+						}
+						console.log("Var -Age:",age);						// 30
+
+
+				// .let keyword through create variable.
+				 	// The let statement declares a block-scoped.
+					// only one time use to assigns to value.
+						console.log(" ");
+					    console.log("8. let Variable");
+						let name1="ketu";						//only outside block scope.
+						if (true)
+						{
+							let name1="mali";  					//only inside block scope.
+							console.log("let inside block -name:",name1);		// mali
+						}
+						console.log("let outside block -name:",name1);			// ketu
+
+
+				// 9. constant keyword through create variable
+					// Constants are block-scoped.
+					// The value of a constant can't be changed through reassignment, and it can't be redeclared.
+					// only one time to assign value 
+						console.log(" ");
+						console.log("9. const Variable");
+						const pi=3.14;
+						if(true)
+						{
+							const pi=3.14159; //only inside block scope.
+							console.log("const inside block -pi:",pi);			// const inside block -pi: 3.14159
+						}
+						console.log("const inside block -pi:",pi);				// const inside block -pi: 3.14
+
+		</script>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  height: 200vh;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background: red;
+  margin: 200px;
+}
+</style>
+</head>
+<body>
+
+<div class="box"></div>
+
+<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.to(".box", {
+  x: 500,
+  scrollTrigger: {
+    trigger: ".box",                    // Element that triggers the animation
+    start: "top center",                // When the top of the box hits the center of the viewport
+    end: "bottom top",                  // When the bottom of the box hits the top of the viewport
+    scrub: true                         // Link animation progress to scroll position
+  }
+});
+</script>
+<pre>
+    🧠 What is happening?
+                Page is tall (200vh → scroll available)
+                When .box comes into view:
+                Scroll down → box moves right
+                Scroll up → box moves back
+                Animation speed = scroll speed
+</pre>
+
+</body>
+</html>

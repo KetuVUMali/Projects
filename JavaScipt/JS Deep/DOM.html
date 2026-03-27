@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DOM & DOM Method</title>
+</head>
+<body>
+
+	<h1>JavaScript DOM Examples</h1>
+
+	<!-- DOM Events - HTML Attribute and JavaScript Implementation -->
+
+	<section>
+	    <h2>DOM Events - HTML Attribute and JavaScript Implementation</h2>
+	    <h2>DOM - Document Object Model</h2>
+	        <p>	DOM use for user interaction(HTML interaction for DOM) 
+	        	<br>
+	        	HTML element access in JS called DOM
+	        	<br>
+	        	mouse hove, drag, click (to perform activity)
+
+	        </p>
+	</section>
+	<section>
+		<h2>DOM Events - HTML Attribute and JavaScript Implementation</h2>
+		<!--  1. On Click  Event -->
+		<!--  one click, doubble clic -->
+	 	<!--  mouse, keybord, loading ,etc...                     -->
+	    <!-- HTML Attribute -->
+	    <button onclick="alert('Button Clicked')">Click me</button>
+
+	    	<!-- JavaScript Implementation -->
+		    <script>
+		        function showMessage() {
+		            alert('Button Clicked via JavaScript');
+		        }
+		    </script>
+	    <button onclick="showMessage()">Click me (JavaScript)</button>
+	</section>
+
+    
+
+
+	<!-- Mouse Events -->
+		<section>
+		    <h2> Mouse Events </h2>
+		    <script>
+		        function handleMouseOver() {
+		            document.getElementById('mouseEventDemo').innerHTML = 'Mouse Over';
+		        }
+
+		        function handleMouseOut() {
+		            document.getElementById('mouseEventDemo').innerHTML = 'Mouse Out';
+		        }
+		    </script>
+
+		    <p id="mouseEventDemo" onmouseover="handleMouseOver()" onmouseout="handleMouseOut()">Hover over me</p>
+        </section>
+
+
+
+
+
+        <!-- Keyboard Events -->
+		<section>
+		    <h2>Keyboard Events</h2>
+			    <script>
+			        function handleKeyPress(event) 
+			          {
+			            document.getElementById('keyEventDemo').innerHTML = 'Key Pressed: ' + event.key;
+			          }
+			    </script>
+
+				<p id="keyEventDemo">No key pressed</p>
+
+			    <input type="text" onkeypress="handleKeyPress(event)" placeholder="Type something">
+		</section>
+
+
+
+
+
+		<!-- Other Events -->
+		<section>
+		    <h2>Other Events</h2>
+			    <script>
+			        function handleResize() {
+			            document.getElementById('resizeEventDemo').innerHTML = 'Window Resized';
+			        }
+
+			        window.addEventListener('resize', handleResize);
+			    </script>
+
+		    <p id="resizeEventDemo">Resize the window</p>
+		</section>
+
+
+
+
+
+
+		<!-- DOM Selectors -->
+		<section>
+		    <h2>DOM Selectors</h2>
+					<script>
+					    // Selecting by ID
+					    let elementById = document.getElementById('demoById');
+					    elementById.innerHTML = 'Selected by ID';
+
+					    // Selecting by Class
+					    let elementsByClass = document.getElementsByClassName('demoByClass');
+					    for (let i = 0; i < elementsByClass.length; i++) 
+						    {
+						        elementsByClass[i].innerHTML = 'Selected by Class ' + (i + 1);
+						    }
+
+					    // Selecting by Tag
+					    let elementsByTag = document.getElementsByTagName('p');
+					    for (let i = 0; i < elementsByTag.length; i++) 
+						    {
+						        elementsByTag[i].innerHTML = 'Selected by Tag ' + (i + 1);
+						    }
+
+					    // Selecting by CSS Selector
+					    let elementBySelector = document.querySelector('#demoBySelector');
+					    elementBySelector.innerHTML = 'Selected by CSS Selector';
+
+					    let elementsBySelectorAll = document.querySelectorAll('.demoBySelectorAll');
+					    elementsBySelectorAll.forEach((element, index) => {
+					        element.innerHTML = 'Selected by CSS Selector All ' + (index + 1);
+					    });
+					</script>
+
+		    <p id="demoById"></p>
+		    <p class="demoByClass"></p>
+		    <p class="demoByClass"></p>
+		    <p class="demoByClass"></p>
+		    <p class="demoByClass"></p>
+		    <p class="demoBySelectorAll"></p>
+		    <p class="demoBySelectorAll"></p>
+		    <p class="demoBySelectorAll"></p>
+		</section>
+
+
+
+
+		<!-- DOM Manipulation -->
+<section>
+    <h2>DOM Manipulation</h2>
+    <script>
+        // Creating Elements or tag
+        //its not present in browser html body
+        // it is virtual element
+        // it is present in JS program
+        // its present in only js not look in HTML Code!
+            // document.createElement(' ');   under bracket write tag name 
+            //document.body.appendChild();  under bracket write tag fun / var name 
+	        var newParagraph = document.createElement('p');
+	        newParagraph.innerHTML = 'New Paragraph created dynamically';
+	        document.body.appendChild(newParagraph);
+
+
+
+
+        // Modifying Attributes
+        // ex. change image src, css prperties, style, etc
+	        var image = document.getElementById('imageDemo');
+	        image.src = 'new-image.jpg';
+	        image.alt = 'New Image';
+
+
+
+        // Removing Elements
+        let elementToRemove = document.getElementById('removeDemo');
+        elementToRemove.parentNode.removeChild(elementToRemove);
+    </script>
+
+
+
+    <p id="removeDemo">This element will be removed</p>
+    <img id="imageDemo" src="old-image.jpg" alt="Old Image">
+
+
+</section>
+
+
+</body>
+</html>

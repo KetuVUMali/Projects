@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Media Query</title>
+    <style>
+        .box{
+            height: 300px;
+            width: 300px;
+            background-color: crimson;
+            border: 5px solid black;
+        }
+
+        .box2{
+            height: 300px;
+            width: 300px;
+            background-color: rgb(50, 20, 220);
+            border: 5px solid black;
+        }
+
+        /* screen size less than 600PX then apply this: */
+        @media (max-width:600px) {
+           .box2{
+            background-color: rosybrown;
+            border-radius: 50%;
+           } 
+        }
+    </style>
+</head>
+<body>
+    <h1> CSS M. Q. is most important for Responsivness. </h1>
+    <h2> Webside layout change like Screnn Size</h2>
+    <br>
+
+    <h3>Without Media Query.</h3>
+    <div class="box"> </div>
+
+    <br> <br> <br> <br> <hr><br> <br><br>
+    <h3>With Media Query.</h3>
+    <div class="box2"></div>
+
+    <br> <br> <br> <br> <hr><br> <br><br>
+
+    <h4> Practices Set :</h4>
+    <ul type="1">
+        <li>CSS Flex Box</li>
+        <li>Responsive Typography (text)</li>
+        <li>Mobile-Fist Approach</li>
+        <li>Flexible Images & Media</li>
+    </ul>
+
+</body>
+</html>

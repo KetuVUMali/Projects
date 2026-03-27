@@ -1,0 +1,98 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title> Basic </title>
+	<style type="text/css">
+		h1
+			{
+				font-size: 70px;
+			}
+        
+        #box
+	        {
+	        	height: 300px;
+	        	width: 300px;
+	        	background-color: salmon;
+	        }
+
+	    div
+	    	{
+	    		color :royalblue ;
+	    	}
+
+	</style>
+</head>
+<body>
+	<h1> DOM </h1>
+	<h4> Document Object Model </h4>
+	<h4> </h4>
+
+	<pre>
+		
+
+	</pre>
+
+	<div id="box"> Hello </div>
+
+	
+</body>
+	<script type="text/javascript">
+		// var h = document.getElementsByClassName("box");
+
+		// // h.innerHTML = "Bye";
+
+		// h.textContent = "Ketan"
+
+
+		var box = document.querySelector("#box");
+
+		// Its Give element base value.
+		// o/p in html tag formate.
+		//box.innerHTML = "<h1> Ketan </h1>"; 
+
+
+		  // Its use for only set text form content.
+		  // Its Give as it is text formate
+		box.textContent = "<h1> Ketan </h1>"; 
+	</script>
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Basic</title>
+    <style type="text/css">
+        h1 {
+            font-size: 70px;
+        }
+        
+        #box {
+            height: 300px;
+            width: 300px;
+            background-color: salmon;
+        }
+
+        div {
+            color: royalblue;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>DOM</h1>
+    <h4>Document Object Model</h4>
+
+    <div id="box">Hello</div>
+
+    <script type="text/javascript">
+        var box = document.querySelector("#box");
+
+        // Correct usage to insert HTML content
+        box.innerHTML = "<h1>Ketan</h1>";
+
+        // Uncomment to set plain text content
+        // box.textContent = "Ketan";
+    </script>
+</body>
+</html>

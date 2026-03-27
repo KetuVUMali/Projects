@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <pre>
+        AOS = Animate On Scroll
+
+        👉 It adds animation when elements enter the screen while scrolling.
+
+        Real-life company usages :
+                                    Website sections fade in smoothly
+                                    Cards slide from left/right
+                                    Content loads progressively
+                                    Improves UX (User Experience)
+
+        ⚠️ Important:
+                        AOS is not heavy animation, it’s scroll-triggered animation.
+
+
+            🔹 2. How AOS Works (Simple Logic)
+                                1. When User scrolls page
+                                2. AOS checks:
+                                        Is element visible in viewport?
+                                3.If YES → apply animation CSS classes to element
+                                4. Animation runs once or multiple times
+
+                        📌 Viewport = visible screen area
+
+
+            🔹 3. Key Features of AOS
+                                - Easy to use with data attributes
+                                - Multiple animation types (fade, slide, zoom)
+                                - Customizable duration, delay, easing
+                                - Responsive and mobile-friendly
+                                - Performance optimized for smooth scrolling
+
+
+             Installation (COMPANY STANDARD – CDN)             
+                1. Include AOS CSS in <head>:
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+
+                2. Include AOS JS before </body>:
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+                3. Initialize AOS in a script tag:
+                    <script>
+                        AOS.init();
+                    </script>
+
+                4. Add data-aos attributes to HTML elements:
+                    <div data-aos="fade-up">Content to animate</div>
+
+
+            Note : AOS works on scroll, not page load.
+
+
+            🔹 4. AOS Animation Types
+                                - fade
+                                - flip
+                                - slide
+                                - zoom
+                                etc.
+                    
+                
+    </pre>
+</body>
+</html>

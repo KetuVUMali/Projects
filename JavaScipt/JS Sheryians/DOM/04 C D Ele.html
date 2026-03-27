@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Create and Delete Element</title>
+    <style>
+        .Demo1
+            {
+                color: burlywood;
+                font-size: x-large;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+    </style>
+</head>
+<body>
+    <pre>
+        Create & Delete Ele
+
+        A. createElement()
+        B. appendChild()
+        C. removeChild()
+    </pre>
+    <h4> Remove Ele</h4>
+    <h5> Remove Ele</h5>
+    
+    <script>
+        // 1. Create Ele or Tag & Add into Body
+            var h1 = document.createElement('h1');      // Create h1 tag
+            h1.textContent = 'First Heading';           // Add Content / Data
+            h1.classList.add('Demo1');                  // Apply CSS Class
+            document.body.appendChild(h1);               // Append h1 to body
+
+
+        // 2. 
+            var h2 = document.createElement('h2');               // Create h1 tag
+            h2.textContent = 'Second Heading';                   // Add Content / Data
+            //h2.classList.add('Demo1');                           // Apply CSS Class
+            document.querySelector('body').appendChild(h2);               // Append h1 to body
+
+
+        // 3. Add IMG
+            var img = document.createElement('img');
+            img.src="D:/Section A/fresher2k23/20231006122730_IMG_8299.JPG"
+            img.alt=" Add By DOM ";
+            img.title= " DOM "
+            document.querySelector('body').appendChild(img);
+
+
+     
+            // 4. Remove h4 from the DOM   ((remove from html))
+                  var h4 = document.querySelector('h4');
+                  h4.parentNode.removeChild(h4); // Correct way to remove the element
+
+
+            // 5.
+                var h5 = document.querySelector('h5');
+                h5.remove(); // This will remove the h4 element from the DOM
+
+            // 6. 
+                    // <div id="parent">
+                    //     <button id="play">Play</button>
+                    //     <button class="pause">Pause</button>
+                    //     <img src="src Path" alt="image2">
+                    // </div>
+                // 1. Create parent div
+                    var parentDiv = document.createElement('div');
+                    parentDiv.id = 'parent'; // Set ID for the parent div
+
+                    // 2. Create Play button
+                    var playButton = document.createElement('button');
+                    playButton.id = 'play'; // Set ID for the Play button
+                    playButton.textContent = 'Play'; // Add Content
+
+                    // 3. Create Pause button
+                    var pauseButton = document.createElement('button');
+                    pauseButton.classList.add('pause'); // Apply CSS Class
+                    pauseButton.textContent = 'Pause'; // Add Content
+
+                    // 4. Create IMG
+                    var img = document.createElement('img');
+                    img.src = "src Path"; // Set the source for the image
+                    img.alt = "image2"; // Set the alt text for the image
+
+                    // 5. Append elements to parent div
+                    parentDiv.appendChild(playButton);
+                    parentDiv.appendChild(pauseButton);
+                    parentDiv.appendChild(img);
+
+                    // 6. Append parent div to body
+                    document.querySelector('body').appendChild(parentDiv);
+    </script>
+</body>
+
+</html>
+
+

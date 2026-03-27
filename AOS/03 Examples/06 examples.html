@@ -1,0 +1,1432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IronShield Defense Systems | Advanced Military Solutions</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- AOS Animation Library CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Exo+2:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #0a192f;
+            --secondary-color: #112240;
+            --accent-color: #64ffda;
+            --danger-color: #ff5252;
+            --warning-color: #ffd166;
+            --success-color: #06d6a0;
+            --text-light: #ccd6f6;
+            --text-muted: #8892b0;
+            --card-bg: rgba(17, 34, 64, 0.7);
+            --border-color: #233554;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Exo 2', sans-serif;
+            line-height: 1.6;
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(100, 255, 218, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 85% 30%, rgba(255, 82, 82, 0.05) 0%, transparent 20%);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--secondary-color);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, var(--accent-color), #233554);
+            border-radius: 6px;
+            border: 2px solid var(--secondary-color);
+        }
+        
+        /* Navigation Bar */
+        .navbar {
+            background-color: rgba(10, 25, 47, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .navbar-brand {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 900;
+            font-size: 1.8rem;
+            color: var(--accent-color) !important;
+            display: flex;
+            align-items: center;
+        }
+        
+        .navbar-brand i {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            margin: 0 10px;
+            color: var(--text-light) !important;
+            position: relative;
+            transition: color 0.3s;
+            letter-spacing: 0.5px;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s;
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--accent-color) !important;
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            min-height: 100vh;
+            background: 
+                linear-gradient(rgba(10, 25, 47, 0.9), rgba(17, 34, 64, 0.95)),
+                url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(100, 255, 218, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 82, 82, 0.1) 0%, transparent 50%);
+            animation: pulse 10s infinite alternate;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 0.3; }
+            100% { opacity: 0.7; }
+        }
+        
+        .hero-content h1 {
+            font-size: 4rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px rgba(100, 255, 218, 0.5);
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: rgba(100, 255, 218, 0.1);
+            border: 1px solid var(--accent-color);
+            padding: 10px 25px;
+            border-radius: 30px;
+            margin-bottom: 30px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            color: var(--accent-color);
+        }
+        
+        /* Tech Grid Animation */
+        .tech-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            opacity: 0.1;
+        }
+        
+        .grid-line {
+            position: absolute;
+            background: var(--accent-color);
+        }
+        
+        .grid-line.horizontal {
+            width: 100%;
+            height: 1px;
+            animation: scanHorizontal 20s linear infinite;
+        }
+        
+        .grid-line.vertical {
+            height: 100%;
+            width: 1px;
+            animation: scanVertical 15s linear infinite;
+        }
+        
+        @keyframes scanHorizontal {
+            0% { top: 0; }
+            100% { top: 100%; }
+        }
+        
+        @keyframes scanVertical {
+            0% { left: 0; }
+            100% { left: 100%; }
+        }
+        
+        /* Section Styling */
+        .section-padding {
+            padding: 120px 0;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 60px;
+            color: var(--text-light);
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, var(--accent-color), transparent);
+            bottom: -15px;
+            left: 0;
+            border-radius: 2px;
+        }
+        
+        .section-title.center::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* Defense Cards */
+        .defense-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s ease;
+            height: 100%;
+            backdrop-filter: blur(10px);
+            position: relative;
+        }
+        
+        .defense-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--accent-color), var(--danger-color));
+        }
+        
+        .defense-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.4),
+                0 0 30px rgba(100, 255, 218, 0.2);
+            border-color: var(--accent-color);
+        }
+        
+        .defense-img {
+            height: 250px;
+            object-fit: cover;
+            width: 100%;
+            transition: transform 0.5s;
+        }
+        
+        .defense-card:hover .defense-img {
+            transform: scale(1.05);
+        }
+        
+        .defense-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 82, 82, 0.9);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        
+        /* Stats Counter */
+        .stats-section {
+            background: 
+                linear-gradient(rgba(10, 25, 47, 0.95), rgba(17, 34, 64, 0.95)),
+                url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-attachment: fixed;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stat-box {
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+        }
+        
+        .stat-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(17, 34, 64, 0.7);
+            border-radius: 15px;
+            z-index: 1;
+        }
+        
+        .stat-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .stat-number {
+            font-size: 4rem;
+            font-weight: 900;
+            background: linear-gradient(to right, var(--accent-color), var(--warning-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 10px;
+            font-family: 'Orbitron', sans-serif;
+            text-shadow: 0 0 20px rgba(100, 255, 218, 0.3);
+        }
+        
+        /* Technology Cards */
+        .tech-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 40px 30px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            height: 100%;
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tech-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(100, 255, 218, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+        
+        .tech-card:hover::before {
+            opacity: 1;
+        }
+        
+        .tech-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-color);
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.4),
+                0 0 30px rgba(100, 255, 218, 0.1);
+        }
+        
+        .tech-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(100, 255, 218, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: var(--accent-color);
+            margin: 0 auto 25px;
+            border: 2px solid var(--accent-color);
+        }
+        
+        /* Security Levels */
+        .security-level {
+            padding: 30px;
+            border-radius: 15px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            height: 100%;
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .security-level::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 10px;
+            height: 100%;
+            background: var(--accent-color);
+        }
+        
+        .security-level.critical::before {
+            background: var(--danger-color);
+        }
+        
+        .security-level.high::before {
+            background: #ff9e00;
+        }
+        
+        .security-level:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        
+        /* Contact Form */
+        .contact-form {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 50px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+        }
+        
+        .form-control {
+            padding: 15px;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 25px;
+            background: rgba(17, 34, 64, 0.5);
+            color: var(--text-light);
+            transition: all 0.3s;
+        }
+        
+        .form-control:focus {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 0.25rem rgba(100, 255, 218, 0.25);
+            background: rgba(17, 34, 64, 0.8);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-color), #0a8);
+            border: none;
+            padding: 15px 40px;
+            border-radius: 8px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(100, 255, 218, 0.3);
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--secondary-color);
+            padding: 80px 0 30px;
+            border-top: 1px solid var(--border-color);
+            position: relative;
+        }
+        
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--accent-color), var(--danger-color));
+        }
+        
+        .footer h5 {
+            color: var(--text-light);
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer h5::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background: var(--accent-color);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-links a i {
+            margin-right: 10px;
+            width: 20px;
+            color: var(--accent-color);
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-color);
+            padding-left: 5px;
+        }
+        
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: rgba(100, 255, 218, 0.1);
+            border-radius: 50%;
+            margin-right: 15px;
+            color: var(--accent-color);
+            transition: all 0.3s;
+            border: 1px solid var(--border-color);
+        }
+        
+        .social-icons a:hover {
+            background: var(--accent-color);
+            color: var(--primary-color);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(100, 255, 218, 0.3);
+        }
+        
+        .copyright {
+            border-top: 1px solid var(--border-color);
+            padding-top: 30px;
+            margin-top: 60px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        /* Security Clearance Badge */
+        .clearance-badge {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(255, 82, 82, 0.9);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 5px 15px rgba(255, 82, 82, 0.3);
+        }
+        
+        .clearance-badge i {
+            margin-right: 8px;
+            animation: blink 2s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+            
+            .section-padding {
+                padding: 80px 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .stat-number {
+                font-size: 3rem;
+            }
+            
+            .contact-form {
+                padding: 30px;
+            }
+            
+            .navbar-brand {
+                font-size: 1.5rem;
+            }
+        }
+        
+        /* Radar Scan Animation */
+        .radar-container {
+            width: 300px;
+            height: 300px;
+            position: relative;
+            margin: 0 auto;
+        }
+        
+        .radar-circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 2px solid var(--accent-color);
+            border-radius: 50%;
+            opacity: 0.3;
+        }
+        
+        .radar-circle:nth-child(1) { width: 100%; height: 100%; }
+        .radar-circle:nth-child(2) { width: 75%; height: 75%; }
+        .radar-circle:nth-child(3) { width: 50%; height: 50%; }
+        .radar-circle:nth-child(4) { width: 25%; height: 25%; }
+        
+        .radar-line {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 50%;
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--accent-color));
+            transform-origin: left center;
+            animation: radarScan 4s linear infinite;
+        }
+        
+        @keyframes radarScan {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Security Clearance Badge -->
+    <div class="clearance-badge" data-aos="fade-left" data-aos-delay="1000">
+        <i class="fas fa-shield-alt"></i> CLASSIFIED: LEVEL 5 CLEARANCE
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <!-- AOS Animation: Logo with fade-right and scale effect -->
+            <a class="navbar-brand" href="#" data-aos="fade-right" data-aos-duration="800" data-aos-easing="ease-out-back">
+                <i class="fas fa-shield-alt"></i>IRONSHIELD
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <!-- AOS Animation: Nav items with fade-down and staggered delays -->
+                    <li class="nav-item" data-aos="fade-down" data-aos-delay="100" data-aos-duration="600">
+                        <a class="nav-link active" href="#home">HOME</a>
+                    </li>
+                    <li class="nav-item" data-aos="fade-down" data-aos-delay="200" data-aos-duration="600">
+                        <a class="nav-link" href="#systems">DEFENSE SYSTEMS</a>
+                    </li>
+                    <li class="nav-item" data-aos="fade-down" data-aos-delay="300" data-aos-duration="600">
+                        <a class="nav-link" href="#technology">TECHNOLOGY</a>
+                    </li>
+                    <li class="nav-item" data-aos="fade-down" data-aos-delay="400" data-aos-duration="600">
+                        <a class="nav-link" href="#security">SECURITY</a>
+                    </li>
+                    <li class="nav-item" data-aos="fade-down" data-aos-delay="500" data-aos-duration="600">
+                        <a class="nav-link" href="#contact">CONTACT</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <!-- Tech Grid Background -->
+        <div class="tech-grid">
+            <div class="grid-line horizontal" style="top: 20%;"></div>
+            <div class="grid-line horizontal" style="top: 40%;"></div>
+            <div class="grid-line horizontal" style="top: 60%;"></div>
+            <div class="grid-line horizontal" style="top: 80%;"></div>
+            <div class="grid-line vertical" style="left: 20%;"></div>
+            <div class="grid-line vertical" style="left: 40%;"></div>
+            <div class="grid-line vertical" style="left: 60%;"></div>
+            <div class="grid-line vertical" style="left: 80%;"></div>
+        </div>
+        
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <!-- AOS Animation: Hero badge with zoom-in and bounce effect -->
+                    <div class="hero-badge mb-4" data-aos="zoom-in" data-aos-duration="800" data-aos-easing="ease-out-back">
+                        <i class="fas fa-bolt me-2"></i>ADVANCED DEFENSE SOLUTIONS
+                    </div>
+                    
+                    <!-- AOS Animation: Main heading with fade-up and cascade effect -->
+                    <h1 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                        PROTECTING <span style="color: var(--accent-color)">TOMORROW</span><br>
+                        WITH TECHNOLOGY TODAY
+                    </h1>
+                    
+                    <!-- AOS Animation: Subtitle with fade-up and longer delay -->
+                    <p class="lead mb-4" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
+                        IronShield Defense Systems provides cutting-edge military technology, 
+                        advanced armaments, and comprehensive security solutions for national 
+                        defense and global security operations.
+                    </p>
+                    
+                    <!-- AOS Animation: Buttons with fade-right and fade-left effects -->
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#systems" class="btn btn-primary btn-lg px-4 py-3" data-aos="fade-right" data-aos-delay="600" data-aos-duration="800">
+                            <i class="fas fa-crosshairs me-2"></i>EXPLORE SYSTEMS
+                        </a>
+                        <a href="#contact" class="btn btn-outline-light btn-lg px-4 py-3" data-aos="fade-left" data-aos-delay="600" data-aos-duration="800">
+                            <i class="fas fa-user-shield me-2"></i>REQUEST ACCESS
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <!-- AOS Animation: Radar animation with rotate-in effect -->
+                    <div class="radar-container mt-5 mt-lg-0" data-aos="fade-left" data-aos-delay="800" data-aos-duration="1200">
+                        <div class="radar-circle"></div>
+                        <div class="radar-circle"></div>
+                        <div class="radar-circle"></div>
+                        <div class="radar-circle"></div>
+                        <div class="radar-line"></div>
+                        <div class="position-absolute top-50 start-50 translate-middle">
+                            <i class="fas fa-satellite fa-3x" style="color: var(--accent-color);"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Defense Systems Section -->
+    <section id="systems" class="section-padding">
+        <div class="container">
+            <!-- AOS Animation: Section title with flip-down and glow effect -->
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title display-5 center" data-aos="flip-down" data-aos-duration="800">
+                        <i class="fas fa-crosshairs me-3"></i>ADVANCED DEFENSE SYSTEMS
+                    </h2>
+                    <p class="lead" data-aos="fade-up" data-aos-delay="200">State-of-the-art military technology for modern warfare</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <!-- System 1 with AOS Animation: Card flips in from left -->
+                <div class="col-lg-4 col-md-6" data-aos="flip-left" data-aos-duration="1000">
+                    <div class="defense-card">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1589656966895-2f33e7653819?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                                 alt="Aerial Defense" class="defense-img">
+                            <span class="defense-badge">AIR SUPERIORITY</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="mb-3">SkyGuard Aerial Defense</h4>
+                            <p class="text-muted mb-3">Advanced anti-aircraft system with AI-powered threat detection and automated response capabilities.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="text-accent fw-bold">Range: 500km</span>
+                                </div>
+                                <a href="#" class="btn btn-outline-accent">SPECIFICATIONS <i class="fas fa-arrow-right ms-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- System 2 with AOS Animation: Card flips in with delay -->
+                <div class="col-lg-4 col-md-6" data-aos="flip-left" data-aos-delay="200" data-aos-duration="1000">
+                    <div class="defense-card">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1586816879360-004f5b0c51e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                                 alt="Naval Defense" class="defense-img">
+                            <span class="defense-badge">NAVAL DOMINANCE</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="mb-3">Neptune Naval Defense</h4>
+                            <p class="text-muted mb-3">Ship-based missile defense system with submarine detection and anti-torpedo capabilities.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="text-accent fw-bold">Range: 300km</span>
+                                </div>
+                                <a href="#" class="btn btn-outline-accent">SPECIFICATIONS <i class="fas fa-arrow-right ms-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- System 3 with AOS Animation: Card flips in with more delay -->
+                <div class="col-lg-4 col-md-6" data-aos="flip-left" data-aos-delay="400" data-aos-duration="1000">
+                    <div class="defense-card">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1542751110-97427bbecf20?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                                 alt="Ground Defense" class="defense-img">
+                            <span class="defense-badge">GROUND SUPERIORITY</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="mb-3">Titan Ground Defense</h4>
+                            <p class="text-muted mb-3">Mobile artillery system with precision targeting and rapid deployment capabilities for ground forces.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="text-accent fw-bold">Range: 200km</span>
+                                </div>
+                                <a href="#" class="btn btn-outline-accent">SPECIFICATIONS <i class="fas fa-arrow-right ms-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section section-padding">
+        <div class="container">
+            <!-- AOS Animation: Section title with fade-down effect -->
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title display-5 center" data-aos="fade-down" data-aos-duration="800">
+                        <i class="fas fa-chart-line me-3"></i>OPERATIONAL STATISTICS
+                    </h2>
+                    <p class="lead" data-aos="fade-up" data-aos-delay="200">Trusted by military forces worldwide</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <!-- Stat 1 with AOS Animation: Box slides in from left with count-up -->
+                <div class="col-md-3 col-sm-6" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="stat-box">
+                        <div class="stat-content">
+                            <div class="stat-number" data-count="156">0</div>
+                            <h5>COUNTRIES</h5>
+                            <p class="text-muted">Global deployment</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Stat 2 with AOS Animation: Box fades in with count-up -->
+                <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+                    <div class="stat-box">
+                        <div class="stat-content">
+                            <div class="stat-number" data-count="99.7">0</div>
+                            <h5>ACCURACY RATE</h5>
+                            <p class="text-muted">Precision systems</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Stat 3 with AOS Animation: Box fades in with more delay -->
+                <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
+                    <div class="stat-box">
+                        <div class="stat-content">
+                            <div class="stat-number" data-count="24">0</div>
+                            <h5>HOUR SUPPORT</h5>
+                            <p class="text-muted">Global operations</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Stat 4 with AOS Animation: Box slides in from right -->
+                <div class="col-md-3 col-sm-6" data-aos="fade-left" data-aos-delay="600" data-aos-duration="1000">
+                    <div class="stat-box">
+                        <div class="stat-content">
+                            <div class="stat-number" data-count="3500">0</div>
+                            <h5>SYSTEMS ACTIVE</h5>
+                            <p class="text-muted">Worldwide deployment</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section id="technology" class="section-padding">
+        <div class="container">
+            <!-- AOS Animation: Section title with roll-in effect -->
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title display-5 center" data-aos="roll-in" data-aos-duration="800">
+                        <i class="fas fa-microchip me-3"></i>CUTTING-EDGE TECHNOLOGY
+                    </h2>
+                    <p class="lead" data-aos="fade-up" data-aos-delay="200">Innovative solutions for modern defense challenges</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Tech 1 with AOS Animation: Card fades up from bottom -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="800">
+                    <div class="tech-card">
+                        <div class="tech-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h4 class="mb-3">AI-Powered Defense</h4>
+                        <p class="text-muted mb-3">Advanced artificial intelligence systems for threat prediction, automated response, and strategic decision-making.</p>
+                        <div class="mt-4">
+                            <span class="badge bg-accent me-2">Machine Learning</span>
+                            <span class="badge bg-secondary">Neural Networks</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tech 2 with AOS Animation: Card fades up with delay -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+                    <div class="tech-card">
+                        <div class="tech-icon">
+                            <i class="fas fa-satellite"></i>
+                        </div>
+                        <h4 class="mb-3">Satellite Surveillance</h4>
+                        <p class="text-muted mb-3">Real-time global surveillance with high-resolution imaging and encrypted data transmission.</p>
+                        <div class="mt-4">
+                            <span class="badge bg-accent me-2">Quantum Encryption</span>
+                            <span class="badge bg-secondary">Real-time Tracking</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tech 3 with AOS Animation: Card fades up with more delay -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400" data-aos-duration="800">
+                    <div class="tech-card">
+                        <div class="tech-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4 class="mb-3">Cyber Defense</h4>
+                        <p class="text-muted mb-3">Advanced cybersecurity systems protecting military networks from sophisticated cyber attacks.</p>
+                        <div class="mt-4">
+                            <span class="badge bg-accent me-2">Quantum Security</span>
+                            <span class="badge bg-secondary">Threat Prevention</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security Levels Section -->
+    <section id="security" class="section-padding" style="background: var(--secondary-color);">
+        <div class="container">
+            <!-- AOS Animation: Section title with zoom-in effect -->
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title display-5 center" data-aos="zoom-in" data-aos-duration="800">
+                        <i class="fas fa-user-shield me-3"></i>SECURITY CLEARANCE LEVELS
+                    </h2>
+                    <p class="lead" data-aos="fade-up" data-aos-delay="200">Multi-layered security protocols for maximum protection</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Security Level 1 with AOS Animation: Card flips in horizontally -->
+                <div class="col-lg-4 col-md-6" data-aos="flip-horizontal" data-aos-duration="1000">
+                    <div class="security-level">
+                        <div class="d-flex align-items-center mb-4">
+                            <i class="fas fa-lock fa-2x text-accent me-3"></i>
+                            <div>
+                                <h4 class="mb-0">LEVEL 1</h4>
+                                <small>BASIC ACCESS</small>
+                            </div>
+                        </div>
+                        <p class="mb-0">Standard security clearance for general personnel. Access to non-classified information and basic facility areas.</p>
+                        <div class="mt-4">
+                            <span class="badge bg-success">Biometric Scan</span>
+                            <span class="badge bg-secondary ms-2">ID Verification</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Security Level 2 with AOS Animation: Card flips in with delay -->
+                <div class="col-lg-4 col-md-6" data-aos="flip-horizontal" data-aos-delay="200" data-aos-duration="1000">
+                    <div class="security-level high">
+                        <div class="d-flex align-items-center mb-4">
+                            <i class="fas fa-lock fa-2x text-warning me-3"></i>
+                            <div>
+                                <h4 class="mb-0">LEVEL 3</h4>
+                                <small>HIGH CLEARANCE</small>
+                            </div>
+                        </div>
+                        <p class="mb-0">Advanced clearance for technical personnel. Access to sensitive systems and restricted research facilities.</p>
+                        <div class="mt-4">
+                            <span class="badge bg-warning">Retina Scan</span>
+                            <span class="badge bg-secondary ms-2">Voice Recognition</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Security Level 3 with AOS Animation: Card flips in with more delay -->
+                <div class="col-lg-4 col-md-6" data-aos="flip-horizontal" data-aos-delay="400" data-aos-duration="1000">
+                    <div class="security-level critical">
+                        <div class="d-flex align-items-center mb-4">
+                            <i class="fas fa-lock fa-2x text-danger me-3"></i>
+                            <div>
+                                <h4 class="mb-0">LEVEL 5</h4>
+                                <small>TOP SECRET</small>
+                            </div>
+                        </div>
+                        <p class="mb-0">Maximum clearance for command personnel. Full access to all systems, strategic plans, and classified operations.</p>
+                        <div class="mt-4">
+                            <span class="badge bg-danger">DNA Verification</span>
+                            <span class="badge bg-secondary ms-2">Multi-factor Auth</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding">
+        <div class="container">
+            <!-- AOS Animation: Section title with fade-up effect -->
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title display-5 center" data-aos="fade-up" data-aos-duration="800">
+                        <i class="fas fa-comments me-3"></i>SECURE CONTACT
+                    </h2>
+                    <p class="lead" data-aos="fade-up" data-aos-delay="200">Encrypted communication for authorized personnel only</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <!-- AOS Animation: Contact form with flip-in effect -->
+                    <div class="contact-form" data-aos="flip-in-y" data-aos-duration="1000">
+                        <form id="contactForm">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-4">
+                                        <label class="form-label">FULL NAME <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" placeholder="Enter your full name" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-4">
+                                        <label class="form-label">SECURITY CLEARANCE <span class="text-danger">*</span></label>
+                                        <select class="form-control" required>
+                                            <option value="">Select clearance level</option>
+                                            <option value="1">LEVEL 1 - Basic Access</option>
+                                            <option value="2">LEVEL 2 - Confidential</option>
+                                            <option value="3">LEVEL 3 - Secret</option>
+                                            <option value="4">LEVEL 4 - Top Secret</option>
+                                            <option value="5">LEVEL 5 - Top Secret/SCI</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-4">
+                                        <label class="form-label">ENCRYPTED EMAIL <span class="text-danger">*</span></label>
+                                        <input type="email" class="form-control" placeholder="encrypted@domain.mil" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-4">
+                                        <label class="form-label">DEPARTMENT/UNIT</label>
+                                        <input type="text" class="form-control" placeholder="Military department or unit">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="form-label">MESSAGE TYPE <span class="text-danger">*</span></label>
+                                <select class="form-control" required>
+                                    <option value="">Select message type</option>
+                                    <option value="inquiry">System Inquiry</option>
+                                    <option value="support">Technical Support</option>
+                                    <option value="training">Training Request</option>
+                                    <option value="emergency">Emergency Contact</option>
+                                    <option value="classified">Classified Communication</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="form-label">ENCRYPTED MESSAGE <span class="text-danger">*</span></label>
+                                <textarea class="form-control" rows="6" placeholder="Enter your encrypted message here..." required></textarea>
+                            </div>
+                            
+                            <!-- AOS Animation: Submit button with pulse effect -->
+                            <div class="text-center" data-aos="pulse" data-aos-delay="300" data-aos-duration="1500" data-aos-iteration="2">
+                                <button type="submit" class="btn btn-primary btn-lg px-5 py-3">
+                                    <i class="fas fa-paper-plane me-2"></i>SEND ENCRYPTED MESSAGE
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact Info with AOS Animation: Staggered fade-up effects -->
+            <div class="row mt-5">
+                <div class="col-md-4 text-center" data-aos="fade-up" data-aos-duration="800">
+                    <div class="p-4">
+                        <i class="fas fa-map-marker-alt fa-2x mb-3 text-accent"></i>
+                        <h5>HEADQUARTERS</h5>
+                        <p class="text-muted">Secure Location<br>Classified Information</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 text-center" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+                    <div class="p-4">
+                        <i class="fas fa-phone fa-2x mb-3 text-accent"></i>
+                        <h5>SECURE LINE</h5>
+                        <p class="text-muted">+1 (XXX) XXX-XXXX<br>Encrypted Communication</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 text-center" data-aos="fade-up" data-aos-delay="400" data-aos-duration="800">
+                    <div class="p-4">
+                        <i class="fas fa-clock fa-2x mb-3 text-accent"></i>
+                        <h5>OPERATIONS</h5>
+                        <p class="text-muted">24/7/365<br>Global Support Coverage</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <!-- AOS Animation: Footer sections with staggered fade-right effects -->
+                <div class="col-lg-4 mb-5" data-aos="fade-right" data-aos-duration="800">
+                    <h5 class="mb-4">
+                        <i class="fas fa-shield-alt me-2"></i>IRONSHIELD DEFENSE SYSTEMS
+                    </h5>
+                    <p class="mb-4 text-muted">Advanced defense technology and security solutions for national security and global stability.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-5" data-aos="fade-right" data-aos-delay="100" data-aos-duration="800">
+                    <h5 class="mb-4">SYSTEMS</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="#"><i class="fas fa-jet-fighter"></i> Aerial Defense</a></li>
+                        <li><a href="#"><i class="fas fa-ship"></i> Naval Systems</a></li>
+                        <li><a href="#"><i class="fas fa-tank"></i> Ground Defense</a></li>
+                        <li><a href="#"><i class="fas fa-satellite"></i> Surveillance</a></li>
+                        <li><a href="#"><i class="fas fa-shield-alt"></i> Cyber Security</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-5" data-aos="fade-right" data-aos-delay="200" data-aos-duration="800">
+                    <h5 class="mb-4">SECURITY</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="#"><i class="fas fa-user-shield"></i> Clearance Levels</a></li>
+                        <li><a href="#"><i class="fas fa-lock"></i> Access Control</a></li>
+                        <li><a href="#"><i class="fas fa-database"></i> Data Encryption</a></li>
+                        <li><a href="#"><i class="fas fa-video"></i> Surveillance</a></li>
+                        <li><a href="#"><i class="fas fa-fingerprint"></i> Biometric Systems</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 mb-5" data-aos="fade-right" data-aos-delay="300" data-aos-duration="800">
+                    <h5 class="mb-4">SECURITY ALERTS</h5>
+                    <p class="text-muted mb-3">Subscribe for security updates and threat level notifications.</p>
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control" placeholder="Secure Email">
+                        <button class="btn btn-primary" type="button">SUBSCRIBE</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- AOS Animation: Copyright with fade-in effect -->
+            <div class="copyright" data-aos="fade-in" data-aos-duration="1000">
+                <p>&copy; 2023 IRONSHIELD DEFENSE SYSTEMS. All Rights Reserved. | CLASSIFIED: LEVEL 5 SECURITY CLEARANCE REQUIRED</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS Animation Library JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        // Initialize AOS with custom settings for defense website
+        AOS.init({
+            duration: 1000, // Default animation duration
+            easing: 'ease-in-out', // Smooth easing for defense animations
+            once: false, // Animations happen every time element is in view
+            mirror: true, // Animate out when scrolling past elements
+            anchorPlacement: 'top-bottom', // Trigger when top of element hits bottom of viewport
+            disable: function() {
+                return window.innerWidth < 768; // Disable on mobile for performance
+            }
+        });
+        
+        // AOS Animation Types Used in This Defense Website:
+        // 1. fade-right: Logo slides in from left (navigation) with bounce easing
+        // 2. fade-down: Navigation items drop down with staggered delays
+        // 3. zoom-in: Hero badge with spring effect
+        // 4. fade-up: Main heading and subtitle with cascade effect
+        // 5. fade-right/fade-left: Hero buttons sliding in from sides
+        // 6. fade-left: Radar animation slides in from right
+        // 7. flip-down: Section title with flipping effect
+        // 8. flip-left: Defense cards flipping in from left with staggered delays
+        // 9. fade-down: Stats section title
+        // 10. fade-right/fade-left/fade-up: Stat boxes with different directions
+        // 11. roll-in: Technology section title rolling in
+        // 12. fade-up: Technology cards rising up with staggered delays
+        // 13. zoom-in: Security section title
+        // 14. flip-horizontal: Security level cards flipping horizontally
+        // 15. flip-in-y: Contact form with vertical flip
+        // 16. pulse: Submit button with pulsing effect
+        // 17. fade-up: Contact info with staggered delays
+        // 18. fade-right: Footer sections sliding in from left
+        // 19. fade-in: Copyright with simple fade
+        // 20. fade-left: Security clearance badge slides in from right
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Navbar background change on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.padding = '15px 0';
+                navbar.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.4)';
+            } else {
+                navbar.style.padding = '20px 0';
+                navbar.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.3)';
+            }
+        });
+        
+        // Animated counter for stats
+        function animateCounter(element) {
+            const target = parseInt(element.getAttribute('data-count'));
+            const current = parseInt(element.textContent);
+            const increment = target > current ? 1 : -1;
+            const step = Math.ceil(target / 100);
+            
+            let count = current;
+            
+            const timer = setInterval(() => {
+                count += increment;
+                element.textContent = count;
+                
+                if ((increment > 0 && count >= target) || (increment < 0 && count <= target)) {
+                    element.textContent = target;
+                    clearInterval(timer);
+                }
+            }, 20);
+        }
+        
+        // Initialize counters when stats section comes into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    document.querySelectorAll('.stat-number').forEach(counter => {
+                        animateCounter(counter);
+                    });
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        const statsSection = document.querySelector('.stats-section');
+        if (statsSection) {
+            observer.observe(statsSection);
+        }
+        
+        // Secure form submission handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show encryption animation
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            
+            submitBtn.innerHTML = '<i class="fas fa-lock me-2"></i>ENCRYPTING...';
+            submitBtn.disabled = true;
+            
+            // Simulate encryption process
+            setTimeout(() => {
+                submitBtn.innerHTML = '<i class="fas fa-check me-2"></i>MESSAGE ENCRYPTED';
+                submitBtn.classList.remove('btn-primary');
+                submitBtn.classList.add('btn-success');
+                
+                // Show secure transmission message
+                const alertDiv = document.createElement('div');
+                alertDiv.className = 'alert alert-success mt-3';
+                alertDiv.innerHTML = '<i class="fas fa-shield-alt me-2"></i> Secure transmission successful. Message has been encrypted and sent through secure channels.';
+                this.appendChild(alertDiv);
+                
+                // Reset form after delay
+                setTimeout(() => {
+                    this.reset();
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.classList.remove('btn-success');
+                    submitBtn.classList.add('btn-primary');
+                    submitBtn.disabled = false;
+                    alertDiv.remove();
+                }, 5000);
+            }, 2000);
+        });
+        
+        // Defense card hover effects
+        document.querySelectorAll('.defense-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                const img = this.querySelector('.defense-img');
+                if (img) {
+                    img.style.transform = 'scale(1.05)';
+                }
+                
+                // Add glowing effect
+                this.style.boxShadow = 
+                    '0 20px 40px rgba(0, 0, 0, 0.4), 0 0 40px rgba(100, 255, 218, 0.3)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                const img = this.querySelector('.defense-img');
+                if (img) {
+                    img.style.transform = 'scale(1)';
+                }
+                
+                // Remove glowing effect
+                this.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.3)';
+            });
+        });
+        
+        // Create dynamic tech grid lines
+        function createGridLines() {
+            const grid = document.querySelector('.tech-grid');
+            if (!grid) return;
+            
+            // Clear existing lines
+            grid.innerHTML = '';
+            
+            // Create horizontal lines
+            for (let i = 1; i <= 10; i++) {
+                const line = document.createElement('div');
+                line.className = 'grid-line horizontal';
+                line.style.top = `${i * 10}%`;
+                line.style.animationDelay = `${i * 0.5}s`;
+                grid.appendChild(line);
+            }
+            
+            // Create vertical lines
+            for (let i = 1; i <= 10; i++) {
+                const line = document.createElement('div');
+                line.className = 'grid-line vertical';
+                line.style.left = `${i * 10}%`;
+                line.style.animationDelay = `${i * 0.3}s`;
+                grid.appendChild(line);
+            }
+        }
+        
+        // Initialize on page load
+        window.addEventListener('load', function() {
+            createGridLines();
+            
+            // Add blinking effect to security badge
+            const badge = document.querySelector('.clearance-badge');
+            if (badge) {
+                setInterval(() => {
+                    badge.style.opacity = badge.style.opacity === '0.7' ? '1' : '0.7';
+                }, 1000);
+            }
+        });
+        
+        // Add scanning sound effect simulation
+        document.addEventListener('scroll', function() {
+            // This would trigger scanning sounds in a real implementation
+            const scrollPosition = window.scrollY;
+            
+            // Update radar rotation speed based on scroll
+            const radarLine = document.querySelector('.radar-line');
+            if (radarLine) {
+                const speed = 4 + (scrollPosition * 0.0001);
+                radarLine.style.animationDuration = `${speed}s`;
+            }
+        });
+        
+        // Security level access simulation
+        document.querySelectorAll('.security-level').forEach(level => {
+            level.addEventListener('click', function() {
+                const levelText = this.querySelector('h4').textContent;
+                alert(`ACCESSING: ${levelText}\n\nBiometric verification required...\nSecurity protocol engaged.`);
+            });
+        });
+    </script>
+</body>
+</html>

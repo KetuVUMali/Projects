@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Operator</title>
+</head>
+<body>
+	<h1>Operators</h1>
+
+	<script type="text/javascript">
+		
+		// Arithmetic Opc
+			let a=10;
+			let b=5;
+				let sum=a+b;
+				let diff=a-b;
+				let pro=a*b;
+				let quo=a/b;
+				let rem=a%b;
+				console.log("Sum :",sum);
+				console.log("Difference :",diff);
+				console.log("Product :",pro);
+				console.log("Quotient :",quo);
+				console.log("Remainder :",rem);
+
+		// Assignment Opc
+			let x=10;
+			let y=10;
+				x+=5    //x = x + 5
+				y-=5    //y = y - 5
+				console.log("Updated x :",x);
+				console.log("Upadated y :",y);
+
+		//Comaprision Opc
+			let p=10;
+			let q=20;	
+				let EqualTo = p==q;
+				let NotEqualTo = p!==q;
+				let GreaterThanEqual = p>=q;
+				let LessThanEqual = p<=q;
+				console.log("EqualTo :",EqualTo);
+				console.log("NotEqualTo :",NotEqualTo);
+				console.log("GreaterThanEqual :",GreaterThanEqual);
+				console.log("LessThanEqual :",LessThanEqual);
+
+		//String Opc
+			let fs="ketu";
+			let ls="mali";
+				let fn= fs+" "+ls;
+				console.log("Full Name :",fn);
+
+		//Logical Opc
+			let isAdult=true;
+			let hasLicense=false;
+				let canDrive = isAdult && hasLicense;  //AND
+				let canVote = isAdult || hasLicense;   //Not
+				let isNotAdult = !isAdult;
+				console.log("Can Drive : ",canDrive);
+				console.log("Can Vote : ",canVote);
+				console.log("Is Not Adult : ",isNotAdult);
+
+		//Ternary Opc
+				let isRaining = true;
+				let umbrella = isRaining ? "Grab an umbrella" : "No need to umbrella";
+					console.log(umbrella);
+
+	</script>
+
+
+</body>
+</html>

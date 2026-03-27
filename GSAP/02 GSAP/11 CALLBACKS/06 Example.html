@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box {
+  width: 80px;
+  height: 80px;
+  background: orange;
+  margin: 20px;
+}
+</style>
+</head>
+<body>
+
+<div class="box"></div>
+<p id="msg"></p>
+
+<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+<script>
+const tl = gsap.timeline({
+  onStart: () => {
+    document.getElementById("msg").innerText = "Timeline Started";
+  },
+  onComplete: () => {
+    document.getElementById("msg").innerText = "Timeline Finished";
+  }
+});
+
+tl.to(".box", { x: 200, duration: 1 })
+  .to(".box", { rotate: 180, duration: 1 })
+  .to(".box", { scale: 1.5, duration: 1 });
+</script>
+
+<pre>
+    Control logic during timeline flow
+
+    🧠 Explanation
+
+            Timeline starts → message shown
+            Timeline ends → message updated
+
+            Used in:
+            Page transitions
+            Section reveals
+</pre>
+
+</body>
+</html>

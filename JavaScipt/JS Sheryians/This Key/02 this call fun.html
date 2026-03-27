@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This</title>
+</head>
+<body>
+    <h1> Using This Keyword Call Any Fun 3 Ways</h1>
+    <h3>call</h3>
+    <h3>apply</h3>
+    <h3>bind</h3>
+</body>
+
+<script>
+
+        // 1. Call
+            var obj = { name : "Ketan"};
+            function abc(){
+                console.log(this);
+            }
+            abc.call(obj);                              // object
+            abc.call();                                 // window
+
+
+        // 2. apply                                     ///////////////////////////////////////////////////////////////
+            var obj = { name : "Ketan"};
+            function abcd(){
+                console.log(this);
+            }
+            abcd.apply(obj,[1,2,3])
+            
+            console.log(abcd());
+            var x= abcd();
+            console.log(x);
+
+
+
+        // 3. bind                                       /////////////////////////////////////////////////////////////////
+            var obj = { name : "Ketan"};
+            function ab(){
+                console.log(this);
+            }
+            const xyz = ab.bind(obj);
+            ab();
+            console.log(ab());
+            console.log(xyz);
+
+
+</script>
+</html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AOS data-aos-once Deep Understanding</title>
+
+  <!-- Bootstrap -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+
+  <!-- AOS -->
+  <link
+    href="https://unpkg.com/aos@2.3.4/dist/aos.css"
+    rel="stylesheet"
+  >
+
+  <style>
+    body {
+      background-color: #f1f3f6;
+    }
+
+    section {
+      padding: 120px 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    h2 {
+      text-align: center;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .desc {
+      max-width: 900px;
+      margin: 0 auto 50px auto;
+      text-align: center;
+      font-size: 15px;
+      color: #444;
+    }
+
+    /* UI Cards */
+    .card-ui {
+      background: #fff;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      text-align: center;
+      height: 100%;
+    }
+
+    .highlight {
+      background: linear-gradient(135deg, #0d6efd, #6610f2);
+      color: #fff;
+    }
+
+    .badge-ui {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      margin-bottom: 10px;
+      background: #e9ecef;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     CORE CONCEPT
+===================================================== -->
+<section>
+  <div class="container">
+    <h2>What is data-aos-once?</h2>
+
+    <p class="desc">
+      <b>data-aos-once</b> decides:
+      <br><br>
+      👉 Should animation run ONLY ONE TIME  
+      👉 OR run EVERY TIME user scrolls up & down
+      <br><br>
+      Think like notifications:
+      <br>
+      Show once ✔ | Repeat every time ❌
+    </p>
+
+    <div class="card-ui highlight">
+      Scroll DOWN → then scroll UP → then scroll DOWN again  
+      <br><br>
+      You will FEEL the difference clearly
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     SCENARIO 1: HERO BANNER (ONCE = TRUE)
+===================================================== -->
+<section>
+  <div class="container">
+    <h2>Scenario 1: Hero Banner (Once = TRUE)</h2>
+
+    <p class="desc">
+      Hero sections should animate only ONCE.
+      <br>
+      Repeating animation looks unprofessional.
+    </p>
+
+    <div
+      class="card-ui highlight"
+      data-aos="fade-up"
+      data-aos-once="true"
+      data-aos-duration="1200"
+    >
+      <h3>Welcome to Our Platform</h3>
+      <p>This animation will NOT repeat on scroll</p>
+      <span class="badge-ui">data-aos-once="true"</span>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     SCENARIO 2: FEATURE CARDS (ONCE = FALSE)
+===================================================== -->
+<section>
+  <div class="container">
+    <h2>Scenario 2: Feature Cards (Once = FALSE)</h2>
+
+    <p class="desc">
+      Feature cards can animate every time.
+      <br>
+      Good for long pages and engagement.
+    </p>
+
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div
+          class="card-ui"
+          data-aos="fade-up"
+          data-aos-once="false"
+        >
+          <h5>Fast Performance</h5>
+          <p>Repeats animation every scroll</p>
+          <span class="badge-ui">once = false</span>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div
+          class="card-ui"
+          data-aos="fade-up"
+          data-aos-once="false"
+          data-aos-delay="150"
+        >
+          <h5>Secure Data</h5>
+          <p>Repeats again & again</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div
+          class="card-ui"
+          data-aos="fade-up"
+          data-aos-once="false"
+          data-aos-delay="300"
+        >
+          <h5>24/7 Support</h5>
+          <p>Visible animation loop</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     SCENARIO 3: STAT COUNTERS (ONCE = TRUE)
+===================================================== -->
+<section>
+  <div class="container">
+    <h2>Scenario 3: Statistics Counter (Once = TRUE)</h2>
+
+    <p class="desc">
+      Counters MUST animate only once.
+      <br>
+      Repeating numbers is wrong UX.
+    </p>
+
+    <div class="row g-4">
+      <div class="col-md-3">
+        <div
+          class="card-ui"
+          data-aos="zoom-in"
+          data-aos-once="true"
+        >
+          <h2>10K+</h2>
+          <p>Users</p>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div
+          class="card-ui"
+          data-aos="zoom-in"
+          data-aos-once="true"
+          data-aos-delay="100"
+        >
+          <h2>500+</h2>
+          <p>Clients</p>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div
+          class="card-ui"
+          data-aos="zoom-in"
+          data-aos-once="true"
+          data-aos-delay="200"
+        >
+          <h2>99%</h2>
+          <p>Uptime</p>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div
+          class="card-ui"
+          data-aos="zoom-in"
+          data-aos-once="true"
+          data-aos-delay="300"
+        >
+          <h2>24/7</h2>
+          <p>Support</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     SCENARIO 4: ALERT / NOTIFICATION
+===================================================== -->
+<section>
+  <div class="container">
+    <h2>Scenario 4: Notification / Alert</h2>
+
+    <p class="desc">
+      Alerts should NEVER repeat.
+      <br>
+      User sees it once → done.
+    </p>
+
+    <div
+      class="card-ui highlight"
+      data-aos="fade-down"
+      data-aos-once="true"
+    >
+      🔔 Your profile is 90% complete  
+      <br>
+      <small>(This message appears only once)</small>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     SCENARIO 5: BLOG LIST (MIXED LOGIC)
+===================================================== -->
+<section>
+  <div class="container">
+    <h2>Scenario 5: Mixed Usage (Professional Logic)</h2>
+
+    <p class="desc">
+      Heading → ONCE  
+      <br>
+      Blog cards → REPEAT
+    </p>
+
+    <h3
+      class="text-center mb-4"
+      data-aos="fade-up"
+      data-aos-once="true"
+    >
+      Latest Blog Posts
+    </h3>
+
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div
+          class="card-ui"
+          data-aos="fade-up"
+          data-aos-once="false"
+        >
+          Blog Post 1
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div
+          class="card-ui"
+          data-aos="fade-up"
+          data-aos-once="false"
+          data-aos-delay="150"
+        >
+          Blog Post 2
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div
+          class="card-ui"
+          data-aos="fade-up"
+          data-aos-once="false"
+          data-aos-delay="300"
+        >
+          Blog Post 3
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     AOS INIT
+===================================================== -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+  /*
+    Global settings
+    If element does NOT have data-aos-once,
+    this value is used
+  */
+  AOS.init({
+    duration: 1000,
+    easing: 'ease-in-out',
+    once: false, // default repeat
+    offset: 120
+  });
+</script>
+
+</body>
+</html>

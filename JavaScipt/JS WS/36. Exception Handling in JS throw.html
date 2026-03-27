@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>35. Exception Handling in JS throw</title>
+</head>
+<body>
+    <h2>Exception Handling throw</h2>
+
+    <pre>
+        catch:
+            - show Predefine error.
+            - show system known error which are defined by compilers.
+
+        throw:
+            - Show user-defined error.
+            - handle user through error.
+    </pre>
+
+    <h1>Please Enter A Number Between 5 & 10</h1>
+    <br>
+    <input type="text" name="" id="num">
+    <br>
+    <button onclick="test()">Click</button>
+    <br>
+    <h1 id="res"></h1>
+
+    <script type="text/javascript">
+        function test() {
+            var num = document.getElementById('num').value;
+
+            try {
+                if (isNaN(num)) 
+                    {
+                        throw "This is not a number";
+                    } 
+                else 
+                {
+                    if (num < 5 || num > 10) 
+                        {
+                          throw "The number is out of Range";
+                        } 
+                    else 
+                        {
+                            throw " The number is in Range ";
+                        }
+                }
+            } catch (errorMessage) {
+                document.getElementById("res").innerText = errorMessage;
+            }
+        }
+    </script>
+</body>
+</html>

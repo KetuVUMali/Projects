@@ -1,0 +1,74 @@
+.active {
+  background-color: green;
+  color: white;
+}
+
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.error {
+  color: red;
+}
+
+.success {
+  color: green;
+}
+
+.active {
+  background-color: green;
+  color: white;
+}
+
+.hii
+{
+  color: rgb(250, 6, 6);
+  font-size: large;
+}
+
+/* ngClass */
+.background-red
+{
+background-color: red;
+font-size:larger;
+font-family: 'Courier New', Courier, monospace;
+}
+
+.background-blue
+{
+background-color: blue;
+font-size: large;
+}
+
+.background-green
+{
+background-color: green;
+font-size: small;
+}
+.special {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.normal {
+  font-weight: normal;
+  font-size: 14px;
+}
+
+.active-item {
+  color: green;
+  font-weight: bold;
+}
+
+.inactive-item {
+  color: gray;
+  text-decoration: line-through;
+}
+
+
+.displayClass{
+  display: none;
+}
+
+

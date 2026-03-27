@@ -1,0 +1,260 @@
+
+<h1> ------------------------- structural-directives ---------------------------</h1>
+<h3>1. *ngFor </h3>
+<p>structural-directives works!</p>
+<!-- use to show user details -->
+<h4 *ngFor="let array of arr">{{array}}</h4>
+
+<table border="2px"  align="center">
+    <thead>
+        <tr>
+          <th> Name </th>
+          <th> Gender</th>
+          <th> DOB </th>
+          <th> Percentage </th>
+        </tr>
+    </thead>
+    <tbody  align="center">
+        <tr *ngFor="let item of studentList
+              let i = index;
+                let f = first;
+                let l = last;
+              let ev = even;
+              let c = count;
+              let o = odd;"
+                [class.background]=f
+                [class.background-blue]=l
+
+          >
+          <td>{{1+i}}</td>                    <!-- i index no    -->
+          <td>{{item.name}}</td>
+          <td>{{item.gender}}</td>
+          <td>{{item.dob}}</td>
+          <td>{{item.percentage}}</td>
+          <td>{{f}}</td>                      <!-- first row   boolean ans -->
+          <td>{{l}}</td>                      <!-- last row    boolean ans-->
+          <td>{{ev}}</td>                     <!-- even rows   boolean ans-->
+          <td>{{c}}</td>                     <!-- count rows   boolean ans-->
+          <td>{{o}}</td>                     <!-- odd rows   boolean ans-->
+        </tr>
+    </tbody>
+    <tfoot></tfoot>
+</table>
+
+<br><br>
+
+<table border="2px"  align="center">
+  <thead>
+      <tr>
+        <th> Name </th>
+        <th> Gender</th>
+        <th> DOB </th>
+        <th> Percentage </th>
+      </tr>
+  </thead>
+  <tbody  align="center">
+      <tr *ngFor="let item of studentList
+            let i = index;
+              let f = first;
+              let l = last;
+            let ev = even;
+            let c = count;
+            let o = odd;"
+
+              [ngClass]="{
+                'background-red': item.percentage <=70,
+                'background-blue': item.percentage > 70 && item.percentage <90,
+                'background-green': item.percentage >=90
+              }"
+           >    <!-- ngClass Use For Show Attendances in color  -->
+
+        <td>{{1+i}}</td>                    <!-- i index no    -->
+        <td>{{item.name}}</td>
+        <td>{{item.gender}}</td>
+        <td>{{item.dob}}</td>
+        <td>{{item.percentage}}</td>
+        <td>{{f}}</td>                      <!-- first row   boolean ans -->
+        <td>{{l}}</td>                      <!-- last row    boolean ans-->
+        <td>{{ev}}</td>                     <!-- even rows   boolean ans-->
+        <td>{{c}}</td>                     <!-- count rows   boolean ans-->
+        <td>{{o}}</td>                     <!-- odd rows   boolean ans-->
+      </tr>
+  </tbody>
+  <tfoot></tfoot>
+</table>
+
+
+
+
+
+
+
+<ul>
+  <li *ngFor="let item of items">{{ item }}</li>
+</ul>
+
+
+<ul>
+  <li *ngFor="let item of items; let i = index">
+    <span>{{ i + 1 }}</span>. {{ item }}
+  </li>
+</ul>
+
+
+<ul>
+  <li *ngFor="let user of users">
+    Name: {{ user.name }}, Age: {{ user.age }}
+  </li>
+</ul>
+
+
+<ul>
+  <li *ngFor="let user of users1; trackBy: trackByUserId">
+    {{ user.name }} (ID: {{ user.id }})
+  </li>
+</ul>
+
+<!-- nested For Loop -->
+<ul *ngFor="let user of empl">
+  <li>Name : Age : {{user.name}}</li>
+  <li>{{user.age}}</li>
+  <li>Accounts : </li>
+      <ul>
+          <li *ngFor="let account of user.acc">{{account}}</li> <!-- Looping through acc array -->
+      </ul>
+</ul>
+
+
+<br>
+<h3>----2. *ngIf --------- </h3>
+<!-- content show hide -->
+<button (click)="showDiv($event)">Button </button>          <!-- Button sometime Not Work Some technical Problem -->
+<button (click)="togleDiv($event)">Togle Button</button>
+<div *ngIf="showContent">
+  This content will be shown if showContent is true.
+</div>
+
+<div *ngIf="isLoggedIn">
+  Welcome, user!
+</div>
+
+
+   <!-- Example 2: *ngIf with else -->
+<div *ngIf="isLoggedIn2; else notLoggedIn">
+  Login Succesfully!
+</div>
+<ng-template #notLoggedIn>
+  <p>Please Try To LogIn...</p>
+</ng-template>
+
+
+
+<!-- *ngIf with then and else -->
+<div *ngIf="isLoggedIn; then loggedInTemplate else loggedOutTemplate"></div>
+
+<ng-template #loggedInTemplate>
+  <p>Welcome, you are logged in!</p>
+</ng-template>
+
+<ng-template #loggedOutTemplate>
+  <p>Please sign in to continue.</p>
+</ng-template>
+
+
+<!--  *ngIf with Multiple Conditions (Logical Operators) -->
+<div *ngIf="isLoggedIn && isAdmin">
+  Welcome, Admin!
+</div>
+
+<div *ngIf="userLoggedIn && isAdmin">
+  Admin-only content
+</div>
+<div *ngIf="userLoggedIn && !isAdmin">
+  Regular user content
+</div>
+
+<!-- *ngIf with Template Variables -->
+<div *ngIf="user as currentUser">
+  Logged in as: {{ currentUser.name }}
+</div>
+
+
+<div *ngIf="show1">
+  I I am true
+</div>
+
+<div *ngIf="show2">
+  I I am false
+</div>
+
+<!-- IF ELSE -->
+<div *ngIf="show3" else elseBlock>
+  I am also login
+</div>
+<ng-template #elseBlock>
+ I am Not Login
+</ng-template>
+
+<!-- IF ELSE -->
+<div *ngIf="show4; then ifBlock else elseBlock">I am also login </div>
+<ng-template #ifBlock> I am Again One More Login (If cond)</ng-template>
+<ng-template #elseBlock>  I am Again OneNot Login (Else Cond) </ng-template>
+
+<!-- string compair --><br>
+<div *ngIf="show5=='data'; then ifBlock else elseBlock">I am also login </div>
+<ng-template #ifBlock> (If cond)</ng-template>
+<ng-template #elseBlock>  (Else Cond) </ng-template>
+
+<br>
+<h3>----3. *ngSwitchCase --------- </h3>
+
+<!-- String -->
+<div [ngSwitch]="color">
+  <div *ngSwitchCase="'red'">Red selected</div>
+  <div *ngSwitchCase="'blue'">Blue selected</div>
+  <div *ngSwitchCase="'green'">Green selected</div>
+  <div *ngSwitchDefault="">No color selected</div>
+</div>
+
+<!-- number -->
+<div [ngSwitch]="day">                          
+  <div *ngSwitchCase="1">It's Monday</div>
+  <div *ngSwitchCase="2">It's Tuesday</div>
+  <div *ngSwitchCase="3">It's Wednesday</div>
+  <div *ngSwitchDefault>It's a weekend or holiday</div>
+</div>
+
+<!-- Default -->
+<div [ngSwitch]="fruit">
+  <div *ngSwitchCase="'apple'">You selected Apple</div>
+  <div *ngSwitchCase="'banana'">You selected Banana</div>
+  <div *ngSwitchCase="'orange'">You selected Orange</div>
+  <div *ngSwitchDefault>Unknown fruit selected</div>
+</div>
+
+
+<div [ngSwitch]="status">
+  <div *ngSwitchCase="'loading'">Loading, please wait...</div>
+  <div *ngSwitchCase="'success'">Operation successful!</div>
+  <div *ngSwitchCase="'error'">An error occurred!</div>
+  <div *ngSwitchDefault>Status unknown, please try again.</div>
+</div>
+<br>
+
+<h4>----- ngIf as SwichCase (ele if)-----</h4>
+
+<ng-template [ngIf]="colour == 'red'">Red</ng-template>
+<ng-template [ngIf]="colour == 'green'">Green</ng-template>
+<ng-template [ngIf]="colour == 'blue'">Blue</ng-template>
+
+<h1>---------------------------------Custom RedElementDirective Directive-----------------------------------------------</h1>
+ <!-- this director from Custom Directive Folder -->
+
+
+
+ <div>  Welcome, Admin! </div>
+ <div appRedElement >  Welcome, Admin! </div>
+
+
+
+<h1>------------------------------------------------------------------------------------------------------</h1>

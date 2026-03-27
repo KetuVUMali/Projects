@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>AOS Easing – Deep Understanding Demo</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+    <style>
+        body {
+            background-color: #f4f6f8;
+        }
+
+        section {
+            padding: 100px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .note {
+            max-width: 900px;
+            margin: 0 auto 40px auto;
+            text-align: center;
+            font-size: 15px;
+            color: #444;
+        }
+
+        .box {
+            background: #0d6efd;
+            color: white;
+            padding: 35px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .green {
+            background: #198754;
+        }
+
+        .dark {
+            background: #212529;
+        }
+
+        .orange {
+            background: #fd7e14;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- =====================================================
+     CORE CONCEPT: WHAT IS data-aos-easing?
+     ===================================================== -->
+    <section>
+        <div class="container">
+            <h2>What is data-aos-easing?</h2>
+            <p class="note">
+                <b>data-aos-easing</b> controls HOW animation moves. <br /><br />
+                👉 It does NOT control time (duration) 👉 It controls motion feeling
+                (speed curve)
+                <br /><br />
+                Think like a car:
+                <br />
+                Slow start → Fast → Slow end = Smooth ride 🚗
+            </p>
+
+            <div class="box">Scroll down slowly and feel the difference</div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+     SECTION 1: linear (ROBOTIC MOVEMENT)
+     ===================================================== -->
+    <section>
+        <div class="container">
+            <h2>linear (No Smoothness)</h2>
+            <p class="note">
+                Same speed from start to end.
+                <br />
+                ❌ Feels robotic.
+                <br />
+                Rarely used in real projects.
+            </p>
+
+            <div class="box dark" data-aos="fade-up" data-aos-easing="linear">
+                linear easing – Example 1
+            </div>
+
+            <div class="box dark" data-aos="fade-left" data-aos-easing="linear">
+                linear easing – Example 2
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+     SECTION 2: ease (DEFAULT BROWSER EASING)
+     ===================================================== -->
+    <section>
+        <div class="container">
+            <h2>ease (Basic Smooth)</h2>
+            <p class="note">
+                Starts slow → speeds up → slows down.
+                <br />
+                ✔ Better than linear
+                <br />
+                ❌ Not best for modern UI
+            </p>
+
+            <div class="box" data-aos="fade-up" data-aos-easing="ease">
+                ease – Content block
+            </div>
+
+            <div class="box" data-aos="zoom-in" data-aos-easing="ease">
+                ease – Image card
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+     SECTION 3: ease-in (SLOW START)
+     ===================================================== -->
+    <section>
+        <div class="container">
+            <h2>ease-in (Slow Start)</h2>
+            <p class="note">
+                Starts VERY slow → ends fast.
+                <br />
+                Good for elements entering quietly.
+            </p>
+
+            <div class="box green" data-aos="fade-right" data-aos-easing="ease-in">
+                ease-in – Text appears gently
+            </div>
+
+            <div class="box green" data-aos="fade-up" data-aos-easing="ease-in">
+                ease-in – Small content
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+     SECTION 4: ease-out (SMOOTH END)
+     ===================================================== -->
+    <section>
+        <div class="container">
+            <h2>ease-out (Smooth Finish)</h2>
+            <p class="note">
+                Starts fast → ends slowly.
+                <br />
+                ✔ Very good for buttons & CTA.
+            </p>
+
+            <div class="box orange" data-aos="fade-up" data-aos-easing="ease-out">
+                ease-out – CTA Button
+            </div>
+
+            <div class="box orange" data-aos="zoom-in" data-aos-easing="ease-out">
+                ease-out – Highlight Card
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+     SECTION 5: ease-in-out (BEST & MOST USED)
+     ===================================================== -->
+    <section>
+        <div class="container">
+            <h2>ease-in-out ⭐ (Company Standard)</h2>
+            <p class="note">
+                Slow start → smooth middle → slow end.
+                <br />
+                ✔ MOST USED in real company projects
+                <br />
+                ✔ Safe, professional, smooth
+            </p>
+
+            <div class="box" data-aos="fade-up" data-aos-easing="ease-in-out">
+                ease-in-out – Section content
+            </div>
+
+            <div class="box" data-aos="fade-left" data-aos-easing="ease-in-out">
+                ease-in-out – Image + Text
+            </div>
+
+            <div class="box" data-aos="zoom-in" data-aos-easing="ease-in-out">
+                ease-in-out – Feature card
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+     SECTION 6: cubic-bezier (ADVANCED CUSTOM)
+     ===================================================== -->
+    <section>
+        <div class="container">
+            <h2>cubic-bezier (Advanced Control)</h2>
+            <p class="note">
+                Custom motion control.
+                <br />
+                Used by senior developers only.
+                <br />
+                Example below creates ultra-smooth motion.
+            </p>
+
+            <div class="box dark" data-aos="fade-up" data-aos-easing="cubic-bezier(0.4, 0, 0.2, 1)">
+                Custom cubic-bezier (Advanced)
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+     SECTION 7: BAD PRACTICE COMPARISON
+     ===================================================== -->
+    <section>
+        <div class="container">
+            <h2>Bad vs Good Easing Comparison</h2>
+            <p class="note">See why easing choice matters.</p>
+
+            <div class="box dark" data-aos="fade-up" data-aos-easing="linear">
+                ❌ linear – Feels robotic
+            </div>
+
+            <div class="box green" data-aos="fade-up" data-aos-easing="ease-in-out">
+                ✅ ease-in-out – Feels professional
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+     AOS INITIALIZATION
+     ===================================================== -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+        /*
+      Global AOS configuration
+      Duration kept same so easing difference is visible
+    */
+        AOS.init({
+            duration: 1000,
+            offset: 120,
+            once: true,
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+
+<section>
+    <h2>Module Examples</h2>
+    <p>
+        In JavaScript, modules allow you to split your code into multiple files, keeping each part
+        in its own file and making the code more organized and maintainable.
+    </p>
+
+    <!-- Importing from External Modules -->
+    <script type="module">
+        // Importing functions from moduleExample1.js using "import ... as ..."
+        import { greet as sayHello, farewell as sayGoodbye } from './js/moduleExample1.js';
+
+        // Using the imported functions
+        sayHello('Alice');
+        sayGoodbye('Bob');
+    </script>
+</section>
+
+
+</body>
+</html>

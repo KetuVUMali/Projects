@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> This Keyword </title>
+</head>
+<body>
+    
+    <button> 6. Event Listener</button>
+</body>
+
+        <script>
+
+
+                // 0. 
+                    console.log(this);
+
+
+
+                // 1. This key inside Function 
+                    function a()
+                    {
+                        console.log(this);                             // Windows
+                    }
+                    var b=a();
+                    console.log(b);                                    // undefine
+
+
+                // 2.  This key method  
+                    // inside {}  or obj        
+                    var obj = {
+                        name : function(){
+                                            console.log(this);
+                                        },
+                        age : 20,
+                        no : 22
+                    }
+                    console.log(obj);
+                    console.log(obj.name);
+                    console.log(obj.age);
+                    console.log(obj.no);
+
+
+
+                // 3. Fun inside method  (es5)                         ///////////////////////////////////////////////////
+                    var obj2 = {
+                        name : function(){
+                                            console.log(this);
+                                            function abc (){
+                                                                console.log(this);
+                                                             }
+
+                                            abc();
+                                        }       
+                    }
+                    console.log(obj2. name());
+                    console.log(obj2);
+
+
+
+
+                // 4. Fun inside method  (es5)                         ///////////////////////////////////////////////////
+                    var obj3 = {
+                        name : function(){
+                                            const child = () => {
+                                                    console.log(this);
+                                            }
+                                        }       
+                    }
+                    console.log(obj3. name());
+                    console.log(obj3);
+
+
+
+                // 5. constructor fun
+                    function add(){
+                        console.log(this);
+                    }
+                    const ans = new add();                             // blank obj.
+
+
+
+                // 6. event listener 
+                    document.querySelector("button").addEventListener("click",function(){
+                                                                                        console.log(this)
+                                                                                        }
+                                                                    );
+        
+        
+                                                                                
+                // 7.
+        
+        
+        
+        
+        
+        
+        
+        
+        </script>
+</html>

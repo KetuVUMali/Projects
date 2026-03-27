@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .box {
+            width: 80px;
+            height: 80px;
+            background: tomato;
+            margin: 10px;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+    <script>
+        gsap.from(".box", {
+            opacity: 0,
+            scale: 0,
+            duration: 0.5,
+            stagger: {
+                each: 0.2,
+                from: "center"
+            }
+        });
+    </script>
+    <div>
+        <h2>GSAP Stagger Direction Example</h2>
+        <p>
+            This example demonstrates a GSAP stagger animation where multiple boxes animate from the center outwards with a delay.
+        </p>
+        <ul>
+            <li>Each box starts 0.2 seconds after the previous one, beginning from the center box to the first.</li>
+            <li>Boxes scale up from 0 to their original size over 0.5 seconds.</li>
+        </ul>
+        <p>This showcases how to create staggered animations with direction control using GSAP.</p>
+
+        <pre>
+            🧠 Explanation
+                        Middle box animates first
+                        Then left & right
+                        Perfect for image galleries
+        </pre>
+
+
+    </div>
+
+</body>
+
+</html>

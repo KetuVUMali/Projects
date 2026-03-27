@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Changing CSS </title>
+</head>
+<body>
+	<h1> DOM </h1>
+	<h4> Selection Of Element </h4>
+	
+	<h4>5. Event Listener  </h4>
+	<pre>
+		Event    :  Particular task , operation
+		            (Something which happaning) 
+
+		Listener :  observer
+
+
+
+		syn : addEventListener(Event_Name,function(){})
+	</pre>
+
+	<b> Hello Ketu </b>
+	<script type="text/javascript">
+		 var a = document.querySelector("b");     // Bold Tag Select 
+
+		  // a.style.color = "red";        
+		  // a.style.backgroundColor = "Yellow";
+
+		  a.addEventListener("click",function()
+		  		{
+		  			console.log("Hey, I AM Change...!");
+		  			a.innerHTML = "Badal Gya Hu Mai Abhi";
+		  			a.style.color = "red";        
+		    		a.style.backgroundColor = "yellow";
+
+		  		})
+
+
+		
+
+	</script>
+</body>
+</html>

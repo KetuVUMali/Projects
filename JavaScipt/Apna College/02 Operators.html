@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operators</title>
+</head>
+<body>
+    Operator = symbol that performs operation on values.
+
+    <pre>
+        🔥 Types of Operators
+
+        1. Arithmetic Operators
+        2. Assignment Operators
+        3. Comparison Operators
+        4. Logical Operators
+        5. Bitwise Operators
+        6. Ternary Operators
+        7. Type Operators
+        8. Spread Operators
+    </pre>
+
+    <pre>
+        1. Arithmetic Operators : perform mathematical operations on numbers and return a single value.
+
+        +   Addition
+        -   Subtraction
+        *   Multiplication
+        /   Division
+        %   Modulus
+        ++  Increment
+        --  Decrement
+
+        a = 10 + 20;    // 30
+        a = 10 - 20;    // -10
+        a = 10 * 20;    // 200
+        a = 10 / 20;    // 0.5      (Division always return quotient)
+        a = 10 % 20;    // 10       (Modulus always return remainder)
+        b = 10;        // 10        
+        b++;            // 11       (Post-increment : use the value first then increment)
+        b--;            // 10       (Post-decrement : use the value first then decrement)
+    </pre>
+
+    <pre>
+        2. Assignment Operators : 
+        let x = 10; let y = 11;  let  z=3;               // Assignment operator (=) assigns the value on the right to the variable on the left.
+            x += 5;     // x = x + 5 → 15    (Addition : x = x + 5)
+            x -= 2;     // x = x - 2 → 13    (Subtraction : x = x - 2)
+            x *= 2;     // x = x * 2 → 26    (Multiplication : x = x * 2)
+            x /= 2;     // x = x / 2 → 13    (Division : x = x / 2)
+            y %= 5;     // y = y % 5 → 1     (remainder) (y = y % 5 :->  11 % 5  :-> 1) 
+            z **= 2;    // x = x ** 2 → 9    (Power : x = x ^ 2)
+
+            10 == "10"   // true 😱    (only value compare)
+            10 === "10"  // false ✅   (value + type compare)
+
+    </pre>
+
+    <pre>
+        3. Comparison Operators  : compare values and return boolean (true/false)
+
+        ==  Equal to
+        === Strict equal to
+        !=  Not equal to
+        !== Strict not equal to
+        >   Greater than
+        <   Less than
+        >=  Greater than or equal to
+        <=  Less than or equal to
+
+        10 == "10"   // true 😱    (only value compare)
+        10 === "10"  // false ✅   (value + type compare)
+        10 != "10"   // false 😱    (only value compare)
+        10 !== "10"  // true ✅   (value + type compare)
+        10 > 5       // true
+        10 < 20      // true
+        10 >= 10     // true
+        10 <= 9      // false
+
+    </pre>
+    <pre>
+        4. Logical Operators : used to combine multiple conditions and return a boolean value based on the result of those conditions.
+
+        &&  Logical AND
+        ||  Logical OR
+        !   Logical NOT
+
+        true && true     // true     : 10 > 5 && 20 > 10 -> true && true -> true
+        true && false    // false    : 10 > 5 && 5 > 10 ->  true && false -> false
+        false && true    // false    : 5 > 10 && 20 > 10 -> false && true -> false
+        false && false   // false    : 5 > 10 && 20 > 10 -> false && true -> false
+
+        true || true     // true     : 10 > 5 || 20 > 10 -> true || true -> true
+        true || false    // true     : 10 > 5 || 5 > 10 ->  true || false -> true
+        false || true    // true     : 5 > 10 || 20 > 10 -> false || true -> true
+        false || false   // false    : 5 > 10 || 20 > 10 -> false || true -> true
+
+        !true            // false    : 10 == 10 -> true -> !true -> false
+        !false           // true     : 10 > 20 -> false -> !false -> true
+
+        true && (false || true)   // true     : 10 > 5 && (5 > 10 || 20 > 10) -> true && (false || true) -> true && true -> true
+        false || (true && false)  // false    : 5 > 10 || (10 > 5 && 5 > 10) -> false || (true && false) -> false || false -> false
+        
+    </pre>
+    
+</body>
+</html>

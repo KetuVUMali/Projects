@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // 1. Print Even Number 1 to 10 using for loop
+            // Even Number : A number that is divesible by 2 and remainder Zero.
+            for( let i=1; i<=100; i++){
+                if(i%2 === 0){
+                    console.log(i);
+                }
+            }
+
+            for( let i=2; i<=100; i+=2){
+                console.log(i);
+            }
+
+        // 2. Print Odd Number 1 to 10 using for loop
+            // Odd Number : A number that is not divisible by 2 and remainder is not Zero.
+            for( let i=1; i<=100; i++){
+                if(i%2 !== 0){
+                    console.log(i);
+                }
+            }
+
+            for( let i=1; i<=100; i+=2){
+                console.log(i);
+            }
+
+
+        // 3. Print Table of 5 using for loop
+            for( let i=1; i<=10; i++){
+                console.log(`5 x ${i} = ${5*i}`);
+            }
+
+        // 5. Guessing number game using while loop
+            let number = 7;
+            let guess= prompt("Guess the number between 1 and 10:");
+            while(guess != number){
+                guess = prompt("Guess the number between 1 and 10:");
+            }
+            console.log("Congratulations! You guessed the number.");
+
+
+        // 6.
+            
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Object </title>
+</head>
+<body>
+
+
+	<h3> Window Screen Object </h3>
+	<pre>
+		
+		- The Screen Object Contains Information About THe Visitors Screen.
+
+		- show the user screen information or size.
+	</pre>
+
+	<pre>
+		Property :
+
+			1. availHeight    : Return Height of Screen 
+			  Syn : screen.availHeight
+
+			2. availwidth     : Return width of screen.
+			  Syn : screen.availwidth
+
+			3. colorDepth      : Return the bit depth of the color palette for displaying images.
+			  Syn : screen.colorDepth
+
+			4. height         : return the total height ofscreen.
+			  Syn : screen.height
+
+			5. pixelDepth     : Return the color resolution (in bit per pixel) of the screen.
+			  Syn : screen.pixelDepth
+
+			6. width          : Return thr total width of screen.
+			  Syn : screen.width
+	</pre>
+	<button onclick="test()"> Avl Height</button>
+	<button onclick="test2()"> Avl Width</button>
+	<button onclick="test3()"> Height</button>
+	<button onclick="test4()"> Width </button>
+	<button onclick="test5()"> Pixel Depth </button>
+	<button onclick="test6()"> Color Depth </button>
+</body>
+
+	<script type="text/javascript">
+		
+		function test()
+			{
+				var height = screen.availHeight;
+				alert(height);
+			}
+
+		function test2()
+			{
+				var height = screen.availWidth;
+				alert(height);
+			}
+
+		function test3()
+			{
+				var height = screen.height;
+				alert(height);
+			}
+
+		function test4()
+			{
+				var height = screen.width;
+				alert(height);
+			}
+
+		function test5()
+			{
+				var height = screen.pixelDepth;
+				alert(height);
+			}
+
+		function test6()
+			{
+				var height = screen.colorDepth;
+				alert(height);
+			}
+	</script>
+</html>

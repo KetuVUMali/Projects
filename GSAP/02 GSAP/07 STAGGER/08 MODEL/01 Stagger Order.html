@@ -1,0 +1,45 @@
+1️⃣ ORDER — “WHO GOES FIRST?”
+Meaning (simple)
+Order decides which element animates first, second, third…
+Think like a queue.
+
+🧠 Real-life analogy
+Example: Students standing in a line
+
+Students:
+A B C D E
+
+If teacher says:
+
+“Start from first” → A → B → C → D → E
+“Start from last” → E → D → C → B → A
+“Start from middle” → C → B & D → A & E
+
+That is ORDER.
+
+
+
+
+Order types you MUST know
+from value	        Meaning
+"start"	            First element animates first
+"end"	            Last element animates first
+"center"	        Middle element animates first
+"edges"	            Outside elements animate first
+number (index)	    Start from that index
+
+
+
+🧠 What happens internally?
+GSAP:
+Selects all elements
+Decides which index starts
+Applies delay based on that order
+
+
+🔥 Why ORDER matters in real projects
+Used in:
+Menu open from top → bottom
+Reverse menu close animation
+Gallery animation from center
+Cards flying from edges

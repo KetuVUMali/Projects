@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  height: 300vh;
+}
+
+.box {
+  width: 120px;
+  height: 120px;
+  background: black;
+  margin: 100px auto;
+}
+</style>
+</head>
+<body>
+
+<div class="box"></div>
+
+<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+const tl = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".box",
+    start: "top top",
+    end: "+=500",
+    scrub: true,
+    pin: true
+  }
+});
+
+tl.to(".box", { x: 200 })
+  .to(".box", { rotate: 180 })
+  .to(".box", { scale: 2 });
+</script>
+<div>
+    <pre>
+        Pin an element and animate it in multiple steps while scrolling.
+        Pin element AND animate it in sequence during scroll.
+
+        🧠 Explanation :
+                Page scrolls normally
+                    When .box reaches top of screen
+                    It gets pinned (fixed)
+                    While pinned, it moves right, rotates, and scales up as you scroll
+                    After 500px of scrolling, it unpins and scroll continues
+    </pre>
+    <pre>
+        🧠 Explanation
+                    As you scroll:
+                    Step 1: Moves right by 200px
+                    Step 2: Rotates 180 degrees
+                    Step 3: Scales up to 2x size
+                    scrub: true = animation follows scroll
+                    👉 Used for complex story-based animations
+    </pre>
+</div>
+</body>
+</html>

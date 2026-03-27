@@ -1,0 +1,40 @@
+<div>
+    <br><br>
+    <button (click)="clickMe()">Click </button>
+    <br><br>
+    <button (click)="first()">Another Function Call </button>
+</div>
+
+<br><br><br>
+<h1> Input Value Get and Set</h1>
+<h3>1. On Input  Value Get </h3>
+    <input  type="text" placeholder="Enter Your Name" (input)="getName1($event)"/>
+    <button> Get Value </button>
+    <p>User Name : {{name1}}</p>
+<br><br>
+    <h3>2. On Button Input Value Get and Display</h3>
+    <input  type="text" placeholder="Enter Your Name" (input)="getName2($event)" />
+    <button (click)="setName1()"> Get Value </button>
+    <p>User Name : {{name2}}</p>
+<br><br>
+    <h3>3. Template Refrences Variable Use For Input Value Get </h3>
+    <input  type="email" placeholder="Enter Your Email" #emailField />
+    <button (click)="getEmail(emailField.value)" > Get Email </button>
+    <p>Email : {{email}}</p>
+
+    <br><br>
+    <input  type="email" placeholder="Enter Your Email"  value="{{setEmailId}}"/>
+    <button (click)="setEmail()" > Set Email </button>
+
+<br><br><br><br>
+
+    <input type="text" #box >
+    <button (click)="onClick(box.value)"> Click Mi </button>
+    <h6>variable : {{variable}}</h6>
+
+
+
+
+
+
+

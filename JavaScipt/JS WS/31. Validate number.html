@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> 31. Validate number </title>
+</head>
+<body>
+
+	<h1>Number Validation </h1>
+
+	<h2>Please Enter Your Number</h2> 
+	<br>
+
+	<input type="text" name="" onkeyup="val(this)">
+
+	<div id="res"></div> 
+</body>
+	
+	<script type="text/javascript">
+		document.getElementById("res").style.color = "red";
+
+		function val(elem)
+		{
+
+			// print text box value
+			//document.getElementById('res').innerText = elem.value;
+
+			// is Not A Number
+			if(isNaN(elem.value))
+				{
+					document.getElementById('res').innerText = "Please Enter Only Number!";
+				}
+			else
+				{
+					document.getElementById('res').innerText = "";
+
+					if (elem.value.length > 10) 
+						{
+							document.getElementById('res').innerText=" Please Enter Only Ten Digits";
+						}
+					else
+						{
+							document.getElementById('res').innerText=" ";
+						}
+				}
+		}
+	</script>
+</html>

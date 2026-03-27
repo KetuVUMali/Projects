@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Property </title>
+</head>
+<body>
+    <h1> Reset Property </h1>
+    use to multile para or thing in single thing
+
+
+    <pre>
+        The three dots (...) operator has two different meanings in JavaScript.
+        uses of the ... are the spread and rest operators.
+
+        1. Spread Operator
+        Copy an Object With the Spread Operator :
+        The spread operator is used to copy an object into another object.
+        Example
+                let user = { name: "John Doe", age: 10 };
+                let copiedUser = { ...user };
+                console.log(copiedUser); // { name: "John Doe", age: 10 }
+
+                const obj1 = { a: 1, b: 2 };
+                const obj2 = { ...obj1 };
+                console.log(obj2);
+                // Expected output: Object { a: 1, b: 2 }
+
+                How to Concatenate or Merge Arrays With the Spread Operator
+                When we have two or more arrays that we want to merge into a new array, we can easily do this with the spread operator. It lets us copy elements from an array:
+                    let maleNames = ["Daniel", "Peter", "Joe"];
+                    let femaleNames = ["Sandra", "Lucy", "Jane"];
+                    let allNames = [...maleNames, ...femaleNames];
+                    console.log(allNames); // ["Daniel","Peter","Joe","Sandra","Lucy","Jane"]
+
+                
+                How to Concatenate or Merge Objects With the Spread Operator
+                We can also concatenate objects similarly to how we did arrays with the spread operator:
+                    let userName = { name: "John Doe" };
+                    let userSex = { sex: "Male" };
+                    let user = { ...userName, ...userSex };
+                    console.log(user); // { name: "John Doe", sex: "Male" }
+
+
+        2. Rest Parameter
+        The rest parameter syntax allows a function to accept an indefinite number of arguments as an array, which is then assigned to a variable.
+        Example
+                function sum(...args) {
+                return args.reduce((a, b) => a + b, 0);
+                }
+                console.log(sum(1));       // 1
+                console.log(sum(1, 2));    // 3
+                console.log(sum(1, 2, 3)); // 6 
+                console.log(sum());        // 0
+
+
+                
+        
+
+
+    </pre>
+
+
+
+
+    <pre>
+
+        This allows us to quickly copy all or parts of an existing array into another array:
+
+        Example
+        Assign the first and second items from numbers to variables and put the rest in an array:
+
+        const numbersOne = [1, 2, 3];
+        const numbersTwo = [4, 5, 6];
+        const numbersCombined = [...numbersOne, ...numbersTwo];
+        console.log(numbersCombined);
+        // Expected output: Array [1, 2, 3, 4, 5, 6]
+
+
+        The rest parameter syntax allows us to represent an indefinite number of arguments as an array:
+        function sum(...args) {
+        return args.reduce((a, b) => a + b, 0);
+        }
+        console.log(sum(1));       // 1
+        console.log(sum(1, 2));    // 3
+        console.log(sum(1, 2, 3)); // 6 
+        console.log(sum());        // 0
+
+       
+    </pre>
+</body>
+    <script>
+            // 
+                var hobbies = ["A", "B", "C"];
+                var [X, Y, ...resethobbies] = hobbies;
+                console.log(X,Y,resethobbies);
+
+
+
+            // 
+                function add(...numbers){
+                  
+                    return numbers.reduce((priviousVal,currentVal)=>{
+                        return priviousVal + currentVal
+                    });
+                }
+                var demo = add(1,2,3,4,5,6,7,8,9,10);
+                console.log(demo)
+
+
+
+    </script>
+</html>

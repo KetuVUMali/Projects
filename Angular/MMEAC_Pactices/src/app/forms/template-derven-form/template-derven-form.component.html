@@ -1,0 +1,31 @@
+<p>template-derven-form works!</p>
+<form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)" novalidate>
+  <!-- Name Field -->
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" [(ngModel)]="user.name" #name="ngModel" required>
+  <div *ngIf="name.invalid && name.touched" class="error">
+    <small *ngIf="name.errors?.['required']">Name is required.</small>
+  </div>
+<br> <br>
+  <!-- Email Field -->
+  <label for="email">Email:&ensp;</label>
+  <input type="email" id="email" name="email" [(ngModel)]="user.email" #email="ngModel" required email>
+  <div *ngIf="email.invalid && email.touched" class="error">
+    <small *ngIf="email.errors?.['required']">Email is required.</small>
+    <small *ngIf="email.errors?.['email']">Invalid email address.</small>
+  </div>
+<br> <br>
+  <!-- Password Field -->
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password" [(ngModel)]="user.password" #password="ngModel" minlength="6" required>
+  <div *ngIf="password.invalid && password.touched" class="error">
+    <small *ngIf="password.errors?.['required']">Password is required.</small>
+    <small *ngIf="password.errors?.['minlength']">Password must be at least 6 characters long.</small>
+  </div>
+<br> <br>
+  <!-- Submit Button -->
+  <button type="submit">Submit</button>
+</form>
+
+
+

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ES6 Feature </title>
+</head>
+<body>
+	<h1> ES6 Feature </h1>
+	
+    <script>
+    	//1. Arrow Function
+	    	console.log("1. Arrow Function ");
+	        // Traditional Function
+	        function addNumbers(a, b) 
+	          {
+	             return a + b;
+	          }
+
+	        // Using simple/traditional functions
+	        console.log("Traditional Function:", addNumbers(3, 5));
+
+
+	        // Arrow Function
+	        const add = (a, b) => a + b;
+
+	        console.log("Arrow Function:", add(3, 5));
+
+
+
+	    // 2. Spread Opc (...)
+	      // combine or add 
+	      		// Array
+	      		console.log(" ");
+		        console.log("2. Spread Opc (...)");
+		    	var num = [1,2,3];     
+		    	var newarray = [...num,4,5];
+		    	console.log("NewArray :",newarray);
+
+
+		    	// Object
+		    	console.log(" ");
+		    	console.log("2. Object ");
+		    	const person = {name:'Ketan',age:23};
+		    	const newperson = { ...person,city:'Pune'};
+		    	console.log("NewPerson :",newperson);
+ 
+    </script>
+
+
+     <h1> Set Object </h1>
+	    <script>
+	        //3. Set
+	          // create set run time
+			  // The Set object in JavaScript is a collection of unique values.
+			  // It automatically removes duplicate values from the collection.
+			  // It can store any data type (numbers, strings, objects, etc.).
+
+				console.log("3. create Set ")
+		        let uniqueNumbers = new Set([1,1, 2, 3, 2, 1, 4, 5,5]);
+
+		        console.log("Set Object:", uniqueNumbers);
+
+		        let demo = new Set([1,1, 2, 3, 2, 1, 4, 5,5]);
+		        console.log("Set Object:", demo);
+
+
+
+			//  Remove Duplicate Numbers from an Array
+				const numbers = [10, 20, 30, 10, 40, 20, 50];
+				const uniqueNumber = new Set(numbers);
+				console.log(uniqueNumber); // Output: Set { 10, 20, 30, 40, 50 }
+
+
+			// 
+				const number = [1, 2, 3, 4, 2, 3, 5, 6, 1, 7];
+				const uniqueNumbe = [...new Set(number)];
+				console.log(uniqueNumbe);
+											// Output: [1, 2, 3, 4, 5, 6, 7]
+	    </script>
+
+
+	 <h2>Promise</h2>
+	    <script>
+
+	        // Promise Example
+	           // used to asynchronous operation perform
+			   // It is used to handle asynchronous operations, such as fetching data from an API, reading a file, or setting a timer.
+
+	        	console.log("4. Promis")
+		        let promiseExample = new Promise((resolve, reject) => 
+			        {
+			            // Simulating an asynchronous operation
+			            setTimeout(() => 
+			             {
+			                let success = true;			// Change this to false to test rejection
+
+			                if (success) 
+			                 {
+			                    resolve("Task completed successfully! ✅");
+			                 } 
+			                else 
+			                 {
+			                    reject("Task failed! ❌");
+			                 }
+			             },  3000);  //3 second time
+			        } );
+
+		        promiseExample
+		            .then(result => console.log("Promise Success:", result))
+		            .catch(error => console.error("Promise Error:", error));
+
+
+
+					// ✔ Use Promises when handling asynchronous operations like fetching data, reading files, or running timers.
+					// ✔ Use .then() and .catch() for handling success and errors.
+					// ✔ Use async/await for cleaner, more readable async code.
+
+
+	    </script>
+
+
+</body>
+</html>

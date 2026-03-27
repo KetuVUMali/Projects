@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Image Alignment</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        img {
+            height: 400px !important;
+            width: 500px !important;
+        }
+    </style>
+</head>
+
+<body class="p-4">
+
+    <h2>Image Alignment</h2>
+    <pre>
+    📌 Concept
+            float-start → left
+            float-end → right
+
+            Align images with the helper float classes or text alignment classes. 
+            block-level images can be centered using the .mx-auto margin utility class.
+  </pre>
+    <div class="row ">
+
+        <!-- Left aligned image -->
+        <h4>Left Aligned Image (float-start)</h4>
+        <img src="https://4kwallpapers.com/images/walls/thumbs_2t/24474.jpg" class="float-start me-3 img-fluid">
+        <br> <br> <br>
+
+        <!-- Right aligned image -->
+        <h4>Right Aligned Image (float-end)</h4>
+        <img src="https://4kwallpapers.com/images/walls/thumbs_2t/24474.jpg" class="float-end ms-3 img-fluid">
+        <br> <br> <br>
+
+        <!-- Center aligned image using margin utilities -->
+        <h4>Center Aligned Image (mx-auto d-block)</h4>
+        <img src="https://4kwallpapers.com/images/walls/thumbs_2t/24474.jpg" class="rounded mx-auto d-block  img-fluid"
+            alt="...">
+        <br> <br> <br>
+
+        <!-- Center aligned image using text alignment -->
+        <h4>Center Aligned Image (text-center)</h4>
+        <div class="text-center">
+            <img src="https://4kwallpapers.com/images/walls/thumbs_2t/24474.jpg" class="rounded  img-fluid" alt="...">
+        </div>
+        <br><br><br>
+
+        <!-- Responsive fluid image -->
+        <h4>Responsive Fluid Image (img-fluid)</h4>
+        <img src="https://4kwallpapers.com/images/walls/thumbs_2t/24474.jpg"
+            class="img-fluid d-block mx-auto  img-fluid" alt="...">
+
+    </div>
+    <br> <br> <br> <br>
+
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Bootstrap Image Alignment - Complete Example</title>
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+
+    <body class="p-4">
+
+        <h2 class="text-center mb-4">Bootstrap Image Alignment - All Examples</h2>
+
+        <pre>
+📌 What is Image Alignment?
+    Image alignment means placing an image
+    - Left
+    - Center
+    - Right
+    - Responsive inside grid
+    - Vertical & horizontal center
+
+📌 Important Rule
+    Always use 'img-fluid' for responsive images.
+</pre>
+
+        <hr>
+
+        <!-- 1. Normal Image (No Alignment) -->
+        <h4>1️⃣ Normal Image (Default)</h4>
+        <pre>
+📌 Concept
+    Image appears in normal flow (left by default)
+    No alignment class used
+</pre>
+
+        <img src="https://4kwallpapers.com/images/walls/thumbs_2t/24474.jpg" class="img-fluid mb-4" alt="Normal Image">
+
+        <hr>
+
+        <!-- 2. Left Aligned Image -->
+        <h4>2️⃣ Left Aligned Image (float-start)</h4>
+        <pre>
+📌 Concept
+    float-start aligns image to the left
+</pre>
+
+        <img src="https://4kwallpapers.com/images/walls/thumbs_2t/24474.jpg" class="img-fluid float-start me-3"
+            style="width:200px;" alt="Left Image">
+
+        <div class="clearfix mb-4"></div>
+
+        <hr>
+
+        <!-- 3. Right Aligned Image -->
+        <h4>3️⃣ Right Aligned Image (float-end)</h4>
+        <pre>
+📌 Concept
+    float-end aligns image to the right
+</pre>
+
+        <img src="https://4kwallpapers.com/images/walls/thumbs_2t/24474.jpg" class="img-fluid float-end ms-3"
+            style="width:200px;" alt="Right Image">
+
+        <div class="clearfix mb-4"></div>
+
+        <hr>
+
+        <!-- 4. Center Aligned Image -->
+        <h4>4️⃣ Center Aligned Image (mx-auto)</h4>
+        <pre>
+📌 Concept
+    d-block makes image block element
+    mx-auto centers image horizontally
+</pre>
+
+        <img src="https://4kwallpapers.com/images/walls/thumbs_2t/24474.jpg" class="img-fluid d-block mx-auto mb-4"
+            style="width:250px;" alt="Center Image">
+
+        <hr>
+
+        <!-- 5. Image Center using Text Alignment -->
+        <h4>5️⃣ Center Image using text-center</h4>
+        <pre>
+📌 Concept
+    Image is inline by default
+    text-center centers inline elements
+</pre>
+
+        <div class="text-center mb-4">
+            <img src="https://4kwallpapers.com/images/walls/thumbs_2t/24474.jpg" class="img-fluid" style="width:250px;"
+                alt="Text Center Image">
+        </div>
+
+        <hr>
+
+        <!-- 6. Image Alignment using Grid -->
+        <h4>6️⃣ Image Alignment inside Grid</h4>
+        <pre>
+📌 Concept
+    Use row and col for responsive layout
+    Images auto align inside columns
+</pre>
+
+        <div class="row text-center mb-4">
+            <div class="col-md-4">
+                <p>Left Column</p>
+                <img src="https://4kwallpapers.com/images/walls/thumbs_2t/24474.jpg" class="img-fluid rounded">
+            </div>
+
+            <div class="col-md-4">
+                <p>Center Column</p>
+                <img src="https://4kwallpapers.com/images/walls/thumbs_2t/24474.jpg" class="img-fluid rounded">
+            </div>
+
+            <div class="col-md-4">
+                <p>Right Column</p>
+                <img src="https://4kwallpapers.com/images/walls/thumbs_2t/24474.jpg" class="img-fluid rounded">
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- 7. Vertical Center Image (Advanced) -->
+        <h4>7️⃣ Vertically Centered Image</h4>
+        <pre>
+📌 Concept
+    d-flex enables flexbox
+    align-items-center → vertical center
+    justify-content-center → horizontal center
+</pre>
+
+        <div class="d-flex align-items-center justify-content-center border" style="height:300px;">
+            <img src="https://4kwallpapers.com/images/walls/thumbs_2t/24474.jpg" class="img-fluid" style="width:200px;"
+                alt="Vertically Centered Image">
+        </div>
+
+        <hr>
+
+        <!-- 8. Image with Text Wrap -->
+        <h4>8️⃣ Image with Text Wrap</h4>
+        <pre>
+📌 Concept
+    float-start lets text wrap around image
+</pre>
+
+        <img src="https://4kwallpapers.com/images/walls/thumbs_2t/24474.jpg" class="img-fluid float-start me-3"
+            style="width:180px;" alt="Wrap Image">
+
+        <p>
+            This is example text that wraps around the image.
+            Bootstrap float utilities are commonly used in blogs
+            and content sections where text flows beside images.
+        </p>
+
+        <div class="clearfix"></div>
+
+        <hr>
+
+        <h4 class="text-center mt-5">✅ End of Image Alignment Examples</h4>
+
+    </body>
+
+    </html>
+
+</body>
+
+</html>

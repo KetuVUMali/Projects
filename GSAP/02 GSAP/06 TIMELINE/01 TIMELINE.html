@@ -1,0 +1,43 @@
+Simple meaning:
+                Timeline = sequence of animations
+                Multiple animations played one after another
+                We can apply timeline on single element or multiple elements
+
+Just like:
+            First → animation A
+            Then → animation B
+            Then → animation C
+
+Without timeline ❌
+You cannot easily control order, overlap, pause, resume.
+
+With timeline ✅
+You control time itself ⏱️
+
+WHY TIMELINE IS IMPORTANT (REAL LIFE)
+
+            Timeline is used in:
+            Page load animations
+            Navbar open / close
+            Modal animations
+            Hero section animation
+            Storytelling websites
+            Scroll-based animations
+
+📌 BASIC RULE (VERY IMPORTANT)
+
+❌ This is NOT timeline:
+                        gsap.to(".box1", { x: 100 });
+                        gsap.to(".box2", { y: 100 });
+
+
+Because → both run at same time
+
+✅ Timeline:
+            const tl = gsap.timeline();
+            tl.to(".box1", { x: 100 })
+            .to(".box2", { y: 100 });
+            
+
+            Because → second starts after first ends
+            

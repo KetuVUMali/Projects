@@ -1,0 +1,25 @@
+.counter-box{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    /* color: #fff; */
+}
+
+.counter-body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
+}
+
+.counter-container{
+    background-color: beige;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 1.5rem;
+    border: 2px solid red;
+    border-radius: 4px;
+}

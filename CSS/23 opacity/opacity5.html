@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#p1 {
+  background-color: yellow;
+}
+</style>
+</head>
+<body>
+
+<h1>The opacity Property</h1>
+
+<p id="p1">Select a value from the list below, to change this element's opacity!</p>
+
+<select onchange="myFunction(this);" size="5">
+  <option>0
+  <option>0.2
+  <option>0.5
+  <option>0.8
+  <option selected="selected">1
+</select>
+
+<script>
+function myFunction(x) {
+  // Return the text of the selected option
+  var opacity = x.options[x.selectedIndex].text;
+  var el = document.getElementById("p1");
+  if (el.style.opacity !== undefined) {
+    el.style.opacity = opacity;
+  } else {
+    alert("Your browser doesn't support this example!");
+  }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+
+.ketu{
+	padding-top: 150px;
+	height: 300px;
+	width: 300px;
+	background-color: red;
+	color: white;
+	text-align: center;
+	font-size: 60px;
+	border-style: dashed;
+	border-width: 2px;
+	size: 90px;
+	border-color: black;
+	font-family:verdana;
+}

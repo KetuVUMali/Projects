@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .box {
+            width: 80px;
+            height: 80px;
+            background: red;
+            margin: 10px;
+            transition: transform 0.5s ease;
+        }
+
+        .wrapper:hover .one {
+            transform: translateX(150px);
+        }
+
+        .wrapper:hover .two {
+            transform: translateX(150px);
+            transition-delay: 0.3s;
+        }
+
+        .wrapper:hover .three {
+            transform: translateX(150px);
+            transition-delay: 0.6s;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="box one"></div>
+        <div class="box two"></div>
+        <div class="box three"></div>
+    </div>
+
+    <div style="margin-top:20px;">
+        Timeline Animation : transition-delay
+        <br>
+        By using transition-delay, we can create a timeline animation effect where each element starts its animation at different times.
+        <br>
+        👉 Sequence of animations
+        <br>
+        👉 One animation after another
+        <br><br><br>
+        In this example:
+        <ul>
+            <li>The first box moves immediately when hovering.</li>
+            <li>The second box starts moving after a 0.3s delay.</li>
+            <li>The third box starts moving after a 0.6s delay.</li>
+        </ul>
+        <br><br>
+        CSS does NOT have real timeline like GSAP
+        But we simulate using delays.
+
+</body>
+
+</html>

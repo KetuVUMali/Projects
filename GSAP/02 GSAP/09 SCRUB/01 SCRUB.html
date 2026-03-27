@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Scrub</title>
+<style>
+    body { height: 200vh; }
+    .box {
+      width: 100px;
+      height: 100px;
+      background: teal;
+      margin-top: 100vh;
+    }
+</style>
+</head>
+<body>
+ 
+<div class="box"></div>
+ 
+<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+ 
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+ 
+  gsap.to(".box", {
+    x: 300,
+    scrollTrigger: {
+      trigger: ".box",
+      start: "top center",
+      scrub: true
+    }
+  });
+</script>
+<div>
+  <pre>
+    SCRUB – SCROLL CONTROLS ANIMATION
+📌 Concept 
+        Scroll position = animation progress.
+        Animation is directly connected to scroll position
+
+🧠 In simple words:
+      You scroll down → animation moves forward
+      You scroll up → animation moves backwards
+      Animation does NOT play automatically
+      Scroll controls animation like a volume knob
+
+🎯 Think like:
+      “Scroll = Remote control for animation”
+  </pre>
+  <pre>
+    Explain : 
+    1. We create a simple GSAP animation that moves a box 300px to the right.
+    2. We use ScrollTrigger to link the animation to the scroll position of the page.
+    3. The scrub: true property makes the animation progress tied to the scroll position.
+    4. As you scroll down, the box moves to the right, and as you scroll up, it moves back to its original position.
+
+  </pre>
+
+  <pre>
+    ❌ Without Scrub
+      Animation plays automatically (time-based)
+
+    ✅ With Scrub
+      Animation plays based on scroll distance
+
+    🔑 Important Rule (Must Know)
+    ⚠️ scrub works ONLY with scrollTrigger
+
+  </pre>
+</div>
+ 
+</body>
+</html>

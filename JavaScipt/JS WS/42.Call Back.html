@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Back</title>
+</head>
+<body>
+
+    <pre>
+
+        Call Back Function
+        A callback is a function passed as an argument to another function.
+        This technique allows a function to call another function. 
+        A callback function can run after another function has finished.
+        Example
+                function greet(name) {
+                console.log('Hello ' + name);
+                }
+
+                function processUserInput(callback) {
+                var name = prompt('Please enter your name.');
+                callback(name);
+                }
+
+                processUserInput(greet);
+
+
+        
+    </pre>
+</body>
+        <script>
+                //
+                    function mul(first,second,callback){
+                       var third = first*second;
+                        callback(third);
+                    }
+
+
+                    function demo(mulResult){
+                        console.log(mulResult);
+                        console.log("Fun demo call");
+                    }
+
+                    function demo2(mulResult2){
+                        console.log(mulResult2);
+                        console.log("Fun Demo1 call");
+                    }
+
+                    mul(10,20, demo);   // fun mul & demo call 
+                    //mul(10,20, demo1);    //jo function send kiya, use call karega 
+        </script>
+</html>

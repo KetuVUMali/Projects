@@ -1,0 +1,221 @@
+Promise, Async, Await – Simple Notes
+
+1. Promise
+    When data comes from the API/backend/DB, it takes time to get the response.
+    This future response is handled by Promise.
+
+    A Promise works using these three states:
+        i.   Pending → Work in progress (data is being fetched)
+        ii.  Resolved → Work completed successfully (data received)
+        iii. Rejected → Work failed (data not received / server error)
+
+    Promise helps JavaScript handle future data without stopping the whole program.
+
+
+2. async
+    If we write async before a function:
+    That function automatically returns a Promise
+    It allows us to use await inside it
+    It means “This function will handle asynchronous work”
+
+
+3. await
+    await is used to pause only that async function, not the entire program.
+    It waits until the Promise is resolved (data comes).
+    After Promise is completed, the function continues from the next line.
+
+    await = wait for data without stopping the whole program.
+
+
+So:
+    👉 async = function becomes asynchronous (supports promise)
+    👉 await = wait for the promise result inside that function
+    
+
+Promise is used when we get data from the backend or database, which takes time. 
+It handles future results using 3 states: Pending (data loading), Resolved (data received successfully), and Rejected (error in getting data). 
+When we write async before a function, it automatically returns a Promise and supports asynchronous work. 
+Inside an async function, we use await to pause that function until the Promise returns the data, 
+and then the function continues normally.
+
+
+
+📘 Synchronous :
+                Code runs line by line, one after another.
+                Next line waits for the previous line to complete.
+                It does not handle time-taking tasks well (like API call, DB call).
+                If a sync task takes time → program will freeze.
+
+📗 Asynchronous:
+                Code can run independently, without waiting for other lines to finish first.
+                Next line does not wait for the previous line to complete.
+                It handles time-taking tasks well (like API call, DB call) without freezing the program and run in queue.
+                If an async task takes time → program continues running other code.
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+1. Promise : Why we use it?
+            When data comes from backend/API/DB → it takes time to come.
+            This “future result” is handled using Promise.
+
+            A Promise has 3 states:
+
+                Pending → Work in progress (Data is being fetched)
+                Resolved → Work completed successfully (Data received)
+                Rejected → Work failed (Error while getting data)
+            
+            Promise helps JavaScript not to stop the whole program while waiting for data.
+
+
+Why use async and await?
+1. async :
+
+        If you write async before a function →
+        That function automatically returns a Promise.
+
+        It means the function supports asynchronous work (future result work).
+
+
+2. await :
+
+        await is used to wait for the Promise result.
+        JavaScript pauses only that async function at await (not entire program).
+        After the Promise becomes Resolved/Rejected, the function continues.
+
+
+Simple Explanation
+
+                    Promise → "I will give the data later."
+                    async → "This function will do future work and return a Promise."
+                    await → "Wait here until the Promise gives the result."
+
+
+Why do we actually use async–await?
+                ✔ To write asynchronous code in simple, clean, readable way
+                ✔ To avoid .then() and .catch() chaining
+                ✔ To handle API/DB operations smoothly
+                ✔ Makes code look like normal synchronous code but runs in asynchronous way
+
+Asynchronous vs Synchronous
+Synchronous
+        Line-by-line execution
+        Next line waits for previous line to complete
+        If one task takes time → whole program stops
+        Example: Normal functions, simple calculations
+
+Asynchronous
+        Non-blocking
+        Program continues other work
+        API calls, DB calls, Timers, Promises
+        Result comes later
+        Example: setTimeout, API calling functions, Promise functions
+
+
+
+
+
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+1) Synchronous (normal) (line by line execution)
+
+    console.log("A");
+    console.log("B");
+    console.log("C");
+
+    Output
+            A
+            B
+            C
+
+    Why (step-by-step) Explanation
+                console.log("A") runs → prints A.
+                Next line runs → prints B.
+                Next line runs → prints C.
+                Everything runs one after another (blocking).
+
+
+
+2) Asynchronous (using setTimeout) (direct run all lines without waiting for privious line)
+
+        console.log("A");
+
+        setTimeout(() => {
+        console.log("B");
+        }, 1000);
+
+        console.log("C");
+
+    Output
+            A
+            C
+            B
+
+    Why (step-by-step)
+                Print A.
+                setTimeout schedules B to run after 1s (does not wait).
+                Immediately print C.
+                After 1s, scheduled callback runs → prints B.
+                So async work runs later, main code continues.
+
+
+
+3) Promise with .then()
+    let p = new Promise((resolve) => {
+            setTimeout(() => resolve("B"), 1000);
+    });
+
+    console.log("A");
+    p.then(res => console.log(res));
+    console.log("C");
+
+    Output
+            A
+            C
+            B
+
+    Why (step-by-step)
+            Promise p starts (will resolve after 1s).
+            Print A.
+            Attach .then() — callback will run when promise resolves.
+            Print C.
+            After 1s, promise resolves → .then() prints B.
+
+
+
+4) Async–Await
+        function wait() {
+                        return new Promise(res => setTimeout(() => res("B"), 1000));
+        }
+
+        async function run() {
+                                console.log("A");
+                                let result = await wait();      // pauses only this function
+                                console.log(result);
+                                console.log("C");
+        }
+
+        run();
+
+    Output
+            A
+            B
+            C
+
+    Why (step-by-step) :
+            Call run() → prints A.
+            await wait() pauses only run() until promise resolves (1s).
+            After 1s, promise gives "B" → prints B.
+            Then prints C.
+            await makes the async function look synchronous without blocking whole program.
+

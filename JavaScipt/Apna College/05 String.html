@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    String :
+        String = text / characters.
+        A string is a sequence of characters enclosed in single quotes (' '), double quotes (" "), or backticks (` `). 
+        Strings are used to represent text and can contain letters, numbers, symbols, and whitespace.
+
+        Syntax:
+            let variableName = "value";
+
+        Example:
+            let name = "John";                          // double quotes
+            let message = 'Hello, World!';              // single quotes
+            let greeting = `Welcome to JavaScript!`;    // backticks (template literals)
+
+
+            Template Literals :
+                A way to embedded expression in string.
+                Template literals are a way to create strings that can contain embedded expressions. 
+                They are enclosed in backticks (` `) and allow for multi-line strings and string interpolation.
+                means we can include variables and expressions inside a string without needing to concatenate them.
+                expressions : A combination of variables, operators, and values that can be evaluated to produce a result.
+                             example : 2 + 3, name.toUpperCase(), etc.
+
+                Syntax:
+                    let variableName = `string with ${expression}`;
+
+                Example:
+                 1. String Interpolation:s
+                    let name = "Alice";
+                    let age = 30;
+                    let message = `My name is ${name} and I am ${age} years old.`;
+                    console.log(message);       // Output: My name is Alice and I am 30 years old.
+
+                2. Numeric Expressions in Template Literals:
+                    let a = 5;
+                    let b = 10;
+                    let result = `The sum of ${a} and ${b} is ${a + b}.`;
+                    console.log(result);        // Output: The sum of 5 and 10 is 15.
+
+                    console.log("The value of 2 + 3 is", 2 + 3);   // Output: The value of 2 + 3 is 5.
+                    console.log(`The value of 2 + 3 is ${2 + 3}.`);   // Output: The value of 2 + 3 is 5.
+
+                3. String Length in Template Literals:
+                    let str = "Hello";
+                    let message = `The length of the string "${str}" is ${str.length}.`;
+                    console.log(message);        // Output: The length of the string "Hello" is 5.
+
+                4. Using Methods in Template Literals:
+                    let name = "Bob";
+                    let greeting = `Hello, ${name.toUpperCase()}!`;
+                    console.log(greeting);      // Output: Hello, BOB!
+
+                5. Objects in Template Literals:
+                    let object = { name: "Charlie", age: 25 };
+                    let message = `The person's name is ${object.name} and they are ${object.age} years old.`;
+                    console.log(message);      // Output: The person's name is Charlie and they are 25 years old.
+
+
+        <script>
+            // 1. String Concatenation
+                let firstName = "John";
+                let middleName = 'Doe';
+                let lastName = `Smith`;
+                console.log(firstName + " " + middleName + " " + lastName);  // John Doe Smith
+
+            // 2. String Length
+                let str = "Hello, World!";
+                console.log(str.length);        // Output: 13
+
+            // 3. Indexing
+                let str1 = "JavaScript";
+                console.log(str1[0]);               // Output: J
+                console.log(str1[4]);               // Output: S
+                console.log(str1[str1.length - 1]); // Output: t
+
+            // 4. String Next Line : \n     (Next line is 2 lines and length is 1)
+                let str2 = "Hello \n World!";
+                console.log(str2);        // Output: Hello
+                                          //          World!
+
+            // 5. String tab space In Line : \t  (tab space is 4 spaces and length is 1)
+                let str3 = "Hello \t World!";
+                console.log(str3);        // Output: Hello    World!
+
+            // 6. String Methods
+                let str4 = "Hello, World!";
+                console.log(str4);                      // Output: Hello, World!
+                console.log(str4.toUpperCase());        // Output: HELLO, WORLD!
+                console.log(str4.toLowerCase());        // Output: hello, world!
+                console.log(str4);                      // Output: Hello, World!
+                // toUpperCase() and toLowerCase() are not change the original string but return a new string with the desired case.
+
+
+                console.log(str4.includes("World"));    // Output: true    : checks if the string contains the specified substring and returns true or false.
+                // includes() method is case-sensitive, so it will return false if the case does not match.
+
+                console.log(str4.startsWith("Hello"));  // Output: true    : checks if the string starts with the specified substring and returns true or false.
+                // startsWith() method is case-sensitive, so it will return false if the case does not match.
+
+                console.log(str4.endsWith("!"));        // Output: true    : checks if the string ends with the specified substring and returns true or false.
+                // endsWith() method is case-sensitive, so it will return false if the case does not match.
+
+            // 7. String Slicing : slice(startIndex, endIndex)   (endIndex is exclusive)
+                let str5 = "JavaScript";
+                console.log(str5.slice(0, 4));          // Output: Java    : extracts a portion of the string from index 0 to index 4 (exclusive).
+                console.log(str5.slice(4));             // Output: Script  : extracts a portion of the string from index 4 to the end of the string.
+                console.log(str5.slice(-6));            // Output: Script  : extracts a portion of the string from index -6 to the end of the string.
+                // slice() method does not modify the original string but returns a new string containing the extracted portion.
+
+            // 8. String Split : split(separator)   (separator is a string or regular expression that specifies where to split the string)
+                let str6 = "Hello, World!";
+                console.log(str6.split(", "));          // Output: [ 'Hello', 'World!' ]    : splits the string into an array of substrings based on the specified separator.
+                // split() method does not modify the original string but returns a new array containing the split substrings.
+
+            // 9. String Trim : trim()   (removes whitespace from both start & ends of the string)
+                let str7 = "   Hello, World!   ";
+                console.log(str7.trim());               // Output: Hello, World!    : removes whitespace from both ends of the string.
+                // trim() method does not modify the original string but returns a new string with the whitespace removed.
+
+            // 10. String Replace : replace(searchValue, newValue)   (searchValue is a string or regular expression that specifies the value to be replaced, newValue is the string that replaces the searchValue)
+                let str8 = "Hello, World!";
+                console.log(str8.replace("World", "JavaScript"));    // Output: Hello, JavaScript!    : replaces the first occurrence of the searchValue with the newValue in the string.
+                // replace() method does not modify the original string but returns a new string with the replacement made. If the searchValue is not found in the string, the original string is returned unchanged.
+
+            // 11. String Repeat : repeat(count)   (count is the number of times to repeat the string)
+                let str9 = "Hello! ";
+                console.log(str9.repeat(3));             // Output: Hello! Hello! Hello!    : repeats the string a specified number of times.
+                // repeat() method does not modify the original string but returns a new string containing the repeated text.
+
+            // 12. String CharAt : charAt(index)   (index is the position of the character to retrieve)
+                let str10 = "JavaScript";
+                console.log(str10.charAt(0));           // Output: J    : returns the character at the specified index in the string.
+                // charAt() method does not modify the original string but returns a new string containing the character at the specified index. If the index is out of range, it returns an empty string.
+
+            // 13. String IndexOf : indexOf(searchValue)   (searchValue is the string to search for)
+                let str11 = "Hello, World!";
+                console.log(str11.indexOf("World"));    // Output: 7    : returns the index of the first occurrence of the specified searchValue in the string, or -1 if it is not found.
+                // indexOf() method is case-sensitive, so it will return -1 if the case does not match. If the searchValue is an empty string, it returns 0.
+
+            // 14. String Mutable or Immutable : Means whether the string can be changed after it is created. In JavaScript, strings are immutable, which means that once a string is created, it cannot be changed. Any operation that seems to modify a string actually creates a new string.
+                let str12 = "Hello";
+                str12[0] = "h";                       // This will not change the original string because strings are immutable in JavaScript.
+                console.log(str12);                    // Output: Hello
+                // To change a string, you need to create a new string with the desired changes.
+
+                let newStr = "h" + str12.slice(1);    // This creates a new string by concatenating "h" with the slice of str12 starting from index 1.
+                console.log(newStr);                   // Output: hello
+                // This new string is mutable and can be modified as desired.
+
+                // String Immutability Example : original string never change. 
+                    let originalString = "Hello, World!";
+                    let modifiedString = originalString.replace("World", "JavaScript");
+                    console.log(originalString);           // Output: Hello, World!    : the original string remains unchanged.
+                    console.log(modifiedString);           // Output: Hello, JavaScript!    : a new string is created with the replacement made.
+
+            // 15. String Comparison : In JavaScript, strings are compared based on their Unicode values. When comparing two strings, JavaScript compares the Unicode values of each character in the strings from left to right until it finds a difference. The comparison is case-sensitive, meaning that uppercase and lowercase letters are considered different.
+
+                let str13 = "Hello";
+                let str14 = "hello";
+                console.log(str13 === str14);          // Output: false   : compares the two strings for strict equality (case-sensitive).
+                console.log(str13.toLowerCase() === str14.toLowerCase());    // Output: true    : compares the two strings for equality after converting both to lowercase (case-insensitive).
+
+            // 16. String Conversion : In JavaScript, strings are converted to other data types using the following methods:
+                let str15 = "123";
+                console.log(parseInt(str15));           // Output: 123    : converts the string to a number using parseInt().
+
+                let str16 = "3.14";
+                console.log(parseFloat(str16));         // Output: 3.14   : converts the string to a floating-point number using parseFloat().
+
+                let num = 42;
+                console.log(num.toString());            // Output: "42"   : converts the number to a string using the toString() method.
+                console.log(String(num));               // Output: "42"   : converts the number to a string using the String() function.
+                console.log(num + "");                 // Output: "42"   : converts the number to a string by concatenating it with an empty string.        
+
+            // 17. String Concatenation : In JavaScript, strings can be concatenated using the + operator, or the concat() method.
+                let str17 = "Hello";
+                let str18 = "World";
+                console.log(str17 + " " + str18);       // Output: Hello World    : concatenates the two strings using the + operator.
+                console.log(str17.concat(" ", str18));  // Output: Hello World    : concatenates the two strings using the concat() method.
+
+            // 18. String update : (Strings are immutable, so we cannot change the original string, but we can create a new string with the desired changes.)
+                let str19 = "Hello, World!";
+                str19[0] = "h";                       // This will not change the original string because strings are immutable in JavaScript.
+                console.log(str19);                    // Output: Hello, World!
+
+                let newStr1 = "h" + str19.slice(1);   // This creates a new string by concatenating "h" with the slice of str19 starting from index 1.
+                console.log(newStr1);                  // Output: hello, World!
+
+                let newStr2 = newStr1.replace("World", "JavaScript");    // This creates a new string by replacing "World" with "JavaScript" in newStr1.
+                console.log(newStr2);                  // Output: hello, JavaScript!
+
+                let newStr3 = "Demo"
+                newStr3 = newStr3 + " String";         // This creates a new string by concatenating "Demo" with " String" and assigns it back to newStr3.
+                console.log(newStr3);                  // Output: Demo String
+                // This senario is change original string, because we are assigning the new string back to the same variable.
+        </script>
+
+
+
+<script>
+    //1. Create USER Name
+        let name = prompt("Enter your first name:");
+        name = name.trim();   // Remove leading and trailing whitespace from the input
+        let username = "@" + "name" +name.length;
+        console.log("Your username is:", username);
+
+    // 2. Create Password
+        let password = prompt("Enter your password:");
+        password = password.trim();   // Remove leading and trailing whitespace from the input
+        let newPassword = password.slice(0, 3) + password.length + password.slice(-3);
+        console.log("Your new password is:", newPassword);
+
+    // 3. Create Email
+        let email = prompt("Enter your email:");
+        email = email.trim();   // Remove leading and trailing whitespace from the input
+        let newEmail = email.replace("@", " at ");
+        console.log("Your new email is:", newEmail);
+
+
+    
+
+</script>
+        
+</body>
+</html>

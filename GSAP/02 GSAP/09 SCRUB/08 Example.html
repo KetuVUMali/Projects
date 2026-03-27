@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>GSAP Advanced Scrub Story</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Spacer before and after */
+.spacer {
+  height: 100vh;
+  background: #f5f5f5;
+}
+
+/* Pinned section */
+.story-section {
+  height: 100vh;
+  background: #111;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Content wrapper */
+.story-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/* Headline */
+.story-title {
+  font-size: 48px;
+  margin-bottom: 20px;
+  opacity: 0;
+}
+
+/* Image */
+.story-image {
+  width: 300px;
+  height: 200px;
+  background: url("https://picsum.photos/600/400") center / cover;
+  margin: 0 auto;
+  opacity: 0;
+  transform: scale(0.8);
+}
+</style>
+</head>
+
+<body>
+
+<div class="spacer"></div>
+
+<section class="story-section">
+  <div class="story-content">
+    <div class="story-title">Scroll to Discover</div>
+    <div class="story-image"></div>
+  </div>
+</section>
+
+<div class="spacer"></div>
+
+<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+const tl = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".story-section",
+    start: "top top",
+    end: "+=150%",
+    scrub: 1,
+    pin: true
+  }
+});
+
+/* Step 1: Show title */
+tl.to(".story-title", {
+  opacity: 1,
+  y: -20,
+  duration: 1
+})
+
+/* Step 2: Show image */
+.to(".story-image", {
+  opacity: 1,
+  scale: 1,
+  duration: 1
+})
+
+/* Step 3: Move everything up slightly */
+.to(".story-content", {
+  y: -60,
+  duration: 1
+});
+</script>
+
+</body>
+</html>

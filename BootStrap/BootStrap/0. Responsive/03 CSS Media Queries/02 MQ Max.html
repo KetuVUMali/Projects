@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>max-width</title>
+    <style>
+        .box{
+            height: 220px;
+            width: 220px;
+            background-color: aqua;
+        }
+
+        @media (max-width:500px) {
+            .box{
+                background-color:blueviolet;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <h2>Max Width  ( - )</h2>
+        <h3>max-Width:500   ( 0 To 500 )</h3>
+        <h4>blueviolet</h4>
+        <h4>Mobile-first approach (Apply styles for small screens first).</h4>
+    </div>
+    
+</body>
+</html>

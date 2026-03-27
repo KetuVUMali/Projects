@@ -1,0 +1,77 @@
+<br>
+<h1>------------------------ Event Binding ----------------------------</h1>
+<br>
+<p>event-binding works!</p>
+
+<button type="button" (click)="buttonClick($event)">Click mi1</button>
+<br>
+
+<h1 style="color: red;">3. Event Binding</h1>
+<button style="color: red;" (click)="buttonCLicked1($event)">Click2</button>
+<p>This is a paragraph</p>
+
+<!-- <p (mouseover)="mouseOverHandler($event)" [style.color]="ifMouseHover ? 'green' : 'red'">This is a paragraph</p>
+<p (mouseover)="mouseOverHandler($event)" (mouseout)="mouseOutHandler($event)" [style.color]="ifMouseHover ? 'green' : 'red'">This is a paragraph</p> -->
+
+<p (mouseover)="mouseOverHandler($event)"
+(mouseout)="mouseOutHandler($event)"
+[style.color]="ifMouseOver ? 'red': 'green'">This is Paragraph</p>
+
+
+
+<br>
+
+
+
+
+<button (click)="onClickWithParam('Hello!')">Click Me</button>
+
+<br>
+<br>
+<input (keyup.enter)="onEnterPress()" placeholder="Press Enter">
+
+<br>
+
+<button (click)="onClick()" (mouseover)="onMouseOver()">Hover or Click Me</button>
+
+
+<br><br>  click through fun call
+<br>
+<button (click)="getName()">Fun Call</button>
+<button (click)="getName2('name',24)">Fun Call2</button>
+
+<!--  -->
+<br><br>
+<b>Value reflect (get Value) Input Event</b>
+<input (input)="onInputChange($event)" placeholder="Enter your name">
+<p>You entered: {{ userName }}</p>
+<br>
+<label>Key Up Event</label>
+<input type="text" #data (keyup)="getData(data.value)" placeholder="Enter Your Name">
+<br>
+<br>
+<label>Blur Event</label>
+<input type="text" #data (blur)="getData(data.value)" placeholder="Enter Your Name">
+<br>
+<br>
+<label>Hover Event Call Fun</label>
+<h6 (mouseover)="getData3('data')">Mouse Over</h6>
+
+
+<br><br>
+<br><br><div (mousemove)="onMouseMove($event)" style="height: 100vh; border: 1px solid black;">
+  <h1>Move your mouse inside this area!</h1>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<br>
+<h1>--------------------------------------------------------------------------------------------</h1>

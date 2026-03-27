@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> modify css usin JS on Event </title>
+
+	<style type="text/css">
+		#main
+		{
+			color: red;
+			font-size: 30px;
+			text-align: center;
+			margin-top: 50px;
+			transition: 2s;
+			
+			cursor: pointer; /*when mouse in that time cursor effect change */
+		}
+
+		#main1
+		{
+			color: red;
+			font-size: 30px;
+			text-align: center;
+			margin-top: 50px;
+			transition: 2s;
+			
+			cursor: pointer; /*when mouse in that time cursor effect change */
+		}
+	</style>
+</head>
+<body>
+	<h1>Modify css usin JS on Event</h1>
+
+	<pre>
+		- when css proprties write in JS it written in *Camel Case*
+	</pre>
+
+	<div id="main" onmouseenter="modify()" onmouseleave="unmodify()">Hello Ketu</div>
+
+	<script type="text/javascript">
+		// function modify()
+		// 	{
+		// 		alert();
+		// 	}
+
+		//when mouse come
+		function modify()
+			{
+				document.getElementById('main').style.fontSize = "100px";
+				document.getElementById('main').style.color = "orange";
+				document.getElementById('main').style.fontFamily = "verdana";
+			}
+
+		// when mouse out
+		function unmodify()
+			{
+				document.getElementById('main').style.fontSize = "30px";
+				document.getElementById('main').style.color = "red";
+				document.getElementById('main').style.fontFamily = "none";
+
+			}
+
+
+			// when mouse is come on " Hello Ketu " that time their effect change!
+	</script>
+
+
+     <pre>
+     	onclick Event
+     </pre> 
+     <div id="main1" onclick="modify1()" onmouseleave="unmodify1()">Hello Ketu</div>
+</body>
+
+	
+
+
+	<script type="text/javascript">
+		function modify1()
+			{
+				document.getElementById('main1').style.fontSize = "100px";
+				document.getElementById('main1').style.color = "orange";
+				document.getElementById('main1').style.fontFamily = "verdana";
+			}
+
+		// when mouse out
+		function unmodify1()
+			{
+				document.getElementById('main1').style.fontSize = "30px";
+				document.getElementById('main1').style.color = "red";
+				document.getElementById('main1').style.fontFamily = "none";
+
+			}
+	</script>
+</html>

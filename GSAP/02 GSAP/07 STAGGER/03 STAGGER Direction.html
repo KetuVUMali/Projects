@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .card {
+        width: 100px;
+        height: 100px;
+        background: steelblue;
+        margin: 10px;
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+    <script>
+      gsap.from(".card", {
+        scale: 0,
+        duration: 0.5,
+        stagger: {
+          each: 0.2,            // time between each animation
+          from: "end",          // directions : "start", "center", "end", random
+        },
+      });
+    </script>
+    <div>
+      <h2>GSAP Stagger Direction Example</h2>
+      <p>
+        This example demonstrates a GSAP stagger animation where multiple cards animate from the end towards the start with a delay.
+      </p>
+      <ul>
+        <li>Each card starts 0.2 seconds after the previous one, beginning from the last card to the first.</li>
+        <li>Cards scale up from 0 to their original size over 0.5 seconds.</li>
+      </ul>
+      <p>This showcases how to create staggered animations with direction control using GSAP.</p>
+    </div>
+    <div>
+      <pre>
+                🧠 Explanation (Step-by-step)
+                    Select all .card elements
+                    Animate from scale:0
+                    Stagger each animation by 0.2s
+                    Each animation lasts 0.5s
+                    Start animations from the end towards the start
+      </pre>
+    </div>
+    <p> Stagger Direction : start, center, end, random </p>
+    <ul>
+        <li>start : Start animations from the start towards the end.</li>
+        <li>center : Start animations from the center towards the end.</li>
+        <li>end : Start animations from the end towards the start.</li>
+        <li>random : Start animations in a random order</li>
+    </ul>
+  </body>
+</html>

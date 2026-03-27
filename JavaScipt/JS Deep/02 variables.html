@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Variable</title>
+</head>
+<body>
+	<h1> Variable</h1>
+
+	<script type="text/javascript">
+	// 1.var keyword through create variable.
+	// one variabl we use mutiple time assingns to value.
+	// var function scope
+		var age=25;											// 25
+		if(true)
+		{
+			var age=30;     //reassigns age to var 
+			console.log("Var inside block -Age:",age);		// 30
+		}
+		console.log("Var outside block -Age:",age);			// 30
+
+	// 2.let keyword through create variable.
+	// only one time use to assigns to value.
+	//block scope
+		let name="ketu";									// ketu
+		if (true)
+		{
+			let name="mali";  //only inside block scope.
+			console.log("let inside block -name:",name);	// mali
+		}
+		console.log("let outside block -name:",name);		// ketu
+
+	// 3. constant keyword through create variable
+	// only one time to assign value 
+	 
+		const pi=3.14;										// 3.14
+		if(true)
+		{
+			const pi=3.14159; //only inside block  scope.
+			console.log("const inside block -pi:",pi);		// 3.14159
+		}
+		console.log("let inside block -pi:",pi);			// 3.14
+	</script>
+
+				
+			<pre>
+			Var Name : 
+						fullName  -> Camel Case   :  We Used mostly this
+						full_name -> Snake Case
+						full-name -> kaba Case     : Not allow
+						FullName  -> Pascal Case
+			</pre>
+
+
+		<pre>
+			Var :  Var can be re-declared & up dated. A global scope var. 
+					var name = 'demo';  .
+					var name = "one";   .
+
+			let : Var cannot be re-declared but can be updated. A block{fun} scope var.
+					let age = 20;
+					let age = 22;  xxxx
+					age = 22;      .
+					age = 50;      .
+
+			const : var cannot be re-declared or updated. A block {fun} scope var.
+					const no = 20; 
+					const no = 25;  xxxx
+					no = 23;        xxxx
+		</pre>
+
+		let a; var b;     -> console    ->  undefine (means var declare only)
+
+		const c;  ->  cant not be undefine. if value not assign then error occured.
+
+
+</body>
+</html>

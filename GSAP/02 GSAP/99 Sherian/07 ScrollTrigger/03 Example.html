@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html, body{
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        #page1{
+            height: 100%;
+            width: 100%;
+            background-color: rgb(145, 227, 230);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #page2{
+            height: 100%;
+            width: 100%;
+            background-color: rgb(66, 189, 189);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #page3{
+            height: 100%;
+            width: 100%;
+            background-color: rgb(51, 201, 188);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .box{
+            width: 300px;
+            height: 300px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="page1">
+        <div class="box"></div>
+    </div>
+    <div id="page2">
+        <div class="box"></div>
+    </div>
+    <div id="page3">
+        <div class="box"></div>
+    </div>
+
+
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <!-- ScrollTrigger CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        
+    <script>
+        gsap.from("#page1 .box", {
+            scale:0,
+            duration: 2,
+            delay: 1,
+            rotate:360
+        });
+
+        // Simple ScrollTrigger Animation
+            // Animation starts when the box's top edge reaches the top of the viewport.
+        gsap.from("#page2 .box", {
+            scale:0,
+            duration: 2,
+            delay: 1,
+            rotate:360,
+            scrollTrigger:"#page2 .box"                // Trigger Element
+        });
+
+        // Proper ScrollTrigger Animation
+            // Animation starts when the box's top edge reaches 60% of the viewport height.
+        gsap.from("#page3 .box", {
+            scale:0,
+            duration: 2,
+            delay: 1,
+            rotate:360,
+            scrollTrigger:{
+                trigger: "#page3 .box",                // Trigger Element
+                scroller: "body",                      // Scroller Element  
+                start: "top 60%",                      // Animation starts when top of element is 60% down viewport.
+                markers: true                          // Show markers on animation start/end.
+            }
+        });
+    </script>
+
+    <pre>
+
+    </pre>
+    
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Services Price List in Pune</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .container-box17 {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        .h2-17 {
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+        }
+        .see-more-btn17 {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+            display: block;
+            width: 150px;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="container-box17">
+            <h2 class="h2-17">Car Services Price List in Pune, India 2025</h2>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Services Type</th>
+                        <th>Price Starts From (₹)</th>
+                        <th>Savings</th>
+                    </tr>
+                </thead>
+                <tbody id="serviceTable">
+                    <tr><td>Car Inspection/Diagnostics</td><td>499</td><td>15%</td></tr>
+                    <tr><td>Inspection</td><td>499</td><td>25%</td></tr>
+                    <tr><td>Door Glass Replacement</td><td>850</td><td>30%</td></tr>
+                    <tr><td>Wind Shield Replacement (Insurance)</td><td>1000</td><td>25%</td></tr>
+                    <tr><td>Accessories</td><td>1099</td><td>30%</td></tr>
+                    <tr><td>Regular AC Service</td><td>1299</td><td>15%</td></tr>
+                    <tr><td>Front Head Lights</td><td>1399</td><td>30%</td></tr>
+                    <tr><td>Tyres & Wheel Care</td><td>1690</td><td>25%</td></tr>
+                    <tr><td>Basic Service</td><td>2099</td><td>10%</td></tr>
+                    <tr class="extra-row"><td>Batteries</td><td>2999</td><td>15%</td></tr>
+                    <tr class="extra-row"><td>Ceramic Coating</td><td>14999</td><td>25%</td></tr>
+                    <tr class="extra-row"><td>Full Body Dent Paint</td><td>23000</td><td>15%</td></tr>
+                </tbody>
+            </table>
+            <button class="see-more-btn17" onclick="toggleRows()">SEE MORE</button>
+        </div>
+    </div>
+
+    <script>
+        let expanded = false;
+        function toggleRows() {
+            let extraRows = document.querySelectorAll(".extra-row");
+            extraRows.forEach(row => {
+                row.style.display = expanded ? "none" : "table-row";
+            });
+            document.querySelector(".see-more-btn17").textContent = expanded ? "SEE MORE" : "SEE LESS";
+            expanded = !expanded;
+        }
+        window.onload = () => toggleRows();
+    </script>
+</body>
+</html>

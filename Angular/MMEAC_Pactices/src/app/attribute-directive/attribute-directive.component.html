@@ -1,0 +1,189 @@
+<p>attribute-directive works!</p>
+<h2>------------------ i. NgModel ----------------------- (Form)</h2>
+      <h3  style="color:red;">One Way Data Binding:</h3>
+      <div>
+          <label>Name :  </label>
+          <input type="text" name="username" id="username" [ngModel]="student.username">
+      </div>
+      <div>
+        {{student.username  | json}}
+      </div>    <!-- Data prerent in obj form then we use JSON Pipe to show data -->
+
+              <h3  style="color:red;">Two Way Data Binding:</h3>
+                  <div>
+                      <label>Name :  </label>
+                      <input type="text" name="username1" id="username1" [(ngModel)]="student.username1">
+                  </div>
+                  <div>
+                    {{student.username1 | json}}
+                  </div>
+
+                  <div>
+                    <label>DOB : </label>
+                    <input type="date" name="dob" id="dob" [(ngModel)]="student.dob">
+                  </div>
+                  <div>
+                    {{student.dob | json}}
+                  </div>
+
+                  <div>
+                    <label>Email : </label>
+                    <input type="email" name="email" id="email" [(ngModel)]="student.email">
+                  </div>
+                  <div>
+                    {{student.email | json}}
+                  </div>
+
+                  <div>
+                    <label>Mobile : </label>
+                    <input type="input" name="mob" id="mob" [(ngModel)]="student.mob">
+                  </div>
+                  <div>
+                    {{student.mob | json}}
+                  </div>
+
+
+                  <!-- ngModel with string Element -->
+                  Name : <input [(ngModel)]="name">
+                  <p>Hello, {{ name }}!</p>
+
+                  <!-- ngModel with number Element -->
+                  <input type="number" [(ngModel)]="userAge" />
+                  <p>Your age is: {{ userAge }}</p>
+
+                  <!-- ngModel with Dropdown (Select) Element -->
+                  <select [(ngModel)]="selectedColor">
+                    <option value="red">Red</option>
+                    <option value="blue">Blue</option>
+                    <option value="green">Green</option>
+                  </select>
+                  {{selectedColor}}
+
+                  <br>
+                  <!-- Using ngModel with Radio Buttons -->
+                  <label>
+                    <input type="radio" [(ngModel)]="selectedOption" value="option1" />
+                    Option 1
+                  </label>
+                  <label>
+                    <input type="radio" [(ngModel)]="selectedOption" value="option2" />
+                    Option 2
+                  </label>
+                  <label>
+                    <input type="radio" [(ngModel)]="selectedOption" value="option3" />
+                    Option 3
+                  </label>
+                  {{selectedOption}}
+
+
+
+                  <br>
+                  <!-- Bind textarea with ngModel -->
+                  <textarea [(ngModel)]="userBio" placeholder="Enter your bio here"></textarea>
+                  {{userBio}}
+                  <br>
+<h3> two way data binding without using [(ngModule)] </h3>
+<input [value]="userInput" #box (input)="updateValue(box.value)" placeholder="Enter some text">
+<p>Your input is: {{userInput}}</p>
+
+
+  <h2>--------------------ngClass-----------------------------------</h2>
+                  <!-- codition throught class apply -->
+                  <div [ngClass]="bgColor==1? 'background-red' : 'background-blue'">
+                      Ng Class Directive (Condition)
+                  </div>
+
+                        <br>
+
+                  <!-- object pass throught class apply -->
+                  <div [ngClass]="{
+                                    'background-red' : bgColor==1 ,
+                                    'background-blue' : bgColor !==1
+                                  }" >
+                      Ng Class Directive  (Obj)
+                  </div>
+                  <!-- Studen attendances cell apply different color to see attendances -->
+
+
+
+                  <button [ngClass]="{'active': isActive}">Click Me</button>
+
+
+
+                  <!-- Apply multiple classes based on conditions -->
+                  <p [ngClass]="{'error': isError, 'success': isSuccess}">This is a message</p>
+
+
+                  <!-- Apply classes from an array -->
+                  <button [ngClass]="[activeClass, disabledClass]">Click Me</button>
+
+
+
+                  <!-- Loop through items and apply class based on active status -->
+                  <ul>
+                    <li *ngFor="let item of items" [ngClass]="{'active-item': item.active, 'inactive-item': !item.active}">
+                      {{ item.name }}
+                    </li>
+                  </ul>
+
+
+<h3>---------------------*ngStyle------------------------------------------------</h3>
+
+<div [ngStyle]="{ 'color': isActive ? 'yellow' : 'pink' }">
+  This text has red color and 24px font size.
+</div>
+
+
+<div [ngStyle]="{ 'color': 'red', 'font-size': '24px' }">
+  This text has red color and 24px font size.
+</div>
+
+
+<div [ngStyle]="getStyles()">
+  This div changes color based on isActive!
+</div>
+<button (click)="isActive4 = !isActive4">Toggle Active</button>
+
+
+
+<div [ngStyle]="{color: color, 'font-size': fontSize, margin: margin}">
+  This text has dynamic styles!
+</div>
+
+
+
+<div [ngStyle]="styles">
+  This text is styled from an object!
+</div>
+
+
+
+
+<table  border="2px" style="border-color: aquamarine;" >
+  <thead >
+      <tr>
+          <th>Sr.No.</th>
+          <th>Name</th>
+          <th>Gender</th>
+          <th>DOB</th>
+          <th>First</th>
+          <th>Last</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let singleStudent of studentList;let srNo = index;let f = first;let l = last"
+      [ngStyle]="{
+          color:  singleStudent.percentage<60 ? 'red': 'green'
+      }">
+          <td>{{srNo +1}}</td>
+          <td>{{singleStudent.name}}</td>
+          <td>{{singleStudent.gender}}</td>
+          <td>{{singleStudent.dob}}</td>
+          <td>{{f}}</td>
+          <td>{{l}}</td>
+      </tr>
+  </tbody>
+  <tfoot></tfoot>
+</table>
+
+  <h3>----------------------------------------------------------------------------------</h3>

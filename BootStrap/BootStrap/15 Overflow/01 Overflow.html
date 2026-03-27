@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Overflow – Clear Visual Example</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light p-4">
+
+<h2 class="text-center mb-4">Bootstrap Overflow – VISUAL Understanding</h2>
+
+<p class="text-center text-muted">
+Each box has SAME height. Content is MORE than height.
+See how overflow behaves.
+</p>
+
+<div class="container">
+
+  <div class="row g-4">
+
+    <!-- ========================= -->
+    <!-- OVERFLOW VISIBLE -->
+    <!-- ========================= -->
+    <div class="col-md-6 col-lg-3">
+      <h6 class="text-center">overflow-visible (default)</h6>
+
+      <div class="border bg-warning p-2" style="height:120px;">
+        <strong>Container</strong>
+        <p>
+          This text goes outside the box.
+          You can see content overflowing.
+          Nothing is hidden.
+          <br />
+          <p>  </p>
+        </p>
+      </div>
+    </div>
+
+    <!-- ========================= -->
+    <!-- OVERFLOW HIDDEN -->
+    <!-- ========================= -->
+    <div class="col-md-6 col-lg-3">
+      <h6 class="text-center">overflow-hidden</h6>
+
+      <div class="border bg-danger text-white p-2 overflow-hidden" style="height:120px;">
+        <strong>Container</strong>
+        <p>
+          This text is CUT.
+          Extra content is hidden.
+          You cannot scroll.
+        </p>
+      </div>
+    </div>
+
+    <!-- ========================= -->
+    <!-- OVERFLOW AUTO -->
+    <!-- ========================= -->
+    <div class="col-md-6 col-lg-3">
+      <h6 class="text-center">overflow-auto</h6>
+
+      <div class="border bg-success text-white p-2 overflow-auto" style="height:120px;">
+        <strong>Container</strong>
+        <p>
+          This text creates scroll only
+          when needed.
+          Scrollbar appears automatically.
+        </p>
+      </div>
+    </div>
+
+    <!-- ========================= -->
+    <!-- OVERFLOW SCROLL -->
+    <!-- ========================= -->
+    <div class="col-md-6 col-lg-3">
+      <h6 class="text-center">overflow-scroll</h6>
+
+      <div class="border bg-primary text-white p-2 overflow-scroll" style="height:120px;">
+        <strong>Container</strong>
+        <p>
+          Scrollbar is ALWAYS visible
+          even if content fits.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ================================= -->
+  <!-- VERTICAL VS HORIZONTAL OVERFLOW -->
+  <!-- ================================= -->
+
+  <hr class="my-5">
+
+  <h4 class="text-center mb-3">Axis-Specific Overflow</h4>
+
+  <div class="row g-4">
+
+    <!-- VERTICAL SCROLL -->
+    <div class="col-md-6">
+      <h6>overflow-y-auto (Vertical Scroll)</h6>
+
+      <div class="border bg-white p-3 overflow-y-auto" style="height:150px;">
+        <p>Line 1</p>
+        <p>Line 2</p>
+        <p>Line 3</p>
+        <p>Line 4</p>
+        <p>Line 5</p>
+        <p>Line 6</p>
+        <p>Line 7</p>
+      </div>
+    </div>
+
+    <!-- HORIZONTAL SCROLL -->
+    <div class="col-md-6">
+      <h6>overflow-x-auto (Horizontal Scroll)</h6>
+
+      <div class="border bg-white p-3 overflow-x-auto">
+        <div class="d-flex" style="width:900px;">
+          <div class="bg-secondary text-white p-3 me-3">Item 1</div>
+          <div class="bg-secondary text-white p-3 me-3">Item 2</div>
+          <div class="bg-secondary text-white p-3 me-3">Item 3</div>
+          <div class="bg-secondary text-white p-3 me-3">Item 4</div>
+          <div class="bg-secondary text-white p-3 me-3">Item 5</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>

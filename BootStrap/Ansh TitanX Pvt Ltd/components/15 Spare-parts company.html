@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Original Spare Parts</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Box Container for Full Section */
+        .box-container15 {
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px 20px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Header Styling */
+        .carousel-header15 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Scrolling Carousel */
+        .carousel-wrapper15 {
+            display: flex;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+        }
+
+        .carousel-track15 {
+            display: flex;
+            gap: 20px; /* Space between images */
+            animation: scrollAnimation 10s linear infinite;
+        }
+
+        .carousel-track15 img {
+            height: 80px; /* Adjust image height */
+            width: auto;
+            padding: 10px; /* Space inside each image box */
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Continuous Scrolling Animation */
+        @keyframes scrollAnimation {
+            from { transform: translateX(0); }
+            to { transform: translateX(-100%); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .carousel-track15 img {
+                height: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box-container15">
+        <div class="carousel-header15">
+            <h2 class="fw-bold">Original Spare Parts</h2>
+            <p>Extended Warranty with GoMechanic</p>
+        </div>
+
+        <div class="carousel-wrapper15">
+            <div class="carousel-track15">
+                <!-- Duplicated images to create a seamless infinite scroll effect -->
+                <img src="https://gomechprod.blob.core.windows.net/gomech-retail/gomechanic_assets/original_spare_parts_icons/bosch.jpg" alt="Bosch">
+                <img src="https://gomechprod.blob.core.windows.net/gomech-retail/gomechanic_assets/original_spare_parts_icons/valeo.jpg" alt="Valeo">
+                <img src="https://gomechprod.blob.core.windows.net/gomech-retail/gomechanic_assets/original_spare_parts_icons/mahle.jpg" alt="Mahle">
+                <img src="https://gomechprod.blob.core.windows.net/gomech-retail/gomechanic_assets/original_spare_parts_icons/ntn.jpg" alt="NTN">
+                <img src="https://gomechprod.blob.core.windows.net/gomech-retail/gomechanic_assets/original_spare_parts_icons/sachs.jpg" alt="Sachs">
+                <img src="https://gomechprod.blob.core.windows.net/gomech-retail/gomechanic_assets/original_spare_parts_icons/textar.jpg" alt="Textar">
+                
+                <!-- Duplicate the same images to create an infinite loop -->
+                <img src="https://gomechprod.blob.core.windows.net/gomech-retail/gomechanic_assets/original_spare_parts_icons/bosch.jpg" alt="Bosch">
+                <img src="https://gomechprod.blob.core.windows.net/gomech-retail/gomechanic_assets/original_spare_parts_icons/valeo.jpg" alt="Valeo">
+                <img src="https://gomechprod.blob.core.windows.net/gomech-retail/gomechanic_assets/original_spare_parts_icons/mahle.jpg" alt="Mahle">
+                <img src="https://gomechprod.blob.core.windows.net/gomech-retail/gomechanic_assets/original_spare_parts_icons/ntn.jpg" alt="NTN">
+                <img src="https://gomechprod.blob.core.windows.net/gomech-retail/gomechanic_assets/original_spare_parts_icons/sachs.jpg" alt="Sachs">
+                <img src="https://gomechprod.blob.core.windows.net/gomech-retail/gomechanic_assets/original_spare_parts_icons/textar.jpg" alt="Textar">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

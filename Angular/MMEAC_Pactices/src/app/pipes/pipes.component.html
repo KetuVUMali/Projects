@@ -1,0 +1,63 @@
+<p>pipes works!</p>
+<h1> Pipes: Transform Data (Make it up to date Format)</h1>
+<h2>Build-In Pipes & Custom Pipes</h2><br>
+
+<h3>i. Date</h3>
+<p>{{currentdate | date}}</p>
+<p>{{currentdate | date: 'dd - MM - yyyy'}}</p>
+<p>{{currentdate | date: 'dd / MM / yyyy'}}</p>
+<p>{{currentdate | date: 'dd MMM yyyy'}}</p>
+<p>{{currentdate | date: 'dd MM yyyy hh:mm:ss'}}</p><br>
+
+<h3>ii. UpperCase()</h3>
+<h4>{{school | uppercase}}</h4><br>
+
+<h3>iii. LowerCase()</h3>
+<h4>{{school | lowercase}}</h4><br>
+
+<h3>iv. TitleCase()</h3>
+<h4>{{school | titlecase}}</h4><br>
+
+<h1>Angular Inbuilt Pipes Example</h1>
+<p>Original Date: {{currentdate}}</p>
+<p>Formatted Date (short): {{currentdate | date:'short'}}</p>
+<p>Formatted Date (fullDate): {{currentdate | date:'fullDate'}}</p><br>
+
+<p>Original Text: hello</p>
+<p>Uppercase: {{'hello' | uppercase}}</p>
+<p>Lowercase: {{'HELLO' | lowercase}}</p>
+<p>Title Case: {{'angular pipes' | titlecase}}</p><br>
+
+<p>Original Number: 12345.6789</p>
+<p>Currency USD : {{12345.6789 | currency:'USD':'symbol':'1.2-2'}}</p>
+<p>Currency INR : {{12345.6789 | currency:'INR'}}</p>
+<p>Currency GBP : {{12345.6789 | currency:'GBP'}}</p>
+<p>Decimal: {{1234.5 | number:'1.2-2'}}</p>
+<p>Percent: {{0.25 | percent}}</p><br>
+
+<p>JSON: {{ { name: 'Angular' } | json}}</p>
+<p>School : {{school}}</p>
+<p>School with JSON : {{school | json}}</p>
+<p>User : {{user}}</p>
+<p>User with JSON : {{user | json}}</p><br>
+
+<p>Original String: Angular</p>
+<p>Sliced: {{'Angular' | slice:1:4}} (1:4)</p>
+<p>Sliced & UpperCase: {{'Angular' | slice:1:4 | uppercase}} (1:4)</p><br>
+
+<p>Displays different text based on a value</p>
+<p>{{gender | i18nSelect: genderMapping}}</p><br>
+
+<h2> Custom Pipes </h2>
+<p> Currency Convertor USD To INR</p>
+ <!-- <p>{{20 | usdToInr}}</p>  Import fron usd-to-Inr pipe  usdToInr from usd-to-inr.pipe.ts (name: 'usdToInr') -->
+ <p>{{20 | usdToInr : 80}}</p><br>
+
+ <p>Reverse String</p>
+ <p>original string : " Angular "</p>
+ <p>Reversed: {{ 'Angular' | reverseString }}</p><br>
+
+ <p> MultiPlication </p>
+ <p>Result: {{ 5 | multiplication: 3 }}</p>
+
+

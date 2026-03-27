@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Object</title>
+</head>
+<body>
+
+
+<h1> Object </h1>
+
+ <script type="text/javascript">
+
+ 		// 1. Object Definition
+		 	    let person = {
+					            firstName: 'John',
+					            lastName: 'Doe',
+					            age: 30,
+								qualification: 
+								  {
+									degree: 'MBA',
+									percentage: '70%'
+								  },
+					            // Method
+					            getFullName: function ()
+					              {
+					                return this.firstName + ' ' + this.lastName;
+					              }
+		                      };
+
+		// 2.  Accessing Object Properties
+        console.log("First Name:", person.firstName);    //object call		John
+        console.log("Last Name:", person['lastName']);    // object call	Doe
+        console.log("Full Name:", person.getFullName());   // fun call		John Doe
+		 	
+ </script>
+
+ <h2> object Method </h2>
+ <script type="text/javascript">
+ 			// 1. .assigen()
+ 			    // merage object
+ 			    var obj1 = { a: 1, b: 2 };
+                var obj2 = { b: 3, c: 4 };
+                Object.assign(obj1, obj2);
+        		console.log("Object.assign Result:",obj1);  // { a: 1,b: 3, c: 4 }
+
+
+        		var obj1 = { a: 1, b: 2 };
+                var obj2 = { c: 3, d: 4 };
+                Object.assign(obj1, obj2);
+        		console.log("Object.assign Result:",obj1);	// {a: 1, b: 2, c: 3, d: 4}
+ </script>
+
+    <h3>Object.keys</h3>
+    <script>
+        // .keys 
+           // list of all keys in array formate
+           let car = { make: 'Toyota', model: 'Camry', year: 2022 };
+           let keysArray = Object.keys(car);
+           console.log("Object.keys Result:", keysArray);	//  ['make', 'model', 'year']
+    </script>
+
+    <h3>Object.values</h3>
+    <script>
+        // .values 
+        	// list of all values in array formate
+	        let book = { make: 'Toyota', model: 'Camry', year: 2022};
+
+	        let valuesArray = Object.values(book);
+	        console.log("Object.values Result:", valuesArray);	// ['Toyota', 'Camry', 2022]
+    </script>
+
+    <h3>Object.entries</h3>
+    <script>
+        // .entries 
+        	// print key and Values.
+	        let laptop = { brand: 'Dell', model: 'XPS', year: 2021 };
+
+	        let entriesArray = Object.entries(laptop);
+	        console.log("Object.entries Result:", entriesArray);	// [Array(2), Array(2), Array(2)]
+    </script>
+    <h3>Object.hasOwnProperty</h3>
+    <script>
+        // .hasOwnProperty 
+	        // Checking if the object has a specific property
+	        let phone = { brand: 'Samsung', model: 'Galaxy', year: 2020 };
+
+	        let hasModelProperty = phone.hasOwnProperty('model');
+
+	        console.log("Object.hasOwnProperty Result:", hasModelProperty);		// true
+
+
+
+
+			// 
+				var a1 = {};
+				a1.name = "Jone";
+				a1.age = 22;
+				a1.no = 92;
+				console.log(a1);	// {name: 'Jone', age: 22, no: 92}
+    </script>
+</body>
+</html>

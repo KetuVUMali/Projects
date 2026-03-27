@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <pre>
+        GSAP ScrollTrigger : 
+                            ScrollTrigger = ScrollTrigger is a plugin for ScrollMagic that allows you to create custom scroll animations.
+                            ScrollTrigger  is perform animation when scroll down at specific part of the page.
+
+
+                        Syntax :
+                            gsap.to("CSS Selector",
+                                    {
+                                        CSS Properties,
+                                        ScrollTrigger: {
+                                            trigger: "CSS Selector",
+                                            CSS Animation Properties
+                                        }
+                                    }
+                            )
+
+
+                        Ex : 
+                            gsap.to(".box1", {
+                                x: 100,
+                                ScrollTrigger: {
+                                    trigger: ".box1",
+                                    start: "top top",
+                                    end: "bottom bottom",
+                                    scrub: true
+                                }
+                            })
+
+                Note : 
+                        1. In GSAP ScrollTrigger take 3 properties
+                            1. trigger → element that triggers animation
+                            2. start → when animation starts (e.g., "top 80%")
+                            3. end → when animation ends (optional)
+                            4. scrub → link animation progress to scroll (optional)
+
+                        2. ScrollTrigger Properties Used:
+                            trigger → element that triggers the animation
+                            start → when the animation should start (box top hits 80% of viewport)
+                            end → when the animation should end (box top hits 30% of viewport)
+
+                        3. ScrollTrigger have their own CDN link :
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+                        4. Markers → show start/end markers (optional)
+                                    ScrollTrigger property used to display animation start and end markings.
+
+                            
+                            
+    </pre>
+</body>
+</html>

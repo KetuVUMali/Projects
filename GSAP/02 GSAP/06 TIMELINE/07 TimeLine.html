@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .box {
+            width: 60px;
+            height: 60px;
+            background: black;
+            margin: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box"></div>
+
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+    <script>
+        const tl = gsap.timeline({
+            repeat: -1,
+            yoyo: true
+        });
+
+        tl.to(".box", { x: 200, duration: 1 })
+            .to(".box", { scale: 1.5, duration: 1 });
+    </script>
+
+    <div>
+        <h2>GSAP Timeline with Repeat and Yoyo Example : Looping timelines</h2>
+        <p>This example demonstrates a GSAP timeline that continuously repeats and reverses the animation of a box.</p>
+        <ul>
+            <li>The box first moves 200px to the right over 1 second.</li>
+            <li>Then, it scales up to 1.5 times its original size over 1 second.</li>
+            <li>The timeline is set to repeat indefinitely and reverse direction after each cycle.</li>
+        </ul>
+        <p>This showcases how to create looping animations using GSAP timelines with repeat and yoyo properties.</p>
+    </div>
+
+    <div>
+        <pre>
+    const tl = gsap.timeline({
+        repeat: -1,                 // Repeat indefinitely
+        yoyo: true                  // Reverse direction after each cycle
+    });
+    </pre>
+        <pre>
+    tl.to(".box", { x: 200, duration: 1 })         // Box moves right for 1 second
+        .to(".box", { scale: 1.5, duration: 1 }); // Box scales up for 1 second
+    </pre>
+        <pre>
+        🧠 Explanation
+                    Box moves right for 1 second
+                    Box scales up for 1 second
+                    Timeline repeats indefinitely
+                    Timeline reverses direction after each cycle
+    </pre>
+    </div>
+
+</body>
+
+</html>

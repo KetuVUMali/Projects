@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Map</title>
+</head>
+<body>
+
+	<h1> Map </h1>
+
+	<script type="text/javascript">
+		
+
+		// 1.  create map
+			console.log("1.  create Map");
+		    var map1 = new Map();
+		    console.log(map1);
+
+		    //
+		    var first = new Map([
+		 						[1, "one"],[2, "two"],[3, "three"]
+		 					   ]);
+		    console.log(first);
+
+
+		// 2.  .set()
+		   //add ele in map
+		   console.log("2. .set()   add ele in map");
+		    var map1 = new Map();
+		    console.log(map1);
+		    map1.set("key1","Value1");
+		    map1.set("key2","Value2");
+		    map1.set("key3","Value3");
+		    map1.set("key4","Value4");
+		    console.log(map1);
+
+
+		 // 3.  .get()   
+		 	// to get ele through value
+		 		console.log("3. .get()   to get ele");
+		 		var first = new Map([
+		 						[1, "one"],[2, "two"],[3, "three"]
+		 					   ]);
+		    	console.log(first.get(1));
+		 		console.log(first.get(3));
+
+
+		 // 4.  .has()     
+		     //  to check ele present or not.
+		 		console.log("4. .has()   to chek ele (key based)");
+		 		var first = new Map([
+		 						[1, "one"],[2, "two"],[3, "three"]
+		 					   ]);
+		    	console.log(first.has(1));   //    o/p in true or false
+		 		console.log(first.has(4));
+
+
+		  // 5.  forEach()
+		     // iterate ele (value)
+
+		 		console.log("5. forEach()   to iterate ele");
+		 		var first = new Map([
+		 						[1, "one"],[2, "two"],[3, "three"]
+		 					   ]);
+		    	first.forEach(kl => console.log(kl))
+
+
+		    	// 6. for .... of()
+		    		// iterate
+			    	console.log("6. for  of()   to iterate ele");
+			    	var myMap = new Map([
+		 						[1, "one"],[2, "two"],[3, "three"]
+		 					   ]);
+
+
+			    //Print key Value
+					console.log("***Print key=Value");
+					for (var [key, value] of myMap) {
+					  console.log(`${key} = ${value}`);
+					     }
+
+
+				//Print only key
+					console.log("***Print Key");
+					for (const key of myMap.keys()) {
+						  console.log(key);
+						 }
+
+
+				//Print only Value
+					console.log("***Print value");
+					for (const value of myMap.values()) {
+  							console.log(value);
+  							}
+
+
+  				//Print key=Value
+  					console.log("***Print key=Value");
+  					for (const [key, value] of myMap.entries()) {
+  						console.log(`${key} = ${value}`);
+  					     }
+
+
+
+  				// 7.  .delete 
+					console.log("7. .delete ele");
+			    	var myMap = new Map([
+		 						[1, "one"],[2, "two"],[3, "three"]
+		 					   ]);	
+					console.log(myMap.delete(1));
+					console.log(myMap);	
+
+
+
+
+				
+
+		 		
+
+
+
+
+
+	</script>
+
+</body>
+</html>

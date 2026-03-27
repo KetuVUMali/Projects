@@ -1,0 +1,142 @@
+<p>genral works!</p>
+
+<h3>--------------Get Input Box Value and Display------------------------</h3>
+
+<input type="text" #box (keydown)="getValue(box.value)" placeholder="Enter Name" name="name" >
+<p> Box value is : {{displayValue}}</p>
+<br>
+
+<p> value get on button</p>
+<!-- The input field with a template reference variable 'box' -->
+<input type="text" #box1 placeholder="Enter Name" name="name">
+<!-- Button triggers 'getValue' method when clicked and passes 'box.value' -->
+<button (click)="getValue2(box1.value)">Click</button>
+<!-- Displays the value stored in 'displayValue' -->
+<p> Box value is : {{displayValue2}}</p>
+<br>
+
+<p> input name or placeholder property get</p>
+<input type="text" #box3 placeholder="Enter Name" name="name">
+<button (click)="getValue3(box3.placeholder)">Click</button>
+<p>Box value is: {{displayValue3}}</p>
+<br><br>
+
+<h3>------------ Counter ----------------</h3>
+
+<!-- <button (click)="increment()"> -- </button>
+<button (click)="decerment()"> ++ </button>
+<p>Count : {{num}}</p> -->
+
+<button (click)="counter('add')">++</button>
+{{count}}
+<button (click)="counter('sub')">--</button>
+
+<br><br>
+<h3>------------ style  ----------------</h3>
+
+<p class="external">External Style (component Style)(2)</p>
+<br>
+<p style="color: blue;">Inline Style (1)</p>
+  <p class="style"> Internal Style2 (using style tag)(1)</p>
+  <style>  .style{ color: blueviolet;}  </style>
+      <p [style.color]="'red'"> Style Property Binding (1)</p> <!--Inline Style Using Property Bindng -->
+<br>
+<p id="global">Global CSS (style.css)(3)</p>
+
+<br><br>
+<h3>------------ Style Binding  ----------------</h3>
+<!-- Dynamic Style Binding (property come from TS File) -->
+ <h6 style="color: red;"> Style Binding</h6> <!-- Simple Inline Style  -->
+  <h6 [style.color]="'red'"> Style Binding</h6> <!--Inline Style Using Property Bindng -->
+
+  <!-- Dynamic -->
+ <h6 [style.color]="design"> Style Binding</h6>
+
+ <p>Changr Text Color</p>
+ <h6 [style.color]="design2"> Style Binding</h6>
+ <button (click)="updateColour()"> Change Colour</button>
+
+ <p>Changr BgColor </p>
+ <h6 [style.backgroundColor]="bgColour"> Style Binding</h6>
+ <button (click)="updateColour2()"> Change Colour</button>
+
+ <p>Both Text & BgColor Change</p>
+ <h6 [style.color]="design3" [style.backgroundColor]="bgColour2"> Style Binding</h6>
+ <button (click)="updateColour3()">Change Colour</button>
+
+
+<br><br>
+ <h3>------------ Simple Form   ----------------</h3> <!-- FormsModule Import-->
+ <form #basicForm="ngForm" (ngSubmit)="formData(basicForm.value)">
+    <label>Name : </label>
+    <input type="text" ngModel name="uname" placeholder="Enter User Name" />
+    <br>
+    <br><label>Email-ID : </label>
+    <input type="text" ngModel name="email" placeholder="Enter User EmailID" />
+    <br>
+    <br><label>Password : </label>
+    <input type="text" ngModel name="password" placeholder="Enter User Password" />
+    <br>
+    <br>
+    <button > Submit </button>
+ </form>
+
+  <ul type="none">
+    <li>{{userData.uname}}</li>
+    <li>{{userData.email}}</li>
+    <li>{{userData.password}}</li>
+  </ul>
+
+
+
+<br><br>
+<h3>------------ Togle Element  ----------------</h3>
+  <!-- on button click Hide a ele or group ele  -->
+    <h5 *ngIf="display"> Togle Content</h5>
+    <button (click)="toggle()" > Hide & Show </button>
+
+    <div *ngIf="show">
+        <i>Hiii</i><br>
+        <i>byyy</i><br>
+        <i>hiiii</i><br>
+        <i>Byyyy</i><br>
+    </div>
+    <button (click)="toggle2()" > Hide & Show </button>
+<br><br>
+<h3>------------ Todo List  ----------------</h3>
+
+<input type="text" placeholder="Enter New Word" #task>   <br><br>
+<button (click)="addTask(task.value)">Add</button>
+<ul *ngFor="let item of list">
+  <li>{{item.name}} <button (click)="remove(item.id)">Remove</button></li>
+</ul>
+
+<br><br>
+<h3>------------  Template Refences Variable  ----------------</h3>
+<input type="text" #vari name="user" placeholder="Enter text">
+<button (click)="onClickButton(vari.value)">Submit</button>
+<p>The variable is: {{variable}}</p>
+
+<input type="text" #info name="user" placeholder="Enter text">
+<button (click)="onClickButton2(info.placeholder)">Submit</button>
+<p>Placeholder Message: {{variable2}}</p>
+
+
+<br><br>
+<h3>------------   ----------------</h3>
+
+
+
+<br><br>
+<h3>------------   ----------------</h3>
+
+
+
+<br><br>
+<h3>------------   ----------------</h3>
+
+
+
+
+<br><br>
+<h3>------------   ----------------</h3>

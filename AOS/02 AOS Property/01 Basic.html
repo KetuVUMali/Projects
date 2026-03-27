@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        
+🔹 AOS Property: data-aos
+        syntax : data-aos = "animation-name"
+        This property tells AOS WHICH animation to apply to an element.
+        Defines animation type.
+        Usage :
+            <div data-aos="fade-up">Content to animate</div>
+
+        Common animation names:
+                                | Animation     |   Meaning                   |
+                                | ----------    | -------------------------   |
+                                | fade-up       |   Element comes from bottom |
+                                | fade-down     |   Element comes from top    |
+                                | fade-left     |   Element comes from right  |
+                                | fade-right    |   Element comes from left   |
+                                | zoom-in       |   Element zooms in          |
+                                | zoom-out      |   Element zooms out         |
+                                | flip-left     |   3D flip                   |
+                                | flip-right    |   3D flip                   |
+                                | slide-up      |   Slides in from bottom     |
+                                | slide-down    |   Slides in from top        |
+                                | slide-left    |   Slides in from right      |
+                                | slide-right   |   Slides in from left       |
+                                | etc.
+
+
+
+🔹 2. data-aos-duration
+
+        syntax : data-aos-duration = "time-in-ms"
+        This property sets the DURATION of the animation in milliseconds.
+        Controls how long the animation runs
+        
+        Usage :
+            <div data-aos="fade-up" data-aos-duration="1000">Content to animate</div>
+
+        🧠 Internal logic
+                    Default duration = 400ms
+                    This property overrides default time
+                    Unit = milliseconds  ( data-aos-duration="1000" )
+
+
+
+🔹 3. data-aos-delay
+
+        syntax : data-aos-delay = "time-in-ms"
+        This property sets the DELAY before the animation starts in milliseconds.
+        Controls when the animation starts.
+        Adds wait time before animation starts
+        
+        Unit = milliseconds  ( data-aos-delay="500" )
+        
+        Usage :
+            <div data-aos="fade-up" data-aos-delay="500">Content to animate</div>
+
+        🧠 Internal logic
+                    Element becomes visible in viewport after
+                    AOS waits for delay time
+                    Then animation starts
+
+        
+🔹 4. data-aos-offset
+        syntax : data-aos-offset = "offset-in-px"
+        This property sets the OFFSET distance in pixels.
+        Controls how far the element must be from the viewport before animation triggers.
+        Controls HOW EARLY animation starts before element is fully visible in viewport.
+        
+        Usage :
+            <div data-aos="fade-up" data-aos-offset="200">Content to animate</div>
+
+        🧠 Internal logic
+                    Default offset = 120px
+                    This property overrides default offset
+                    Unit = pixels  ( data-aos-offset="200" )
+
+                    | Offset | Behavior               |
+                    | ------ | ---------------------- |
+                    | 50     | Animation starts late  |
+                    | 120    | Default                |
+                    | 300    | Animation starts early |
+
+
+
+🔹 5. data-aos-easing  :
+        syntax : data-aos-easing = "easing-function"
+        This property sets the EASING function for the animation.
+        Controls the acceleration pattern of the animation.
+        Defines how animation speed changes over time.
+        Controls animation movement style.
+        
+        Usage :
+            <div data-aos="fade-up" data-aos-easing="ease-in-out-back">Content to animate</div>
+
+        Common easing functions: Defines speed curve of animation:
+
+                                | Easing Function      |   Behavior                      |
+                                | -------------------  | ------------------------------ |
+                                | linear               |   Constant speed                |
+                                | ease                 |   Slow start and end            |
+                                | ease-in              |   Slow start                    |
+                                | ease-out             |   Slow end                      |
+                                | ease-in-out          |   Slow start and end            |
+                                | ease-in-back         |   Overshoot at start            |
+                                | ease-out-back        |   Overshoot at end              |
+                                | ease-in-out-back     |   Overshoot at start and end    |  
+        
+
+
+6. data-aos-once
+        syntax : data-aos-once = "boolean"
+        This property sets whether animation should run once or multiple times.
+        Controls whether animation should run once or multiple times.
+        Controls animation repeat behavior.
+        
+        Usage :
+            <div data-aos="fade-up" data-aos-once="true">Content to animate</div>   
+
+        🧠 Internal logic
+                    true  -> Animation runs only once when element enters viewport
+                    false -> Animation runs every time element enters viewport (animation repeats on scroll)
+
+        
+7. data-aos-mirror
+        syntax : data-aos-mirror = "boolean"
+        This property sets whether animation should mirror on scroll up.
+        Controls if animation reverses when scrolling back up. (Reverse Anime)
+        
+        Usage :
+            <div data-aos="fade-up" data-aos-mirror="true">Content to animate</div>
+
+        🧠 Internal logic
+                    true  -> Animation reverses when scrolling back up
+                    false -> Animation does not reverse on scroll up
+
+
+8. data-aos-anchor-placement
+        syntax : data-aos-anchor-placement = "position"
+        This property sets the ANCHOR PLACEMENT for triggering the animation.
+        Controls which part of the element triggers the animation based on its position in the viewport.
+        
+        Usage :
+            <div data-aos="fade-up" data-aos-anchor-placement="top-bottom">Content to animate</div>
+
+        Common anchor placement options:
+
+                               | Property Value | Meaning                              |
+                                | -------------- | ------------------------------------ |
+                                | top-bottom     | element top meets viewport bottom    |
+                                | top-center     | element top meets viewport center    |
+                                | top-top        | element top meets viewport top       |
+                                | center-bottom  | element center meets viewport bottom |
+                                | center-center  | element center meets viewport center |
+                                | center-top     | element center meets viewport top    |
+                                | bottom-bottom  | element bottom meets viewport bottom |
+                                | bottom-center  | element bottom meets viewport center |
+                                | bottom-top     | element bottom meets viewport top    |
+
+
+
+    9. Combining AOS Properties
+        You can combine multiple AOS properties on a single element to create complex animations.
+        Usage :
+            <div 
+                data-aos="fade-up" 
+                data-aos-duration="1000" 
+                data-aos-delay="500" 
+                data-aos-offset="200" 
+                data-aos-easing="ease-in-out-back" 
+                data-aos-once="true" 
+                data-aos-mirror="false" 
+                data-aos-anchor-placement="top-bottom"
+            >
+                Content to animate
+            </div>
+
+
+
+AOS.init() :
+        To activate AOS animations, you need to initialize AOS in your JavaScript code.
+        Usage :
+            <script>
+                AOS.init();
+            </script>
+
+        Global AOS.init() Settings :
+                                | Setting               |   Description                                  |
+                                | --------------------- | ---------------------------------------------- |
+                                | duration              |   Default animation duration in milliseconds   |
+                                | delay                 |   Default delay before animation starts        |
+                                | offset                |   Default offset distance in pixels            |
+                                | easing                |   Default easing function for animations       |
+                                | once                  |   Run animations only once (true/false)       |
+                                | mirror                |   Mirror animations on scroll up (true/false)  |
+
+                ex : AOS.init({ duration: 800, once: true });
+
+                <script>
+                        AOS.init({
+                                duration: 1000,                 // values from 0 to 3000, with step 50ms
+                                delay: 200,                     // values from 0 to 3000, with step
+                                easing: 'ease-in-out',          // default easing for AOS animations
+                                once: true,                     // whether animation should happen only once - while scrolling down
+                                mirror: false,                  // whether elements should animate out while scrolling past them
+                                offset: 120                     // offset (in px) from the original trigger point
+                        });
+                </script>
+
+
+
+
+
+
+
+
+        Summary Table of AOS Properties
+                                | Property                  |   Description                                  |
+                                | ------------------------- | ---------------------------------------------- |
+                                | data-aos                 |   Animation type                              |
+                                | data-aos-duration        |   Animation duration in milliseconds          |
+                                | data-aos-delay           |   Delay before animation starts in milliseconds|
+                                | data-aos-offset          |   Offset distance in pixels                   |
+                                | data-aos-easing          |   Easing function for animation               |
+                                | data-aos-once            |   Run animation once (true/false)             |
+                                | data-aos-mirror          |   Mirror animation on scroll up (true/false)  |
+                                | data-aos-anchor-placement|   Anchor placement for triggering animation   |
+
+    References:
+        - AOS Official Documentation: https://michalsnik.github.io/aos/
+        - AOS GitHub Repository: https://github.com/michalsnik/aos
+        - AOS CDN: https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js
+
+
+    </pre>
+</body>
+</html>

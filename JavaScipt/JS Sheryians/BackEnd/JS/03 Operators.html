@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+        // 1 Basic Opc  +, _, %, *, / 
+
+        // && AND   
+
+        // || OR Opc.
+            // if first value is True then 1st value is execute and 2nd value is avoid
+                console.log(true || 1);              // true
+                console.log(true || false);          // true
+                console.log(true || NaN);            // true
+                console.log(1 || false);             // 1
+                console.log("a" || false);           // "a"      
+
+            // if first value is flase then 2nd value execute 
+                // 0, false, undefine, NaN, document.all, null, " "    => All Value is Falsy
+                console.log(" ");
+                console.log(false || 1);            // 1
+                console.log(NaN || 1);              // 1 
+                console.log(undefined || 1);        // 1
+                console.log(null || 1);             // 1
+                console.log(document.all || 1);     // 1
+                console.log("" || 1);               // 1
+
+        
+</script>
+</html>

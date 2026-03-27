@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fuction Method</title>
+</head>
+<body>
+	<h2>Function Definition and Usage</h2>
+    <p>
+        In JavaScript, functions are blocks of code designed to perform a task. Functions can take parameters,
+        return values, and can be defined using function declarations or function expressions.
+    </p>
+
+    <script>
+        // Function Declaration
+	        function greet(name) {
+	            console.log("Hello, " + name + "!");
+	        }
+
+	    // Function Call
+       		greet("Ketu");
+
+        // Function Expression
+	        let add = function (a, b) 
+	        {
+	            return a + b;
+	        };
+
+        // fuction call with parmeter pass
+	        let sum = add(500, -300);
+	        console.log("Sum:", sum);
+    </script>
+
+     <h2>Function Methods</h2>
+
+		    <h3>function.call</h3>
+		    <script>
+		        // function .call Example
+		        // fun call inside obj.
+		        // obj inside call fun
+		        function introduce(city, country) {
+		            console.log(`My name is ${this.name}, and I'm from ${city}, ${country}.`);
+		        }
+
+		        let person = { name: 'Ketan' };
+
+		        // Using call to invoke the function with a specified context (person object)
+		        introduce.call(person, 'Maharashtra', 'Indian');
+
+		        // if we not set parameter in function then we can add extra parameter "(person)" but key "${this.name}" alreday define in function. 
+		    </script>
+
+
+		    <h3>function.apply</h3>
+		    <script>
+		        // function .apply Example
+		        // same as call 
+		        // argument pass through array (only two)
+		        function displayInfo(greeting, farewell) {
+		            console.log(`${greeting}, ${this.name}! ${farewell}, ${this.name}!`);
+		        }
+
+		        let user = { name: 'Ketan' };
+
+		        // Using apply to invoke the function with a specified context and array of arguments
+		        displayInfo.apply(user, ['Hi', 'Goodbye']);
+		    </script>
+
+
+		    <h3>function.bind</h3>
+		    <script>
+		        // function.bind Example
+		        //
+		        function multiply(factor) {
+		            return this.number * factor;
+		        }
+
+		        let context = { number: 7 };
+
+		        // Using bind to create a new function with a specified context
+		        let boundFunction = multiply.bind(context, 6);
+
+		        console.log("Result of bound function:", boundFunction());
+		    </script>
+
+</body>
+</html>

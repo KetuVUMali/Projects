@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AOS Mirror – Deep Understanding</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <style>
+    body {
+      background: #f2f4f7;
+    }
+
+    section {
+      padding: 120px 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    h2 {
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .note {
+      max-width: 900px;
+      margin: 15px auto 40px;
+      text-align: center;
+      color: #444;
+      font-size: 15px;
+    }
+
+    .box {
+      background: #0d6efd;
+      color: white;
+      padding: 45px;
+      border-radius: 8px;
+      text-align: center;
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .green { background: #198754; }
+    .dark { background: #212529; }
+    .orange { background: #fd7e14; }
+    .red { background: #dc3545; }
+  </style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     BASIC CONCEPT
+===================================================== -->
+<section>
+  <div class="container">
+    <h2>What is data-aos-mirror?</h2>
+    <p class="note">
+      Mirror decides what happens when user scrolls UP.
+      <br><br>
+      ✔ mirror = true → animation runs again while scrolling UP  
+      ✔ mirror = false → animation runs only while scrolling DOWN  
+      <br><br>
+      This is very important for UX.
+    </p>
+
+    <div class="box dark">
+      Scroll down first, then scroll up slowly
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     SCENARIO 1: mirror = false (DEFAULT & MOST USED)
+===================================================== -->
+<section>
+  <div class="container">
+    <h2>Scenario 1: mirror = false (Recommended)</h2>
+    <p class="note">
+      Animation triggers when scrolling DOWN.
+      <br>
+      When scrolling UP → NO animation.
+      <br><br>
+      ✔ Best for content, text, images.
+    </p>
+
+    <div
+      class="box"
+      data-aos="fade-up"
+      data-aos-mirror="false"
+    >
+      Fade-Up (No animation on scroll UP)
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     SCENARIO 2: mirror = true (TWO-WAY ANIMATION)
+===================================================== -->
+<section>
+  <div class="container">
+    <h2>Scenario 2: mirror = true</h2>
+    <p class="note">
+      Animation works BOTH ways.
+      <br>
+      Scroll DOWN → animation  
+      Scroll UP → animation again  
+      <br><br>
+      ✔ Useful only in special cases.
+    </p>
+
+    <div
+      class="box green"
+      data-aos="fade-right"
+      data-aos-mirror="true"
+    >
+      Animation on DOWN & UP
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     SCENARIO 3: CONTENT TEXT (BAD PRACTICE)
+===================================================== -->
+<section>
+  <div class="container">
+    <h2>Bad Practice Example</h2>
+    <p class="note">
+      Text repeating animation while scrolling UP
+      is confusing for users.
+      <br>
+      ❌ Avoid mirror=true for reading content.
+    </p>
+
+    <div
+      class="box red"
+      data-aos="fade-up"
+      data-aos-mirror="true"
+    >
+      ❌ Text animates again on scroll UP
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     SCENARIO 4: IMAGE GALLERY (GOOD USE CASE)
+===================================================== -->
+<section>
+  <div class="container">
+    <h2>Image / Gallery Section</h2>
+    <p class="note">
+      In visual sections, mirror animation can feel nice.
+      <br>
+      ✔ Allowed for creative UI.
+    </p>
+
+    <div
+      class="box orange"
+      data-aos="zoom-in"
+      data-aos-mirror="true"
+    >
+      Gallery Image (Mirror enabled)
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     SCENARIO 5: DASHBOARD / ADMIN PANEL
+===================================================== -->
+<section>
+  <div class="container">
+    <h2>Dashboard Widgets</h2>
+    <p class="note">
+      Widgets may animate again to show interaction.
+      <br>
+      ✔ mirror=true is acceptable.
+    </p>
+
+    <div
+      class="box dark"
+      data-aos="fade-left"
+      data-aos-mirror="true"
+    >
+      Dashboard Card (Two-way animation)
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     SCENARIO 6: HERO SECTION (STRICT RULE)
+===================================================== -->
+<section>
+  <div class="container">
+    <h2>Hero Section (Strict Rule)</h2>
+    <p class="note">
+      Hero animation should NEVER repeat.
+      <br>
+      ✔ mirror=false is mandatory.
+    </p>
+
+    <div
+      class="box"
+      data-aos="fade-up"
+      data-aos-mirror="false"
+    >
+      Hero Heading (No reverse animation)
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     SCENARIO 7: COMPARISON SIDE BY SIDE
+===================================================== -->
+<section>
+  <div class="container">
+    <h2>Comparison: false vs true</h2>
+    <p class="note">
+      Scroll down & up to compare both clearly.
+    </p>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div
+          class="box green"
+          data-aos="fade-up"
+          data-aos-mirror="false"
+        >
+          mirror = false (Professional)
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div
+          class="box orange"
+          data-aos="fade-up"
+          data-aos-mirror="true"
+        >
+          mirror = true (Creative)
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     AOS INIT
+===================================================== -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  /*
+    Global company-level configuration
+    Individual elements override mirror
+  */
+  AOS.init({
+    duration: 1000,
+    easing: 'ease-in-out',
+    offset: 120,
+    once: false,
+    mirror: false // default safe behavior
+  });
+</script>
+
+</body>
+</html>

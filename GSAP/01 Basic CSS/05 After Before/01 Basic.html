@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My First CSS</title>
+</head>
+<body>
+
+<pre>
+::before and ::after are fake elements created by CSS.
+    They are not written in HTML
+    CSS creates them automatically
+    They appear inside an element
+    ::before → at the start
+    ::after → at the end
+
+
+HTML Element
+    │
+    ├── ::before  (CSS added)
+    ├── Real content (HTML)
+    └── ::after   (CSS added)
+
+
+
+2️⃣ MOST IMPORTANT RULE (Never forget this 🚨)
+                ❗ content property is REQUIRED
+
+    Without content, nothing shows.
+
+        ::before {
+                    content: "";
+        }
+    ✔ Empty string still works
+    ❌ No content = no element
+
+    
+</pre>
+
+</body>
+</html>

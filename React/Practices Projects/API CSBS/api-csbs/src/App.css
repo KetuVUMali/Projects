@@ -1,0 +1,24 @@
+.listx{
+  display: flex;
+  /* flex-direction: row; */
+  justify-content: space-between;
+  border: 1px solid rgb(249, 248, 248);
+  margin: 0;
+  padding: 10px;
+  list-style: none;
+}
+.user-listx-heading{
+  font-size: 20px;
+  font-weight:bold ;
+  margin: 0;
+  padding: 10px;
+  list-style: none;
+}
+
+.nav-list{
+  display: flex;
+  width: 400px;
+  justify-content: space-between;
+  list-style: none;
+  
+}

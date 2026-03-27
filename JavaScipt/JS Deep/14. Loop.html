@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Loop </title>
+</head>
+<body>
+	<h1> Loop </h1>
+	<pre>
+		- A loop is used to repeat a block of code.
+		- when similar task is needed to be done again.
+		- used to Repeation 
+		- reuseability of code
+
+	</pre>
+
+	<pre>
+			Types Of Loop
+			1. For Loop        
+			   syn. for (initi; test condi; inc/dec ele)
+			   {
+			   	//
+			   }
+
+			   <!-- 
+			   Ex. for (var count = 0; count<10; count++)
+			   {
+			    	document.write(count+"Hello Ketu");
+			   } 
+				-->
+	</pre>
+			   Script : 
+			   <script type="text/javascript">
+			   	 for (var count = 0;count<11;count++)
+			      {
+			    	 document.write(count);				// 0 1 2 3 4 5 6 7 8 9 10
+			      }
+			   </script>
+
+			   <br>
+
+			   <script type="text/javascript">
+			   	 for (var count = 0; count<11; count++)
+			      {
+			    	 document.write(count+"<br/>");
+			      }
+			      document.write("Loop End");			// 0 1 2 3 4 5 6 7 8 9 10
+			   </script>
+
+			   <br>
+
+			    <script type="text/javascript">
+			   	 for (var count = 10; count>=0; count--)
+			      {
+			    	 document.write(count+" <br/> ");		// 10 9 8 7 6 5 4 3 2 1 0
+			      }
+			   </script>
+			   <script type="text/javascript">
+			   	 for (var count = 10; count>=-10; count--)
+			      {
+			    	 document.write(count+" ");			// 10 9 8 7 6 5 4 3 2 1 0 -1 -2 -3 -4 -5 -6 -7 -8 -9 -10
+			      }
+			   </script>
+
+
+			   <script>
+					// Infinity Loop
+						// for (var count = 10; count>=-10; count--)
+						// 	{
+						// 		for (var count1 = 1; count; count1++)
+						// 		{
+						// 			console.log(count1)
+						// 		}
+						// 	}
+				</script>
+
+	<pre>
+			2. While Loop
+			-A while loop is to exectue a statement or code block repeatedly as long as condition is true
+
+			-once the condition becomes false, the loop terminates
+
+			- it is also called entry control loop.
+
+
+			Syn.  while (expression)
+					{
+						// Statement
+						// inc / dec
+					}
+
+
+			Ex.     var count = 0;
+					while(count<10)
+					{
+						document.write(count +"Hello <br>");
+						count++;
+					}
+	</pre>
+
+			<script type="text/javascript">
+					   var count=0;
+					   while(count<5)
+					   {
+					   	 document.write("While Loop Iteration :",count,"<br>");
+					   	 count++;
+					   }
+			</script>
+			<br>
+
+
+			<!-- Loop Going to INFINITE LOOP
+			<script type="text/javascript">
+				var i = 0;
+				while(i<10)
+				{
+					document.write("Hello");
+				}
+			</script> -->
+
+
+			<script type="text/javascript">
+				var i = 0;
+				while(i<10)
+				{
+					document.write(i);			// 0 1 2 3 4 5 6 7 8 9
+					i++;
+				}
+			</script>
+			<br>
+
+			<script type="text/javascript">
+				var i = 10;
+				while(i>0)
+				{
+					document.write(i);		// 10 9 8 7 6 5 4 3 2 1
+					i--;
+				}
+			</script>
+
+
+	<pre>
+		3. For Each Loop
+
+		 - A forEach loop (method) is used to get data from array , object.
+
+		 - The method calls a function once for each element in an array, in order.
+
+		 -- print each ele of array
+
+		 - Syn. 
+		      function Fun_Name (item, index, array)
+				{
+					//
+				}
+
+
+			item   :  give name of ele in array (required)  (any var type name)
+			index  :  give index no. of ele  (optional)
+			array  :  privious ele attach with something of array  (optional)
+
+	</pre>
+		<script type="text/javascript">
+			var cars = ["car1","car2", "car3", "car4"];
+
+			cars.forEach(car)
+				function car(item)
+				{
+					document.write(item+"<br/>");		// "car1","car2", "car3", "car4"
+				}
+			
+
+
+		</script>
+		<br>
+		<script type="text/javascript">
+			var cars = ["car1","car2", "car3", "car4"];
+
+			cars.forEach(car)
+
+			function car(item,index )
+				{
+					document.write(item+ " = " +index+ "<br/>")
+				}
+			
+		</script>
+		<br>
+		<script type="text/javascript">
+			var cars = ["car1","car2", "car3", "car4"];
+
+			cars.forEach(car)
+
+			function car(item,index,array)
+				{
+					// document.write(item+ " = " +index+ "<br/>")
+					 array[index] = item+"0"
+				}															//undefine
+			cars.forEach(after);
+			function after(item,index)
+				{
+					document.write(index+ " = " +item+ "<br>");
+				}
+		</script>
+
+</body>
+</html>

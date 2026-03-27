@@ -1,0 +1,174 @@
+<!-- Create a tabbed interface where clicking on tabs display different content sections without page reolade -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #tabs 
+      {
+        display: flex;
+        gap: 20px;
+      }
+
+      .tab 
+      {
+        padding: 12px 22px;
+        background-color: aquamarine;
+        border: 2px solid red;
+        border-radius: 5px;
+        width: 30px;
+        display: inline;       
+      }
+
+      h3 
+      {
+        margin-top: 20px;
+        width: 50%;
+        display: none;
+      }
+
+      body
+      {
+        margin-top: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tabs">
+                <div id="home" class="tab">Home</div>
+                <div id="about" class="tab">About</div>
+                <div id="contact" class="tab">Contact</div>
+    </div>
+
+        <h3 id="hometext">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad voluptatum
+      quia assumenda quos est deserunt alias eum et atque incidunt aspernatur
+      sunt dignissimos, error veritatis id magnam officiis at! Expedita cumque
+      natus voluptatibus rerum doloribus quas reiciendis praesentium qui
+      mollitia, facere omnis nesciunt, culpa inventore quisquam tempora hic
+      exercitationem illum, officia dolore. Numquam, eaque voluptas sit alias
+      dolor nemo expedita! Quas iste ducimus accusamus consectetur deserunt, id
+      inventore ipsam? Aperiam minus esse debitis perspiciatis iure repudiandae
+      porro facere, odio vitae quae, saepe tenetur tempora quis tempore quod
+      error perferendis et dolorum! Explicabo deserunt officia veniam molestias
+      quidem, unde aliquid distinctio voluptas! Nostrum laboriosam corporis
+      quibusdam architecto delectus possimus molestias quisquam nemo. In
+      temporibus architecto iusto tempora, molestias voluptas et soluta magni
+      quisquam tempore vitae reiciendis! Recusandae, magnam? Consequatur ut
+      adipisci omnis deserunt neque ipsa tenetur, vel aut voluptatibus!
+      Architecto sapiente consequatur, modi illum excepturi explicabo fuga autem
+      repellendus voluptatum nobis quo, tempore in neque ea incidunt minima
+      repudiandae distinctio aspernatur quod ipsum a. Consequatur, expedita! Nam
+      libero eligendi alias quia eos? Voluptate placeat, tenetur ea qui iusto in
+      nostrum id praesentium consequatur laudantium nulla odio maxime sed
+      officiis a ipsa amet, nihil consequuntur natus ducimus enim? Tempora ipsa
+      doloribus fugit maxime velit porro accusantium exercitationem harum nam,
+      repellat illo accusamus distinctio voluptas possimus corrupti enim! Ex sit
+      ea aspernatur sequi libero quod, quis vero accusantium amet soluta
+      reiciendis nam doloribus debitis tempora culpa minima aliquid placeat
+      officia. Consectetur, libero. Accusantium, praesentium eaque! Earum
+      exercitationem dicta voluptatum porro voluptate nulla quae.
+        </h3>
+        <h3 id="abouttext">
+        Lorem ipsum  et dolorum! Explicabo deserunt officia veniam molestias
+        quidem, unde aliquid distinctio voluptas! Nostrum laboriosam corporis
+        quibusdam architecto delectus possimus molestias quisquam nemo. In
+        temporibus architecto iusto tempora, molestias voluptas et soluta magni
+        quisquam tempore vitae reiciendis! Recusandae, magnam? Consequatur ut
+        adipisci omnis deserunt neque ipsa tenetur, vel aut voluptatibus!
+        Architecto sapiente consequatur, modi illum excepturi explicabo fuga autem
+        repellendus voluptatum nobis quo, tempore in neque ea incidunt minima
+        repudiandae distinctio aspernatur quod ipsum a. Consequatur, expedita! Nam
+        libero eligendi alias quia eos? Voluptate placeat, tenetur ea qui iusto in
+        nostrum id praesentium consequatur laudantium nulla odio maxime sed
+        officiis a ipsa amet, nihil consequuntur natus ducimus enim? Tempora ipsa
+        doloribus fugit maxime velit porro accusantium exercitationem harum nam,
+        repellat illo accusamus distinctio voluptas possimus corrupti enim! Ex sit
+        ea aspernatur sequi libero quod, quis vero accusantium amet soluta
+        reiciendis nam doloribus debitis tempora culpa minima aliquid placeat
+        officia. Consectetur, libero. Accusantium, praesentium eaque! Earum
+        exercitationem dicta voluptatum porro voluptate nulla quae.
+        </h3>
+        <h3 id="contacttext">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad voluptatum
+        quia assumenda quos est deserunt alias eum et atque incidunt aspernatur
+        sunt dignissimos, error veritatis id magnam officiis at! Expedita cumque
+        natus voluptatibus rerum doloribus quas reiciendis praesentium qui
+        mollitia, facere ont minima
+        repudiandae distinctio aspernatur quod ipsum a. Consequatur, expedita! Nam
+        libero eligendi alias quia eos? Voluptate placeat, tenetur ea qui iusto in
+        nostrum id praesentium consequatur laudantium nulla odio maxime sed
+        officiis a ipsa amet, nihil consequuntur natus ducimus enim? Tempora ipsa
+        doloribus fugit maxime velit porro accusantium exercitationem harum nam,
+        repellat illo accusamus distinctio voluptas possimus corrupti enim! Ex sit
+        ea aspernatur sequi libero quod, quis vero accusantium amet soluta
+        reiciendis nam doloribus debitis tempora culpa minima aliquid placeat
+        officia. Consectetur, libero. Accusantium, praesentium eaque! Earum
+        exercitationem dicta voluptatum porro voluptate nulla quae.
+        </h3>
+  </body>
+  <script>
+        var home  = document.querySelector('#home');
+        var about  = document.querySelector('#about');
+        var contact  = document.querySelector('#contact');
+
+        var hometext  = document.querySelector('#hometext');
+        var abouttext  = document.querySelector('#abouttext');
+        var contacttext  = document.querySelector('#contacttext');
+
+        hometext.style.display = "block";
+        hometext.style.width = "50%";
+
+
+        home.addEventListener('click',function(){
+            clear();
+            hometext.style.display = "block";
+            hometext.style.width = "50%";
+        })
+
+        about.addEventListener('click',function(){
+            clear();
+            abouttext.style.display = "block";
+            abouttext.style.width = "50%";
+        })
+
+        contact.addEventListener('click',function(){
+            clear();
+            contacttext.style.display = "block";
+            contacttext.style.width = "50%";
+        })
+
+        function clear()
+         {
+            document.querySelectorAll('h3').forEach(function(h3){
+                h3.style.display = "none";
+            })
+         }
+  </script>
+  <script>
+            // Short Code
+                // var divs = document.querySelectorAll('.tab');
+                // var text = document.querySelectorAll('h3');
+
+                // texts[0].style.display = "block";
+                // texts[0].style.width = "50%";
+
+                // divs.forEach(function(div,index){
+                //     div.addEventListener("click", function(){
+                //         clear();
+                //         texts[index].style.display = "block";
+                //         texts[index].style.width = "50%";
+                //     });
+                // });
+
+                // function clear()
+                //     {
+                //         text.forEach(function(text){
+                //             text.style.display = "none";
+                //         });
+                //     }
+  </script>
+</html>

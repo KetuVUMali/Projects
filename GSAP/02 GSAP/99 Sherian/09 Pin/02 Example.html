@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html, body{
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        #page1{
+            height: 100%;
+            width: 100%;
+            background-color: rgb(145, 227, 230);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #page2{
+            height: 100%;
+            width: 100%;
+            background-color: rgb(66, 189, 189);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            /* gap: 50px; */
+        }
+
+        #page3{
+            height: 100%;
+            width: 100%;
+            background-color: rgb(51, 201, 188);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .box{
+            width: 300px;
+            height: 300px;
+            background-color: red;
+        }
+
+        h1{
+            position: relative;
+            font-size: 60px;
+            background-color: red;
+            color: white;
+            padding: 10px
+        }
+        h2{
+            position: relative;
+            font-size: 60px;
+            background-color: rgb(226, 238, 54);
+            color: white;
+            padding: 10px
+        }
+    </style>
+</head>
+<body>
+
+    <div id="page1">
+        <div class="box"></div>
+    </div>
+    <div id="page2">
+        <h1>Hello World</h1>
+        <h2>Web Designer</h2>
+    </div>
+    <div id="page3">
+        <div class="box"></div>
+    </div>
+
+
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <!-- ScrollTrigger CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        
+    <script>
+        gsap.from("#page1 .box", {
+            scale:0,
+            duration: 2,
+            delay: 1,
+            rotate:360
+        });
+
+      
+        gsap.from("#page2 h1", {
+            opacity:0,
+            duration: 2,
+            x: 500,
+            scrollTrigger:{
+                trigger: "#page2 h1",                // Trigger Element
+                scroller: "body",                      // Scroller Element  
+                start: "top 50%",                      // Animation starts when top of element is 80% down viewport.
+                markers: true                          // Show markers on animation start/end.
+            }               
+        });
+
+        gsap.from("#page2 h2", {
+            opacity:0,
+            duration: 2,
+            x: -500,
+            scrollTrigger:{
+                trigger: "#page2 h1",                // Trigger Element
+                scroller: "body",                      
+                start: "top 50%",   
+                end:"top 20%",                   
+                markers: true,  
+                scrub: true,    
+                pin:true                   
+            }               
+        });
+
+       
+        gsap.from("#page3 .box", {
+            scale:0,
+            opacity:0,
+            duration: 1,
+            rotate:720,
+            scrollTrigger:{
+                trigger: "#page3 .box",                
+                scroller: "body",                       
+                start: "top 60%",                     
+                end:"top 20%",                          
+                markers: true,
+                scrub: true                          
+            }
+        });
+    </script>
+
+    <pre>
+
+    </pre>
+    
+</body>
+</html>

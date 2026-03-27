@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Class </title>
+</head>
+<body>
+
+	<h1>JavaScript Class </h1>
+
+	
+	<section>
+	    <h2>Class Definition</h2>
+	    <p>
+	        In JavaScript, a class is a blueprint for creating objects with predefined properties and methods.
+	        It provides a way to create and organize code in an object-oriented manner.
+	    </p>
+	</section>
+
+	 <h2>Usage of Class</h2>
+    <p>
+        Let's create a simple class named <code>Person</code> with properties <code>name</code> and <code>age</code>.
+        We'll also add a method to display information about the person.
+    </p>
+
+    <pre>
+        
+        class Person 	 							// Class declaration
+        {
+			var name = "Initial Name";				 // var assigen
+            constructor(name, age, abc) 			// constructo
+	            {
+	                this.name = name;
+	                this.age = age;
+	            }
+            displayInfo()  					   		 // method
+	            {
+	                console.log(`Name: ${this.name}, Age: ${this.age}`);
+	            }
+        }
+
+        let person1 = new Person("John Doe", 25, "ABC Value");			// person1 obj is create & pass para
+		let person2 = new Person("Vilas", 50, "ABC Value");				// person2 obj is create & pass para
+        person1.displayInfo();  										//obj through method call
+		person2.displayInfo(); 											//obj through method call
+    </pre>
+
+    <!-- Class Features: Getter, Setter, Constructor, Inheritance, and Others -->
+<section>
+    <h2>Class Features</h2>
+    <p>
+        Let's explore various features of classes including getters, setters, constructors, inheritance (extends),
+        and other class-related keywords.
+    </p>
+
+    <!-- JavaScript Example -->
+    <pre>
+        // Base class
+        class Animal 
+        	{
+        		// costructor
+	            constructor(name) 
+		            {
+		                this.name = name;
+		            }
+
+	            // Getter (to get value)
+	            get getName() 
+		            {
+		                return this.name;
+		            }
+
+	            // Setter (to set value) 
+	            set setName(newName) 
+		            {
+		                this.name = newName;
+		            }
+
+	            // Method
+	            makeSound() 
+		            {
+		                console.log("Generic animal sound");
+		            }
+	        }
+
+        // Inherited class (extends)
+        class Dog extends Animal {
+            constructor(name, breed) // Constructor
+	            {
+	                // Super keyword is used to call the constructor of the parent class
+	                super(name);
+	                this.breed = breed;
+	            }
+
+            // Overriding method
+            makeSound() 
+	            {
+	                console.log("Woof! Woof!");
+	            }
+
+            // New method specific to Dog class
+            displayBreed() 
+	            {
+	                console.log(`Breed: ${this.breed}`);
+	            }
+        }
+
+        // create class object
+        let genericAnimal = new Animal("Generic Animal");
+        console.log("Getter - Name:", genericAnimal.getName);
+
+        genericAnimal.setName = "Updated Animal";
+        console.log("Setter - Updated Name:", genericAnimal.getName);
+
+        genericAnimal.makeSound();
+
+        let dog1 = new Dog("Buddy", "Golden Retriever");
+        dog1.makeSound();
+        dog1.displayBreed();
+    </pre>
+
+
+</body>
+</html> 

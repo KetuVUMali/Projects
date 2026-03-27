@@ -1,0 +1,42 @@
+ 
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <h1> setInterval() </h1>
+    <pre>
+        - Perform perticular task repeatedly some time
+        - The setInterval() method repeats a given function at every time given time interval.
+         (interval : repeatation)
+
+        - Repeat perticular task or operation.
+        
+        - Syntax : window.setInterval(function,milli seconds);
+
+        - function : first parameter is the function to be executed.
+
+        - milliseconds : indicates the length of the time - interval between each execution.
+
+        - continuously repeat task , not stop. (Continous perfom task)
+    </pre>
+
+
+    <button onclick="test()"> Test </button>
+    
+ </body>
+    <script type="text/javascript">
+    	function test()
+    		{
+    			setInterval(
+    						function()
+	    						{
+	    							alert("hello");
+	    						},2500   //milisecodances	
+    				       )
+    		}
+
+    </script>
+ </html>

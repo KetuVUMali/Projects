@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON parse() </title>
+</head>
+<body>
+    <pre>
+        A common use of JSON is to exchange data to/from a web server.
+
+        When receiving data from a web server, the data is always a string.
+
+        Parse the data with JSON.parse(), and the data becomes a JavaScript object.
+
+
+
+        JSON.parse() is a built-in JavaScript function that converts a JSON string into a JavaScript object.
+
+        JSON.parse() to convert text into a JavaScript object
+
+
+
+
+
+        JSON.parse(): Converts a JSON string into a JavaScript object or array.
+        Example: JSON.parse('{"name": "Ketan"}') → {name: "Ketan"}
+
+        parseInt(): Converts a string to an integer.
+        Example: parseInt("123") → 123
+
+        parseFloat(): Converts a string to a floating-point number.
+        Example: parseFloat("123.45") → 123.45
+
+        Number(): Converts a value to a number (more strict than parseInt()).
+        Example: Number("123.45") → 123.45
+
+        Date.parse(): Converts a date string into a timestamp (milliseconds since 1970).
+        Example: Date.parse("2024-10-17T12:00:00Z") → 1729051200000
+
+        split(): Breaks a string into an array based on a delimiter (useful for parsing strings).
+        Example: "apple,banana,cherry".split(",") → ["apple", "banana", "cherry"]
+    </pre>
+</body>
+    <script>
+
+            //   JSON string is parsed into a JavaScript object:
+                const jsonString0 = '{"name": "Ketan", "age": 24, "isStudent": true}';
+
+                // Parsing the JSON string into a JavaScript object
+                const student = JSON.parse(jsonString0);
+
+                console.log(student.name);  // Output: "Ketan"
+                console.log(student.age);   // Output: 24
+                console.log(student.isStudent); // Output: true
+
+
+            //  Parsing a JSON Array
+                 const jsonArray = '["Math", "Science", "English"]';
+
+                // Parsing the JSON string into a JavaScript array
+                const subjects = JSON.parse(jsonArray);
+
+                console.log(subjects[0]); // Output: "Math"
+                console.log(subjects[1]); // Output: "Science"
+                console.log(subjects[2]); // Output: "English"
+
+
+            //
+                const jsonString = '{"name": "Alice", "age": 30, "city": "New York"}';
+                console.log(jsonString);                    // {"name": "Alice", "age": 30, "city": "New York"}
+                const jsonObject = JSON.parse(jsonString);
+                console.log(jsonObject);                    // object { name: 'Alice', age: 30, city: 'New York' }
+    
+
+
+        // parseInt()
+            // parseInt() function in JavaScript is used to convert a string into an integer (whole number)
+            // It can handle both decimal and non-decimal (radix) numbers, like binary, octal, and hexadecimal.
+            // Syntax :  parseInt(string, radix);
+                //string: The string to be converted to an integer.
+                //radix (optional): A number between 2 and 36 that specifies the base of the number system. 
+                //                  By default, it's 10 (decimal).
+                console.log(parseInt("123"));     // Output: 123 (as an integer)
+                console.log(parseInt("123.45"));  // Output: 123 (only the integer part is returned)
+                console.log(parseInt("101", 2));  // Output: 5 (binary "101" to decimal)
+                console.log(parseInt("FF", 16));  // Output: 255 (hexadecimal "FF" to decimal)
+
+
+
+
+
+
+
+        // parseFloat() 
+            // The parseFloat() function is used to convert a string into a floating-point number (decimal number)
+            // Syntax : parseFloat(string);
+                console.log(parseFloat("123.45"));  // Output: 123.45 (retains the decimal part)
+                console.log(parseFloat("123"));     // Output: 123 (still works for whole numbers)
+                console.log(parseFloat("12.34abc")); // Output: 12.34 (stops parsing when encountering non-numeric characters)
+
+        
+
+        // Number()
+            // The Number() function is used to convert a string, boolean, or other data types into a number. 
+            // It is more strict compared to parseInt() and parseFloat(), meaning if the string contains non-numeric characters (except whitespace), it will return NaN (Not-a-Number).
+                // Syntax :  Number(value);
+                //                  // value: The value to be converted to a number.
+
+                    console.log(Number("123"));     // Output: 123 (as a number)
+                    console.log(Number("123.45"));  // Output: 123.45
+                    console.log(Number("12abc"));   // Output: NaN (invalid numeric string)
+                    console.log(Number(true));      // Output: 1 (true is converted to 1)
+                    console.log(Number(false));     // Output: 0 (false is converted to 0)
+
+
+
+        //  Date.parse()
+            // he Date.parse() function parses a string representing a date and returns the number of milliseconds since January 1, 1970, 00:00:00 UTC (known as the Unix Epoch)
+            // Syntax :   Date.parse(dateString);
+            //                dateString: A string representing a date.
+
+                console.log(Date.parse("2024-10-17T12:00:00Z"));  // Output: 1729051200000 (milliseconds since 1970)
+                console.log(Date.parse("October 17, 2024"));      // Output: A timestamp (in milliseconds)
+
+            // You can then use the new Date() constructor to convert the timestamp into a date object:
+                const timestamp = Date.parse("2024-10-17T12:00:00Z");
+                console.log(new Date(timestamp));  // Output: Thu Oct 17 2024 12:00:00 GMT+0000 (UTC)
+
+
+
+
+        //  split() (Not a parse function, but a useful string parser)
+            // While not a "parse" function, split() allows you to break a string into an array of substrings based on a specified delimiter.
+            // Syntax :  string.split(separator);
+            //                        separator: The character or pattern to split the string by.
+                const data = "apple,banana,cherry";
+                const fruits = data.split(",");     // Split the string by commas
+                console.log(fruits);                // Output: ["apple", "banana", "cherry"]
+
+                const sentence = "Hello World!";
+                const words = sentence.split(" ");  // Split the sentence by spaces
+                console.log(words);                 // Output: ["Hello", "World!"]
+
+    
+            // 
+                const jsonString3 = '{"name": "Alice", "age": "24", "height": "5.7"}';
+
+                const obj = JSON.parse(jsonString3, (key, value) => {
+                if (key === 'age') {
+                    return parseInt(value, 10); // Convert to integer
+                }
+                if (key === 'height') {
+                    return parseFloat(value); // Convert to float
+                }
+                return value; // Leave other values unchanged
+                });
+
+                console.log(obj.age);   // Output: 24 (as a number)
+                console.log(obj.height); // Output: 5.7 (as a number)
+
+
+            //
+                const jsonString1 = '{"name": "Alice", "age": "30", "city": "New York"}';
+                const reviver = (key, value) => {
+                    if (key === "age") {
+                        return parseInt(value);
+                    }
+                    return value;
+                };
+                const jsonObject1 = JSON.parse(jsonString, reviver);
+                console.log(jsonObject);        // object { name: 'Alice', age: 30, city: 'New York' }
+
+
+
+            // Handling Invalid JSON Error
+                // const invalidJsonString = '{"name": "Ketan", "age": 24,'; // Missing closing brace
+                // try {
+                //     const student = JSON.parse(invalidJsonString);
+                // } 
+                // catch (error) {
+                //     console.error("Invalid JSON:", error.message);  // Output: "Invalid JSON: Unexpected end of JSON input"
+                // }
+        
+    
+    </script>
+</html>

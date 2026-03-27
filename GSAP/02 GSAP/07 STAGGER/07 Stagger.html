@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .nav {
+            background: #222;
+            width: 200px;
+            padding: 10px;
+        }
+
+        .nav div {
+            color: white;
+            margin: 10px 0;
+        }
+
+        button {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button onclick="navTL.play()">Open Menu</button>
+    <button onclick="navTL.reverse()">Close Menu</button>
+
+    <div class="nav">
+        <div>Home</div>
+        <div>About</div>
+        <div>Services</div>
+        <div>Contact</div>
+    </div>
+
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+    <script>
+        const navTL = gsap.timeline({ paused: true });
+
+        navTL.from(".nav div", {
+            x: -50,
+            opacity: 0,
+            duration: 0.4,
+            stagger: 0.15
+        });
+    </script>
+    <div>
+        <h2>GSAP Timeline Navigation with Stagger Example : Staggered menu animation</h2>
+        <p>This example demonstrates a GSAP timeline that animates menu items with a staggered effect when opening and closing a menu.</p>
+        <ul>
+            <li>Each menu item slides in from the left and fades in when the menu is opened.</li>
+            <li>There is a 0.15 second delay between the start of each item's animation.</li>
+            <li>The timeline is paused initially and controlled via button clicks.</li>
+        </ul>
+        <p>This showcases how to combine timelines and staggered animations using GSAP for a polished menu animation effect.</p>
+    </div>
+    <div>
+        <pre>
+        const navTL = gsap.timeline({ paused: true });      // Create paused timeline
+
+        navTL.from(".nav div", {                            // Animate menu items with stagger
+            x: -50,                                         // Start 50px left of the screen
+            opacity: 0,                                     // Fade out initially
+            duration: 0.4,                                  // Each animation takes 0.4 seconds
+            stagger: 0.15                                   // Stagger each animation by 0.15s  
+        });
+        </pre>
+    </div>
+
+</body>
+
+</html>

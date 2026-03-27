@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Array</title>
+</head>
+<body>
+	<h1> Array  </h1>
+
+	<script type="text/javascript">
+		
+		// 1.Creat Array 
+			console.log("1. Array Element");
+			var array = ["A",1,1.1,"B"];
+			console.log("Array Element :",array,"\n");
+
+		// 2. Accessing Elements in an Array index no through
+			console.log("2. Accessing Elements");
+			console.log("First Element by index no.");
+			var array = ["A",1,1.1,"B"];
+			var arrayele = array[0];
+			console.log(arrayele);
+
+			console.log(array[0]);
+
+			console.log("last Element by .length through ");
+			var array = ["A",1,1.1,"B"];
+			var arrayele = array[array.length-1];
+			console.log(arrayele); 
+
+		// 4. Modifying array 
+		    console.log("4. Array Modify");
+			var array = ["A",1,1.1,"B"];
+			array[0] = "K";
+			console.log(array);					// "K",1,1.1,"B"
+
+
+		// 5. Add ele in array
+			console.log("5. Array add Ele");
+			var array = ["A",1,1.1,"B"];
+			array[4] = 4;
+			console.log(array);					// "A",1,1.1,"B",4
+
+
+		// 6. Add ele last position in array
+			console.log("6. Array add Ele at last");
+			var array = ["A",1,1.1,"B"];
+			array.push(10);
+			console.log(array);				// "A",1,1.1,"B",10
+
+		// 7. Remove ele in array at last
+			console.log("7. Array remove Ele at last");
+			var array = ["A",1,1.1,"B"];
+			array.pop();
+			console.log(array);				// "A",1,1.1
+
+		// 8. .shift()
+			// Remove First ele in array
+				console.log("8. .shift() Remove 1st ele");
+				var array = ["A",1,1.1,"B"];
+				array.shift();
+				console.log(array);			// 1,1.1,"B"
+
+		// 9. .unshift()
+			// Add First ele in array
+				console.log("8. .shift() Add 1st ele");
+				var array = ["A",1,1.1,"B"];
+				array.unshift("First");
+				console.log(array);			// "FIrst","A",1,1.1,"B"
+
+		// 10. splice()
+			//add ele to specific poition
+			   console.log("10. .splice() Add ele/rem specific poition");
+				var array = ["A",1,1.1,"B"];
+				array.splice(2,0,"Ele1");
+				console.log(array);				// 'A', 1, 'Ele1', 1.1, 'B'
+
+			// add multiple ele specific position 
+				var array = ["A",1,1.1,"B"];
+				array.splice(2,0,"Ele1","Ele2","Ele3");
+				console.log(array);				// 'A', 1, 'Ele1', 'Ele2', 'Ele3', 1.1, 'B'
+
+			// Remove ele specific position 
+				var array = ["A",1,1.1,"B"];
+				array.splice(2,1);
+				console.log(array);				// A', 1, 'B
+
+			// Remove mul ele specific position 
+				var array = ["A",1,1.1,"B"];
+				array.splice(2,2);
+				console.log(array);				// A', 1
+
+
+			// update Ele
+			var array = ["A",1,1.1,"B"];		// ["A", 1, 1.1, "B"];
+				array.splice(2,1,"demo");
+				console.log(array);				// ['A', 1, 'demo', 'B']
+
+ 
+
+		// 11. .indexOf() 
+			//Find index No.
+			console.log(" 11. .indexOf()   Find index no.");
+			var array = ["A",1,1.1,"B"];
+				console.log(array.indexOf("B"));			// 3
+
+
+		// 12. .concat()  
+			// Combine two array
+			console.log("12. concat array");
+			var arr1 = ["A","B","C"];
+			var arr2 = [1,2,3];
+
+			var arr3 = arr1.concat(arr2);
+			console.log(arr3);				// "A","B","C",1,2,3
+
+			var arr4 = arr2.concat(arr1);
+			console.log(arr4);				// 1,2,3,"A","B","C"
+
+
+		// 13.  .slice()
+			// Print particular array ele
+			// last para or index not count
+			console.log("13. .slice() Print ele");
+			var arr1 = ["A","B","C","D","E"];
+			console.log(arr1.slice(0,4));			// "A","B","C","D"
+			console.log(arr1.slice(1,4));			// "B","C","D"
+
+			console.log(arr1.slice(2,-1));			// "C","D"
+			console.log(arr1.slice(2,-2));			// "C"
+
+		// 14.  reverse()   
+			// reverse array ele
+			console.log("14. .reverse() print reverse array");
+			var arr1 = ["A","B","C","D","E"];
+			console.log(arr1.reverse());			// "E", "D", "C", "B", "A"
+
+			var arr2 = ["A","B","C","D","E"];
+			console.log(arr2.slice().reverse());	// "E", "D", "C", "B", "A",
+
+
+		// 15. sort() 
+			// Sorting array
+			console.log("15.  .sort()  sorting array")
+			var arr1 = [5,3,4,1,2,6];
+			var arr2 = [5,3,4,1,2,6];
+
+			console.log(arr1.sort());				// 1 2 3 4 5 6
+			console.log(arr2.slice().sort());		// 1 2 3 4 5 6
+
+			var arr = [5,3,6,4,7,2,8,1];
+			var sort1 = arr.sort((a,b) =>{
+				return a-b;
+			});
+			console.log(sort1);					// 1 2 3 4 5 6 7 8   (only sorting Done)
+
+			var arr = [5,3,6,4,7,2,8,1];
+			arr.forEach(function(value){
+				console.log(value*2);			// 10 6 12 8 14 4 16 2
+			})
+
+
+			var arr = [5,3,6,4,7,2,8,1];
+			arr.forEach(function(value){
+				console.log(value*value);		// 25 9 36 16 49 4 64 1
+			})
+
+			
+
+
+
+		// 16. map method
+		  // can access,modify,return ele
+		  // Used in data transformation
+		  console.log("16. Map method")
+			var arr1 = ["A","B","C","D","E"];
+		  let filteredarr1 = arr1.map((arr1) => (arr1.toLowerCase()));
+		  console.log(filteredarr1);			// ['a', 'b', 'c', 'd', 'e']
+
+		  // var arr2 = ["A","B","C","D","E"];
+		  // let filteredarr2 = arr2.map((arr2) =>{(arr2.toLowerCase()+ "---";
+		  // 		return filteredarr2;
+		  // 	});
+
+
+		  // 1: Convert Prices from Rupees to Dollars
+		  	const pricesInRupees = [100, 200, 300, 400];
+			const exchangeRate = 0.012; // 1 INR = 0.012 USD
+			const pricesInDollars = pricesInRupees.map(price => price * exchangeRate);
+			console.log(pricesInDollars); // Output: [1.2, 2.4, 3.6, 4.8]
+
+
+		 // 17. .filter() 
+		   // use to filter data
+		   console.log("17. .filter() ");
+
+		   var words = ['spray', 'elite', 'exuberant', 'destruction', 'present'];
+
+			var result = words.filter((words) => words.length > 6);
+			console.log(result);					// 'exuberant', 'destruction', 'present'
+
+
+			var result = words.filter(
+				words => 
+				{
+					if(words.length>6)
+						{
+							return true;
+						}
+					else
+						{
+							return false;
+						}
+				});
+			console.log(result);					// 'exuberant', 'destruction', 'present'
+			
+
+
+				var array = [-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+				function isPrime(num) 
+				{
+				  for (let i=2; num>i; i++) 
+				    {
+				     if (num % i === 0) 
+				       {
+				         return false;
+				       }
+				    } 
+				  return num > 1;
+				}
+				console.log(array.filter(isPrime)); 				// 2, 3, 5, 7, 11, 13
+
+		 // 18. .reduce()
+		 	//iterate all ele one by one
+		 	// used to calculation/length/etc array addition
+		    console.log("17. .reduce() ");
+		 	var arr = [10,20,30,40,50];
+		 	var add = arr.reduce((prevVal, currVal) => prevVal += currVal ,0); 
+			console.log(add);							// 150   (ADD of All Arrray ELE)
+
+
+		 // 19. forEach()
+		    // access all ele ii array
+		       console.log("19. forEach()");
+		       var arr = [10,20,30,40,50];
+		       arr.forEach(e1 => console.log(e1));			// 10,20,30,40,50]
+
+				// arr.forEach(function(e1){
+				// 	console.log(e1);		// 10,20,30,40,50
+				// })
+			
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+		
+	</script>
+
+</body>
+</html>

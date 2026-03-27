@@ -1,0 +1,70 @@
+<!-- Create a from with input fields and a submit button. 
+     used JS to validate the form and Display an error message 
+     If the input is invalid. -->
+
+
+     <!-- When form submited then Form realod page then JS Validation is not work .
+          Form ko Submit karne par relaod se rokne ke liye  event ko preventDefault kar dena-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="error"></h1>
+
+    <form>
+        <input id="input1" type="text">
+        <input id="input2" type="text">
+        <button > Submit </button>
+    </form>
+</body>
+    <script>
+            // var form = document.querySelector('form');
+            // var input1 = document.querySelector('#input1');
+            // var input2 = document.querySelector('#input2');
+            // var h1 = document.querySelector('#error');
+
+
+            // form.addEventListener('submit',function(event){
+            //     event.preventDefault();                                        //preventDefault         
+            //     if(input1.value.trim() === "" || input2.value.trim() === "")   //trim() to avoid blank value (single space)
+            //     {
+            //         h1.textContent = "Error, Some Field Is Blank";
+            //         h1.style.color="red";
+            //     }
+            //     else
+            //     {
+            //         h1.textContent = "";
+            //         h1.style.color="black";
+            //     }
+            // })
+    </script>
+    <script>
+        // multiple inputs store in single var              //////////////////////////////////////////////// 
+            var form = document.querySelector('form');
+            var h1 = document.querySelector('h1');
+            
+            var inps = document.querySelectorAll('input[type="text"]');       //Array like structure(node list : only store html tag)
+            
+
+            //console.log(input1);
+            //console.log(input1.length);
+
+            form.addEventListener('submit',function(eve){
+                eve.preventDefault();                                     //preventDefault         
+               for(var i=0; i<inps.length; i++)
+                {
+                    if(inps[i].value.trim() === '')
+                     {
+                        
+                        h1.textContent = "Error, Some Field Is Blank";
+                        h1.style.color="red";
+                        break;
+                     }
+                }
+            })
+    </script>
+</html>

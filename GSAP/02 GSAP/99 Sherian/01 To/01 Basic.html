@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <pre>
+        // GSAP :
+                    GSAP = GreenSock Animation Platform
+                        👉 GSAP is a JavaScript animation library
+                        👉 Used to create smooth, powerful, professional animations
+
+
+        // To : Initial Position To Target Animation Position Perform   (Target -> Final Position)
+                Initial Position   ------------------- >   Target Position                           
+                            ❎   ---------------------- >   ✔️
+                            A             To                  B
+
+
+
+        // GSAP TO Animation Syntax
+                            gsap.to( target, { Properties } );
+                            Where,
+                                gsap.to    : GSAP TO Animation Method
+                                target     : Element CSS Selector to be Animated
+                                Properties : Animation Properties Object to Define Animation Type & Values
+       
+        Ex :
+        gsap.to(".box",                                     // .box (Class) => Element CSS Selector
+                        {
+                        // This All Animation Class TO Perform Animation
+                            duration: 2,                        // Animation Duration Time (Seconds)
+                            x: 300,                             // Target Position X Axis: 300px
+                            y: 300,                             // Target Position Y Axis: 300px
+                            rotation: 360,                      // Rotate Animation 360 Degree
+                            scale: 0.5                          // Scale Animation 0.5 Times
+                        }
+                );
+
+        Note :
+            1. X & Y Axis Position Change Based On Element Original Position
+                Both take Positive & Negative Values to Move Element in Different Directions
+                Positive X = Right Direction 
+                Negative X = Left Direction
+                Positive Y = Down Direction
+                Negative Y = Up Direction
+                X + Y = Up & Right Direction (Cross Direction)
+
+            2. Element CSS Selector can be ID, Class or HTML Tag Name
+                ID Selector = "#idName"
+                Class Selector = ".className"
+                HTML Tag Selector = "tagName"
+
+            3. You can Add More Animation Properties as per Requirement.
+
+            4. Animation Duration Time (Seconds) can be Decimal Value also like 2.5, 3.5 etc.
+                        Ex :        Duration: 2.5
+                                A -----------------.> B
+
+            5. Delay Property can be Added to Delay Animation Start Time
+                        Ex :        delay: 1.5          // 1.5 Seconds Delay Before Animation Start
+                                    ........... A-----------------.>  B
+
+            Duration : Animation Take Time To Complete
+            Delay    : Animation Start Before Take Time
+                                         
+            6. CDN GSAP  : To Use GSAP in HTML File
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        
+    </pre>
+</body>
+</html>

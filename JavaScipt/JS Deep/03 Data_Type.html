@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> Data Type</title>
+</head>
+<body>
+
+	<h1> Data Type </h1>
+
+	<script type="text/javascript">
+		
+		// String
+			let str="Hello,World!";
+			console.log("String :",str);
+
+		// Number
+			let num=44;
+			console.log("Number :",num);
+
+		// Bigint (More than 15 Digit )
+			let bigIntNum = 70382495929022862066n;
+			console.log("Bigint :",bigIntNum);
+
+		// Boolean
+			let isTrue=true;
+			let isFalse=false;
+			console.log("Boolean (True) :",isTrue);
+			console.log("Boolean (False) :",isFalse);
+
+		// undefine - no val store
+			let undefinedVar;
+			console.log("Undefined Variable :",undefinedVar);
+
+		// Null
+			let nullVar=null;
+			console.log("Null Variable :",nullVar);
+
+		// Object :-> key : val pair
+			let person={
+					 	 name:"ketu",
+						 age:23,
+						 std:"mca"   
+						};
+			console.log("object :",person);
+
+			var fan = {
+				color : "Red",
+				type : "Table Fan",
+				price : 1300,
+				incSpeed : function(){
+							console.log("Inc Speed");
+						},
+				decSpeed : function(){
+							console.log("Dec Speed");
+						},
+				onFan : function(){},
+				offFan : function(){}
+			}
+			console.log(fan.name);
+			console.log(fan.price);
+			console.log(fan['price']);					// print/get val
+
+			console.log(fan.type);
+			console.log(fan.incSpeed);
+			console.log(fan.decSpeed());
+			fan.incSpeed();								// call obj inside fun
+
+			fan['color'] = "Black"
+			fan['price'] = fan['price'] + 1;			// update prices by one
+
+
+		// Array (Object Data Type or combination/collection of Multi Data Type ) 
+			let colors=[
+						 "red","green","blue",1,{name :"ket"}
+						];
+			console.log("Array :",colors);
+
+		// Date (Object Data Type)
+			let currentDate = new Date();
+			console.log("Date :",currentDate); 
+
+
+		//Identify Data Type
+			console.log("colors :",(typeof colors));
+			console.log("Array :",(typeof Array));
+			console.log("Person :",(typeof person));
+			console.log("undefinedVar :",(typeof undefinedVar));
+
+			// Note : const value not change but const object key value we can change.
+		
+
+
+	</script>
+	// JS is dynamic typed language means in any var we can story/update any type value.
+			<pre>
+				fullName = "Ketan Mali";
+				fullName = 25;
+				fullName = true;
+
+				In Js any var we can add any kind of var value or update. We Can store direct value.
+				This feature are restricted in other programming languages like java, ts, etc.
+				TS is super set of JS (Advanced Version).
+				TS is typed based language means var strictly follow single data type when we create it.
+
+			</pre>
+
+
+
+
+</body>
+</html>

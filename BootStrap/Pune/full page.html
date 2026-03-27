@@ -1,0 +1,1675 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Car Service Booking</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#DC3545",
+              secondary: "#28A745",
+            },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+      .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+      z-index: 1;
+      }
+      .dropdown:hover .dropdown-content {
+      display: block;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <header class="bg-white shadow-sm z-50">
+      <nav
+        class="container mx-auto px-4 py-3 flex items-center justify-between"
+      >
+        <div class="flex items-center space-x-4">
+          <a
+            href="#"
+            class="text-2xl font-['Pacifico'] text-primary flex items-center"
+          >
+            <i class="ri-car-line mr-2"></i>
+            logo
+          </a>
+          <div class="dropdown relative">
+            <button
+              class="flex items-center space-x-1 text-gray-700 hover:text-primary"
+            >
+              <i class="ri-map-pin-line"></i>
+              <span>Pune</span>
+              <i class="ri-arrow-down-s-line"></i>
+            </button>
+            <div class="dropdown-content rounded-md mt-2">
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100">Mumbai</a>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100">Delhi</a>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100"
+                >Bangalore</a
+              >
+            </div>
+          </div>
+          <div class="dropdown relative ml-4">
+            <button
+              class="flex items-center space-x-1 text-gray-700 hover:text-primary"
+            >
+              <i class="ri-article-line"></i>
+              <span>Blog</span>
+            </button>
+          </div>
+          <div class="dropdown relative ml-4">
+            <button
+              class="flex items-center space-x-1 text-gray-700 hover:text-primary"
+            >
+              <i class="ri-more-2-fill"></i>
+              <span>More</span>
+              <i class="ri-arrow-down-s-line"></i>
+            </button>
+            <div class="dropdown-content rounded-md mt-2">
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100">About Us</a>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100">Services</a>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100">Contact</a>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100">FAQ</a>
+            </div>
+          </div>
+        </div>
+        <button
+          class="bg-primary text-white px-6 py-2 rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap"
+        >
+          Login
+        </button>
+      </nav>
+    </header>
+    <main class="relative">
+      <div class="absolute inset-0 z-0">
+        <img
+          src="./img/home-screen.jpg"
+          alt="Car Service Background"
+          class="w-full h-full object-cover object-top"
+        />
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+      </div>
+      <div class="container mx-auto px-4 py-12 relative z-10">
+        <div class="flex flex-col lg:flex-row items-center gap-12">
+          <div class="lg:w-3/5">
+            <!-- <img src="" alt="" class="w-full h-auto rounded-lg shadow-xl"/> -->
+          </div>
+          <div class="lg:w-2/5 space-y-8 bg-white bg-opacity-90 p-8 rounded-lg">
+            <div>
+              <h1 class="text-4xl font-bold mb-4">
+                Experience The Best Car Services In Pune
+              </h1>
+              <p class="text-gray-600">
+                Get instant quotes for your car service
+              </p>
+            </div>
+            <form class="space-y-4" id="bookingForm">
+              <div class="relative">
+                <select
+                  class="w-full p-3 border rounded-md appearance-none bg-white pr-10"
+                >
+                  <option>PUNE</option>
+                  <option>Mumbai</option>
+                  <option>Delhi</option>
+                  <option>Bangalore</option>
+                </select>
+                <i
+                  class="ri-arrow-down-s-line absolute right-3 top-1/2 -translate-y-1/2"
+                ></i>
+              </div>
+              <div class="relative">
+                <select
+                  class="w-full p-3 border rounded-md appearance-none bg-white pr-10"
+                >
+                  <option>SELECT YOUR CAR</option>
+                  <option>Maruti Suzuki</option>
+                  <option>Hyundai</option>
+                  <option>Toyota</option>
+                  <option>Honda</option>
+                </select>
+                <i
+                  class="ri-arrow-down-s-line absolute right-3 top-1/2 -translate-y-1/2"
+                ></i>
+              </div>
+              <input
+                type="tel"
+                placeholder="ENTER MOBILE NUMBER"
+                class="w-full p-3 border rounded-md"
+                pattern="[0-9]{10}"
+              />
+              <button
+                type="submit"
+                class="w-full bg-primary text-white py-3 rounded-button hover:bg-opacity-90 transition-colors text-lg font-medium"
+              >
+                CHECK PRICES FOR FREE
+              </button>
+            </form>
+            <div class="flex items-center justify-between pt-4 border-t">
+              <div class="flex items-center">
+                <div class="text-secondary text-2xl mr-2">
+                  <i class="ri-star-fill"></i>
+                </div>
+                <div>
+                  <div class="font-bold text-xl">4.0/5</div>
+                  <div class="text-sm text-gray-500">
+                    Based on 150000+ Reviews
+                  </div>
+                </div>
+              </div>
+              <div class="text-center">
+                <div class="font-bold text-xl">2 Million+</div>
+                <div class="text-sm text-gray-500">Happy Customers</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <section class="container mx-auto px-4 py-12">
+      <div class="border-t border-gray-200 pt-8">
+        <h2 class="text-2xl font-bold mb-2">Car Services Available In Pune</h2>
+        <p class="text-gray-600 mb-8">
+          Get affordable and hassle-free periodic car service, car repair, wheel
+          care services, cashless insurance claim and much more in Queen of the
+          Deccan, Pune.
+        </p>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+          <!-- Service 1 -->
+          <div
+            class="bg-gray-100 p-4 rounded flex flex-col items-center text-center"
+          >
+            <div class="w-16 h-16 flex items-center justify-center mb-2">
+              <img
+                src="https://public.readdy.ai/ai/img_res/4cd9733d41dc1d519f0126ff719e5d6f.jpg"
+                alt="Periodic Services"
+                class="w-12 h-12"
+              />
+            </div>
+            <h3 class="text-sm font-medium">Periodic Services</h3>
+          </div>
+          <!-- Service 2 -->
+          <div
+            class="bg-gray-100 p-4 rounded flex flex-col items-center text-center"
+          >
+            <div class="w-16 h-16 flex items-center justify-center mb-2">
+              <img
+                src="https://public.readdy.ai/ai/img_res/c102a99ed5d6ff6789321860bf6dfcb5.jpg"
+                alt="AC Service & Repair"
+                class="w-12 h-12"
+              />
+            </div>
+            <h3 class="text-sm font-medium">AC Service & Repair</h3>
+          </div>
+          <!-- Service 3 -->
+          <div
+            class="bg-gray-100 p-4 rounded flex flex-col items-center text-center"
+          >
+            <div class="w-16 h-16 flex items-center justify-center mb-2">
+              <img
+                src="https://public.readdy.ai/ai/img_res/0d1a5e3ea55404704dfa15c4c1a4b338.jpg"
+                alt="Batteries"
+                class="w-12 h-12"
+              />
+            </div>
+            <h3 class="text-sm font-medium">Batteries</h3>
+          </div>
+          <!-- Service 4 -->
+          <div
+            class="bg-gray-100 p-4 rounded flex flex-col items-center text-center"
+          >
+            <div class="w-16 h-16 flex items-center justify-center mb-2">
+              <img
+                src="https://public.readdy.ai/ai/img_res/2c954a9ddf27e7dcc3dbdabb42dc01c6.jpg"
+                alt="Tyres & Wheel Care"
+                class="w-12 h-12"
+              />
+            </div>
+            <h3 class="text-sm font-medium">Tyres & Wheel Care</h3>
+          </div>
+          <!-- Service 5 -->
+          <div
+            class="bg-gray-100 p-4 rounded flex flex-col items-center text-center"
+          >
+            <div class="w-16 h-16 flex items-center justify-center mb-2">
+              <img
+                src="https://public.readdy.ai/ai/img_res/50667aec645a89eaa45195707359548a.jpg"
+                alt="Denting & Painting"
+                class="w-12 h-12"
+              />
+            </div>
+            <h3 class="text-sm font-medium">Denting & Painting</h3>
+          </div>
+          <!-- Service 6 -->
+          <div
+            class="bg-gray-100 p-4 rounded flex flex-col items-center text-center"
+          >
+            <div class="w-16 h-16 flex items-center justify-center mb-2">
+              <img
+                src="https://public.readdy.ai/ai/img_res/b37a66ce517d396a6a132c1ba7d1841b.jpg"
+                alt="Detailing Services"
+                class="w-12 h-12"
+              />
+            </div>
+            <h3 class="text-sm font-medium">Detailing Services</h3>
+          </div>
+          <!-- Service 7 -->
+          <div
+            class="bg-gray-100 p-4 rounded flex flex-col items-center text-center"
+          >
+            <div class="w-16 h-16 flex items-center justify-center mb-2">
+              <img
+                src="https://public.readdy.ai/ai/img_res/86811dfbc63f574bebed3a183cfa867d.jpg"
+                alt="Car Spa & Cleaning"
+                class="w-12 h-12"
+              />
+            </div>
+            <h3 class="text-sm font-medium">Car Spa & Cleaning</h3>
+          </div>
+          <!-- Service 8 -->
+          <div
+            class="bg-gray-100 p-4 rounded flex flex-col items-center text-center relative"
+          >
+            <div
+              class="absolute -top-2 -right-2 bg-green-500 text-white text-xs px-2 py-1 rounded"
+            >
+              New
+            </div>
+            <div class="w-16 h-16 flex items-center justify-center mb-2">
+              <img
+                src="https://public.readdy.ai/ai/img_res/020161fd415ec6477546344c6999b4e8.jpg"
+                alt="Car Inspections"
+                class="w-12 h-12"
+              />
+            </div>
+            <h3 class="text-sm font-medium">Car Inspections</h3>
+          </div>
+          <!-- Service 9 -->
+          <div
+            class="bg-gray-100 p-4 rounded flex flex-col items-center text-center"
+          >
+            <div class="w-16 h-16 flex items-center justify-center mb-2">
+              <img
+                src="https://public.readdy.ai/ai/img_res/b0ae734983b33b56e257de1bf8d6f01b.jpg"
+                alt="Windshields & Lights"
+                class="w-12 h-12"
+              />
+            </div>
+            <h3 class="text-sm font-medium">Windshields & Lights</h3>
+          </div>
+          <!-- Service 10 -->
+          <div
+            class="bg-gray-100 p-4 rounded flex flex-col items-center text-center"
+          >
+            <div class="w-16 h-16 flex items-center justify-center mb-2">
+              <img
+                src="https://public.readdy.ai/ai/img_res/a50126b2945134e81524a5336b164e55.jpg"
+                alt="Suspension & Fitments"
+                class="w-12 h-12"
+              />
+            </div>
+            <h3 class="text-sm font-medium">Suspension & Fitments</h3>
+          </div>
+          <!-- Service 11 -->
+          <div
+            class="bg-gray-100 p-4 rounded flex flex-col items-center text-center relative"
+          >
+            <div
+              class="absolute -top-2 -right-2 bg-green-500 text-white text-xs px-2 py-1 rounded"
+            >
+              New
+            </div>
+            <div class="w-16 h-16 flex items-center justify-center mb-2">
+              <img
+                src="https://public.readdy.ai/ai/img_res/dbdc82749f9c0a0269551ed940e4c5b3.jpg"
+                alt="Clutch & Body Parts"
+                class="w-12 h-12"
+              />
+            </div>
+            <h3 class="text-sm font-medium">Clutch & Body Parts</h3>
+          </div>
+          <!-- Service 12 -->
+          <div
+            class="bg-gray-100 p-4 rounded flex flex-col items-center text-center"
+          >
+            <div class="w-16 h-16 flex items-center justify-center mb-2">
+              <img
+                src="https://public.readdy.ai/ai/img_res/44f7521ee96354a6b8da94e81f9b1cfe.jpg"
+                alt="Insurance Claims"
+                class="w-12 h-12"
+              />
+            </div>
+            <h3 class="text-sm font-medium">Insurance Claims</h3>
+          </div>
+        </div>
+        <!-- Miles Card -->
+        <div class="mt-8 bg-primary rounded-lg overflow-hidden max-w-xs">
+          <div class="p-4 text-white">
+            <h3 class="text-xl font-bold">Miles</h3>
+            <p class="text-sm">Free Road Side Assistance</p>
+            <div class="flex justify-end mt-2">
+              <i class="ri-arrow-right-line text-xl"></i>
+            </div>
+          </div>
+          <img
+            src="https://public.readdy.ai/ai/img_res/f922c10b227884c510c1afc40e17f7d9.jpg"
+            alt="Miles Road Side Assistance"
+            class="w-full h-32 object-cover"
+          />
+        </div>
+      </div>
+      <!-- Curated Custom Services -->
+      <div class="border-t border-gray-200 pt-8 mt-12">
+        <h2 class="text-2xl font-bold mb-8">Curated Custom Services</h2>
+        <div class="relative">
+          <div class="flex overflow-x-auto pb-4 space-x-4 scrollbar-hide">
+            <!-- Item 1 -->
+            <div class="flex-shrink-0 w-36 relative">
+              <div class="bg-red-100 rounded-lg overflow-hidden">
+                <div
+                  class="absolute top-0 left-0 bg-red-600 text-white text-xs px-2 py-1"
+                >
+                  SALE
+                </div>
+                <img
+                  src="https://public.readdy.ai/ai/img_res/f024a42ad444cc8c01e2de596dd216fb.jpg"
+                  alt="Batteries"
+                  class="w-full h-32 object-contain p-2"
+                />
+                <div class="p-2 text-center">
+                  <h3 class="text-sm font-medium">Batteries</h3>
+                </div>
+              </div>
+            </div>
+            <!-- Item 2 -->
+            <div class="flex-shrink-0 w-36">
+              <div class="bg-gray-100 rounded-lg overflow-hidden">
+                <img
+                  src="https://public.readdy.ai/ai/img_res/4634756f7b689e137159df9fdc27da94.jpg"
+                  alt="Brakes"
+                  class="w-full h-32 object-contain p-2"
+                />
+                <div class="p-2 text-center">
+                  <h3 class="text-sm font-medium">Brakes</h3>
+                </div>
+              </div>
+            </div>
+            <!-- Item 3 -->
+            <div class="flex-shrink-0 w-36">
+              <div class="bg-gray-100 rounded-lg overflow-hidden">
+                <img
+                  src="https://public.readdy.ai/ai/img_res/a68ed85fe13bf1e9b7742638c9027cca.jpg"
+                  alt="AC Parts"
+                  class="w-full h-32 object-contain p-2"
+                />
+                <div class="p-2 text-center">
+                  <h3 class="text-sm font-medium">AC Parts</h3>
+                </div>
+              </div>
+            </div>
+            <!-- Item 4 -->
+            <div class="flex-shrink-0 w-36 relative">
+              <div class="bg-gray-100 rounded-lg overflow-hidden">
+                <div
+                  class="absolute top-0 right-0 bg-green-500 text-white text-xs px-2 py-1"
+                >
+                  NEW
+                </div>
+                <img
+                  src="https://public.readdy.ai/ai/img_res/8149169a347ddaac55a6cc7f373497fa.jpg"
+                  alt="Clutch"
+                  class="w-full h-32 object-contain p-2"
+                />
+                <div class="p-2 text-center">
+                  <h3 class="text-sm font-medium">Clutch</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            class="absolute left-0 top-1/2 -translate-y-1/2 -ml-4 bg-white rounded-full shadow-md p-2 z-10"
+          >
+            <i class="ri-arrow-left-s-line text-xl"></i>
+          </button>
+          <button
+            class="absolute right-0 top-1/2 -translate-y-1/2 -mr-4 bg-white rounded-full shadow-md p-2 z-10"
+          >
+            <i class="ri-arrow-right-s-line text-xl"></i>
+          </button>
+        </div>
+      </div>
+      <!-- Get Summer Ready -->
+      <div class="border-t border-gray-200 pt-8 mt-12">
+        <h2 class="text-2xl font-bold mb-8">
+          Get Summer Ready With GoMechanic
+        </h2>
+        <div class="relative">
+          <div class="flex overflow-x-auto pb-4 space-x-4 scrollbar-hide">
+            <!-- Item 1 -->
+            <div class="flex-shrink-0 w-64">
+              <div class="bg-cyan-500 rounded-lg overflow-hidden">
+                <div class="p-4 text-white">
+                  <h3 class="text-lg font-medium">Front Bumper Paint</h3>
+                  <div class="flex items-center mt-2">
+                    <div
+                      class="w-6 h-6 bg-white rounded-full flex items-center justify-center"
+                    >
+                      <i class="ri-add-line text-cyan-500"></i>
+                    </div>
+                  </div>
+                </div>
+                <img
+                  src="https://public.readdy.ai/ai/img_res/5ee0b0195352c52943a41bb916a450af.jpg"
+                  alt="Front Bumper Paint"
+                  class="w-full h-40 object-cover"
+                />
+              </div>
+            </div>
+            <!-- Item 2 -->
+            <div class="flex-shrink-0 w-64">
+              <div class="bg-cyan-500 rounded-lg overflow-hidden">
+                <div class="p-4 text-white">
+                  <h3 class="text-lg font-medium">Rubbing & Polishing</h3>
+                  <div class="flex items-center mt-2">
+                    <div
+                      class="w-6 h-6 bg-white rounded-full flex items-center justify-center"
+                    >
+                      <i class="ri-add-line text-cyan-500"></i>
+                    </div>
+                  </div>
+                </div>
+                <img
+                  src="https://public.readdy.ai/ai/img_res/60cdfb06881f40da0dcb80a077f22e4a.jpg"
+                  alt="Rubbing & Polishing"
+                  class="w-full h-40 object-cover"
+                />
+              </div>
+            </div>
+            <!-- Item 3 -->
+            <div class="flex-shrink-0 w-64">
+              <div class="bg-cyan-500 rounded-lg overflow-hidden">
+                <div class="p-4 text-white">
+                  <h3 class="text-lg font-medium">Deep All Round Spa</h3>
+                  <div class="flex items-center mt-2">
+                    <div
+                      class="w-6 h-6 bg-white rounded-full flex items-center justify-center"
+                    >
+                      <i class="ri-add-line text-cyan-500"></i>
+                    </div>
+                  </div>
+                </div>
+                <img
+                  src="https://public.readdy.ai/ai/img_res/4abd9178ec2005fa2cf11d764b8accb8.jpg"
+                  alt="Deep All Round Spa"
+                  class="w-full h-40 object-cover"
+                />
+              </div>
+            </div>
+          </div>
+          <button
+            class="absolute left-0 top-1/2 -translate-y-1/2 -ml-4 bg-white rounded-full shadow-md p-2 z-10"
+          >
+            <i class="ri-arrow-left-s-line text-xl"></i>
+          </button>
+          <button
+            class="absolute right-0 top-1/2 -translate-y-1/2 -mr-4 bg-white rounded-full shadow-md p-2 z-10"
+          >
+            <i class="ri-arrow-right-s-line text-xl"></i>
+          </button>
+        </div>
+      </div>
+      <!-- TOP ASSIST -->
+      <div class="mt-12">
+        <div class="bg-red-500 rounded-lg overflow-hidden">
+          <div class="flex flex-col md:flex-row">
+            <div class="p-6 text-white md:w-1/2">
+              <h2 class="text-3xl font-bold mb-2">TOP ASSIST</h2>
+              <p class="text-xl mb-4">Road Side Assistance Program</p>
+              <ul class="space-y-2 mb-6">
+                <li class="flex items-center">
+                  <i class="ri-checkbox-circle-line mr-2"></i>
+                  <span>24X7 Assistance PAN India</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="ri-checkbox-circle-line mr-2"></i>
+                  <span>11 SOS Services</span>
+                </li>
+              </ul>
+              <button
+                class="bg-white text-red-500 px-4 py-2 rounded-button font-medium hover:bg-gray-100 transition-colors"
+              >
+                SUBSCRIBE NOW
+                <i class="ri-arrow-right-line ml-1"></i>
+              </button>
+            </div>
+            <div class="md:w-1/2">
+              <img
+                src="https://public.readdy.ai/ai/img_res/66ecea51866745da0a1a17d4bb65f168.jpg"
+                alt="Road Side Assistance"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Choose Workshop -->
+      <div class="border-t border-gray-200 pt-8 mt-12">
+        <h2 class="text-2xl font-bold mb-2">Choose the Workshop Near You</h2>
+        <p class="text-gray-600 mb-8">Schedule a Pickup Today!</p>
+        <div class="relative">
+          <div class="flex overflow-x-auto pb-4 space-x-4 scrollbar-hide">
+            <!-- Workshop 1 -->
+            <div class="flex-shrink-0 w-80">
+              <img
+                src="https://public.readdy.ai/ai/img_res/bb317c6e9c876118b52bf67cb5d7b120.jpg"
+                alt="Workshop 1"
+                class="w-full h-48 object-cover rounded-lg"
+              />
+            </div>
+            <!-- Workshop 2 -->
+            <div class="flex-shrink-0 w-80">
+              <img
+                src="https://public.readdy.ai/ai/img_res/7d84d13a5dde947811c1d4662449c4e0.jpg"
+                alt="Workshop 2"
+                class="w-full h-48 object-cover rounded-lg"
+              />
+            </div>
+            <!-- Workshop 3 -->
+            <div class="flex-shrink-0 w-80">
+              <img
+                src="https://public.readdy.ai/ai/img_res/31fcd9503ec061fe17daf74651722fab.jpg"
+                alt="Workshop 3"
+                class="w-full h-48 object-cover rounded-lg"
+              />
+            </div>
+          </div>
+          <button
+            class="absolute left-0 top-1/2 -translate-y-1/2 -ml-4 bg-white rounded-full shadow-md p-2 z-10"
+          >
+            <i class="ri-arrow-left-s-line text-xl"></i>
+          </button>
+          <button
+            class="absolute right-0 top-1/2 -translate-y-1/2 -mr-4 bg-white rounded-full shadow-md p-2 z-10"
+          >
+            <i class="ri-arrow-right-s-line text-xl"></i>
+          </button>
+        </div>
+      </div>
+      <!-- GoMechanic Guarantee -->
+      <div class="mt-12">
+        <h2 class="text-2xl font-bold mb-8">GoMechanic Guarantee</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Guarantee 1 -->
+          <div class="border rounded-lg p-4 flex items-center">
+            <div class="mr-4">
+              <i class="ri-truck-line text-primary text-3xl"></i>
+            </div>
+            <div>
+              <h3 class="font-medium">Free Pickup Drop</h3>
+            </div>
+          </div>
+          <!-- Guarantee 2 -->
+          <div class="border rounded-lg p-4 flex items-center">
+            <div class="mr-4">
+              <i class="ri-verified-badge-line text-primary text-3xl"></i>
+            </div>
+            <div>
+              <h3 class="font-medium">Genuine Parts</h3>
+            </div>
+          </div>
+          <!-- Guarantee 3 -->
+          <div class="border rounded-lg p-4 flex items-center">
+            <div class="mr-4">
+              <i class="ri-shield-check-line text-primary text-3xl"></i>
+            </div>
+            <div>
+              <h3 class="font-medium">30 Days Warranty</h3>
+            </div>
+          </div>
+          <!-- Guarantee 4 -->
+          <div class="border rounded-lg p-4 flex items-center">
+            <div class="mr-4">
+              <i class="ri-money-dollar-circle-line text-primary text-3xl"></i>
+            </div>
+            <div>
+              <h3 class="font-medium">Affordable Prices</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- How GoMechanic works -->
+      <div class="border-t border-gray-200 pt-8 mt-12">
+        <h2 class="text-2xl font-bold mb-8">How GoMechanic works?</h2>
+        <div class="space-y-8">
+          <!-- Step 1 -->
+          <div class="flex items-center">
+            <div
+              class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center mr-4"
+            >
+              <span>1</span>
+            </div>
+            <div class="flex-1">
+              <h3 class="font-medium">Select The Perfect Car Service</h3>
+              <p class="text-gray-600 text-sm">
+                From GoMechanic's broad portfolio of services
+              </p>
+            </div>
+            <div class="w-24 h-24 flex-shrink-0">
+              <img
+                src="https://public.readdy.ai/ai/img_res/e04a966a130a4004fd2bdc4b3957132d.jpg"
+                alt="Select Service"
+                class="w-full h-full object-contain"
+              />
+            </div>
+          </div>
+          <!-- Step 2 -->
+          <div class="flex items-center">
+            <div
+              class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center mr-4"
+            >
+              <span>2</span>
+            </div>
+            <div class="flex-1">
+              <h3 class="font-medium">Schedule Free Doorstep Pick-up</h3>
+              <p class="text-gray-600 text-sm">
+                We offer free pick up and drop for all services booked
+              </p>
+            </div>
+            <div class="w-24 h-24 flex-shrink-0">
+              <img
+                src="https://public.readdy.ai/ai/img_res/bf853fefac2bf409983548ef6326b969.jpg"
+                alt="Doorstep Pickup"
+                class="w-full h-full object-contain"
+              />
+            </div>
+          </div>
+          <!-- Step 3 -->
+          <div class="flex items-center">
+            <div
+              class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center mr-4"
+            >
+              <span>3</span>
+            </div>
+            <div class="flex-1">
+              <h3 class="font-medium">Track Your Car Service Real-Time</h3>
+              <p class="text-gray-600 text-sm">
+                We will take care of everything from here!
+              </p>
+            </div>
+            <div class="w-24 h-24 flex-shrink-0">
+              <img
+                src="https://public.readdy.ai/ai/img_res/6074b625a53e26b56162ad4921c5be28.jpg"
+                alt="Track Service"
+                class="w-full h-full object-contain"
+              />
+            </div>
+          </div>
+          <!-- Step 4 -->
+          <div class="flex items-center">
+            <div
+              class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center mr-4"
+            >
+              <span>4</span>
+            </div>
+            <div class="flex-1">
+              <h3 class="font-medium">Earn While We Service</h3>
+              <p class="text-gray-600 text-sm">
+                Spread the word! You get Rs.750. Your friends get Rs.750.
+              </p>
+            </div>
+            <div class="w-24 h-24 flex-shrink-0">
+              <img
+                src="https://public.readdy.ai/ai/img_res/5712be45d0d8e24d91f02b5ee389f01e.jpg"
+                alt="Earn Rewards"
+                class="w-full h-full object-contain"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      // Initialize carousel navigation
+      document.addEventListener("DOMContentLoaded", function () {
+        const carouselButtons = document.querySelectorAll(
+          'button[class*="absolute"]',
+        );
+        carouselButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            const isNext = this.classList.contains("right-0");
+            const carousel = this.parentElement.querySelector(
+              ".flex.overflow-x-auto",
+            );
+            if (isNext) {
+              carousel.scrollBy({ left: 300, behavior: "smooth" });
+            } else {
+              carousel.scrollBy({ left: -300, behavior: "smooth" });
+            }
+          });
+        });
+        // Testimonial carousel
+        const testimonialDots = document.querySelectorAll(".testimonial-dot");
+        const testimonialSlides = document.querySelectorAll(".testimonial-slide");
+        testimonialDots.forEach((dot, index) => {
+          dot.addEventListener("click", () => {
+            testimonialDots.forEach((d) => d.classList.remove("bg-primary"));
+            dot.classList.add("bg-primary");
+            testimonialSlides.forEach((slide) => slide.classList.add("hidden"));
+            testimonialSlides[index].classList.remove("hidden");
+          });
+        });
+        // FAQ accordion
+        const faqButtons = document.querySelectorAll(".faq-button");
+        faqButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            const content = this.nextElementSibling;
+            const icon = this.querySelector("i");
+            if (content.style.maxHeight) {
+              content.style.maxHeight = null;
+              icon.classList.remove("ri-arrow-up-s-line");
+              icon.classList.add("ri-arrow-down-s-line");
+            } else {
+              content.style.maxHeight = content.scrollHeight + "px";
+              icon.classList.remove("ri-arrow-down-s-line");
+              icon.classList.add("ri-arrow-up-s-line");
+            }
+          });
+        });
+      });
+    </script>
+    <!-- Statistics Section -->
+    <section class="container mx-auto px-4 py-12 border-t border-gray-200">
+      <div class="grid grid-cols-4 gap-8 mb-12">
+        <!-- Stat 1 -->
+        <div class="text-center">
+          <h3 class="text-2xl font-bold text-gray-800">3 Million+</h3>
+          <p class="text-sm text-gray-600">Cars Serviced</p>
+        </div>
+        <!-- Stat 2 -->
+        <div class="text-center">
+          <h3 class="text-2xl font-bold text-gray-800">25 Lacs+</h3>
+          <p class="text-sm text-gray-600">Happy Customers</p>
+        </div>
+        <!-- Stat 3 -->
+        <div class="text-center">
+          <h3 class="text-2xl font-bold text-gray-800">4.0 ★</h3>
+          <p class="text-sm text-gray-600">Average Rating</p>
+        </div>
+        <!-- Stat 4 -->
+        <div class="text-center">
+          <h3 class="text-2xl font-bold text-gray-800">1000+</h3>
+          <p class="text-sm text-gray-600">Touch Points in India</p>
+        </div>
+      </div>
+      <!-- Testimonials Section -->
+      <div class="border-t border-gray-200 pt-8">
+        <h2 class="text-2xl font-bold mb-8">What Car Owners In Pune Say</h2>
+        <div class="relative">
+          <!-- Testimonial 1 -->
+          <div class="testimonial-slide grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Testimonial Card 1 -->
+            <div class="bg-gray-100 p-6 rounded-lg relative">
+              <div class="text-primary text-4xl absolute top-4 left-4">"</div>
+              <div class="pt-8">
+                <h3 class="text-lg font-bold mb-2">
+                  Service with Reasonable Prices
+                </h3>
+                <p class="text-gray-600 mb-8">
+                  GoMechanic workshop offers great service at reasonable prices.
+                  Highly recommend!
+                </p>
+                <div class="flex items-center mt-4">
+                  <div
+                    class="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center text-white mr-3"
+                  >
+                    <i class="ri-google-fill"></i>
+                  </div>
+                  <div>
+                    <p class="font-medium">Anant Sharma</p>
+                    <p class="text-sm text-gray-500">Google</p>
+                  </div>
+                </div>
+                <div class="mt-4 text-sm text-gray-500">
+                  <p>Workshop Name</p>
+                  <p>GoMechanic - Bhekenagar, Pune</p>
+                </div>
+              </div>
+            </div>
+            <!-- Testimonial Card 2 -->
+            <div class="bg-gray-100 p-6 rounded-lg relative">
+              <div class="text-primary text-4xl absolute top-4 left-4">"</div>
+              <div class="pt-8">
+                <h3 class="text-lg font-bold mb-2">Quick, Efficient service</h3>
+                <p class="text-gray-600 mb-8">
+                  Very happy with the car repair service at GoMechanic. They
+                  were quick and efficient.
+                </p>
+                <div class="flex items-center mt-4">
+                  <div
+                    class="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center text-white mr-3"
+                  >
+                    <i class="ri-google-fill"></i>
+                  </div>
+                  <div>
+                    <p class="font-medium">Saurav Sharma</p>
+                    <p class="text-sm text-gray-500">Google</p>
+                  </div>
+                </div>
+                <div class="mt-4 text-sm text-gray-500">
+                  <p>Workshop Name</p>
+                  <p>GoMechanic - Hinjewadi, Pune</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Hidden Testimonials (for carousel) -->
+          <div
+            class="testimonial-slide hidden grid grid-cols-1 md:grid-cols-2 gap-6"
+          >
+            <!-- Additional testimonials would go here -->
+            <div class="bg-gray-100 p-6 rounded-lg relative">
+              <div class="text-primary text-4xl absolute top-4 left-4">"</div>
+              <div class="pt-8">
+                <h3 class="text-lg font-bold mb-2">
+                  Excellent Customer Service
+                </h3>
+                <p class="text-gray-600 mb-8">
+                  The staff was very professional and kept me updated throughout
+                  the service process.
+                </p>
+                <div class="flex items-center mt-4">
+                  <div
+                    class="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center text-white mr-3"
+                  >
+                    <i class="ri-google-fill"></i>
+                  </div>
+                  <div>
+                    <p class="font-medium">Rahul Deshmukh</p>
+                    <p class="text-sm text-gray-500">Google</p>
+                  </div>
+                </div>
+                <div class="mt-4 text-sm text-gray-500">
+                  <p>Workshop Name</p>
+                  <p>GoMechanic - Kothrud, Pune</p>
+                </div>
+              </div>
+            </div>
+            <div class="bg-gray-100 p-6 rounded-lg relative">
+              <div class="text-primary text-4xl absolute top-4 left-4">"</div>
+              <div class="pt-8">
+                <h3 class="text-lg font-bold mb-2">Transparent Pricing</h3>
+                <p class="text-gray-600 mb-8">
+                  No hidden charges. They explained everything before starting
+                  the work. Very satisfied!
+                </p>
+                <div class="flex items-center mt-4">
+                  <div
+                    class="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center text-white mr-3"
+                  >
+                    <i class="ri-google-fill"></i>
+                  </div>
+                  <div>
+                    <p class="font-medium">Priya Joshi</p>
+                    <p class="text-sm text-gray-500">Google</p>
+                  </div>
+                </div>
+                <div class="mt-4 text-sm text-gray-500">
+                  <p>Workshop Name</p>
+                  <p>GoMechanic - Hadapsar, Pune</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Testimonial Navigation Dots -->
+        <div class="flex justify-center space-x-2 mt-6">
+          <button
+            class="testimonial-dot w-2 h-2 rounded-full bg-primary"
+          ></button>
+          <button
+            class="testimonial-dot w-2 h-2 rounded-full bg-gray-300"
+          ></button>
+          <button
+            class="testimonial-dot w-2 h-2 rounded-full bg-gray-300"
+          ></button>
+          <button
+            class="testimonial-dot w-2 h-2 rounded-full bg-gray-300"
+          ></button>
+          <button
+            class="testimonial-dot w-2 h-2 rounded-full bg-gray-300"
+          ></button>
+          <button
+            class="testimonial-dot w-2 h-2 rounded-full bg-gray-300"
+          ></button>
+        </div>
+      </div>
+      <!-- FAQ Section -->
+      <div class="border-t border-gray-200 pt-8 mt-12">
+        <h2 class="text-2xl font-bold mb-8">
+          Common Car Service Questions In Pune
+        </h2>
+        <!-- FAQ Item 1 -->
+        <div class="mb-4">
+          <button
+            class="faq-button w-full bg-gray-100 p-4 rounded flex justify-between items-center"
+          >
+            <span class="font-medium text-left"
+              >How do I book a car service with GoMechanic?</span
+            >
+            <i class="ri-arrow-down-s-line"></i>
+          </button>
+          <div
+            class="bg-gray-100 px-4 pb-4 rounded-b overflow-hidden"
+            style="max-height: 0; transition: max-height 0.3s ease-out;"
+          >
+            <p class="text-gray-700">
+              Book apni aur bhau ki car services via GoMechanic's website or by
+              calling/WhatsApp on 8398970970. Follow these steps and be a chava
+              booking your car services with GoMechanic: 1) Select your car's
+              make, model, and fuel type 2) Choose the required service 3) Pick
+              a preferred time slot 4) Enjoy free pick-up and drop-off services
+            </p>
+          </div>
+        </div>
+        <!-- FAQ Item 2 -->
+        <div class="mb-4">
+          <button
+            class="faq-button w-full bg-gray-100 p-4 rounded flex justify-between items-center"
+          >
+            <span class="font-medium text-left"
+              >What should I do if my car malfunctions while stuck in
+              traffic?</span
+            >
+            <i class="ri-arrow-down-s-line"></i>
+          </button>
+          <div
+            class="bg-gray-100 px-4 pb-4 rounded-b overflow-hidden"
+            style="max-height: 0; transition: max-height 0.3s ease-out;"
+          >
+            <p class="text-gray-700">
+              If your car breaks down in traffic, first ensure your safety by
+              turning on hazard lights and moving to the side if possible. Call
+              GoMechanic's roadside assistance for immediate help. Our
+              technicians will either fix the issue on-site or arrange for
+              towing to the nearest workshop.
+            </p>
+          </div>
+        </div>
+        <!-- FAQ Item 3 -->
+        <div class="mb-4">
+          <button
+            class="faq-button w-full bg-gray-100 p-4 rounded flex justify-between items-center"
+          >
+            <span class="font-medium text-left"
+              >How do you ensure the use of genuine parts for replacements in
+              Pune?</span
+            >
+            <i class="ri-arrow-down-s-line"></i>
+          </button>
+          <div
+            class="bg-gray-100 px-4 pb-4 rounded-b overflow-hidden"
+            style="max-height: 0; transition: max-height 0.3s ease-out;"
+          >
+            <p class="text-gray-700">
+              GoMechanic ensures genuine parts by sourcing directly from
+              authorized distributors and OEMs. We provide warranty on all parts
+              and services, and customers can verify part authenticity through
+              packaging and documentation provided with the service.
+            </p>
+          </div>
+        </div>
+        <!-- FAQ Item 4 -->
+        <div class="mb-4">
+          <button
+            class="faq-button w-full bg-gray-100 p-4 rounded flex justify-between items-center"
+          >
+            <span class="font-medium text-left"
+              >What is the GoMechanic SOS helpline number in Pune?</span
+            >
+            <i class="ri-arrow-down-s-line"></i>
+          </button>
+          <div
+            class="bg-gray-100 px-4 pb-4 rounded-b overflow-hidden"
+            style="max-height: 0; transition: max-height 0.3s ease-out;"
+          >
+            <p class="text-gray-700">
+              The GoMechanic SOS helpline number for Pune is 8398970970. This
+              24/7 service provides immediate assistance for roadside
+              emergencies, breakdowns, and urgent service requirements
+              throughout Pune city and surrounding areas.
+            </p>
+          </div>
+        </div>
+        <!-- FAQ Item 5 -->
+        <div class="mb-4">
+          <button
+            class="faq-button w-full bg-gray-100 p-4 rounded flex justify-between items-center"
+          >
+            <span class="font-medium text-left"
+              >What are the hot services of GoMechanic?</span
+            >
+            <i class="ri-arrow-down-s-line"></i>
+          </button>
+          <div
+            class="bg-gray-100 px-4 pb-4 rounded-b overflow-hidden"
+            style="max-height: 0; transition: max-height 0.3s ease-out;"
+          >
+            <p class="text-gray-700">
+              GoMechanic's most popular services include Standard Service,
+              Comprehensive Service, AC Service & Repair, Batteries Replacement,
+              Denting & Painting, and Car Spa & Cleaning. Our seasonal packages
+              and custom services are also highly sought after by Pune car
+              owners.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- App Download Section -->
+      <div class="border-t border-gray-200 pt-8 mt-12">
+        <h2 class="text-2xl font-bold mb-8">Download GoMechanic App</h2>
+        <div class="flex flex-col md:flex-row items-center gap-8">
+          <div class="md:w-1/3">
+            <img
+              src="https://public.readdy.ai/ai/img_res/af277e67fababf6bb3daf1a7ff5a3b84.jpg"
+              alt="GoMechanic App"
+              class="w-full max-w-xs mx-auto"
+            />
+          </div>
+          <div class="md:w-2/3 space-y-6">
+            <div class="flex flex-wrap gap-4">
+              <a href="#" class="inline-block">
+                <img
+                  src="https://public.readdy.ai/ai/img_res/7e930ff16baa48dd922b2695f52f61d0.jpg"
+                  alt="Google Play"
+                  class="h-12"
+                />
+              </a>
+              <a href="#" class="inline-block">
+                <img
+                  src="https://public.readdy.ai/ai/img_res/44fa10b847c13b40953438a977cc3f57.jpg"
+                  alt="App Store"
+                  class="h-12"
+                />
+              </a>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="flex items-center">
+                <img
+                  src="https://public.readdy.ai/ai/img_res/07018a1358dbb3bdc4f0b7f30efd7042.jpg"
+                  alt="India"
+                  class="h-6 mr-2"
+                />
+                <input
+                  type="tel"
+                  placeholder="Mobile Number"
+                  class="border rounded-md px-3 py-2 w-40"
+                />
+              </div>
+              <button
+                class="bg-primary text-white px-4 py-2 rounded-button whitespace-nowrap"
+              >
+                GET APP LINK
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Original Spare Parts Section -->
+      <div class="border-t border-gray-200 pt-8 mt-12">
+        <h2 class="text-2xl font-bold">Original Spare Parts</h2>
+        <p class="text-gray-600 mb-8">Extended Warranty with GoMechanic</p>
+        <div class="relative">
+          <div
+            class="flex overflow-x-auto pb-4 space-x-8 scrollbar-hide items-center"
+          >
+            <!-- Brand 1 -->
+            <div class="flex-shrink-0">
+              <img
+                src="https://public.readdy.ai/ai/img_res/b9d490e096b5bb222fcc63700991452c.jpg"
+                alt="Bosch"
+                class="h-12 object-contain"
+              />
+            </div>
+            <!-- Brand 2 -->
+            <div class="flex-shrink-0">
+              <img
+                src="https://public.readdy.ai/ai/img_res/5b2e9a1939043104a8d693c54f095536.jpg"
+                alt="Valeo"
+                class="h-12 object-contain"
+              />
+            </div>
+            <!-- Brand 3 -->
+            <div class="flex-shrink-0">
+              <img
+                src="https://public.readdy.ai/ai/img_res/189cae7ef1947b9c2ee0fc88c89a6bec.jpg"
+                alt="Mahle"
+                class="h-12 object-contain"
+              />
+            </div>
+            <!-- Brand 4 -->
+            <div class="flex-shrink-0">
+              <img
+                src="https://public.readdy.ai/ai/img_res/64ba38a9d351241723a69e84aa5ca828.jpg"
+                alt="Denso"
+                class="h-12 object-contain"
+              />
+            </div>
+            <!-- Brand 5 -->
+            <div class="flex-shrink-0">
+              <img
+                src="https://public.readdy.ai/ai/img_res/8f0d929865bc51a2e223dc5fab029449.jpg"
+                alt="Castrol"
+                class="h-12 object-contain"
+              />
+            </div>
+          </div>
+          <button
+            class="absolute left-0 top-1/2 -translate-y-1/2 -ml-4 bg-white rounded-full shadow-md p-2 z-10"
+          >
+            <i class="ri-arrow-left-s-line text-xl"></i>
+          </button>
+          <button
+            class="absolute right-0 top-1/2 -translate-y-1/2 -mr-4 bg-white rounded-full shadow-md p-2 z-10"
+          >
+            <i class="ri-arrow-right-s-line text-xl"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- Why Choose GoMechanic Section -->
+    <section class="container mx-auto px-4 py-12 border-t border-gray-200">
+      <div class="mb-8">
+        <h2 class="text-2xl font-bold mb-2 relative inline-block">
+          Why Choose GoMechanic In Pune?
+          <div class="absolute -bottom-2 left-0 w-12 h-1 bg-primary"></div>
+        </h2>
+      </div>
+      <div class="bg-gray-50 p-6 rounded-lg mb-8">
+        <h3 class="font-bold mb-2">Pune: The City That Breathes</h3>
+        <p class="text-gray-700 mb-3">
+          Pune is different. It isn't Mumbai's chaos. It isn't Delhi's rush.
+          It's hills and highways. Colleges and culture. Slow mornings. Busy
+          evenings.
+        </p>
+        <p class="text-gray-700 mb-3">
+          Your car feels it all. From the climb to Sinhagad to the traffic near
+          FC Road. It's with you. Rain or shine. Traffic or open roads.
+        </p>
+        <p class="text-gray-700 mb-3">
+          But every car needs care. Attention that fits its journey.
+        </p>
+        <p class="text-gray-700 mb-3">That's where we come in.</p>
+        <h3 class="font-bold mt-6 mb-2">Services That Understand Pune</h3>
+        <p class="text-gray-700 mb-3">
+          Pune is unique. Its roads. Its weather. Its pace. Your car deserves
+          services made for this city:
+        </p>
+        <ul class="list-disc pl-6 space-y-4 mb-4">
+          <li>
+            <p class="font-medium">
+              Car Detailing (Cleaning, Polishing, Coating)
+            </p>
+            <p class="text-gray-700">
+              Dust from the Sahyadris. Pollen from the city's green patches. It
+              settles on your car. We clean it all. Shine restored.
+            </p>
+          </li>
+          <li>
+            <p class="font-medium">Denting & Painting</p>
+            <p class="text-gray-700">
+              A scratch near Deccan. A dent in Camp. They happen. But they don't
+              stay. We fix them, smooth and seamless.
+            </p>
+          </li>
+          <li>
+            <p class="font-medium">
+              Repairs & Replacements (Engine, Brakes, Suspension, Clutch, etc.)
+            </p>
+            <p class="text-gray-700">
+              A jolt on a highway. A screech near a busy chowk. We listen to
+              your car. And then, we fix it.
+            </p>
+          </li>
+          <li>
+            <p class="font-medium">AC Service & Repairs</p>
+            <p class="text-gray-700">
+              Summers in Pune are unforgiving. Winters can surprise. Your car's
+              AC? It needs to perform. We make sure it does.
+            </p>
+          </li>
+          <li>
+            <p class="font-medium">General Service</p>
+            <p class="text-gray-700">
+              A healthy car isn't luck. It's maintenance. Oil changes.
+              Inspections. Filters swapped. We do it all.
+            </p>
+          </li>
+        </ul>
+        <h3 class="font-bold mt-6 mb-2">How It Works</h3>
+        <p class="text-gray-700 mb-3">
+          Pune values simplicity. So do we. Here's how car servicing gets done:
+        </p>
+        <ol class="list-decimal pl-6 space-y-2 mb-4">
+          <li>
+            <span class="font-medium">Book Online:</span> App or website. It's
+            fast and easy.
+          </li>
+          <li>
+            <span class="font-medium">Confirm Slot: CR</span> details sent to
+            WhatsApp. No chasing.
+          </li>
+          <li>
+            <span class="font-medium">Free Pickup:</span> Driver arrives. OTP
+            verified. Photos clicked. Done.
+          </li>
+          <li>
+            <span class="font-medium">Inspection Begins:</span> Your car
+            checked. Thoroughly. Every detail noted.
+          </li>
+          <li>
+            <span class="font-medium">Approval First:</span> Estimate shared.
+            You approve. We proceed.
+          </li>
+          <li>
+            <span class="font-medium">Service in Progress:</span> Updates in
+            real-time. You're always informed.
+          </li>
+          <li>
+            <span class="font-medium">Delivery Done Right:</span> Your car comes
+            back, Pune-ready.
+          </li>
+        </ol>
+        <h3 class="font-bold mt-6 mb-2">Why Pune Picks Us</h3>
+        <p class="text-gray-700 mb-3">
+          Cars in Pune don't just need repairs. They need trust. That's why
+          we've become the city's choice:
+        </p>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>Mechanics who don't guess. They know.</li>
+          <li>Genuine parts, always with warranty.</li>
+          <li>Transparent pricing. No hidden costs.</li>
+          <li>Free pickup and drop-off. Always.</li>
+          <li>Real-time updates. You're never left wondering.</li>
+        </ul>
+        <h3 class="font-bold mt-6 mb-2">Pune's Numbers Speak</h3>
+        <p class="text-gray-700 mb-3">
+          Pune drives. We deliver. Here's what the city tells us:
+        </p>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>
+            <span class="font-medium">Luxury Workshops:</span> 4. Precision care
+            for premium cars.
+          </li>
+          <li>
+            <span class="font-medium">Non-Luxury Workshops:</span> 35. Ready for
+            every other car on the road.
+          </li>
+          <li>
+            <span class="font-medium">B2B Clients:</span> BluSmart, Eco
+            Mobility. Trusted by Pune's finest fleets.
+          </li>
+          <li>
+            <span class="font-medium">EV Servicing:</span> 4,549 bookings a
+            month. Pune's roads are going green, and we're ready.
+          </li>
+          <li>
+            <span class="font-medium">Periodic Service:</span> 13,982 cars every
+            month. Routine checks that keep cars running.
+          </li>
+          <li>
+            <span class="font-medium">AC Servicing:</span> 9,321 cars per month.
+            Keeping Pune cool, drive after drive.
+          </li>
+          <li>
+            <span class="font-medium">Windshield Repair/Replacement:</span>
+            4,661 cars monthly. Quick fixes for clearer journeys.
+          </li>
+          <li>
+            <span class="font-medium">Other Services:</span> 20,973 cars every
+            month. Every service you can think of.
+          </li>
+          <li>
+            <span class="font-medium">SOS Response Time:</span> 26 minutes. On
+            time. Every time.
+          </li>
+        </ul>
+        <h3 class="font-bold mt-6 mb-2">Keep Pune Moving</h3>
+        <p class="text-gray-700 mb-3">
+          Pune's pace is its own. It climbs, flows, and rests. Your car keeps
+          you in sync.
+        </p>
+        <p class="text-gray-700 mb-3">
+          We're here for the small fixes. The big repairs. The times you need us
+          the most. And when you're stuck on the road?
+          <span class="font-medium">Our SOS team arrives in 26 minutes.</span>
+        </p>
+        <p class="text-gray-700 mb-3">
+          Book your service today. Or call for help now.
+        </p>
+        <p class="text-gray-700">Because Pune drives on trust. And so do we.</p>
+      </div>
+      <!-- Car Services Price List -->
+      <div>
+        <h2 class="text-2xl font-bold mb-6 relative inline-block">
+          Car Services price List in Pune, India 2025
+          <div class="absolute -bottom-2 left-0 w-12 h-1 bg-primary"></div>
+        </h2>
+        <div class="overflow-x-auto">
+          <table class="min-w-full border-collapse">
+            <thead>
+              <tr class="bg-gray-100">
+                <th class="border border-gray-200 px-4 py-2 text-left">
+                  Services Type
+                </th>
+                <th class="border border-gray-200 px-4 py-2 text-left">
+                  Price Starts From (₹)
+                </th>
+                <th class="border border-gray-200 px-4 py-2 text-left">
+                  Savings
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border border-gray-200 px-4 py-2">
+                  Car Inspection/Diagnostics
+                </td>
+                <td class="border border-gray-200 px-4 py-2">499</td>
+                <td class="border border-gray-200 px-4 py-2">15%</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="border border-gray-200 px-4 py-2">Inspection</td>
+                <td class="border border-gray-200 px-4 py-2">499</td>
+                <td class="border border-gray-200 px-4 py-2">25%</td>
+              </tr>
+              <tr>
+                <td class="border border-gray-200 px-4 py-2">
+                  Door Glass Replacement
+                </td>
+                <td class="border border-gray-200 px-4 py-2">850</td>
+                <td class="border border-gray-200 px-4 py-2">30%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-sm text-gray-500 mt-2">
+          This data was last updated on 3/28/2025
+        </p>
+        <div class="text-center mt-4">
+          <button
+            class="bg-gray-200 text-gray-700 px-4 py-2 rounded-button hover:bg-gray-300 transition-colors whitespace-nowrap"
+          >
+            SEE MORE
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- Footer Section -->
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
+          <!-- About Us Column -->
+          <div>
+            <h3 class="text-lg font-bold mb-4">ABOUT US</h3>
+            <ul class="space-y-2">
+              <li><a href="#" class="hover:text-primary">FAQs</a></li>
+              <li><a href="#" class="hover:text-primary">Contact Us</a></li>
+              <li>
+                <a href="#" class="hover:text-primary">Terms and Conditions</a>
+              </li>
+              <li><a href="#" class="hover:text-primary">Privacy Policy</a></li>
+              <li>
+                <a href="#" class="hover:text-primary">GoMechanic Partners</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-primary">Workshop Locator</a>
+              </li>
+              <li><a href="#" class="hover:text-primary">Offers</a></li>
+              <li><a href="#" class="hover:text-primary">Reviews</a></li>
+              <li><a href="#" class="hover:text-primary">Directory</a></li>
+            </ul>
+          </div>
+          <!-- Our Services Column -->
+          <div>
+            <h3 class="text-lg font-bold mb-4">OUR SERVICES</h3>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="hover:text-primary">Scheduled Services</a>
+              </li>
+              <li><a href="#" class="hover:text-primary">AC Services</a></li>
+              <li>
+                <a href="#" class="hover:text-primary">Cleaning & Detailing</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-primary">Lights & Fitments</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-primary">Denting Painting</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-primary">Insurance Services</a>
+              </li>
+              <li><a href="#" class="hover:text-primary">Custom Repair</a></li>
+              <li><a href="#" class="hover:text-primary">Batteries</a></li>
+              <li><a href="#" class="hover:text-primary">Tyres</a></li>
+              <li>
+                <a href="#" class="hover:text-primary">Detailing Services</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-primary">Windshields & Glass</a>
+              </li>
+            </ul>
+          </div>
+          <!-- Luxury Brands Column -->
+          <div>
+            <h3 class="text-lg font-bold mb-4">LUXURY BRANDS</h3>
+            <ul class="space-y-2">
+              <li><a href="#" class="hover:text-primary">Mercedes</a></li>
+              <li><a href="#" class="hover:text-primary">BMW</a></li>
+              <li><a href="#" class="hover:text-primary">Audi</a></li>
+              <li><a href="#" class="hover:text-primary">Volvo</a></li>
+              <li><a href="#" class="hover:text-primary">Mitsubishi</a></li>
+              <li><a href="#" class="hover:text-primary">Jaguar</a></li>
+              <li><a href="#" class="hover:text-primary">Porsche</a></li>
+              <li><a href="#" class="hover:text-primary">Rolls Royce</a></li>
+              <li><a href="#" class="hover:text-primary">Ferrari</a></li>
+              <li><a href="#" class="hover:text-primary">Land Rover</a></li>
+            </ul>
+          </div>
+          <!-- Popular Brands Column -->
+          <div>
+            <h3 class="text-lg font-bold mb-4">POPULAR BRANDS</h3>
+            <ul class="space-y-2">
+              <li><a href="#" class="hover:text-primary">Maruti Suzuki</a></li>
+              <li><a href="#" class="hover:text-primary">Hyundai</a></li>
+              <li><a href="#" class="hover:text-primary">Honda</a></li>
+              <li><a href="#" class="hover:text-primary">Toyota</a></li>
+              <li><a href="#" class="hover:text-primary">Tata</a></li>
+              <li><a href="#" class="hover:text-primary">Mahindra</a></li>
+              <li><a href="#" class="hover:text-primary">Chevrolet</a></li>
+              <li><a href="#" class="hover:text-primary">Fiat</a></li>
+              <li><a href="#" class="hover:text-primary">Renault</a></li>
+              <li><a href="#" class="hover:text-primary">Kia</a></li>
+              <li><a href="#" class="hover:text-primary">Skoda</a></li>
+              <li><a href="#" class="hover:text-primary">Volkswagen</a></li>
+            </ul>
+          </div>
+          <!-- Popular Areas Column -->
+          <div>
+            <h3 class="text-lg font-bold mb-4">POPULAR AREAS NEAR YOU</h3>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="hover:text-primary"
+                  >Garage near me in Pimpri Chinchwad</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-primary"
+                  >Garage near me in Viman Nagar</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-primary"
+                  >Garage near me in Shivaji Nagar</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-primary"
+                  >Garage near me in Baner</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-primary"
+                  >Garage near me in Deccan</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-primary"
+                  >Garage near me in Yerwada</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-primary"
+                  >Garage near me in Hinjewadi</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-primary"
+                  >Garage near me in Kondhwa</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-primary"
+                  >Garage near me in Khadakwasla</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="border-t border-gray-800 mt-12 pt-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Company Info -->
+            <div>
+              <div class="flex items-center mb-6">
+                <i class="ri-car-line text-white text-3xl mr-2"></i>
+                <span class="text-2xl font-['Pacifico'] text-white"
+                  >GoMechanic</span
+                >
+              </div>
+              <p class="text-gray-400 mb-4">
+                7th Floor, Tower A, Spaze iTech Park,<br />
+                Sohna - Gurgaon Rd, Block S, Sector 49,<br />
+                Gurugram, Haryana 122018
+              </p>
+              <div class="flex space-x-4 mt-4">
+                <a href="#" class="text-gray-400 hover:text-white">
+                  <i class="ri-facebook-fill text-xl"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white">
+                  <i class="ri-twitter-fill text-xl"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white">
+                  <i class="ri-instagram-line text-xl"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white">
+                  <i class="ri-whatsapp-line text-xl"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white">
+                  <i class="ri-youtube-fill text-xl"></i>
+                </a>
+              </div>
+            </div>
+            <!-- Contact Info -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <div class="space-y-4">
+                  <div class="flex items-center">
+                    <i class="ri-mail-line text-xl mr-3"></i>
+                    <div>
+                      <p class="text-gray-400">Email</p>
+                      <p>Info@goMechanic.in</p>
+                    </div>
+                  </div>
+                  <div class="flex items-center">
+                    <i class="ri-phone-line text-xl mr-3"></i>
+                    <div>
+                      <p class="text-gray-400">Phone Number</p>
+                      <p>9388893888</p>
+                    </div>
+                  </div>
+                  <div class="flex items-center">
+                    <i class="ri-calendar-line text-xl mr-3"></i>
+                    <div>
+                      <p class="text-gray-400">Working Days</p>
+                      <p>Monday - Sunday</p>
+                    </div>
+                  </div>
+                  <div class="flex items-center">
+                    <i class="ri-time-line text-xl mr-3"></i>
+                    <div>
+                      <p class="text-gray-400">Working Hours</p>
+                      <p>7:00AM - 9:00PM(IST)</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="flex flex-col space-y-4 justify-center">
+                <a href="#" class="block">
+                  <img
+                    src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png"
+                    alt="Get it on Google Play"
+                    class="h-12"
+                  />
+                </a>
+                <a href="#" class="block">
+                  <img
+                    src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg"
+                    alt="Download on the App Store"
+                    class="h-10"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center text-gray-400 mt-8">
+          <p>© 2016-2025 Service Easy Technology Private Limited</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

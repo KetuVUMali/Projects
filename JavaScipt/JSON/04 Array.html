@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <pre>
+            A JSON array is used to store multiple values in an ordered list. 
+            These values can be of any type, such as strings, numbers, objects, arrays, or booleans. 
+            Arrays are written inside square brackets [], and the values are separated by commas.
+        </pre>
+</body>
+    <script>
+
+            // 
+                const jsonArray = ["apple", "banana", "orange"];
+                console.log(jsonArray[0]);                      // Output: apple
+                console.log(jsonArray[1]);                      // Output: banana
+                
+                jsonArray[1] = "grape";
+                console.log(jsonArray);                         // Output: ["apple", "grape", "orange"]
+
+
+
+
+            //   
+                const myJSON = '["Ford", "BMW", "Fiat"]';
+                const myArray = JSON.parse(myJSON);
+                console.log(myArray);                           // Ford,BMW,Fiat
+                console.log(myArray[0]);                        // Ford
+                
+
+
+            //  Array as a obj 
+                const myJSON1 = '{"name":"John", "age":30, "cars":["Ford", "BMW", "Fiat"]}';
+                const myObj = JSON.parse(myJSON1);
+                console.log(myObj);                 // {"name":"John", "age":30, "cars":["Ford", "BMW", "Fiat"]}
+                console.log(myObj.cars[0]);         // Ford
+
+
+            // for in loop
+                let text1 = "";
+                for (let i in myObj.cars) {
+                text1 += myObj.cars[i] + ", ";
+                }
+                // Ford, BMW, Fiat,
+
+            // for loop
+                let text2 = "";
+                for (let i = 0; i < myObj.cars.length; i++) {
+                text2 += myObj.cars[i] + ", ";
+                }
+                //  Ford, BMW, Fiat,
+
+
+
+
+
+
+    </script>
+</html>

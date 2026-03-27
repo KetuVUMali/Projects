@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "name": "Bharat",
+      "email": "Bharat@example.com",
+      "age": "23",
+      "id": "9860"
+    },
+    {
+      "name": "Chetan",
+      "email": "Chetan@example.com",
+      "age": "26",
+      "id": "a6de"
+    },
+    {
+      "name": "Dhruv",
+      "email": "Dhruv@example.com",
+      "age": "27",
+      "id": "cdd9"
+    },
+    {
+      "name": "Dhruva",
+      "email": "Dhruva@example.com",
+      "age": "25",
+      "id": "3b9a"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GSAP To</title>
+  <style>
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .box {
+      width: 100px;
+      height: 100px;
+      background: #4f46e5;
+    }
+  </style>
+</head>
+<body>
+
+<div class="box"></div>
+
+<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+
+<script>
+  gsap.to(".box", {
+    x: 500,          // move right
+    duration: 3,     // seconds
+    ease: "power2.out"
+  });
+</script>
+
+
+<!-- <script>
+  gsap.to(".box", {
+    opacity: 0,
+    y: 500,
+    x:500,
+    scale:3,
+    duration: 3
+  });
+</script> -->
+
+
+
+<br><br>
+<div style="padding-top: 300px;">
+    <pre>
+            Explanation:
+                gsap.to() → GSAP method to animate to specified properties
+                .box is selected
+                x: 500 → moves box 500px right
+                duration: 3 → animation takes 3 seconds
+                ease: "power2.out" → applies easing for smooth effect
+    </pre>
+</div>
+
+
+</body>
+</html>
+ 

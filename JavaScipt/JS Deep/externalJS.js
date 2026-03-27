@@ -1,0 +1,1 @@
+alert("This is From java Script file");

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Set</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		
+			// 1.  Create set
+			  console.log("1.  create Set  : fruitsSetDemo")
+			  var fruitsSetDemo = new Set();
+			  console.log(fruitsSetDemo);
+
+
+			// 2.  .add()
+			  // add ele in set
+			  var fruitsSet = new Set();     //create set
+			  console.log("2. .add ele")
+			  fruitsSet.add("A");
+			  fruitsSet.add("B");
+			  fruitsSet.add("C");
+			  fruitsSet.add("D");
+			  console.log(fruitsSet);
+
+ 
+			 // 3.  .has()
+			 	// check ele present or not
+			 	console.log("3. .has()    Ele present or not")
+			 	var set1 = new Set([10, 20, 30, 30, 40, 40]);
+			 	console.log(set1.has(10));
+			 	console.log(set1.has("Z"));
+
+
+			 // 4.  .delete()
+			    // remove ele
+			    console.log("4. .delete()   delete ele")
+			 	var set1 = new Set([10, 20, 30, 40, 50]);
+			 	console.log("Before",set1);
+			 	console.log(set1.delete(10)); // o/p in true or False
+			 	console.log("After",set1);
+
+
+			 // 5. .size
+			   // find how many ele present
+			   // count no. of ele.
+			     console.log("4. .size()   check no. of ele")
+			 	 var set1 = new Set([10, 20, 30, 40, 50]);
+			 	 console.log(set1.size);
+
+
+			 // 6.  forEach    
+			   // to access all ele
+			     console.log("4. forEach()   Iterate Ele")
+			 	 var set1 = new Set([10, 20, 30, 40, 50]);
+			 	 set1.forEach(kl => console.log(kl))
+
+
+			 // 7. .entries()     
+			 	// to check or show entries
+			 	 console.log("4..entries()    to check or show entries");
+			 	 var set1 = new Set([10, 20, 30, 40, 50]);
+			 	 console.log(set1.entries());
+
+
+			 // 8.  .clear()
+			   // to clear(del) all ele in set()
+			     console.log("4. .clear()   to clear all set ele");
+			 	 var set1 = new Set([10, 20, 30, 40, 50]);
+			 	 console.log("Before : ",set1);
+			 	 clear = set1.clear();
+			 	 console.log(clear);
+
+
+			 // 9. ES6 Feature no dublicates 
+
+			 var demo = new Set([1,2,3,4,5,5,4,3,2,1,1,2,3,4,5]);
+			 console.log(demo);
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>

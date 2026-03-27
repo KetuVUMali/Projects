@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Date Methods </title>
+</head>
+<body>
+	<h4>Date Methods </h4>
+
+	<h1 id="res">
+		
+	</h1>
+
+	<button onclick="getDate()"> Full Date </button>
+	<button onclick="year()"> Year </button>
+	<button onclick="month()"> Month </button>
+	<button onclick="hour()"> Hour </button>
+	<button onclick="todate()"> Date </button>
+	<button onclick="day()"> Day </button>
+	<button onclick="min()"> Mintues </button>
+	<button onclick="time()"> Time </button>
+	<button onclick="sec()"> Seconds</button>
+	<button onclick="millisec()"> Milliseconds</button>
+
+
+	<script type="text/javascript">
+		var date = new Date();
+/*************  ✨ Windsurf Command ⭐  *************/
+	/**
+	 * Gets the full date
+	 */
+/*******  dce9c7df-662d-45c9-b3b7-370399747f44  *******/
+		function getDate()
+			{
+				document.getElementById('res').innerText = date;
+			}
+
+		function year()
+			{
+				document.getElementById('res').innerText = date.getFullYear();
+			}
+
+		function month()
+			{
+				// document.getElementById('res').innerText = date.getMonth();
+
+				// (" .getMonth() is give no. but now we add some programmin then hi give month name");
+
+				var month = ["Jan", "Feb", "Mar", "April", "May", "June", "Jully", "Aug","Sep", "Oct", "Nov", "Dec"];
+				document.getElementById('res').innerText = month[date.getMonth()];
+
+			}
+
+		function hour()
+			{
+				document.getElementById('res').innerText = date.getHours();
+			}
+
+		function todate()
+			{
+				document.getElementById('res').innerText = date.getDate();
+			}
+
+		function day()
+			{
+				document.getElementById('res').innerText = date.getDay();
+			}
+
+
+		function min()
+			{
+				document.getElementById('res').innerText = date.getMinutes();
+			}
+
+
+		function time()
+			{
+				document.getElementById('res').innerText = date.getTime();
+			}
+
+
+		function sec()
+			{
+				document.getElementById('res').innerText = date.getSeconds();
+			}
+
+
+		function millisec()
+			{
+				document.getElementById('res').innerText = date.getMilliseconds();
+			}
+
+
+	</script>
+
+</body>
+	<script type="text/javascript">
+		// 1. Date Constructor
+		   // Date Constructor show Current Date & time Both
+		   // to get current date & time details according to browser
+		   // create date  for access all date Functions
+		      var today = new Date();
+		      console.log(today);
+
+		// 2. .getMonth()
+		    // Show current month
+		    // o/p give in index 
+		    // o - Jan  to  11 Dec
+		    // get month as a number (0 - 11)
+		      var today = new Date();
+		      console.log(today.getMonth());
+
+		// 3. .getDay()
+		    // Show today day
+		    // o/p give in index 
+		    // get weekday as a number (0 - 6)
+		    // 0 - sunday     1 - monday  .......
+		      var today = new Date();
+		      console.log(today.getDay()); 
+
+		// 4. .getFullYear()
+			// give current year
+			// get the year as four digit number (yyyy)
+		      var today = new Date();
+		      console.log(today.getFullYear());
+
+		// 5. .getHours()
+		    // Give Current Hour
+		    // get hour (0- 23)
+		      var today = new Date();
+		      console.log(today.getHours());
+
+		// 6. .getMinutes()
+		    // Give current Minutes
+		    // get minutes (0 - 59)
+		      var today = new Date();
+		      console.log(today.getMinutes());
+
+		// 6. .getSeconds()
+		    // Give current getSeconds
+		    // get seconds (0 - 59)
+		      var today = new Date();
+		      console.log(today.getSeconds());
+
+		// 8. .getTime()
+    	    // give from 1/1/1970 time to today time in milli-seconds()
+    	    // get the time  (milliseconds since January 1,1970)
+    	    // op in milli_seconds from 01-01-1970  to Today
+    	   console.log("7. .getTime()");
+    	   var today = new Date();
+    	   let timestamp = today.getTime();
+    	   console.log("Timestamp (milliseconds):",timestamp);
+    	   
+
+	</script>
+</html>

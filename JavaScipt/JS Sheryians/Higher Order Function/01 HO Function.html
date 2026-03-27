@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Higher Order Function </title>
+</head>
+<body>
+    <h1> Higher Order Function </h1>
+    <h3>
+        If a fun accept a fun as a parameter or/and return a fun 
+    </h3>
+    <h2>
+        A fun get parameter as a fun or function inside return another fun 
+        , Then Outer fun is HO functions.
+    </h2>
+
+    <script>
+
+            // 1. simple Fun
+                function abc(para)
+                 {
+                    console.log(para);
+                    console.log("Para");
+                 }
+                abc(12);
+
+
+            // 2. Higher Order Function
+                 function a(par)
+                  { }
+                 abc(function(){});                 // send para as function 
+
+                 //or
+                 // Clouser and HO Fun following ex. have differences of var use,
+                 // In HO fun there is no use paren fun.
+                 function abc()
+                  {
+                    return function() {}          // return fun 
+                  }
+
+                // 
+
+    </script>
+</body>
+</html>

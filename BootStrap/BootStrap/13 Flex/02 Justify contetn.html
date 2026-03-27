@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bootstrap justify-content Complete Guide</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        .container-box {
+            border: 2px dashed #999;
+            padding: 15px;
+            margin-bottom: 40px;
+            min-height: 120px;
+        }
+
+        .item {
+            background-color: #0d6efd;
+            color: white;
+            padding: 12px 20px;
+            margin: 5px;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body class="p-4">
+
+    <h1 class="text-center mb-4">Bootstrap justify-content – Deep Explanation</h1>
+
+    <pre>
+📌 What is justify-content?
+    justify-content is a FLEXBOX property.
+    It controls HORIZONTAL alignment of items inside a flex container.
+
+📌 IMPORTANT RULES
+    ✔ justify-content works ONLY with:
+        d-flex or d-inline-flex
+    ✔ It works on the MAIN AXIS
+    ✔ Default flex direction is ROW (horizontal)
+
+📌 Syntax
+    justify-content-{value}
+</pre>
+
+    <hr>
+
+    <!-- ================================================= -->
+    <h3>1️⃣ justify-content-start</h3>
+
+    <pre>
+📌 Class Name
+    justify-content-start
+
+📌 Meaning
+    Items align to the LEFT side of container
+
+📌 Use Case
+    Default layout, menus, lists
+</pre>
+
+    <div class="container-box d-flex justify-content-start">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+    </div>
+
+    <hr>
+
+    <!-- ================================================= -->
+    <h3>2️⃣ justify-content-center</h3>
+
+    <pre>
+📌 Class Name
+    justify-content-center
+
+📌 Meaning
+    Items align at the CENTER horizontally
+
+📌 Use Case
+    Buttons, icons, loaders
+</pre>
+
+    <div class="container-box d-flex justify-content-center">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+    </div>
+
+    <hr>
+
+    <!-- ================================================= -->
+    <h3>3️⃣ justify-content-end</h3>
+
+    <pre>
+📌 Class Name
+    justify-content-end
+
+📌 Meaning
+    Items align to the RIGHT side
+
+📌 Use Case
+    Login buttons, action menus
+</pre>
+
+    <div class="container-box d-flex justify-content-end">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+    </div>
+
+    <hr>
+
+    <!-- ================================================= -->
+    <h3>4️⃣ justify-content-between</h3>
+
+    <pre>
+📌 Class Name
+    justify-content-between
+
+📌 Meaning
+    First item at START
+    Last item at END
+    Equal space between items
+
+📌 Use Case
+    Navbar (logo left, menu right)
+</pre>
+
+    <div class="container-box d-flex justify-content-between">
+        <div class="item">Left</div>
+        <div class="item">Center</div>
+        <div class="item">Right</div>
+    </div>
+
+    <hr>
+
+    <!-- ================================================= -->
+    <h3>5️⃣ justify-content-around</h3>
+
+    <pre>
+📌 Class Name
+    justify-content-around
+
+📌 Meaning
+    Equal space AROUND each item
+    Outer space is HALF of inner space
+
+📌 Use Case
+    Card layouts
+</pre>
+
+    <div class="container-box d-flex justify-content-around">
+        <div class="item">Item A</div>
+        <div class="item">Item B</div>
+        <div class="item">Item C</div>
+    </div>
+
+    <hr>
+
+    <!-- ================================================= -->
+    <h3>6️⃣ justify-content-evenly</h3>
+
+    <pre>
+📌 Class Name
+    justify-content-evenly
+
+📌 Meaning
+    Equal space BETWEEN items
+    Equal space at START & END
+
+📌 Use Case
+    Perfect symmetric layouts
+</pre>
+
+    <div class="container-box d-flex justify-content-evenly">
+        <div class="item">One</div>
+        <div class="item">Two</div>
+        <div class="item">Three</div>
+    </div>
+
+    <hr>
+
+    <!-- ================================================= -->
+    <h3>7️⃣ justify-content with flex-column</h3>
+
+    <pre>
+📌 IMPORTANT CONCEPT
+    If flex-direction is COLUMN,
+    justify-content works VERTICALLY.
+
+📌 Example
+    flex-column + justify-content-center
+</pre>
+
+    <div class="container-box d-flex flex-column justify-content-center" style="height:200px">
+        <div class="item">Top</div>
+        <div class="item">Middle</div>
+    </div>
+
+    <hr>
+
+    <!-- ================================================= -->
+    <h3>8️⃣ Responsive justify-content</h3>
+
+    <pre>
+📌 Responsive Classes
+    justify-content-sm-start
+    justify-content-md-center
+    justify-content-lg-between
+    justify-content-xl-evenly
+
+📌 Meaning
+    Different alignment for different screen sizes
+</pre>
+
+    <div class="container-box d-flex justify-content-center justify-content-md-between justify-content-lg-evenly">
+        <div class="item">Responsive 1</div>
+        <div class="item">Responsive 2</div>
+        <div class="item">Responsive 3</div>
+    </div>
+
+    <hr>
+
+    <!-- ================================================= -->
+    <h3>9️⃣ Common Mistakes</h3>
+
+    <pre>
+❌ Using justify-content without d-flex
+❌ Expecting vertical alignment in flex-row
+❌ Forgetting flex-direction
+
+✔ Solution:
+   Always check:
+   - d-flex
+   - flex-row / flex-column
+</pre>
+
+    <hr>
+
+    <h2 class="text-center mt-4">✅ END – justify-content Mastery</h2>
+
+</body>
+
+</html>

@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GSAP Complete Basics</title>
+
+    <!-- GSAP CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+  </head>
+  <body>
+    <pre>
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 GSAP (GreenSock Animation Platform)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+    GSAP ek powerful JavaScript animation library hai.
+            Iska use karke hum:
+                ✔ smooth animations
+                ✔ high performance
+                ✔ scroll / hover / timeline animations
+            bana sakte hain.
+
+        GSAP animation CSS jaisa dikhta hai
+        lekin control JavaScript se hota hai.
+
+──────────────────────────────────
+1️⃣ gsap.to()
+──────────────────────────────────
+
+    Syntax:
+        gsap.to(target, vars)
+
+    Meaning:
+        Kisi element ko CURRENT state se
+        kisi NEW state tak animate karta hai.
+
+    Simple Language:
+        "Element ko yahan se wahan le jao"
+
+    Usage:
+        gsap.to(".box", { x: 300 });
+
+    🧠 Internal Logic:
+        - GSAP pehle element ka current position padhta hai
+        - Fir usko target values tak smoothly move karta hai
+        - Browser repaint optimized hota hai (fast animation)
+
+    Example:
+        gsap.to(".box", {
+            x: 300
+        });
+
+──────────────────────────────────
+2️⃣ gsap.from()
+──────────────────────────────────
+
+Syntax:
+    gsap.from(target, vars)
+
+Meaning:
+    Element pehle given state me hota hai
+    aur wapas ORIGINAL position pe aata hai
+
+Simple Language:
+    "Animation yahan se start ho"
+
+Usage:
+    gsap.from(".box", { x: -200 });
+
+🧠 Internal Logic:
+    - GSAP pehle element ko fake initial state deta hai
+    - Fir natural CSS state tak animate karta hai
+
+Example:
+    gsap.from(".box", {
+        x: -200,
+        opacity: 0
+    });
+
+──────────────────────────────────
+3️⃣ gsap.fromTo()
+──────────────────────────────────
+
+Syntax:
+    gsap.fromTo(target, fromVars, toVars)
+
+Meaning:
+    Aap manually define karte ho:
+    start point + end point
+
+Simple Language:
+    "Yahan se start karo, wahan finish karo"
+
+Usage:
+    gsap.fromTo(".box",
+        { x: -200 },
+        { x: 200 }
+    );
+
+🧠 Internal Logic:
+    - GSAP dono values lock kar deta hai
+    - CSS interfere nahi kar sakta
+
+──────────────────────────────────
+4️⃣ duration
+──────────────────────────────────
+
+Syntax:
+    duration: seconds
+
+Meaning:
+    Animation kitni der chalegi
+
+Unit:
+    Seconds (NOT milliseconds)
+
+Example:
+    duration: 1 = 1 second
+
+Usage:
+    gsap.to(".box", {
+        x: 300,
+        duration: 2
+    });
+
+🧠 Logic:
+    - Default duration = 0.5s
+    - Zyada duration = slow animation
+
+──────────────────────────────────
+5️⃣ delay
+──────────────────────────────────
+
+Syntax:
+    delay: seconds
+
+Meaning:
+    Animation start hone se pehle waiting time
+
+Example:
+    delay: 1 = 1 second
+
+Usage:
+    gsap.to(".box", {
+        x: 300,
+        delay: 1
+    });
+
+🧠 Logic:
+    - Page load hote hi GSAP wait karta hai
+    - Delay complete hone ke baad animation start
+
+──────────────────────────────────
+6️⃣ ease (Easing Function)
+──────────────────────────────────
+
+Syntax:
+    ease: "easeName"
+
+Meaning:
+    Animation ka speed pattern
+
+Simple Language:
+    Motion ka style
+
+Common Easings:
+
+    power1.out     → smooth end
+    power2.in      → slow start
+    power3.inOut   → slow start + slow end
+    elastic.out    → spring effect
+    bounce.out     → bounce effect
+    etc
+
+Usage:
+    gsap.to(".box", {
+        x: 300,
+        ease: "power3.out"
+    });
+
+🧠 Logic:
+    - GSAP math formula use karta hai
+    - Speed curve control hota hai
+
+──────────────────────────────────
+7️⃣ opacity
+──────────────────────────────────
+
+Meaning:
+    Element visible ya invisible
+
+Range:
+    0 → invisible
+    1 → fully visible
+
+Usage:
+    gsap.from(".box", {
+        opacity: 0
+    });
+
+──────────────────────────────────
+8️⃣ scale
+──────────────────────────────────
+
+Meaning:
+    Size control
+
+Usage:
+    scale: 1.5 → 150%
+    scale: 0.5 → 50%
+
+Example:
+    gsap.from(".box", {
+        scale: 0
+    });
+
+──────────────────────────────────
+9️⃣ rotation
+──────────────────────────────────
+
+Meaning:
+    Element rotate karna
+
+Unit:
+    Degrees
+
+Usage:
+    gsap.to(".box", {
+        rotation: 360
+    });
+
+──────────────────────────────────
+🔟 stagger
+──────────────────────────────────
+
+Meaning:
+    Multiple elements ko delay ke sath animate karna
+
+Usage:
+    gsap.from(".item", {
+        y: 50,
+        opacity: 0,
+        stagger: 0.2
+    });
+
+🧠 Logic:
+    - Har element ko thoda delay milta hai
+    - Sequence jaisa effect aata hai
+
+──────────────────────────────────
+1️⃣1️⃣ repeat
+──────────────────────────────────
+
+Meaning:
+    Animation repeat karna (not reverse)
+
+Usage:
+    repeat: 2 → total 3 times
+    repeat: -1 → infinite
+
+Example:
+    gsap.to(".box", {
+        x: 200,
+        repeat: -1
+    });
+
+──────────────────────────────────
+1️⃣2️⃣ yoyo
+──────────────────────────────────
+
+Meaning:
+    Aage jao → wapas aao. Forward + backward. (Reverse)
+
+Usage:
+    gsap.to(".box", {
+        x: 200,
+        repeat: -1,
+        yoyo: true
+    });
+
+──────────────────────────────────
+1️⃣3️⃣ Timeline (gsap.timeline)
+──────────────────────────────────
+
+Meaning:
+    Multiple animations ko ek sequence me control karna
+
+Usage:
+    const tl = gsap.timeline();
+
+    tl.from(".box1", { y: 50 })
+      .from(".box2", { x: 50 })
+      .to(".box3", { rotation: 360 });
+
+🧠 Logic:
+    - Ek animation khatam
+    - Dusri start
+    - Clean & professional flow
+
+    🔥 GSAP Timeline ek element par bhi lag sakta hai aur multiple elements par bhi.
+        Timeline ka main kaam hai multiple animations ko sequence me control karna.
+──────────────────────────────────
+1️⃣4️⃣ Default GSAP Settings
+──────────────────────────────────
+
+gsap.defaults({
+    duration: 1,
+    ease: "power2.out"
+});
+
+Meaning:
+    Har animation me ye auto apply hoga
+
+──────────────────────────────────
+📌 Summary Table
+──────────────────────────────────
+
+| Property     | Use |
+|-------------|-----|
+| gsap.to     | Move to state |
+| gsap.from   | Animate from state |
+| duration    | Time |
+| delay       | Wait |
+| ease        | Motion style |
+| stagger     | Sequence |
+| repeat      | Loop |
+| yoyo        | Back & forth |
+| timeline    | Multi animation |
+
+──────────────────────────────────
+📚 References
+──────────────────────────────────
+GSAP Docs: https://greensock.com/docs/
+GSAP CDN: https://cdn.jsdelivr.net/npm/gsap@3/
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+END OF GSAP BASIC LEARNING FILE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+</pre>
+  </body>
+</html>

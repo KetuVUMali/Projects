@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Obj</title>
+</head>
+<body>
+    Data is represented in key-value pairs: 
+    Each data point has a key (like a name) and a value (like the data itself).
+
+
+<br><br>
+It is a common mistake to call a JSON object literal "a JSON object".
+
+JSON cannot be an object. JSON is a string format.
+
+The data is only JSON when it is in a string format. 
+When it is converted to a JavaScript variable, it becomes a JavaScript object.
+
+    <script>
+            // simple Obj
+                person = {name:"Ketan", age:24, city:"Betawad"};
+                console.log(person.name);                       // Ketan
+                console.log(person["name"]);                    // Ketan
+
+
+
+            // update value
+                person2 = {name:"Jay", age:25, city:"Pune"};
+                person2.name = "Jaymin";
+                // person2["name"] = "Jaymin";
+                console.log(person.name);                       // Jaymin
+
+
+
+            
+                const student = {
+                                    "name": "Ketan",
+                                    "age": 24,
+                                    "isStudent": true,
+                                    "subjects": ["Math", "Science", "English"],
+                                    "address": {
+                                             "city": "Jalgaon",
+                                             "state": "Maharashtra"
+                                        }
+                                    };
+
+                // Accessing properties
+                console.log(student.name); // Output: "Ketan"
+                console.log(student.age);  // Output: 24
+                console.log(student.isStudent); // Output: true
+
+                // Accessing array values
+                console.log(student.subjects[0]); // Output: "Math"
+
+                // Accessing nested object
+                console.log(student.address.city); // Output: "Jalgaon"
+
+
+                student.age = 25; // Update age
+                student.email = "ketan@example.com"; // Add new property
+
+                console.log(student.age);  // Output: 25
+                console.log(student.email); // Output: "ketan@example.com"
+
+
+
+
+            // JSON.stringify() – Converting JavaScript Object to JSON
+            // JSON.stringify() is used to convert a JavaScript object into a JSON string.
+                const user = {
+                        name: "Ketan",
+                        age: 24,
+                        isStudent: true
+                    };
+                const jsonString = JSON.stringify(user);
+                console.log(jsonString);            // Output: '{"name":"Ketan","age":24,"isStudent":true}'
+
+
+
+        //  Loop Object access key
+            const myJSON = '{"name":"John", "age":30, "car":null}';
+            const myObj = JSON.parse(myJSON);
+
+            let text = "";
+            for (const x in myObj) {
+            text += x + ", ";
+            }                       // name, age, car,
+
+        // Loop Object access value
+            const myJSON2 = '{"name":"John", "age":30, "car":null}';
+            const myObj2 = JSON.parse(myJSON2);
+
+            let text2 = "";
+            for (const x in myObj2) {
+            text2 += myObj2[x] + ", ";
+            }                       // jone,30,null,
+    </script>
+    
+</body>
+</html>

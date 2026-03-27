@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .product {
+      position: relative;
+      display: inline-block;
+      padding: 20px;
+      border: 1px solid #ccc;
+    }
+
+    .product::after {
+      content: "NEW";
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      background: red;
+      color: white;
+      padding: 4px 6px;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="product">Mobile Phone</div>
+
+</body>
+</html>
+
+<pre>
+🔍 Explanation (Step-by-Step)
+    .product → container for product name
+    position: relative → parent for absolute child
+    .product::after → create badge after product name
+    content: "NEW" → text inside badge
+    position: absolute → position relative to parent
+    top: -10px; right: -10px → place badge at top-right corner
+    background: red → badge background color
+    color: white → badge text color
+    padding: 4px 6px → space inside badge
+    font-size: 12px → size of badge text
+
+    
+</pre>

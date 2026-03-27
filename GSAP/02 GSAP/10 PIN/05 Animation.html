@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.panel {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+}
+
+.one { background: #ff595e; }
+.two { background: #1982c4; }
+.three { background: #6a4c93; }
+</style>
+</head>
+<body>
+
+<div class="panel one">Section 1</div>
+<div class="panel two">Section 2</div>
+<div class="panel three">Section 3</div>
+
+<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.utils.toArray(".panel").forEach(panel => {
+  ScrollTrigger.create({
+    trigger: panel,
+    start: "top top",
+    pin: true,
+    pinSpacing: false
+  });
+});
+</script>
+<div>
+    <pre>
+        Pin multiple sections as you scroll.
+        Pin each section one by one
+
+        🧠 Explanation :
+                Each .panel pins when it reaches the top
+                Stays pinned until the next panel pushes it up
+                Creates a smooth scrolling effect through sections
+    </pre>
+    <pre>
+        🧠 Explanation
+                Each section pins at top
+                Stays pinned until next section arrives
+                👉 Great for storytelling or step-by-step content
+    </pre>
+</div>
+
+</body>
+</html>

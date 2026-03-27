@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madification Dom Ele</title>
+</head>
+<body>
+    <strong>.textContent   &   .innerHTML </strong> <br>
+
+    <button>1. Text Change </button>
+
+    <h1>2. Hiiii </h1>
+
+    <h3>3. Hiiii,  </h3>
+
+    <h4> 4. Hello </h4>
+
+    <h5> 5. Hell0 </h5>
+
+    <h6> 6.  hiii, </h6>
+</body>
+
+<script>
+
+        // 1 .textContent                                          change text content
+            var btn = document.querySelector('button');
+            btn.textContent = " Change Successfull..!";
+
+
+        // 2. .textContent 
+            var h1 = document.querySelector("h1");
+            h1.textContent = " I am Change Now...!";
+
+
+        // 3. .textContent  
+            var h3 = document.querySelector("h3");
+            h3.textContent += " Ketu ";                                         // op -> Hiiii,ketu
+            // h3.textContent = " Ketu ";                                       // op -> ketu
+
+
+        // 4.  .textContent 
+            var h4 = document.querySelector('h4');
+            h4.textContent='<i> Hello <i>';                                     // op ->   <i> Hello <i>
+            //  h4.innerHTML='<i> Hello <i>';                                   // op ->   hello
+
+
+        // 5.  .innerHTML                      to change html tag with content
+            var h5 = document.querySelector('h5');
+                //  h5.textContent='<i> Hello <i>';                             // op ->   <i> Hello <i>
+                h5.innerHTML='<i> Hello <i>';                                   // op ->    Hello 
+
+        
+        // 6. . innerHTML
+                var h6 = document.querySelector("h6");
+                    h6.innerHTML += " <i> Ketu <i>";                            // op ->    hiiii, Ketu
+                    //   h6.innerHTML = " <i> Ketu <i>";                        // op ->    Ketu
+
+</script>
+</html>

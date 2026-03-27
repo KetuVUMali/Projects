@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> How to get data using prompt function </title>
+</head>
+<body>
+	<h3>How to get data using prompt function</h3>
+
+	<!-- 
+		<script type="text/javascript">
+			var res =  prompt("Enter Your Name!","");
+			document.write(res);
+		</script> 
+	-->
+
+
+
+		<!-- 
+			Name : <i> </i>
+			<br>
+			<button onclick="call()"> call </button> 
+
+			<pre>
+				when we click on call Button that time prompt is open
+			</pre>
+
+
+			<script type="text/javascript">
+				function call()
+				 {
+					var res =  prompt("Enter Your Name!","");
+					document.write(res);
+				  }
+			</script>
+		 -->
+
+
+		    Name : <i id="result"> </i>
+			<br>
+			<button onclick="call()"> Call </button> 
+
+			<pre>
+				when we click on call Button that time prompt is open
+			</pre>
+
+
+			<script type="text/javascript">
+				function call()
+				 {
+					var name  =  prompt("Enter Your Name!","");                  //
+
+					//document.getElementById('result').innerHTML = name;
+					document.getElementById('result').textContent = name;            //
+				  }
+			</script>
+
+
+
+
+	
+</body>
+	
+</html>

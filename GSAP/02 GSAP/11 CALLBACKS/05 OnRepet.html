@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box {
+  width: 80px;
+  height: 80px;
+  background: black;
+  margin: 40px;
+}
+</style>
+</head>
+<body>
+
+<div class="box"></div>
+<p id="count">Repeats: 0</p>
+
+<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+<script>
+let count = 0;
+
+gsap.to(".box", {
+  x: 150,
+  duration: 1,
+  repeat: 3,
+  yoyo: true,
+  onRepeat: () => {
+    count++;
+    document.getElementById("count").innerText = "Repeats: " + count;
+  }
+});
+</script>
+<div>
+    <pre>
+        Do something every time animation repeats
+
+        🧠 Explanation
+                Animation repeats 3 times
+                Every repeat → onRepeat runs
+
+            Used in:
+                Loaders
+                Attention animations
+    </pre>
+</div>
+
+</body>
+</html>

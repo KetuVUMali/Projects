@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype Inheritances</title>
+</head>
+<body>
+    
+    
+</body>
+<script>
+
+        // 1. 
+            function mk(name,age)
+             {
+                this.name=name;
+                this.age=age;
+             }
+            
+            new mk()                       // create blank obj
+            
+
+
+
+        // 2. 
+             function a()
+             {
+                this.name="harsh";
+                this.age=20;
+             }
+             let ans = new a();
+             console.log(ans);
+
+
+        // 3. constructor fun
+             function b()
+             {
+
+             }
+             var x = new b();                      // blank obj
+
+
+        // 4. 
+            function c()
+             {
+                name="harsh";
+                age=20;
+             }
+             let ans2 = new c();
+             console.log(ans2);                   // blank obj
+
+
+            function d()
+             {
+                this.name="harsh";
+                this.age=20;
+             }
+             let ans3 = new d();
+             console.log(ans3);
+
+
+
+             function e()
+             {
+                this.name="harsh";
+                var add=20 + 20;
+                this.add;
+             }
+             let ans4 = new e();
+             console.log(ans4);
+
+
+
+        // 5. 
+            function f()
+             {
+                this.name="harsh";
+                this.add=20 + 20;
+                
+             }
+             let ans5 = new f();
+             console.log(ans5);
+
+
+        
+        // 6. para base val
+            function g(name,age)
+             {
+                this.name=name;
+                this.age=age;
+             }
+             let h1 = new g("A",1);
+             console.log(h1);
+             let h2 = new g("B",2);
+             console.log(h2);
+
+
+
+        // 7. 
+             function h(name,age)
+             {
+                this.name=name;
+                this.age=age;
+                this.print=function(){
+                    console.log(this.name);
+                }
+             }
+             let m1 = new h("A",1);
+             console.log(m1);
+             let m2 = new h("B",2);
+             console.log(m2);
+
+
+
+
+        // 8. Prototype
+            function i(name,age)
+             {
+                this.name=name;
+                this.age=age;
+             }
+             
+             i.prototype.print=function(){
+                console.log(this.name);
+             }
+             
+             let k1 = new h("A",1);
+             console.log(k1);
+             let k2 = new h("B",2);
+             console.log(k2);
+             
+
+
+</script>
+</html>

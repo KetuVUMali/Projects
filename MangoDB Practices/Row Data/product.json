@@ -1,0 +1,33 @@
+[
+    {
+      "_id": 1,
+      "name": "Laptop",
+      "category": "Electronics",
+      "price": 1200,
+      "stock": 15,
+      "ratings": [4.5, 4.7, 4.2],
+      "manufacturer": { "name": "TechCorp", "location": "New York" },
+      "createdAt": "2024-12-20T10:00:00Z"
+    },
+    {
+      "_id": 2,
+      "name": "Smartphone",
+      "category": "Electronics",
+      "price": 800,
+      "stock": 25,
+      "ratings": [4.8, 4.4, 4.6],
+      "manufacturer": { "name": "PhoneWorld", "location": "California" },
+      "createdAt": "2024-12-18T12:00:00Z"
+    },
+    {
+      "_id": 3,
+      "name": "Microwave",
+      "category": "Home Appliances",
+      "price": 300,
+      "stock": 10,
+      "ratings": [4.3, 4.1, 4.0],
+      "manufacturer": { "name": "KitchenPlus", "location": "Texas" },
+      "createdAt": "2024-12-15T08:00:00Z"
+    }
+  ]
+  

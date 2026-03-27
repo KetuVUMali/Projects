@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> Conditional Statement </title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		
+		// If Statement
+			let temp=40;
+				if(temp>30)
+				{
+					console.log("It's a Hot Day!");				// It's a Hot Day!
+				}
+
+		// If - Else Statement
+			let hour=14;
+				if(hour<12)
+				  {
+				  	console.log("Good Morning!");
+				  }
+				else
+				  {
+				  	console.log("Good Afternoon!");			// Good Afternoon!
+				  }
+
+		//If - ElseIf - Else Statement
+			let marks=75;
+				if(marks>=90)
+				  {
+				  	console.log("Excellent!");
+				  }
+				else if(marks>=60)
+				  {
+				  	console.log("Nice!");					// Nice
+				  }
+				else if(marks>=70)
+				  {
+				  	console.log("Good Job!");
+				  }
+				else if(marks>=50)
+				  {
+				  	console.log("You Passed");
+				  }
+				else
+				  {
+				  	console.log("You Need To Improvmrnt");
+				  }
+
+
+		//Switch Case
+			let dayofweek=3;
+			let dayname;
+				switch(dayofweek)
+				  {
+				    case 1:
+				  		   dayname = "Monday";
+				  		   break;
+				  	case 2:
+				  		   dayname = "Tuesday";
+				  		   break;
+				  	case 3:
+				  		   dayname = "Wednesday";
+				  		   break;
+				  	case 4:
+				  		   dayname = "Thursday";
+				  		   break;
+				  	case 5:
+				  		   dayname = "Friday";
+				  		   break;
+				  	case 6:
+				  		   dayname = "Saturday";
+				  		   break;
+				  	case 7:
+				  		   dayname = "Sunday";
+				  		   break;
+				  	default:
+				  		  dayname = "Invalid Day";
+				  		 
+				  }
+				console.log("Day of the Week ",dayname);				// Day of the Week  Wednesday
+
+
+
+			//
+				  var gender = "m";
+
+				  switch(gender){
+					case "m" :
+								console.log("Gender Is Male");
+							break;
+
+					case "f" :
+								console.log("Gender Is Female");
+							break;
+
+					default :
+								console.log("Gender Is Not Define");
+				  }
+		
+
+
+			// //
+					var gender = "m";
+
+						switch(gender){
+						case "m" :
+									console.log("Gender Is Male");			// Gender Is Male
+								//break;
+
+						case "f" :
+									console.log("Gender Is Female");		// Gender Is Female
+								break;
+
+						default :
+									console.log("Gender Is Not Define");
+						}
+
+
+	</script>
+
+</body>
+</html>

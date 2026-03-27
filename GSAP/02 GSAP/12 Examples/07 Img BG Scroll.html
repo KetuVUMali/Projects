@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html,body{
+            width: 100%;
+            height: 700vh;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        h1{
+            margin: 0;
+            padding: 0;
+            text-transform: uppercase;
+            font-family: 'FK Script Pro', cursive;
+            font-size: 15vw;
+            font-weight: 600;
+            line-height: 90%;
+            color: #fff;
+            letter-spacing: 2px;
+        }
+        p{
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: 400;
+            color: #fff;
+        }
+        section{
+            width: 100vw;
+            height: 100vh;
+        }
+        .hero{
+            padding: 4em;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            background: url('../../../IMG/wp13947776-solo-leveling-arise-wallpapers.jpg') 50% 50%;
+            background-size: cover;
+            /* background-position: center;s */
+        }
+        .hero p{
+            width: 50%;
+            text-align: center;
+        }
+        .about{
+            padding: 4em 12em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10em;
+            background-color: #667e74;
+        }
+        .about-img{
+            height: 75%;
+            border: 2px solid #000;
+        }
+        .about-copy h1{
+            text-align: center;
+            font-size: 10vw;
+            color: #263230;
+        }
+        .footer{
+            padding: 2em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: #1d2944;
+        }
+        .sticky{
+            position: relative;
+            perspective: 1000px;
+        }
+        .intro{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            padding: 1em;
+            display: flex;
+            z-index: 2;
+        }
+        .intro-col{
+            flex: 1;
+            display: flex;
+        }
+        .intro-col p{
+           flex:1;
+        }
+        .intro-col p span{
+            display: inline-block;
+        }
+        .intro-col:nth-child(2){
+            text-align: right;
+        }
+        .img-1,.img-2,.img-3{
+            position: absolute;
+            left: 0;
+            top:0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .img-2{
+            clip-path: polygon(40% 25%, 60% 25%, 60% 75%, 40% 75%);
+        }
+        .img-3{
+            clip-path: polygon(50% 25%, 50% 25%, 50% 75%, 50% 75%);
+        }
+        .img-3 img {
+            transform-origin: top right;
+            transform: scale(3);
+        }
+        .copy{
+            width:50%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%) rotate(-75deg) scale(0.5);
+            transform-origin: bottom left;
+            display: none;
+        }
+        .copy h1{
+            font-size: 10vw;
+            /* color: #fff; */
+            text-align: center;
+        }
+
+
+
+
+        
+ 
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section class="hero">
+            <h1>Genesis</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis expedita sed tempora, laudantium maiores quidem reprehenderit nam iusto libero vero aliquam nulla ullam ipsam! Reiciendis maiores vitae quidem fuga alias?</p>
+        </section>
+
+        <section class="about">
+            <div class="about-img">
+                <img src="../../../IMG/wp12515108-4k-solo-leveling-wallpapers.jpg" alt="">
+            </div>
+            <div class="about-copy">
+                <h1>The other Universal Movement</h1>
+            </div>
+        </section>
+
+        <section class="sticky">
+            <div class="intro">
+                <div class="intro-col">
+                    <p>Veiled depths of eternity</p>
+                    <p>Currents of cosmic wisdom</p>
+                </div>
+                <div class="intro-col">
+                    <p>Nexus of all existence</p>
+                </div>
+            </div>
+            <div class="img-1">
+                <img src="../../../IMG/sung-jinwoo-7680x4320-21872.jpg" alt="">
+            </div>
+            <div class="img-2">
+                <img src="../../../IMG/sung-jinwoo-dope-5120x2880-20241.jpg" alt="">
+            </div>
+            <div class="img-3">
+                <img src="../../../IMG/yoo-jinho-sung-5120x2880-21527.jpg" alt="">
+            </div>
+            <div class="copy">
+                <h1>The cosmic keystone with in Aethoria unlocks the gates to multiversal transformation </h1>
+            </div>
+        </section>
+
+        <section class="footer">
+            Infinity Realms of Eternity <br>
+            Backon Beyond
+        </section>
+    </div>
+    <script src='https://unpkg.com/lenis@1.0.31/dist/lenis.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded',()=>{
+            gsap.registerPlugin(ScrollTrigger);
+            const stickySection = document.querySelector('.sticky');
+            const totalStickyHeight = window.innerHeight * 4; // Total height for the sticky section (4 times the viewport height)
+
+            // lenis smooth scroll setup
+            const lenis = new Lenis();
+            lenis.on('scroll', ScrollTrigger.update);
+            gsap.ticker.add((time) => {
+                lenis.raf(time * 1000);
+            });
+            gsap.ticker.lagSmoothing(0);
+
+            // height fun : spilit text into letter
+            const introParagraphs = document.querySelector('.intro-col p');
+            introParagraphs.forEach((paragraph)=>{
+                const text = paragraph.textContent;
+                paragraph.innerHTML = text
+                          .split(/(\s+)/)
+                          .map((part)=>{
+                            if(part.trim() === ""){
+                                return part;
+                            }
+                            else{
+                                return part
+                                       .split("")
+                                       .map(
+                                        (char)=>
+                                         `<span style="opacity:0; display:inline-block;"> ${char} </span>  `
+                                       )
+                                       .join("");
+                            }
+                          })
+                          .join("");
+            })
+
+            // Flicker Animation into text
+            function flickerAnimation(targets, toOpacity){
+                gsap.to(targets,{
+                    opacity: toOpacity,
+                    duration: 0.05,
+                    stagger: {
+                        amount:0.3,
+                        from:"random"
+                    }
+                })
+            }
+
+            ScrollTrigger.create({
+                trigger: stickySection,
+                start:'top top',
+                end:()=>{`${window.innerHeight*3}`},
+                onEnter:()=> flickerAnimation(".intro-col p span", 1),
+                onLeave: ()=> flickerAnimation(".intro-col p span", 0),
+                onEnterBack: ()=> flickerAnimation(".intro-col p span", 1),
+                onLeaveBack: ()=> flickerAnimation(".intro-col p span", 1),
+            })
+
+            // Pin the sticky section
+            ScrollTrigger.create({
+                trigger: stickySection,
+                start: 'top top',
+                end: () => `+=${totalStickyHeight}`,
+                pin: true,
+                pinSpacing: false,
+            })
+
+            // scale Img-1
+            gsap.to('.img-1 img',{
+                scale:1.25,
+                ease:"none",
+                scrollTrigger:{
+                    trigger: stickySection,
+                    start:'top top',
+                    end:()=> `+=${window.innerHeight}`,
+                    scrub:true,
+                }
+            })
+
+            // scale Img-2 clippath
+            gsap.to('.img-2',{
+                clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
+                ease:"none",
+                scrollTrigger:{
+                    trigger: stickySection,
+                    start:'top top',
+                    end:()=> `+=${window.innerHeight}`,
+                    scrub:true,
+                    onupdate:(self)=>{
+                        const progress = self.progress;
+                       gsap.to('.img-2',{
+                            clipPath: `polygon(
+                            ${gsap.utils.interpolate(40,0,progress)}% ${gsap.utils.interpolate(25,0,progress)}%,
+                            ${gsap.utils.interpolate(60,100,progress)}% ${gsap.utils.interpolate(25,0,progress)}%,
+                            ${gsap.utils.interpolate(60,100,progress)}% ${gsap.utils.interpolate(75,100,progress)}%,
+                            ${gsap.utils.interpolate(40,0,progress)}% ${gsap.utils.interpolate(75,100,progress)}%
+                            )`
+                        })
+                    }
+                }
+            })
+
+            // scale Img-2
+            gsap.to('.img-2 img',{
+                scale:1.25,
+                ease:"none",
+                scrollTrigger:{
+                    trigger: stickySection,
+                    start:'top top',
+                    end:()=> `+=${window.innerHeight}`,
+                    scrub:true,
+                }
+            })
+
+            // animate img-3 clippath path
+            gsap.to('.img-3',{
+                clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
+                ease:"none",
+                scrollTrigger:{
+                    trigger: stickySection,
+                    start:`${window.innerHeight*3}`,
+                    end:()=> `${window.innerHeight*4}`,
+                    scrub:true,
+                    onupdate:(self)=>{
+                        const progress = self.progress;
+                       gsap.set('.img-3',{
+                            clipPath: `polygon(
+                            ${gsap.utils.interpolate(50,0,progress)}% ${gsap.utils.interpolate(50,0,progress)}%,
+                            ${gsap.utils.interpolate(50,100,progress)}% ${gsap.utils.interpolate(50,0,progress)}%,
+                            ${gsap.utils.interpolate(50,100,progress)}% ${gsap.utils.interpolate(50,100,progress)}%,
+                            ${gsap.utils.interpolate(50,0,progress)}% ${gsap.utils.interpolate(50,100,progress)}%
+                            )`
+                        })
+                    }
+                }
+            })
+                // continue img-2 scale
+                gsap.fromTo('.img-2 img',{
+                    scale:1.25,
+                },{
+                    scale:1.5,
+                    ease:"none",
+                    scrollTrigger:{
+                        trigger: stickySection,
+                        start:`${window.innerHeight*3}`,
+                        end:()=> `${window.innerHeight*4}`,
+                        scrub:true,
+                    }
+                })
+
+                // scale down img-3
+                gsap.to('.img-3 img',{
+                    scale:2.9,
+                    ease:"none",
+                    scrollTrigger:{
+                        trigger: stickySection,
+                        start:`${window.innerHeight*3}`,
+                        end:()=> `${window.innerHeight*4}`,
+                        scrub:true,
+                    }
+                })
+
+                // reset img-3 scale (zoom out)
+                gsap.fromTo('.img-3 img',{
+                    scale:2.9,
+                },{
+                    scale:1,
+                    ease:"none",
+                    scrollTrigger:{
+                        trigger: stickySection,
+                        start:`${window.innerHeight*4}`,
+                        end:()=> `${window.innerHeight*6}`,
+                        scrub:true,
+                    }
+                })
+
+                // final copy reveal
+                let tl = gsap.timeline({
+                    scrollTrigger:{
+                        trigger: stickySection,
+                        start:`${window.innerHeight*4}`,
+                        end:()=> `${window.innerHeight*6}`,
+                        scrub:true,
+                        toggleActions:"play reverse play reverse",
+                    }
+                })
+                tl.to('.copy',{
+                    display:"block",
+                    rotation:0,
+                    scale:1,
+                    duration:1,
+                    ease:"none",
+                })
+
+        })
+    </script>
+</body>
+</html>

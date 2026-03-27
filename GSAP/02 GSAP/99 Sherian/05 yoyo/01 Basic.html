@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <pre>
+        GSAP yoyo : Reverse direction after each cycle
+                    Reverse animation direction after each cycle.
+
+            syntax :
+                    gsap.to(Selector, duration, animation).yoyo(true)
+
+
+            Example :
+                    gsap.to(".card", {
+                        y: 40,
+                        opacity: 0,
+                        yoyo: true,
+                        duration: 0.6
+                    });
+
+                Note :1. Take value True & False
+                        yoyo : true
+                                Means reverse direction after each cycle
+
+                        yoyo : false
+                                Means 
+
+                    2. When used yoyo then always remember to use repeat : -1
+                    because some time conflict occur.
+
+    </pre>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  height: 200vh;
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+  background: crimson;
+  margin: 100px auto;
+}
+</style>
+</head>
+<body>
+
+<div class="box"></div>
+
+<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+ScrollTrigger.create({
+  trigger: ".box",
+  start: "top top",
+  pin: true
+});
+</script>
+<div>
+    <pre>
+        Pin a box when it reaches the top while scrolling.
+
+        🧠 Explanation :
+                Page scrolls normally
+                    When .box reaches top of screen
+                    It gets pinned (fixed)
+                    It stays fixed forever (no end defined)
+    </pre>
+</div>
+
+</body>
+</html>

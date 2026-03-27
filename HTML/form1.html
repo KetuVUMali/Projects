@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form>
+      <fieldset>
+        <legend> User Details  </legend>
+        <label>User Name : </label> <input type="text" placeholder="Enter User Name" name="userName" required />
+        <br> <br>
+        <label>Mobile No. : </label> <input type="number" minlength="10" maxlength="10" name="mobileNo" required />
+        <br><br>
+        <label>Email : </label> <input type="email" name="email" placeholder="Enter Email ID" required />
+        <br><br>
+        <label>Password : </label>  <input type="password" name="password" placeholder="Enter Password" required/>
+        <br><br>
+        <label>Gender : </label  > <input type="radio" name="gender" value="male" /> Male
+                                 <input type="radio" name="gender" value="female" /> Femail
+        <br><br>
+        <label>Hobbies : </label > <input type="checkbox" /> Running
+                                  <input type="checkbox" /> Reading
+                                  <input type="checkbox" /> Traveling
+        <br><br>
+        <label> State : </label>  <select >
+                                            <option> Select Option </option>
+                                            <option value="mah"> MAH </option>
+                                            <option value="gu" > GU </option>
+                                            <option value="goa"> GOA</option>
+                                  </select>
+        <br><br>
+        <label>Photo : </label>   <input type="file" name="photo" required />                    
+        <br><br>
+        <label>DOB : </label> <input type="date" name="dob" />
+        <br><br>
+
+        <br><br>
+        <button type="submit"> Submit </button>
+        &ensp;&ensp;
+        <button type="reset" >Cancle </button>
+
+       </fieldset>
+    </form>
+</body>
+</html>

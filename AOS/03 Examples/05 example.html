@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gusto Italiano | Authentic Italian Restaurant</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- AOS Animation Library CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Day Theme Variables */
+            --day-primary: #c41e3a;
+            --day-secondary: #d4a574;
+            --day-accent: #2a9d8f;
+            --day-light: #f8f9fa;
+            --day-dark: #212529;
+            --day-bg: #ffffff;
+            --day-card-bg: #ffffff;
+            --day-text: #333333;
+            --day-border: #e9ecef;
+            
+            /* Night Theme Variables */
+            --night-primary: #ff6b6b;
+            --night-secondary: #ffd166;
+            --night-accent: #06d6a0;
+            --night-light: #2d3748;
+            --night-dark: #0d1117;
+            --night-bg: #1a202c;
+            --night-card-bg: #2d3748;
+            --night-text: #e2e8f0;
+            --night-border: #4a5568;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color 0.5s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+        
+        body {
+            font-family: 'Raleway', sans-serif;
+            line-height: 1.7;
+            background-color: var(--day-bg);
+            color: var(--day-text);
+            transition: all 0.5s ease;
+        }
+        
+        body.night-mode {
+            background-color: var(--night-bg);
+            color: var(--night-text);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+        
+        /* Theme Toggle Button */
+        .theme-toggle {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            z-index: 1000;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--day-primary);
+            color: white;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .theme-toggle:hover {
+            transform: rotate(30deg) scale(1.1);
+        }
+        
+        .night-mode .theme-toggle {
+            background-color: var(--night-primary);
+        }
+        
+        /* Navigation Bar */
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        .night-mode .navbar {
+            background-color: rgba(26, 32, 44, 0.95);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-weight: 800;
+            font-size: 2rem;
+            color: var(--day-primary) !important;
+        }
+        
+        .night-mode .navbar-brand {
+            color: var(--night-primary) !important;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            margin: 0 8px;
+            color: var(--day-dark) !important;
+            position: relative;
+            transition: color 0.3s;
+        }
+        
+        .night-mode .nav-link {
+            color: var(--night-text) !important;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            background-color: var(--day-primary);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s;
+        }
+        
+        .night-mode .nav-link::after {
+            background-color: var(--night-primary);
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--day-primary) !important;
+        }
+        
+        .night-mode .nav-link:hover,
+        .night-mode .nav-link.active {
+            color: var(--night-primary) !important;
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            min-height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content h1 {
+            font-size: 4rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background-color: rgba(196, 30, 58, 0.8);
+            padding: 10px 25px;
+            border-radius: 30px;
+            margin-bottom: 30px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        
+        .night-mode .hero-badge {
+            background-color: rgba(255, 107, 107, 0.8);
+        }
+        
+        /* Section Styling */
+        .section-padding {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 50px;
+            color: var(--day-primary);
+        }
+        
+        .night-mode .section-title {
+            color: var(--night-primary);
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--day-secondary);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        .night-mode .section-title::after {
+            background: var(--night-secondary);
+        }
+        
+        /* Menu Cards */
+        .menu-card {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            height: 100%;
+            background-color: var(--day-card-bg);
+            border: 1px solid var(--day-border);
+        }
+        
+        .night-mode .menu-card {
+            background-color: var(--night-card-bg);
+            border-color: var(--night-border);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .menu-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .menu-img {
+            height: 220px;
+            object-fit: cover;
+            width: 100%;
+            transition: transform 0.5s;
+        }
+        
+        .menu-card:hover .menu-img {
+            transform: scale(1.05);
+        }
+        
+        .menu-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--day-primary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .night-mode .menu-badge {
+            background-color: var(--night-primary);
+        }
+        
+        .price-tag {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--day-primary);
+        }
+        
+        .night-mode .price-tag {
+            color: var(--night-primary);
+        }
+        
+        /* About Section */
+        .about-section {
+            background-color: var(--day-light);
+        }
+        
+        .night-mode .about-section {
+            background-color: var(--night-light);
+        }
+        
+        .about-img {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Chef Cards */
+        .chef-card {
+            background-color: var(--day-card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            height: 100%;
+            border: 1px solid var(--day-border);
+            transition: all 0.3s;
+        }
+        
+        .night-mode .chef-card {
+            background-color: var(--night-card-bg);
+            border-color: var(--night-border);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .chef-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .chef-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--day-secondary);
+            margin: 0 auto 25px;
+        }
+        
+        .night-mode .chef-img {
+            border-color: var(--night-secondary);
+        }
+        
+        /* Testimonial Cards */
+        .testimonial-card {
+            background-color: var(--day-card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            height: 100%;
+            border: 1px solid var(--day-border);
+            position: relative;
+        }
+        
+        .night-mode .testimonial-card {
+            background-color: var(--night-card-bg);
+            border-color: var(--night-border);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            font-size: 100px;
+            color: rgba(196, 30, 58, 0.1);
+            top: -40px;
+            left: 20px;
+            font-family: serif;
+            line-height: 1;
+        }
+        
+        .night-mode .testimonial-card::before {
+            color: rgba(255, 107, 107, 0.1);
+        }
+        
+        .client-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--day-secondary);
+        }
+        
+        .night-mode .client-img {
+            border-color: var(--night-secondary);
+        }
+        
+        /* Reservation Form */
+        .reservation-form {
+            background-color: var(--day-card-bg);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--day-border);
+        }
+        
+        .night-mode .reservation-form {
+            background-color: var(--night-card-bg);
+            border-color: var(--night-border);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .form-control {
+            padding: 15px;
+            border: 2px solid var(--day-border);
+            border-radius: 10px;
+            margin-bottom: 20px;
+            background-color: var(--day-light);
+            color: var(--day-text);
+            transition: all 0.3s;
+        }
+        
+        .night-mode .form-control {
+            background-color: var(--night-light);
+            border-color: var(--night-border);
+            color: var(--night-text);
+        }
+        
+        .form-control:focus {
+            border-color: var(--day-primary);
+            box-shadow: 0 0 0 0.25rem rgba(196, 30, 58, 0.25);
+        }
+        
+        .night-mode .form-control:focus {
+            border-color: var(--night-primary);
+            box-shadow: 0 0 0 0.25rem rgba(255, 107, 107, 0.25);
+        }
+        
+        .btn-primary {
+            background-color: var(--day-primary);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .night-mode .btn-primary {
+            background-color: var(--night-primary);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--day-dark);
+            color: white;
+            padding: 80px 0 30px;
+        }
+        
+        .night-mode .footer {
+            background-color: var(--night-dark);
+        }
+        
+        .footer h5 {
+            color: white;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer h5::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background-color: var(--day-secondary);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .night-mode .footer h5::after {
+            background-color: var(--night-secondary);
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #b0b7c3;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--day-secondary);
+            padding-left: 5px;
+        }
+        
+        .night-mode .footer-links a:hover {
+            color: var(--night-secondary);
+        }
+        
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            margin-right: 10px;
+            color: white;
+            transition: all 0.3s;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--day-primary);
+            transform: translateY(-5px);
+        }
+        
+        .night-mode .social-icons a:hover {
+            background-color: var(--night-primary);
+        }
+        
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            margin-top: 50px;
+            text-align: center;
+            color: #b0b7c3;
+        }
+        
+        /* Restaurant Theme Elements */
+        .pasta-animation {
+            width: 80px;
+            height: 80px;
+            position: relative;
+            margin: 0 auto;
+        }
+        
+        .pasta-animation::before,
+        .pasta-animation::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 10px;
+            background-color: var(--day-secondary);
+            border-radius: 5px;
+            animation: pastaMove 3s ease-in-out infinite;
+        }
+        
+        .night-mode .pasta-animation::before,
+        .night-mode .pasta-animation::after {
+            background-color: var(--night-secondary);
+        }
+        
+        .pasta-animation::before {
+            top: 20px;
+            left: 10px;
+            transform: rotate(45deg);
+            animation-delay: 0.5s;
+        }
+        
+        .pasta-animation::after {
+            top: 50px;
+            left: 10px;
+            transform: rotate(-45deg);
+        }
+        
+        @keyframes pastaMove {
+            0%, 100% { transform: rotate(45deg) translateX(0); }
+            50% { transform: rotate(45deg) translateX(10px); }
+        }
+        
+        /* Day/Night Specific Elements */
+        .day-only {
+            display: block;
+        }
+        
+        .night-only {
+            display: none;
+        }
+        
+        .night-mode .day-only {
+            display: none;
+        }
+        
+        .night-mode .night-only {
+            display: block;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .theme-toggle {
+                top: 80px;
+                right: 15px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+            
+            .section-padding {
+                padding: 60px 0;
+            }
+        }
+        
+        /* Loading Animation for Theme Switch */
+        .theme-transition {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--day-primary);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+        
+        .theme-transition.active {
+            opacity: 0.8;
+        }
+        
+        .theme-transition i {
+            font-size: 4rem;
+            color: white;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="day-mode">
+    <!-- Theme Transition Overlay -->
+    <div class="theme-transition">
+        <i class="fas fa-utensils"></i>
+    </div>
+    
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="themeToggle">
+        <i class="fas fa-sun day-only"></i>
+        <i class="fas fa-moon night-only"></i>
+    </button>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <!-- AOS Animation: Logo slides in from left with bounce effect -->
+            <a class="navbar-brand" href="#" data-aos="fade-right" data-aos-duration="800" data-aos-easing="ease-out-back">
+                <i class="fas fa-utensils me-2"></i>Gusto Italiano
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <!-- AOS Animation: Nav items fade in from top with staggered delays -->
+                    <li class="nav-item" data-aos="fade-down" data-aos-delay="100" data-aos-duration="600">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item" data-aos="fade-down" data-aos-delay="200" data-aos-duration="600">
+                        <a class="nav-link" href="#menu">Menu</a>
+                    </li>
+                    <li class="nav-item" data-aos="fade-down" data-aos-delay="300" data-aos-duration="600">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item" data-aos="fade-down" data-aos-delay="400" data-aos-duration="600">
+                        <a class="nav-link" href="#chefs">Chefs</a>
+                    </li>
+                    <li class="nav-item" data-aos="fade-down" data-aos-delay="500" data-aos-duration="600">
+                        <a class="nav-link" href="#testimonials">Testimonials</a>
+                    </li>
+                    <li class="nav-item" data-aos="fade-down" data-aos-delay="600" data-aos-duration="600">
+                        <a class="nav-link" href="#reservation">Reservation</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <!-- AOS Animation: Badge zooms in with spring effect -->
+                    <div class="hero-badge mb-4" data-aos="zoom-in" data-aos-duration="800" data-aos-easing="ease-out-back">
+                        <i class="fas fa-star me-2"></i>Authentic Italian Cuisine
+                    </div>
+                    
+                    <!-- AOS Animation: Main heading fades up with cascade effect -->
+                    <h1 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                        Taste the <span style="color: #d4a574">True Essence</span> of Italy
+                    </h1>
+                    
+                    <!-- AOS Animation: Subtitle fades up with longer delay -->
+                    <p class="lead mb-4" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
+                        Experience traditional Italian flavors crafted with passion and the finest ingredients. 
+                        From handmade pasta to wood-fired pizzas, every dish tells a story.
+                    </p>
+                    
+                    <!-- AOS Animation: Buttons slide in from left and right -->
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#menu" class="btn btn-primary btn-lg px-4 py-3" data-aos="fade-right" data-aos-delay="600" data-aos-duration="800">
+                            <i class="fas fa-utensils me-2"></i>View Menu
+                        </a>
+                        <a href="#reservation" class="btn btn-outline-light btn-lg px-4 py-3" data-aos="fade-left" data-aos-delay="600" data-aos-duration="800">
+                            <i class="fas fa-calendar-alt me-2"></i>Book Table
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <!-- AOS Animation: Pasta animation element -->
+                    <div class="pasta-animation mt-5" data-aos="fade-left" data-aos-delay="800" data-aos-duration="1200"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="section-padding">
+        <div class="container">
+            <!-- AOS Animation: Section title with flip-down effect -->
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title display-5" data-aos="flip-down" data-aos-duration="800">Our Specialties</h2>
+                    <p class="lead" data-aos="fade-up" data-aos-delay="200">Handcrafted dishes made with love and tradition</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Menu Item 1 with AOS Animation: Card flips in from left -->
+                <div class="col-lg-4 col-md-6" data-aos="flip-left" data-aos-duration="1000">
+                    <div class="menu-card">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                                 alt="Truffle Pasta" class="menu-img">
+                            <span class="menu-badge">Chef's Special</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="mb-2">Truffle Mushroom Pasta</h4>
+                            <p class="text-muted mb-3">Handmade fettuccine with wild mushrooms, black truffle, and Parmigiano-Reggiano</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="price-tag">$24.99</span>
+                                </div>
+                                <a href="#" class="btn btn-outline-primary">Order Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Menu Item 2 with AOS Animation: Card flips in with delay -->
+                <div class="col-lg-4 col-md-6" data-aos="flip-left" data-aos-delay="200" data-aos-duration="1000">
+                    <div class="menu-card">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                                 alt="Margherita Pizza" class="menu-img">
+                            <span class="menu-badge">Most Popular</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="mb-2">Wood-Fired Margherita</h4>
+                            <p class="text-muted mb-3">Traditional Neapolitan pizza with San Marzano tomatoes, fresh mozzarella, and basil</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="price-tag">$18.99</span>
+                                </div>
+                                <a href="#" class="btn btn-outline-primary">Order Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Menu Item 3 with AOS Animation: Card flips in with more delay -->
+                <div class="col-lg-4 col-md-6" data-aos="flip-left" data-aos-delay="400" data-aos-duration="1000">
+                    <div class="menu-card">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                                 alt="Osso Buco" class="menu-img">
+                            <span class="menu-badge">Seasonal</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="mb-2">Milanese Osso Buco</h4>
+                            <p class="text-muted mb-3">Braised veal shanks with gremolata, served with saffron risotto</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="price-tag">$32.99</span>
+                                </div>
+                                <a href="#" class="btn btn-outline-primary">Order Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- AOS Animation: View full menu button with zoom-in effect -->
+            <div class="text-center mt-5" data-aos="zoom-in" data-aos-delay="600">
+                <a href="#" class="btn btn-primary btn-lg px-5 py-3">
+                    <i class="fas fa-book-open me-2"></i>View Full Menu
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding about-section">
+        <div class="container">
+            <!-- AOS Animation: Section title with bounce effect -->
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title display-5" data-aos="bounce-in" data-aos-duration="800">Our Story</h2>
+                    <p class="lead" data-aos="fade-up" data-aos-delay="200">A family tradition since 1985</p>
+                </div>
+            </div>
+            
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <!-- AOS Animation: About image slides in from left -->
+                    <div class="about-img mb-4 mb-lg-0" data-aos="fade-right" data-aos-duration="1000">
+                        <img src="https://images.unsplash.com/photo-1554679665-f5537f187268?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                             alt="Restaurant Interior" class="img-fluid rounded">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <!-- AOS Animation: About text fades in from right -->
+                    <div data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                        <h3 class="mb-4">Bringing Italy to Your Table</h3>
+                        <p class="mb-4">Founded by the Rossi family who immigrated from Tuscany, Gusto Italiano has been serving authentic Italian cuisine for over three decades. Our recipes have been passed down through generations, preserving the true flavors of Italy.</p>
+                        
+                        <!-- AOS Animation: Feature list with staggered fade-up -->
+                        <ul class="list-unstyled">
+                            <li class="mb-3" data-aos="fade-up" data-aos-delay="300"><i class="fas fa-check text-primary me-2"></i> Fresh ingredients sourced daily</li>
+                            <li class="mb-3" data-aos="fade-up" data-aos-delay="400"><i class="fas fa-check text-primary me-2"></i> Handmade pasta and bread</li>
+                            <li class="mb-3" data-aos="fade-up" data-aos-delay="500"><i class="fas fa-check text-primary me-2"></i> Imported Italian cheeses and wines</li>
+                            <li class="mb-3" data-aos="fade-up" data-aos-delay="600"><i class="fas fa-check text-primary me-2"></i> Traditional wood-fired oven</li>
+                        </ul>
+                        
+                        <!-- AOS Animation: Signature dish highlight with zoom -->
+                        <div class="mt-4 p-4 rounded" style="background-color: rgba(196, 30, 58, 0.1);" data-aos="zoom-in" data-aos-delay="700">
+                            <h5><i class="fas fa-utensil-spoon me-2"></i> Our Signature Dish</h5>
+                            <p class="mb-0">Try our award-winning "Pasta alla Nonna" - a secret family recipe that has won the "Best Pasta" award three years in a row.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chefs Section -->
+    <section id="chefs" class="section-padding">
+        <div class="container">
+            <!-- AOS Animation: Section title with roll-in effect -->
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title display-5" data-aos="roll-in" data-aos-duration="800">Meet Our Chefs</h2>
+                    <p class="lead" data-aos="fade-up" data-aos-delay="200">Passionate artisans behind every dish</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Chef 1 with AOS Animation: Card fades up from bottom -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="800">
+                    <div class="chef-card">
+                        <img src="https://images.unsplash.com/photo-1581299894007-aaa50297cf16?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                             alt="Chef Marco" class="chef-img">
+                        <h4 class="mb-2">Marco Rossi</h4>
+                        <p class="text-muted mb-3">Head Chef & Owner</p>
+                        <p>Third-generation chef from Florence, specializing in traditional Tuscan cuisine. Trained in Michelin-starred restaurants across Italy.</p>
+                        <div class="mt-3">
+                            <span class="badge bg-primary me-2">Pasta Artisan</span>
+                            <span class="badge bg-secondary">Tuscan Cuisine</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Chef 2 with AOS Animation: Card fades up with delay -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+                    <div class="chef-card">
+                        <img src="https://images.unsplash.com/photo-1595475038784-bbe439ff41e6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                             alt="Chef Sofia" class="chef-img">
+                        <h4 class="mb-2">Sofia Conti</h4>
+                        <p class="text-muted mb-3">Pastry Chef</p>
+                        <p>Born and raised in Sicily, Sofia brings the sweet flavors of Southern Italy to our desserts. Her tiramisu has been featured in Food & Wine magazine.</p>
+                        <div class="mt-3">
+                            <span class="badge bg-primary me-2">Dessert Artist</span>
+                            <span class="badge bg-secondary">Sicilian Specialties</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Chef 3 with AOS Animation: Card fades up with more delay -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400" data-aos-duration="800">
+                    <div class="chef-card">
+                        <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                             alt="Chef Antonio" class="chef-img">
+                        <h4 class="mb-2">Antonio Moretti</h4>
+                        <p class="text-muted mb-3">Pizza Master</p>
+                        <p>From Naples, the birthplace of pizza, Antonio has mastered the art of wood-fired Neapolitan pizza. Certified by the Associazione Verace Pizza Napoletana.</p>
+                        <div class="mt-3">
+                            <span class="badge bg-primary me-2">Pizza Maestro</span>
+                            <span class="badge bg-secondary">Neapolitan Style</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section-padding about-section">
+        <div class="container">
+            <!-- AOS Animation: Section title with zoom-in effect -->
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title display-5" data-aos="zoom-in" data-aos-duration="800">What Our Guests Say</h2>
+                    <p class="lead" data-aos="fade-up" data-aos-delay="200">Experiences that speak for themselves</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Testimonial 1 with AOS Animation: Card flips in horizontally -->
+                <div class="col-lg-4 col-md-6" data-aos="flip-horizontal" data-aos-duration="1000">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-4">
+                            <img src="https://randomuser.me/api/portraits/women/32.jpg" class="client-img me-3" alt="Client">
+                            <div>
+                                <h5 class="mb-0">Jessica Miller</h5>
+                                <small>Food Critic, Epicure Magazine</small>
+                            </div>
+                        </div>
+                        <p class="mb-0">"The truffle pasta at Gusto Italiano is the most authentic I've tasted outside of Italy. The flavors are perfectly balanced, and the pasta is cooked al dente just right."</p>
+                        <div class="text-warning mt-3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 with AOS Animation: Card flips in with delay -->
+                <div class="col-lg-4 col-md-6" data-aos="flip-horizontal" data-aos-delay="200" data-aos-duration="1000">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-4">
+                            <img src="https://randomuser.me/api/portraits/men/54.jpg" class="client-img me-3" alt="Client">
+                            <div>
+                                <h5 class="mb-0">Robert Chen</h5>
+                                <small>Regular Customer</small>
+                            </div>
+                        </div>
+                        <p class="mb-0">"I've been coming here for years, and the quality never disappoints. The wood-fired pizza is incredible, and the atmosphere feels like a little piece of Italy."</p>
+                        <div class="text-warning mt-3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 with AOS Animation: Card flips in with more delay -->
+                <div class="col-lg-4 col-md-6" data-aos="flip-horizontal" data-aos-delay="400" data-aos-duration="1000">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-4">
+                            <img src="https://randomuser.me/api/portraits/women/67.jpg" class="client-img me-3" alt="Client">
+                            <div>
+                                <h5 class="mb-0">Maria Rodriguez</h5>
+                                <small>Travel Blogger</small>
+                            </div>
+                        </div>
+                        <p class="mb-0">"During my food tour of the city, Gusto Italiano stood out as the most authentic Italian experience. The osso buco melted in my mouth, and the service was impeccable."</p>
+                        <div class="text-warning mt-3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation Section -->
+    <section id="reservation" class="section-padding">
+        <div class="container">
+            <!-- AOS Animation: Section title with fade-up effect -->
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title display-5" data-aos="fade-up" data-aos-duration="800">Make a Reservation</h2>
+                    <p class="lead" data-aos="fade-up" data-aos-delay="200">Book your table for an unforgettable dining experience</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <!-- AOS Animation: Reservation form with flip-in effect -->
+                    <div class="reservation-form" data-aos="flip-in-y" data-aos-duration="1000">
+                        <form id="reservationForm">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Full Name</label>
+                                        <input type="text" class="form-control" placeholder="John Smith" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Email Address</label>
+                                        <input type="email" class="form-control" placeholder="john@example.com" required>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Phone Number</label>
+                                        <input type="tel" class="form-control" placeholder="(123) 456-7890" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Number of Guests</label>
+                                        <select class="form-control">
+                                            <option>1 person</option>
+                                            <option>2 people</option>
+                                            <option>3 people</option>
+                                            <option>4 people</option>
+                                            <option>5+ people</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Date</label>
+                                        <input type="date" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Time</label>
+                                        <select class="form-control">
+                                            <option>6:00 PM</option>
+                                            <option>6:30 PM</option>
+                                            <option>7:00 PM</option>
+                                            <option>7:30 PM</option>
+                                            <option>8:00 PM</option>
+                                            <option>8:30 PM</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="form-label">Special Requests</label>
+                                <textarea class="form-control" rows="3" placeholder="Dietary restrictions, celebrations, etc."></textarea>
+                            </div>
+                            
+                            <!-- AOS Animation: Submit button with pulse effect -->
+                            <div class="text-center" data-aos="pulse" data-aos-delay="300" data-aos-duration="1500" data-aos-iteration="2">
+                                <button type="submit" class="btn btn-primary btn-lg px-5 py-3">
+                                    <i class="fas fa-calendar-check me-2"></i>Book Table
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Restaurant Info with AOS Animation: Staggered fade-up effects -->
+            <div class="row mt-5">
+                <div class="col-md-4 text-center" data-aos="fade-up" data-aos-duration="800">
+                    <div class="p-4">
+                        <i class="fas fa-map-marker-alt fa-2x mb-3 text-primary"></i>
+                        <h4>Location</h4>
+                        <p>123 Little Italy Street<br>New York, NY 10013</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 text-center" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+                    <div class="p-4">
+                        <i class="fas fa-phone fa-2x mb-3 text-primary"></i>
+                        <h4>Reservations</h4>
+                        <p>(212) 555-1234<br>reservations@gustoitaliano.com</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 text-center" data-aos="fade-up" data-aos-delay="400" data-aos-duration="800">
+                    <div class="p-4">
+                        <i class="fas fa-clock fa-2x mb-3 text-primary"></i>
+                        <h4>Opening Hours</h4>
+                        <p>Mon-Thu: 5PM - 10PM<br>Fri-Sun: 12PM - 11PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <!-- AOS Animation: Footer sections with staggered fade-right effects -->
+                <div class="col-lg-4 mb-5" data-aos="fade-right" data-aos-duration="800">
+                    <h4 class="mb-4">
+                        <i class="fas fa-utensils me-2"></i>Gusto Italiano
+                    </h4>
+                    <p class="mb-4">Experience authentic Italian cuisine in the heart of the city. Family recipes, premium ingredients, and warm hospitality since 1985.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-tripadvisor"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-5" data-aos="fade-right" data-aos-delay="100" data-aos-duration="800">
+                    <h5 class="mb-4">Quick Links</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#chefs">Chefs</a></li>
+                        <li><a href="#reservation">Reservation</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-5" data-aos="fade-right" data-aos-delay="200" data-aos-duration="800">
+                    <h5 class="mb-4">Menu Categories</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="#">Antipasti</a></li>
+                        <li><a href="#">Pasta</a></li>
+                        <li><a href="#">Pizza</a></li>
+                        <li><a href="#">Secondi</a></li>
+                        <li><a href="#">Dolci</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 mb-5" data-aos="fade-right" data-aos-delay="300" data-aos-duration="800">
+                    <h5 class="mb-4">Newsletter</h5>
+                    <p>Subscribe for exclusive offers and seasonal menus.</p>
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control" placeholder="Your Email">
+                        <button class="btn btn-primary" type="button">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- AOS Animation: Copyright with fade-in effect -->
+            <div class="copyright" data-aos="fade-in" data-aos-duration="1000">
+                <p>&copy; 2023 Gusto Italiano. All Rights Reserved. | Authentic Italian Restaurant</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS Animation Library JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        // Initialize AOS with custom settings for restaurant website
+        AOS.init({
+            duration: 1000, // Default animation duration
+            easing: 'ease-in-out', // Smooth easing for restaurant animations
+            once: false, // Animations happen every time element is in view
+            mirror: true, // Animate out when scrolling past elements
+            anchorPlacement: 'top-bottom', // Trigger when top of element hits bottom of viewport
+            disable: function() {
+                return window.innerWidth < 768; // Disable on mobile for performance
+            }
+        });
+        
+        // Theme Toggle Functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        const themeTransition = document.querySelector('.theme-transition');
+        
+        // Check for saved theme or default to day mode
+        const savedTheme = localStorage.getItem('restaurantTheme') || 'day';
+        
+        // Apply saved theme on page load
+        if (savedTheme === 'night') {
+            body.classList.remove('day-mode');
+            body.classList.add('night-mode');
+            updateThemeIcons('night');
+        }
+        
+        // Theme toggle event listener
+        themeToggle.addEventListener('click', function() {
+            // Show transition overlay
+            themeTransition.classList.add('active');
+            
+            // Toggle theme after short delay
+            setTimeout(() => {
+                if (body.classList.contains('night-mode')) {
+                    // Switch to Day Mode
+                    body.classList.remove('night-mode');
+                    body.classList.add('day-mode');
+                    localStorage.setItem('restaurantTheme', 'day');
+                    updateThemeIcons('day');
+                } else {
+                    // Switch to Night Mode
+                    body.classList.remove('day-mode');
+                    body.classList.add('night-mode');
+                    localStorage.setItem('restaurantTheme', 'night');
+                    updateThemeIcons('night');
+                }
+                
+                // Hide transition overlay
+                setTimeout(() => {
+                    themeTransition.classList.remove('active');
+                }, 300);
+                
+                // Trigger AOS refresh after theme change
+                setTimeout(() => {
+                    AOS.refresh();
+                }, 500);
+            }, 300);
+        });
+        
+        // Update theme icons
+        function updateThemeIcons(theme) {
+            const sunIcons = document.querySelectorAll('.fa-sun');
+            const moonIcons = document.querySelectorAll('.fa-moon');
+            
+            if (theme === 'night') {
+                sunIcons.forEach(icon => icon.style.display = 'none');
+                moonIcons.forEach(icon => icon.style.display = 'inline-block');
+            } else {
+                sunIcons.forEach(icon => icon.style.display = 'inline-block');
+                moonIcons.forEach(icon => icon.style.display = 'none');
+            }
+        }
+        
+        // AOS Animation Types Used in This Restaurant Website:
+        // 1. fade-right: Logo slides in from left (navigation)
+        // 2. fade-down: Navigation items drop down with staggered delays
+        // 3. zoom-in: Hero badge with spring effect
+        // 4. fade-up: Main heading and subtitle with cascade effect
+        // 5. fade-right/fade-left: Hero buttons sliding in from sides
+        // 6. fade-left: Pasta animation in hero section
+        // 7. flip-down: Section title with flipping effect
+        // 8. flip-left: Menu cards flipping in from left with staggered delays
+        // 9. zoom-in: View full menu button
+        // 10. bounce-in: About section title
+        // 11. fade-right: About image slides in from left
+        // 12. fade-left: About text fades in from right
+        // 13. fade-up: Feature list with staggered animation
+        // 14. zoom-in: Signature dish highlight
+        // 15. roll-in: Chefs section title rolling in
+        // 16. fade-up: Chef cards rising up with staggered delays
+        // 17. zoom-in: Testimonials section title
+        // 18. flip-horizontal: Testimonial cards flipping horizontally
+        // 19. flip-in-y: Reservation form with vertical flip
+        // 20. pulse: Submit button with pulsing effect
+        // 21. fade-up: Restaurant info with staggered delays
+        // 22. fade-right: Footer sections sliding in from left
+        // 23. fade-in: Copyright with simple fade
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Navbar background change on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.padding = '15px 0';
+                navbar.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                navbar.style.padding = '20px 0';
+                navbar.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.05)';
+            }
+        });
+        
+        // Form submission handler
+        document.getElementById('reservationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show success message
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            
+            submitBtn.innerHTML = '<i class="fas fa-check me-2"></i>Table Booked!';
+            submitBtn.classList.remove('btn-primary');
+            submitBtn.classList.add('btn-success');
+            
+            // Reset form
+            this.reset();
+            
+            // Revert button after 3 seconds
+            setTimeout(() => {
+                submitBtn.innerHTML = originalText;
+                submitBtn.classList.remove('btn-success');
+                submitBtn.classList.add('btn-primary');
+            }, 3000);
+        });
+        
+        // Menu image hover effect
+        document.querySelectorAll('.menu-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                const img = this.querySelector('.menu-img');
+                img.style.transform = 'scale(1.05)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                const img = this.querySelector('.menu-img');
+                img.style.transform = 'scale(1)';
+            });
+        });
+        
+        // Add subtle animation to pasta element on scroll
+        window.addEventListener('scroll', function() {
+            const pasta = document.querySelector('.pasta-animation');
+            const scrollPosition = window.scrollY;
+            
+            if (pasta) {
+                pasta.style.transform = `rotate(${scrollPosition * 0.1}deg)`;
+            }
+        });
+        
+        // Initialize day/night icons on page load
+        updateThemeIcons(savedTheme);
+    </script>
+</body>
+</html>

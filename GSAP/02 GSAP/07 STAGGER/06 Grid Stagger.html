@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 80px);
+            gap: 10px;
+        }
+
+        .cell {
+            width: 80px;
+            height: 80px;
+            background: purple;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="grid">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+    </div>
+
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+    <script>
+        gsap.from(".cell", {
+            opacity: 0,         // fade in effect
+            scale: 0,           // scale up effect
+            duration: 2,        // animation duration
+            stagger: {
+                each: 0.6,      // time between each animation
+                grid: [2, 3],   // grid layout (rows, columns)
+                from: "start"   // animation starts from the first cell
+            }
+        });
+    </script>
+
+    <div>
+        <h2>GSAP Grid Stagger Example</h2>
+        <p>
+            This example demonstrates a GSAP stagger animation applied to a grid layout where multiple cells animate in a staggered manner.
+        </p>
+        <ul>
+            <li>Each cell starts 0.6 seconds after the previous one, following a grid pattern.</li>
+            <li>Cells scale up from 0 to their original size and fade in over 2 seconds.</li>
+        </ul>
+        <p>This showcases how to create staggered animations in a grid layout using GSAP.</p>
+    </div>
+    <div>
+        <pre>
+                🧠 Explanation (Step-by-step)
+                    Select all .cell elements
+                    Animate from opacity:0 and scale:0
+                    Stagger each animation by 0.6s
+                    Each animation lasts 2s
+                    Create a grid layout with 2 rows and 3 columns
+                    Start animations from the first cell
+        </pre>
+    </div>
+
+</body>
+
+</html>

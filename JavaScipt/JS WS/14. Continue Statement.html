@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Continue Statement </title>
+</head>
+<body>
+
+	<h3> Continue Statement </h3>
+	<pre>
+		
+		- The Continue statement is used to skip the current iteration & go to next iteration.
+
+		-  Continue Statement (skip or escape  that no of excution step)
+
+		- continue is a keyword.
+	</pre>
+
+	<script type="text/javascript">
+		for(var i=0; i<10; i++)
+			{
+				if (i==5) 
+					{
+						continue;
+					}
+				document.write(i + "<br>");				// 0 1 2 3 4 6 7 8 9 
+			} 
+	</script>
+
+
+<br><br>
+<br><br>
+
+
+
+
+	<script type="text/javascript">
+		// Continue Statement (skip that no of excution)
+			for(let i=1; i<=5; i++)
+		    	{
+				  if(i==3)
+				    {
+				    	console.log("Continue Statement - Skipping iteration 3");
+				    	continue;
+				    }
+				    document.write("Continue Statement - Iteration :",i+ "<br>");
+				   //  console.log("Continue Statement - Iteration :",i);
+			    }
+	</script>
+	<br>
+	<br>
+
+	<script type="text/javascript">
+		document.write("Print Odd No."+"<br>");
+		for(var i = 1; i<10;i++)
+			{
+				if(i%2 == 0)
+					{
+						continue;
+					}
+				document.write(i + "<br>");
+			}
+	</script>
+	<br>
+	<br>
+	<script type="text/javascript">
+		document.write("Print Even No."+"<br>");
+		for(var i = 1; i<11;i++)
+			{
+				if(i%2 == 1)
+					{
+						continue;
+					}
+				document.write(i + "<br>");
+			}
+	</script>
+
+</body>
+</html>

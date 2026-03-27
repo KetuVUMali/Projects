@@ -1,0 +1,58 @@
+<!-- Build A countdown timer that starts when a button is clicked and updates the Display in real-Time  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        Per second code run
+        setInterval(callback,timer);
+
+        callback => Function 
+        timer    => mili second (1000=1 second)
+
+        setInterval(function(){},1000);
+
+        To Stop setInterval => 
+        var_name = setInterval(callback,timer);
+        clearInterval(setInterval_store_var);
+
+    </pre>
+
+    <h3> 0 </h3>
+    <button id="start"> Start </button>
+    <button id="stop"> Stop </button>
+
+    
+</body>
+<script>
+    //Exampl For Practices
+    // var count = 0
+    // setInterval(function(){
+    //     console.log(count);
+    //     count++;
+    // },1000)
+
+    var h3 =document.querySelector("h3");
+    var start =document.querySelector("#start")
+    var stop =document.querySelector("#stop")
+    var int;
+    start.addEventListener('click',function(){
+        var count=0;
+        int = setInterval(function(){
+            h3.textContent = count;
+            count++;
+        },1000);
+    });
+    
+    stop.addEventListener('click',function(){
+        clearInterval(int);
+    });
+    
+
+</script>
+</html>

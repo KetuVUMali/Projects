@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        loops :
+                1. for              //+++
+                2. while
+                3. do-while        
+                4. forIn            // ++
+                5. forEach          //+++
+                6. for of 
+
+    </pre>
+</body>
+<script>
+        // 1 for loop
+            for(starting (init); ending (cond); change (inc/dec))
+            {}
+
+            for(var i=0; i<=5; i++)
+             {
+                console.log(i);             // 0 1 2 3 4 5
+             }
+
+            for(var a=5; a>=0; a--)
+             {
+                console.log(a);             // 5 4 3 2 1 0
+             }
+
+
+        // 2. forEach()
+             // mostly use with Array
+             
+             var arr = [1, 2, 3, 4, 5];
+             arr.forEach(function(value)
+             {
+                consol.log(value);          //  1 2 3 4 5
+             })
+
+             var arr = [1, 2, 3, 4, 5];
+             arr.forEach(function(value)
+             {
+                consol.log(value + 2);      // 3 4 5 6 7
+             })
+
+
+             var arr = [1, 2, 3, 4, 5];
+             arr.forEach(function(value, index)
+             {
+                console.log(value + 2, index);      // 3 0   4 1    5 2    6 3     7 4   (value index_no)
+             })
+
+             
+            const number = [1,2,3,4,5];
+            number.forEach(number => {
+                console.log(number);            // 1 2 3 4 5 
+             })
+
+
+
+
+        // 3. for in loop
+             // mostly use with objects
+
+             var obj = {
+                name : "A",
+                age : 22,
+                no : 1
+             }
+             for(var value in obj)
+              {
+                console.log(value);                  // name   age    no     (key print)
+                console.log(obj[value]);             //  A     22     1      (Value Print)
+                console.log(value,obj[value]);       // name  A       age  22      no  1       (key Value Pair)     
+              }
+
+             
+             const user = {
+                            name : "Ketan",
+                            role : " Dev",
+                            lang : "JS"
+                        };
+                for(const key in user)
+                {
+                    console.log(`$(key) : $(user[key])`);           // name : Ketan,   role : Dev,  lang : "JS"
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+             // for of
+             const demo = [ "HTML", "CSS", "JS", "TY", "AG"];
+             for(const tech of demo)
+             {
+                console.log(tech);              // "HTML", "CSS", "JS", "TY", "AG"
+             }
+            
+             
+
+           
+
+
+            // while
+             let counter = 0;
+             while(counter <=5){
+                consol.log(counter);            //  0 1 2 3 4 5
+                counter++;
+             }
+
+             // do while loop 
+             let count = 0;
+             do{
+                consol.log(count);            //  0 1 2 3 4 5
+                counter++;
+             }while(counter <=5);
+
+
+             // map,filter,reduces
+              const numbers = [1,2,3,4,5];
+              const doubleNumbers = number.map(numbers => numbers*2);
+              console.log(doubleNumbers);      // [2, 4, 6, 8, 10]
+</script>
+</html>

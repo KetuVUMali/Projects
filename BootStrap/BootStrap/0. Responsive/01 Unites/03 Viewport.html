@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VW / VH</title>
+    <style>
+        html,body{
+            height: 100%;
+            width: 100%;
+        }
+
+
+        #box1 {
+            height: 500px;
+            width: 500px;
+            background-color: crimson;
+        }
+
+        #inner1 {
+            height: 50%;
+            width: 50%;
+            background-color: royalblue;
+        }
+
+        
+    
+        .inner2 {
+            height: 50%;
+            width: 50%;
+            background-color: rgb(20, 220, 63);
+        }
+
+
+        .inner2 {
+            height: 50%;
+            width: 50%;
+            background-color: rgb(20, 220, 63);
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <h4> Normal PX </h4>
+    
+     <div id="box1">                     
+       <div id="inner1"> 
+        </div>
+    </div>          
+
+    <br><br><hr><br><br>
+
+    <h4> Normal % ( "inner2" Dependances on parent )</h4>
+
+    <div id="box1">                     
+        <div class="inner2">
+         </div>
+     </div> 
+
+
+     <br><br><hr><br><br>
+
+    <h4> "inner3" set hight & Width  as per Screen ( "inner3" Dependances on parent it depend on Screen )</h4>
+     <h5> VW - Viewport Width  (like % take value width of screen) </h5>
+     <h5> VH - Viewport Height (like % take value height of screen) </h5>
+     <h4> Screen Perspective Height and Width Set. (value as per screen)</h4>
+
+     <h3> VW / VH : On Screen Size Width / height Change </h3>
+     <style>
+        .inner3 {
+            height: 50vh;   /* Depaints on height change (laptop,mobile) */
+            width: 50vw;    /* Depaints on width change (laptop, mobile) */
+            background-color: rgb(20, 220, 63);
+        }        
+     </style>
+    <div id="box1">                     
+        <div class="inner3">
+         </div>
+     </div> 
+
+     <br><br><hr><br><br>
+
+     <h1 style="font-size: 100px;"> Not Font Change As Per Screnn Size</h1>
+
+     <br><br><hr><br><br>
+
+     <h1 style="font-size: 6vw;"> on Font Change As Per Screnn width Size </h1>
+     <h1 style="font-size: 6vh;"> on Font Change As Per Screnn height Size </h1>
+
+</body>
+
+</html>

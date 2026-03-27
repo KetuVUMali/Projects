@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+}
+
+.section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+}
+
+.section1 { background: #111; color: white; }
+.section2 { background: #eee; }
+
+.box {
+  width: 120px;
+  height: 120px;
+  background: crimson;
+}
+</style>
+</head>
+<body>
+
+<div class="section section1">Scroll Down ⬇️</div>
+
+<div class="section section2">
+  <div class="box"></div>
+</div>
+
+<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.from(".box", {
+            y: 100,
+            opacity: 0,
+            duration: 1,
+            scrollTrigger: ".box"
+        });
+</script>
+
+<div>
+    <pre>
+    👉 Explanation: Animate a box when it enters the screen
+
+        🧠 WHAT IS HAPPENING?
+
+            Page is scrollable
+            Box is hidden initially
+            When you scroll down and box enters viewport → animation starts
+
+    </pre>
+    <pre>
+        Animate a box when its section comes into view
+
+            Page has two full-screen sections
+            Box is in the second section, initially hidden
+            When you scroll to the second section → box animates into view
+
+    </pre>
+    <pre>
+        🧠 What is happening :
+                Page has 2 full screen sections
+                When you scroll to section 2
+                Box animates from bottom to its place
+
+                📌 scrollTrigger: ".box"
+                → means animation starts when .box enters viewport
+    </pre>
+    <pre>
+        How it is work :
+            1. gsap.from() sets initial state of .box (y:100, opacity:0)
+            2. scrollTrigger watches .box
+            3. When .box enters viewport during scroll (viewport bottom reaches .box top)
+            4. Animation plays to bring .box to y:0, opacity:1
+    </pre>
+</div>
+
+</body>
+</html>

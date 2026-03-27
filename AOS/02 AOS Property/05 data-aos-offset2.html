@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>AOS Offset – Real World Deep Concepts</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+    <style>
+        body {
+            background-color: #f4f6f8;
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        .box {
+            background: #0d6efd;
+            color: white;
+            padding: 40px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .green {
+            background: #198754;
+        }
+
+        .dark {
+            background: #212529;
+        }
+
+        .note {
+            text-align: center;
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 40px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- =====================================================
+     SCENARIO 1: WHAT IS data-aos-offset (BASIC CONCEPT)
+     ===================================================== -->
+    <section>
+        <div class="container">
+            <h2>Basic Concept of data-aos-offset</h2>
+            <p class="note">
+                <b>data-aos-offset</b> controls
+                <br />
+                <b>HOW EARLY or HOW LATE</b> the animation starts when you scroll.
+                <br /><br />
+                Offset value = distance (in pixels) from bottom of screen
+                <br />
+                BEFORE animation triggers.
+            </p>
+
+            <!-- Default offset (120px) -->
+            <div class="box" data-aos="fade-up">Default Offset (120px)</div>
+
+            <!-- Small offset -->
+            <div class="box" data-aos="fade-up" data-aos-offset="50">
+                Small Offset (50px → animation starts late)
+            </div>
+
+            <!-- Large offset -->
+            <div class="box" data-aos="fade-up" data-aos-offset="300">
+                Large Offset (300px → animation starts early)
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+     SCENARIO 2: HERO SECTION (EARLY ANIMATION)
+     ===================================================== -->
+    <section>
+        <div class="container">
+            <h2>Hero Section – Early Trigger</h2>
+            <p class="note">
+                In real websites, hero content should animate
+                <b>BEFORE it fully appears</b>.
+                <br />
+                That creates premium feel.
+                <br />
+                Companies use HIGH offset here.
+            </p>
+
+            <div class="box" data-aos="fade-up" data-aos-offset="400">
+                Hero Heading (offset 400px)
+            </div>
+
+            <div class="box green" data-aos="fade-up" data-aos-offset="350">
+                Hero Subheading (offset 350px)
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+     SCENARIO 3: ABOUT SECTION (NORMAL OFFSET)
+     ===================================================== -->
+    <section>
+        <div class="container">
+            <h2>About Section – Normal Reading Flow</h2>
+            <p class="note">
+                Informational content should animate when user actually reaches it.
+                <br />
+                Default offset is BEST here.
+            </p>
+
+            <div class="box" data-aos="fade-left" data-aos-offset="120">
+                About Text (offset 120px – default)
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+     SCENARIO 4: SERVICES / FEATURES CARDS
+     ===================================================== -->
+    <section>
+        <div class="container">
+            <h2>Services Cards – Balanced Offset</h2>
+            <p class="note">
+                Cards should animate slightly early, but not too early.
+                <br />
+                Medium offset gives clean UX.
+            </p>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="box" data-aos="fade-up" data-aos-offset="200">
+                        Service 1 (offset 200px)
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="box" data-aos="fade-up" data-aos-offset="200">
+                        Service 2 (offset 200px)
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="box" data-aos="fade-up" data-aos-offset="200">
+                        Service 3 (offset 200px)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+     SCENARIO 5: IMAGE + TEXT SECTION
+     ===================================================== -->
+    <section>
+        <div class="container">
+            <h2>Image & Text – Focus Control</h2>
+            <p class="note">
+                Image should animate first, text should animate when image is visible.
+                <br />
+                Different offset helps focus user attention.
+            </p>
+
+            <!-- Image -->
+            <div class="box dark" data-aos="zoom-in" data-aos-offset="300">
+                Image / Illustration (offset 300px)
+            </div>
+
+            <!-- Text -->
+            <div class="box" data-aos="fade-right" data-aos-offset="150">
+                Supporting Text (offset 150px)
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+     SCENARIO 6: STATISTICS / COUNTERS
+     ===================================================== -->
+    <section>
+        <div class="container">
+            <h2>Statistics Section – Late Trigger</h2>
+            <p class="note">
+                Numbers should animate only when clearly visible.
+                <br />
+                Smaller offset is better.
+            </p>
+
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="box" data-aos="fade-up" data-aos-offset="80">
+                        10+ Years
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="box" data-aos="fade-up" data-aos-offset="80">
+                        500+ Clients
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="box" data-aos="fade-up" data-aos-offset="80">
+                        1200+ Projects
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="box" data-aos="fade-up" data-aos-offset="80">
+                        24/7 Support
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+     SCENARIO 7: BAD PRACTICE (LEARNING PURPOSE)
+     ===================================================== -->
+    <section>
+        <div class="container">
+            <h2>Very High Offset – Avoid</h2>
+            <p class="note">
+                Too large offset can trigger animation when element is NOT visible.
+                <br />
+                This feels confusing to users.
+            </p>
+
+            <div class="box dark" data-aos="fade-up" data-aos-offset="800">
+                Offset 800px (❌ Not Recommended)
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+     AOS INITIALIZATION
+     ===================================================== -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+        /*
+      Global AOS settings
+      Used in real company projects
+    */
+        AOS.init({
+            duration: 900,
+            easing: "ease-in-out",
+            once: true,
+            offset: 120, // default offset
+        });
+    </script>
+</body>
+
+</html>

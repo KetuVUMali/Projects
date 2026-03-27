@@ -1,0 +1,273 @@
+ <!DOCTYPE html>
+<html>
+<head>
+	<title> String </title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		// 1. String Concatenation
+			let firstName = 'ketu';
+			let lastName = "Mali";
+			let fullName = firstName+ " " +lastName;
+			console.log("FullName : ",fullName);			// FullName :  ketu Mali
+
+		// 2. String Length
+			let message = "Hellow, World!";
+			let MessageLength = message.length;
+			console.log("Message : ",message + "\n" + "MessageLength : ",MessageLength);		// Message :  Hellow, World!
+																								// MessageLength :  14
+
+		// 3. Accessing Characters ( -ve index some time not support)
+			 let str = "Hello Ketu";
+			 let firatchar = str[0];
+			 let lastchar = str[str.length - 1];
+			 console.log("First Char : ",firatchar);		// H
+			 console.log("Last Char : ",lastchar);			// u
+
+		// 4. Case Changing
+			// i. toUpperCase()
+			// ii. toLowerCase()
+
+			let name = "Hello Ketu";
+			let upper = name.toUpperCase();
+			let lower = name.toLowerCase();
+			console.log("Upper Case :",upper);
+			console.log("Lower Case :",lower);
+
+		// 5. indeOf() Method
+			let sentences = "Hello i am ketan . I am from India";
+			console.log(sentences.indexOf('ketan'));			// 11
+
+			let sentence = "Hello i am ketan . I am from India";
+			let wordToFind = "ketan";
+			let indexOfWord = sentence.indexOf(wordToFind);
+			console.log("Index Of "+ wordToFind + " : ",indexOfWord);		// 11
+
+		// 6. slice() Method
+				let orgstr = "Javascript is powerfull";
+				let slicestr1 = orgstr.slice(0,10);
+				let slicestr2 = orgstr.slice(5,15);
+				let slicestr3 = orgstr.slice(-10);  //-ve index
+				console.log("Original String :",orgstr);		// Javascript is powerfull
+				console.log("Slice String :",slicestr1);		// Javascript
+				console.log("Slice String :",slicestr2);		// cript is p
+				console.log("Slice String :",slicestr3);		// powerfull
+
+
+		// 7. substring()
+		    // sub string used to extract the part of string
+		    // particular part of strig get
+				let substr = "This is a Sub String Example.";
+				let substrres1 = substr.substring(5,13);
+				// 13 no. not get
+				let substrres2 = substr.substring(-10); //-ve index not working
+				console.log(substrres1);				// is a Sub
+				console.log(substrres2);				// This is a Sub String Example.
+
+		// 8. substr()
+			// total char extract from string.
+				let substr2 = "This is a Sub String Example.";
+				let substrres3 = substr.substr(5,13);
+				let substrres4 = substr.substr(-10); //-ve index not working
+				console.log(substrres1);				// is a Sub
+				console.log(substrres2);				// This is a Sub String Example.
+
+
+		// 9. replace() 
+				var replace = "Hello Mali";
+				var relpacestr = replace.replace("Hello","ketan");
+				console.log(relpacestr); 				// ketan Mali
+
+			// replaceAll()
+				var a = " English Is Global Lang, But I Am Speak english";
+				console.log(a);												// English Is Global Lang, But I Am Speak english
+				var b = a.replaceAll("English","Marathi");
+				console.log(b);												// Marathi Is Global Lang, But I Am Speak english												
+				var c = a.replaceAll(/English/gi,"Marathi");
+				console.log(c);												// Marathi Is Global Lang, But I Am Speak Marathi
+
+
+
+
+
+		// 10. includes()
+			// Find String Present or Not 
+				var replace = "Hello Mali";
+				var relpacestr = replace.includes("Mali");
+				var relpacestr1 = replace.includes("mali");
+				console.log(relpacestr); 						// true
+				console.log(relpacestr1); // case sensitive		// false
+
+				
+
+		// 11. charAt()
+		   //Inside String specific Char index get
+		   //String Index start from Zero
+		   let charat = "Hello";
+		   let charAtIndex = charat.charAt(4);
+		   console.log(charAtIndex);						// o
+		   console.log(charat.charAt(0));					// H
+
+		   // 12. charCodeAt()
+		     // To get char code   (UTF-8 Char Set Code)
+		     let code = "Jaimin";
+		     let charCode = code.charCodeAt(1);
+		     console.log(charCode);						// 97
+		     console.log(code.charCodeAt(0));			// 74
+
+		     console.log("abc".charCodeAt(0));			// 97
+
+		    // 13. split()	
+		    	// str convert into array			[Join()  Array into Str]
+		      // to break specific content at string & string convert into array
+		      var string = "Javascript Is Brain Lang";
+		      console.log(string);								// [Javascript Is Brain Lang]
+		      let split = string.split(" "); //input is space
+		      console.log(split);								// ['Javascript', 'Is', 'Brain', 'Lang']
+		       console.log(string.split("a"));					// [J', 'v', 'script Is Br', 'in L', 'ng']
+
+		      var string = "Javascript,Is,Brain,Lang";
+		      let split1 = string.split(","); //input is comma (we use in opc to seperate it but its present in string)
+		      console.log(split1);				// ['Javascript', 'Is', 'Brain', 'Lang']
+			  console.log(split1.length);		// 4
+
+		     // 14. trim()
+		       //Remove Whide space before and after sentaces or string
+		       var string = "  hello, Good Morning  ";
+		       let trim = string.trim();
+		       console.log(string); 			//org sentences
+		       console.log(trim);				//trim() use
+
+
+		      // 15. repeat()
+		        //to repreat string
+		        var string = "  hello, Good Morning  ";
+		        let repeat = string.repeat(3);
+		        console.log(repeat);					// hello, Good Morning    hello, Good Morning    hello, Good Morning
+		        console.log("ketu ".repeat(3));			// ketu ketu ketu 
+
+		     // 16. starstWith()
+		        // check string start with give value or not
+		        // output true or False
+		        var string = "Hello, Saurabh";
+		        let start1 = string.startsWith("Hello");
+		        console.log(start1);						// true
+		        let start2 = string.startsWith("hello");    //case sensitive
+		        console.log(start2); 						// false
+
+
+		    // 17. endsWith() 
+		      // check string end with give value or not
+		        // output true or False
+		        var string = "Hello, Jaimin";
+		        let end1 = string.endsWith("Jaimin");
+		        console.log(end1);						// true
+		        let end2 = string.endsWith("jaimin"); //case sensitive
+		        console.log(end2); 						// false
+
+
+		      // 18. padStart()
+		      	// to genrate serial no.
+		      	var start = "1"; //starting sries no.
+		      	let padStart = start.padStart(5,"0");
+		      	console.log(padStart);						// 00001
+		      	console.log("1".padStart(5,"*"));			// ****1
+
+		     // 19. padEnd()
+		       // to genrate serial no.
+		      	var end = "1"; //starting sries no.
+		      	let padEnd = end.padEnd(5,"0");				
+		      	console.log(padEnd);						// 10000
+		      	console.log("1".padEnd(5,"*"));				// 1****
+
+
+		      // 20. match(//g)
+		        // Match to regular expression & give matching words.
+		        var string = "The Cat In The Hat";
+		        let match = string.match(/at/g);
+		        console.log(match);						// ['at', 'at']
+		        console.log("ketan Mali".match(/a/g));	// ['a', 'a']
+		        // g use for all string char match
+		        console.log("ketan Mali".match(/a/));	// ['a', index: 3, input: 'ketan Mali', groups: undefined]
+		        // no g use only first match show
+
+		    // 21. search()
+		    	// get index no.
+		    	//i.
+		    	var string = "The Cat In The Hat";
+		        let search1 = string.search(/at/g);
+		        console.log(search1);					// 5
+
+		        // ii.
+		        let search2 = string.search(/at/);
+		        console.log(search2);					// 5
+
+		        // iii.
+		        let search3 = string.search("Cat"); //case sensitive
+		        console.log(search3);					// 4
+
+		     // 22. toLocaleLowerCase() & toLocaleUpperCase()
+             // case changing
+			     var string = "Ketan";
+			     console.log(string.toLocaleLowerCase());
+			     console.log(string.toLocaleUpperCase());
+
+			 // 23. toString()
+			   // Number convert into String
+			   let num = 1234;
+			   let tostring = num.toString();
+			   console.log(tostring);
+			   console.log(typeof(tostring));
+			   let num2 = 12345;
+			   console.log(num2.toString());
+
+			 // 24. valueof()
+			   // to print variable value
+			   var value = "Hello,Jaimin";
+
+			   console.log(value.valueOf());
+			   
+			   console.log(value);
+
+			// 25. double cote use inside single cote
+				var demo = "Hello, Ketan 'I am Monarch'";
+				console.log(demo);
+
+
+			// 26. Escape char (\) using double qoute 
+			//              /  => Forword Slash
+			//				\  => Backword Slash
+				var demo = "Hello, Ketan \"I am Monarch \"";
+				console.log(demo);
+
+
+			// 27. string inside backtik ( `  ` )
+			// var bind in text 
+			// BackTik (` `) Reperesent string then it called String Template
+			// Inside backtik we writin Expression also
+			// text under bind var is called Interpullation.
+				var demo1 = 'ketan';
+				var demo2 = 'mali';
+				console.log("My Name IS demo1 demo2");				// My Name IS demo1 demo2
+				console.log(`My Name IS demo1 demo2`);				// My Name IS demo1 demo2
+				console.log(`My Name IS ${demo1} ${demo2}`);		// My Name IS ketan mali
+				console.log("My Name IS ${demo1} ${demo2}");		// My Name IS ${demo1} ${demo2}
+				console.log(`My Name IS ${demo1} ${demo2}.Addition ${2+2}`);		// Expression 
+				console.log(`My Name IS ${demo1} ${demo2} Addition ${2+2}`);		// Expression 
+
+
+
+			// 28. String Obj 
+				let s1 = new String("Hii");		// String create through obj
+				let s2 = "Hii";					// obth Same         // Most_offly Use
+
+
+
+
+		 
+
+
+	</script>
+</body>
+</html>

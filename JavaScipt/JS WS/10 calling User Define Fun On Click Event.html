@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Calling user Define Function on Click Event</title>
+</head>
+<body>
+
+	<h2>Calling user Define Function on Click Event</h2>
+
+	<!-- <input type="text" name="name" id="name"/>
+	<button onclick="greet()"> Greet </button>
+	<script type="text/javascript">	 
+		function greet()
+		 {
+		 	alert("Hello");  
+		 }
+	</script> -->
+	<br>
+    <hr>
+    <br>
+
+	<!-- <input type="text" name="name" id="name1"/>
+		 <button onclick="greet()"> Greet </button>
+		 <script type="text/javascript">	 
+		function greet()
+		 {
+		 	var name = document.getElementById('name1').value;
+		 	alert(name);  
+		 }
+	</script> -->
+	<br>
+    <hr>
+    <br>
+
+    <input type="text" name="name" id="name"/>
+
+	<button onclick="greet()"> Greet </button>
+
+	 <div class="greet11"> </div>
+	
+	<script type="text/javascript">	 
+		function greet()
+		 {
+		 	var name = document.getElementById('name').value;
+		 	var stringDemo = "Hello "+name;
+		 	document.getElementsByClassName('greet11')[0].innerHTML = stringDemo;		// Hello  .......
+		 }
+	</script>
+
+
+
+</body>
+
+</html>

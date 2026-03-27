@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>GSAP Complete Deep Learning File</title>
+
+    <!-- GSAP CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+</head>
+
+<body>
+
+    <pre>
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 GSAP COMPLETE MASTER LEARNING GUIDE (BEGINNER → ADVANCED)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🧠 GSAP KYA HAI?
+
+GSAP = GreenSock Animation Platform
+
+Ye ek high-performance JavaScript animation library hai
+jo CSS animations se:
+✔ zyada smooth
+✔ zyada powerful
+✔ zyada controllable
+✔ cross-browser stable
+hoti hai.
+
+Simple Language:
+CSS animation basic hai.
+GSAP professional control deta hai.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔥 GSAP CORE CONCEPT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+GSAP 3 me sirf ek global object use hota hai:
+
+    gsap
+
+Isi object ke through saari animations banti hain.
+
+Basic 3 main methods:
+
+1. gsap.to()
+2. gsap.from()
+3. gsap.fromTo()
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1️⃣ gsap.to()
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Syntax:
+    gsap.to(target, { properties })
+
+Meaning:
+    Current state → new state tak animate karta hai.
+
+Simple Socho:
+    "Element ko yahan se wahan smoothly move karo"
+
+Example:
+    gsap.to(".box", {
+        x: 300
+    });
+
+🧠 Internal Logic:
+    - GSAP element ka current position read karta hai
+    - Uske baad browser ke render cycle ke sath
+      smooth interpolation karta hai
+    - Frame by frame movement calculate hota hai
+
+Default:
+    duration: 0.5 seconds
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2️⃣ gsap.from()
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Syntax:
+    gsap.from(target, { properties })
+
+Meaning:
+    Fake starting state define karta hai
+    aur original CSS state tak animate karta hai
+
+Example:
+    gsap.from(".box", {
+        x: -200,
+        opacity: 0
+    });
+
+🧠 Internal Logic:
+    - GSAP element ko temporarily start position deta hai
+    - Phir normal CSS state tak move karta hai
+
+Ye mostly:
+    Page load animations ke liye use hota hai
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+3️⃣ gsap.fromTo()
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Syntax:
+    gsap.fromTo(target, { startProps }, { endProps })
+
+Meaning:
+    Start bhi aap define karte ho
+    End bhi aap define karte ho
+
+Example:
+    gsap.fromTo(".box",
+        { x: -200 },
+        { x: 200 }
+    );
+
+Use Kab Kare?
+    Jab CSS interfere kar raha ho
+    ya exact control chahiye
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🎯 IMPORTANT PROPERTIES (VERY DEEP UNDERSTANDING)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+────────────────────────
+4️⃣ duration
+────────────────────────
+
+Unit:
+    Seconds (NOT milliseconds)
+
+Example:
+    duration: 2  → 2 seconds
+
+Logic:
+    Animation kitni der chalegi
+
+Default:
+    0.5 seconds
+
+Long duration → slow feel
+Short duration → fast feel
+
+────────────────────────
+5️⃣ delay
+────────────────────────
+
+Unit:
+    Seconds
+
+Example:
+    delay: 1
+
+Logic:
+    Animation start hone se pehle kitna wait kare
+
+────────────────────────
+6️⃣ ease (VERY IMPORTANT)
+────────────────────────
+
+Meaning:
+    Speed curve
+
+Animation linear nahi hoti.
+Human movement me acceleration hota hai.
+
+Common Eases:
+
+    power1.out
+    power2.in
+    power3.inOut
+    back.out
+    elastic.out
+    bounce.out
+
+Example:
+    ease: "power3.out"
+
+Deep Logic:
+    GSAP internally mathematical curve apply karta hai.
+    Har ease ka ek formula hota hai.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🎨 TRANSFORM PROPERTIES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+7️⃣ x / y
+
+Meaning:
+    Move element horizontally / vertically
+
+Example:
+    x: 200
+    y: -100
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+8️⃣ scale
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Meaning:
+    Size control
+
+scale: 1 → normal
+scale: 2 → double
+scale: 0 → invisible size
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+9️⃣ rotation
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Unit:
+    Degrees
+
+Example:
+    rotation: 360
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔟 opacity
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Range:
+    0 to 1
+
+0 = invisible
+1 = visible
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔁 ADVANCED CONTROL PROPERTIES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1️⃣1️⃣ repeat
+
+Meaning:
+    Animation repeat kitni baar hogi
+
+repeat: 2 → 3 total times
+repeat: -1 → infinite
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1️⃣2️⃣ yoyo
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Meaning:
+    Forward jao → phir reverse aao
+
+Use:
+    repeat ke sath
+
+Example:
+    repeat: -1,
+    yoyo: true
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1️⃣3️⃣ stagger
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Meaning:
+    Multiple elements ko delay sequence me animate karna
+
+Example:
+    gsap.from(".item", {
+        y: 50,
+        opacity: 0,
+        stagger: 0.3
+    });
+
+Internal Logic:
+    Har next element previous se delay lega
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🧩 TIMELINE (VERY IMPORTANT FOR PROFESSIONAL WORK)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Timeline ka use:
+    Multiple animations ko sequence me control karne ke liye
+
+Example:
+
+    const tl = gsap.timeline();
+
+    tl.from(".box1", { y: 50 })
+      .from(".box2", { x: 50 })
+      .to(".box3", { rotation: 360 });
+
+Logic:
+    Ek khatam → dusra start
+    Clean readable structure
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+⚙ GSAP GLOBAL DEFAULTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+    gsap.defaults({
+        duration: 1,
+        ease: "power2.out"
+    });
+
+Meaning:
+    Har animation me ye auto apply hoga
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🧠 REAL THINKING (IMPORTANT)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Professional animation banate waqt socho:
+
+✔ Motion natural lag raha?
+✔ Zyada fast to nahi?
+✔ Ease sahi hai?
+✔ Over animation to nahi?
+✔ User experience smooth hai?
+
+Animation decoration nahi hai.
+Animation communication hai.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 COMPLETE SUMMARY TABLE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+| Concept      | Purpose |
+|-------------|----------|
+| gsap.to     | Move to state |
+| gsap.from   | Animate from state |
+| fromTo      | Full control |
+| duration    | Time |
+| delay       | Wait |
+| ease        | Motion style |
+| x/y         | Position |
+| scale       | Size |
+| rotation    | Rotate |
+| opacity     | Visibility |
+| repeat      | Loop |
+| yoyo        | Reverse |
+| stagger     | Sequence |
+| timeline    | Multiple animations |
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📚 OFFICIAL LINKS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Docs:
+https://greensock.com/docs/
+
+CDN:
+https://cdn.jsdelivr.net/npm/gsap@3/
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🎉 END OF COMPLETE GSAP MASTER FILE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+</pre>
+
+</body>
+
+</html>

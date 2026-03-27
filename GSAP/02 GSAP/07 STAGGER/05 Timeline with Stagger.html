@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .menu-item {
+            width: 150px;
+            height: 40px;
+            background: #333;
+            color: white;
+            margin: 10px;
+            line-height: 40px;
+            padding-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="menu-item">Home</div>
+    <div class="menu-item">About</div>
+    <div class="menu-item">Services</div>
+    <div class="menu-item">Contact</div>
+
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+    <script>
+        const tl = gsap.timeline();
+
+        tl.from(".menu-item", {
+            x: -100,
+            opacity: 0,
+            duration: 0.4,
+            stagger: 0.15
+        });
+    </script>
+
+    <div>
+        <h2>GSAP Timeline with Stagger Example</h2>
+        <p>
+            This example demonstrates a GSAP timeline that animates multiple menu items with a staggered effect.</p>
+        <ul>
+            <li>Each menu item slides in from the left and fades in.</li>
+            <li>There is a 0.15 second delay between the start of each item's animation.</li>
+            <li>The entire animation sequence is managed within a single timeline.</li>
+        </ul>
+        <p>This showcases how to combine timelines and staggered animations using GSAP for a polished entrance effect.</p>
+    </div>
+    <div>
+        <pre>
+        tl.from(".menu-item", {
+            x: -100,
+            opacity: 0,
+            duration: 0.4,              // Each animation takes 0.4 seconds
+            stagger: 0.15               // Stagger each animation by 0.15s
+        });
+        </pre>
+        <pre>
+            🧠 Explanation :
+                            Timeline controls sequence
+                            Stagger controls delay between items
+                            Used in side menus, navbars
+        </pre>
+    </div>
+
+</body>
+
+</html>

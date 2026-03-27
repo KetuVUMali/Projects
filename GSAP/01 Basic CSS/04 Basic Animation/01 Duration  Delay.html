@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: teal;
+            transition: transform 1s ease;
+        }
+
+        .delay:hover {
+            transform: translateX(250px);
+            transition-delay: 0.7s;
+        }
+
+        .fast:hover {
+            transform: translateX(250px);
+            transition-duration: 0.3s;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box delay">Delay</div>
+    <br><br>
+    <div class="box fast">Fast</div>
+
+    <div style="margin-top:20px;">
+        Duration and Delay
+        <br>
+        Duration : How long the animation takes to complete.
+
+                👉 How long animation runs
+                        transition-duration: 1s;
+        <br><br><br><br>
+        Delay    : How long to wait before starting the animation.
+        <br>
+                👉 Wait before animation starts
+                        transition-delay: 0.5s;
+
+
+        
+    </div>
+
+</body>
+
+</html>

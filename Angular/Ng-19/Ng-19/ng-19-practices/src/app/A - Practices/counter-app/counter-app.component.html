@@ -1,0 +1,22 @@
+<h1>Counter App </h1>
+
+<div style="text-align: center;">
+    <h2 class="count"> {{count1}} </h2>
+    <div>
+        <button class="btn bg-red" (click)="handleDec()" > Decrement </button>
+        <button class="btn bg-black" (click)="handleRes()" > Reset </button>
+        <button class="btn bg-green" (click)="handleInc()" > Increment </button>
+    </div>
+</div>
+
+<br>
+<br>
+
+<div style="text-align: center;">
+    <h2 class="count"> {{count2}} </h2>
+    <div>
+        <button class="btn bg-red" (click)="handleCount('dec')" > Decrement </button>
+        <button class="btn bg-black" (click)="handleCount('')" > Reset </button>
+        <button class="btn bg-green" (click)="handleCount('inc')" > Increment </button>
+    </div>
+</div>

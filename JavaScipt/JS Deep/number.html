@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Number</title>
+</head>
+<body>
+
+
+	<script type="text/javascript">
+		
+	    // Example 1: Basic Number Operations
+		    let num1 = 10;
+		    let num2 = 5;
+		    let sum = num1 + num2;
+		    let difference = num1 - num2;
+		    let product = num1 * num2;
+		    let quotient = num1 / num2;
+		    console.log("1: Basic Number Operations");
+		    console.log("Add:", sum);
+		    console.log("Sub:", difference);
+		    console.log("Mul:", product);
+		    console.log("Remainder:", quotient, "\n");
+
+		// 2: toFixed()
+		   //it print specific decimale value range
+		    let num3 = 7.123456;
+		    let fixedNumber = num3.toFixed(3); // arounds 3 decimal places
+		    console.log("2: toFixed()");
+		    console.log("Original Number:", num3);							// 7.123456
+		    console.log("Fixed Number (3 decimal places):", fixedNumber);	// 7.123
+
+		// 3: toPrecision()
+		  //it print all value at specific range
+		  console.log("");
+		  console.log("3: toPrecision()");
+		  var no = 7.123456;
+		  let precisionNumber = no.toPrecision(3); // Total digits (including decimals)
+		  console.log("Original Number:", no);											// 7.123456
+		  console.log("Precision Number (3 total digits):", precisionNumber, "\n");		// 7.12		// Total digits (including decimals)
+
+
+		    // 4: Number Method - toExponential()   (e)
+		    	console.log("");
+		    	console.log("4:  toExponential()");
+			    let num5 = 12345;
+			    let exponentialForm = num5.toExponential(2); // Exponential notation with him and 2 decimal places
+
+			    // Output the result
+			    console.log("Original Number:", num5);
+			    console.log("Exponential Form (2 decimal places):", exponentialForm, "\n");
+
+			// 5. parseFloat() and parseInt()
+			    // Convert into String			
+			    console.log("");    
+			    console.log(" 5. parseFloat()");
+			    let floatString = "3.14"; //string
+			    console.log("Original Float String:", floatString);	// 3.14
+			    let parsedFloat = parseFloat(floatString);
+			    console.log("Parsed Float:", parsedFloat);			// 3.14
+			    console.log(typeof(parsedFloat));					// number
+
+			    console.log("");
+			    console.log(" 5. parseInt()");
+			    let integerString = "42";//string
+			    console.log("Original Integer String:", integerString);	// 42
+			    let parsedInteger = parseInt(integerString);
+			    console.log("Parsed Integer:", parsedInteger, "\n");	// 42
+			    console.log(typeof(parsedInteger));						// number
+
+			
+			// 6. isNaN() & isFinite()
+			  // isNaN() to check datatype number or not(is not a no.)
+			  	console.log("");
+			    console.log("6. isNaN()");
+			    var no = "name";
+			    console.log("isNaN(no):", isNaN(no)); //String True
+
+			     var num = 11;
+			    console.log("isNaN(num):", isNaN(num)); //No.  is False
+
+			   // isFinite() 
+			     // check No. Finie or Not
+			       console.log("6. isFinite()");
+					let infiniteNumber = Infinity; //Infinite no.
+					console.log("isFinite(Infinity):", isFinite(infiniteNumber), "\n");	// False
+
+					let finiteNum = 1234.3333; // Finite No.
+					console.log("isFinite(Infinity):", isFinite(finiteNum), "\n");		// True
+
+
+					// tostring() ?
+
+			// 7 toBinaryString(), toOctalString(), & toHexString()
+			  // number coversion into bin., oct., hexa.
+			  	console.log("");
+			   console.log("7. toBinaryString()");
+				let binaryNumber = 42;
+			    let binaryString = binaryNumber.toString(2);
+			    console.log("Binary String:", binaryString);	// 101010
+
+			    console.log("");
+			    console.log("7.  toOctalString()");
+			    let octalNumber = 42;
+			    let octalString = octalNumber.toString(8);
+			    console.log("Octal String:", octalString);	// 52
+
+			    console.log("");
+			    console.log("7. toHexString()");
+			    let hexNumber = 42;
+			    let hexString = hexNumber.toString(16);
+			    console.log("Hexadecimal String:", hexString, "\n");	// 2a
+
+
+			// 8. toLocalString()
+				//local conversion of data
+				  console.log("");
+				  console.log(" 8. toLocalString()");
+				  let largeNumber = 1234567890;
+    			  let localeString = largeNumber.toLocaleString();
+    			  console.log("Original Number:", largeNumber);			// 1234567890
+    			  console.log("Locale String:", localeString, "\n");	// 1,234,567,890
+
+
+    			  // Another Use 
+    			  const d = new Date();
+				  let text = d.toLocaleString();
+				  console.log(text);				// 3/7/2025, 7:55:31 PM     19:55:31.070 
+				  
+
+
+			// 9. valueOf()
+					console.log("9. valueOf()");
+				    let valueOfNumber = new Number(42);
+				    console.log("Original Number:", valueOfNumber);
+
+				    let value = valueOfNumber.valueOf();		// Number {42}
+				    
+    				console.log("Value:", value, "\n");			// 42 
+
+
+			// 
+
+
+			     
+
+			    
+
+
+
+	</script>
+ 
+</body>
+</html>

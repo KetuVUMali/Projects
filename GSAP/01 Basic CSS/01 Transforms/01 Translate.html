@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: tomato;
+            margin: 20px;
+            display: inline-block;
+            transition: transform 0.5s;
+        }
+
+        /* Scenario 1: Move right */
+        .move-right:hover {
+            transform: translateX(80px);
+        }
+
+        /* Scenario 2: Move down */
+        .move-down:hover {
+            transform: translateY(80px);
+        }
+
+        /* Scenario 3: Move diagonally */
+        .move-diagonal:hover {
+            transform: translate(60px, 60px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box move-right">Right</div>
+    <div class="box move-down">Down</div>
+    <div class="box move-diagonal">Diagonal</div>
+
+    <div style="margin-top: 100px;">
+        1️⃣ CSS Transforms : 
+
+                Transforms change how an element looks or moves.
+                Transforms do NOT affect surrounding elements (important concept).
+
+        A) translate() – Move elements from its current position.
+
+                    translate means move :
+                            X → left / right
+                            Y → top / bottom
+
+                            translateX(50px) → move right (x-axis).
+
+                            translateY(50px) → move down (y-axis).
+    </div>
+
+</body>
+
+</html>

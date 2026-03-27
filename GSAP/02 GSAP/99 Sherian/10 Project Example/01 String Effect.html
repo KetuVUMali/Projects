@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        #string{
+            height: 100%;
+            width: 100%;
+            /* background-color: red; */
+        }
+        /* svg{
+            background-color: red;
+        } */
+    </style>
+</head>
+<body>
+    
+    <div id="string">
+        <svg width="1000" height="200" >
+            <path d="M 10 100 Q 500 100 990 100" 
+                stroke="white" fill="transparent"
+            />
+        </svg>
+    </div>
+ 
+    <pre>
+        SVG path Curve :
+                            1. Quadratic  Curve
+                            2. Bezier Curve
+
+        1. Quadratic Curve :
+            Q x1 y1, x y
+            Q -> command for Quadratic Curve
+            x1 y1 -> control point
+            x y -> end point
+
+        2. Bezier Curve :
+            C x1 y1, x2 y2, x y
+            C -> command for  Bezier Curve
+            x1 y1 -> first control point
+            x2 y2 -> second control point
+
+        Note :
+                a cubic one, called with C, and a quadratic one, called with Q.
+                stroke='' -> line color
+                fill='' -> inside color
+
+        1. Quadratic Curve Example :
+            M 10 80 Q 95 10 180 80
+            M -> move to   (Starting point) (10 : x-axis, 80 : y-axis)
+            Q -> Quadratic Curve            (95 : x-axis, 10 : y-axis, 180 : x-axis, 80 : y-axis)
+            
+            (10,80) -> Curve Starting Line Point
+            (95,10) -> Control Point (curve direction)(curve up-down)
+            (180,80) -> Curve End Line Point
+
+    </pre>
+        
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <!-- ScrollTrigger CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+    <script>
+        var path = `M 10 100 Q 500 100 990 100`;
+        var finalPath = `M 10 100 Q 500 100 990 100`;
+
+        var string = document.querySelector('#string')
+
+        string.addEventListener('mouseenter', function(e){
+            path = `M 10 100 Q ${e.x} ${e.y} 990 100`;
+
+            gsap.to('svg path', {
+                // duration: 0.2,
+                attr: { d: path },         // attr -> attribute
+                ease: 'power3.out'
+            });
+        });
+
+        string.addEventListener('mouseleave', function(){
+            gsap.to('svg path', {
+                 duration: 1.5,
+                attr: { d: finalPath },
+                ease: 'elastic.out(1, 0.2)'
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Callbacks</title>
+<style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background: crimson;
+    }
+</style>
+</head>
+<body>
+ 
+<div class="box"></div>
+ 
+<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+ 
+<script>
+  gsap.to(".box", {
+    x: 200,
+    duration: 1,
+    onStart: () => console.log("Started"),
+    onComplete: () => console.log("Completed")
+  });
+</script>
+<div>
+  <pre>
+      9️⃣ CALLBACKS
+      📌 Concept
+          Run code when animation starts/ends.
+          “Run a function when something happens during animation”
+          Just like:
+                    After animation starts → do something
+                    While animation is running → do something
+                    After animation ends → do something
+  </pre>
+  <pre>
+      📌 onStart
+          Runs when the animation starts.
+          Example:
+              onStart: () => console.log("Started")
+
+      📌 onComplete
+          Runs when the animation completes.
+          Example:
+              onComplete: () => console.log("Completed")
+  </pre>
+  <pre>
+    2️⃣ Common GSAP Callbacks List
+        Callback	              When it runs
+        onStart	                When animation starts
+        onUpdate	              While animation is running
+        onComplete	            When animation ends
+        onRepeat	              Every time animation repeats
+        onReverseComplete	      When reverse finishes
+  </pre>
+</div>
+ 
+</body>
+</html>

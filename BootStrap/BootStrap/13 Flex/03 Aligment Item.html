@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bootstrap align-items – Super Clear Guide</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        /* Container */
+        .demo-container {
+            border: 3px dashed #6c757d;
+            height: 220px;
+            margin-bottom: 50px;
+            padding: 10px;
+            background: #f8f9fa;
+        }
+
+        /* Items */
+        .item {
+            background: #0d6efd;
+            color: white;
+            padding: 10px;
+            margin: 5px;
+            width: 120px;
+            text-align: center;
+            border-radius: 6px;
+        }
+
+        /* Different heights to SHOW alignment */
+        .h-small {
+            height: 40px;
+        }
+
+        .h-medium {
+            height: 80px;
+        }
+
+        .h-large {
+            height: 120px;
+        }
+    </style>
+</head>
+
+<body class="p-4">
+
+    <h1 class="text-center mb-4">Bootstrap align-items (Super Clear Learning)</h1>
+
+    <pre>
+📌 What is align-items?
+    align-items controls VERTICAL alignment of FLEX items
+    inside a FLEX container.
+
+📌 IMPORTANT RULES (MUST READ)
+    ✔ d-flex is REQUIRED
+    ✔ align-items works on CROSS AXIS
+    ✔ Default flex-direction = row
+    ✔ Container MUST have height
+</pre>
+
+    <hr>
+
+    <!-- ================================================= -->
+    <h2>STEP 1️⃣ : Without align-items (Default Behavior)</h2>
+
+    <pre>
+📌 Default align-items value = stretch
+    Items stretch to full container height
+</pre>
+
+    <div class="demo-container d-flex">
+        <div class="item h-small">Small</div>
+        <div class="item h-medium">Medium</div>
+        <div class="item h-large">Large</div>
+    </div>
+
+    <hr>
+
+    <!-- ================================================= -->
+    <h2>STEP 2️⃣ : align-items-start (TOP)</h2>
+
+    <pre>
+📌 Class: align-items-start
+    All items align from TOP of container
+</pre>
+
+    <div class="demo-container d-flex align-items-start">
+        <div class="item h-small">Small</div>
+        <div class="item h-medium">Medium</div>
+        <div class="item h-large">Large</div>
+    </div>
+
+    <hr>
+
+    <!-- ================================================= -->
+    <h2>STEP 3️⃣ : align-items-center (CENTER – MOST IMPORTANT)</h2>
+
+    <pre>
+📌 Class: align-items-center
+    All items align at CENTER vertically
+
+📌 REAL USE
+    Image + text
+    Cards
+    Profile sections
+</pre>
+
+    <div class="demo-container d-flex align-items-center">
+        <div class="item h-small">Small</div>
+        <div class="item h-medium">Medium</div>
+        <div class="item h-large">Large</div>
+    </div>
+
+    <hr>
+
+    <!-- ================================================= -->
+    <h2>STEP 4️⃣ : align-items-end (BOTTOM)</h2>
+
+    <pre>
+📌 Class: align-items-end
+    All items align at BOTTOM of container
+</pre>
+
+    <div class="demo-container d-flex align-items-end">
+        <div class="item h-small">Small</div>
+        <div class="item h-medium">Medium</div>
+        <div class="item h-large">Large</div>
+    </div>
+
+    <hr>
+
+    <!-- ================================================= -->
+    <h2>STEP 5️⃣ : align-items-baseline (TEXT ALIGNMENT)</h2>
+
+    <pre>
+📌 Class: align-items-baseline
+    Items align according to TEXT baseline
+    (Not box height)
+
+📌 Used when font sizes differ
+</pre>
+
+    <div class="demo-container d-flex align-items-baseline">
+        <div class="item" style="font-size:14px;">Small Text</div>
+        <div class="item" style="font-size:28px;">Big Text</div>
+        <div class="item" style="font-size:18px;">Medium Text</div>
+    </div>
+
+    <hr>
+
+    <!-- ================================================= -->
+    <h2>STEP 6️⃣ : align-items-stretch (DEFAULT)</h2>
+
+    <pre>
+📌 Class: align-items-stretch
+    Items stretch to full height of container
+</pre>
+
+    <div class="demo-container d-flex align-items-stretch">
+        <div class="item">Stretch 1</div>
+        <div class="item">Stretch 2</div>
+        <div class="item">Stretch 3</div>
+    </div>
+
+    <hr>
+
+    <!-- ================================================= -->
+    <h2>STEP 7️⃣ : align-items with flex-column</h2>
+
+    <pre>
+📌 VERY IMPORTANT CONCEPT
+    If flex-direction = column
+    align-items works HORIZONTALLY
+</pre>
+
+    <div class="demo-container d-flex flex-column align-items-center">
+        <div class="item">Item A</div>
+        <div class="item">Item B</div>
+    </div>
+
+    <hr>
+
+    <!-- ================================================= -->
+    <h2>STEP 8️⃣ : align-items vs align-self (ADVANCED)</h2>
+
+    <pre>
+📌 align-items
+    Controls ALL items
+
+📌 align-self
+    Controls ONE item only
+</pre>
+
+    <div class="demo-container d-flex align-items-center">
+        <div class="item h-medium">Normal</div>
+        <div class="item h-medium align-self-start">align-self-start</div>
+        <div class="item h-medium align-self-end">align-self-end</div>
+    </div>
+
+    <hr>
+
+    <!-- ================================================= -->
+    <h2>STEP 9️⃣ : Responsive align-items</h2>
+
+    <pre>
+📌 Classes
+    align-items-sm-start
+    align-items-md-center
+    align-items-lg-end
+
+📌 Behavior
+    Mobile → Top
+    Tablet → Center
+    Desktop → Bottom
+</pre>
+
+    <div class="demo-container d-flex align-items-start align-items-md-center align-items-lg-end">
+        <div class="item h-medium">Responsive 1</div>
+        <div class="item h-medium">Responsive 2</div>
+    </div>
+
+    <hr>
+
+    <h2 class="text-center mt-4">✅ align-items – MASTERED PROPERLY</h2>
+
+</body>
+
+</html>

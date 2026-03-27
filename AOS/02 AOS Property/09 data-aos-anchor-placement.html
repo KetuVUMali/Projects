@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AOS Anchor Placement – Deep Understanding</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <style>
+    body {
+      background: #f2f4f7;
+    }
+
+    section {
+      padding: 140px 0;
+      border-bottom: 1px solid #ccc;
+    }
+
+    h2 {
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .note {
+      max-width: 900px;
+      margin: 0 auto 40px;
+      text-align: center;
+      color: #444;
+      font-size: 15px;
+    }
+
+    .box {
+      padding: 45px;
+      border-radius: 8px;
+      color: white;
+      text-align: center;
+      font-size: 18px;
+      margin-bottom: 30px;
+      background: #0d6efd;
+    }
+
+    .green { background: #198754; }
+    .dark { background: #212529; }
+    .orange { background: #fd7e14; }
+    .purple { background: #6f42c1; }
+    .red { background: #dc3545; }
+  </style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     BASIC CONCEPT
+===================================================== -->
+<section>
+  <div class="container">
+    <h2>What is data-aos-anchor-placement?</h2>
+    <p class="note">
+      This property decides **WHEN animation should start**
+      based on the element position and viewport position.
+      <br><br>
+      👉 Top of element  
+      👉 Center of element  
+      👉 Bottom of element  
+      👉 Top / Center / Bottom of screen
+      <br><br>
+      This gives you **EARLY or LATE animation control**.
+    </p>
+
+    <div class="box dark">
+      Scroll slowly to feel the timing difference
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     SCENARIO 1: DEFAULT (top-bottom)
+===================================================== -->
+<section>
+  <div class="container">
+    <h2>Default – top-bottom</h2>
+    <p class="note">
+      Animation triggers when
+      <br>
+      👉 TOP of element touches BOTTOM of viewport
+      <br><br>
+      ✔ Most common behavior
+    </p>
+
+    <div
+      class="box"
+      data-aos="fade-up"
+      data-aos-anchor-placement="top-bottom"
+    >
+      top-bottom (Default trigger)
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     SCENARIO 2: top-center (EARLY TRIGGER)
+===================================================== -->
+<section>
+  <div class="container">
+    <h2>Early Animation – top-center</h2>
+    <p class="note">
+      Animation triggers when
+      <br>
+      👉 TOP of element reaches CENTER of viewport
+      <br><br>
+      ✔ Used when animation should start EARLY
+    </p>
+
+    <div
+      class="box green"
+      data-aos="fade-right"
+      data-aos-anchor-placement="top-center"
+    >
+      top-center (Early animation)
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     SCENARIO 3: center-bottom (LATE TRIGGER)
+===================================================== -->
+<section>
+  <div class="container">
+    <h2>Late Animation – center-bottom</h2>
+    <p class="note">
+      Animation triggers when
+      <br>
+      👉 CENTER of element reaches BOTTOM of viewport
+      <br><br>
+      ✔ Used when you want delayed animation
+    </p>
+
+    <div
+      class="box orange"
+      data-aos="fade-left"
+      data-aos-anchor-placement="center-bottom"
+    >
+      center-bottom (Late animation)
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     SCENARIO 4: center-center (PERFECT CENTER)
+===================================================== -->
+<section>
+  <div class="container">
+    <h2>Balanced Animation – center-center</h2>
+    <p class="note">
+      Animation triggers when
+      <br>
+      👉 CENTER of element meets CENTER of viewport
+      <br><br>
+      ✔ Used for focus sections (CTA, highlights)
+    </p>
+
+    <div
+      class="box purple"
+      data-aos="zoom-in"
+      data-aos-anchor-placement="center-center"
+    >
+      center-center (Balanced)
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     SCENARIO 5: bottom-bottom (VERY LATE)
+===================================================== -->
+<section>
+  <div class="container">
+    <h2>Very Late Animation – bottom-bottom</h2>
+    <p class="note">
+      Animation triggers when
+      <br>
+      👉 BOTTOM of element touches BOTTOM of viewport
+      <br><br>
+      ✔ Used rarely – special effects only
+    </p>
+
+    <div
+      class="box red"
+      data-aos="fade-up"
+      data-aos-anchor-placement="bottom-bottom"
+    >
+      bottom-bottom (Very late trigger)
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     SCENARIO 6: REAL WORLD – HERO SECTION
+===================================================== -->
+<section>
+  <div class="container">
+    <h2>Hero Section (top-center)</h2>
+    <p class="note">
+      Hero animation should start early
+      <br>
+      before user fully scrolls.
+    </p>
+
+    <div
+      class="box green"
+      data-aos="fade-up"
+      data-aos-anchor-placement="top-center"
+    >
+      Hero Heading Animation
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     SCENARIO 7: CARDS GRID
+===================================================== -->
+<section>
+  <div class="container">
+    <h2>Service Cards (center-bottom)</h2>
+    <p class="note">
+      Cards animate when they are clearly visible
+      <br>
+      not too early, not too late.
+    </p>
+
+    <div class="row">
+      <div class="col-md-4">
+        <div
+          class="box"
+          data-aos="fade-up"
+          data-aos-anchor-placement="center-bottom"
+        >
+          Card 1
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div
+          class="box"
+          data-aos="fade-up"
+          data-aos-delay="200"
+          data-aos-anchor-placement="center-bottom"
+        >
+          Card 2
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div
+          class="box"
+          data-aos="fade-up"
+          data-aos-delay="400"
+          data-aos-anchor-placement="center-bottom"
+        >
+          Card 3
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     SCENARIO 8: DASHBOARD / ADMIN
+===================================================== -->
+<section>
+  <div class="container">
+    <h2>Dashboard Widgets (center-center)</h2>
+    <p class="note">
+      Widgets animate when user focuses
+      exactly at center.
+    </p>
+
+    <div
+      class="box dark"
+      data-aos="fade-right"
+      data-aos-anchor-placement="center-center"
+    >
+      Dashboard Widget
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     BAD PRACTICE EXAMPLE
+===================================================== -->
+<section>
+  <div class="container">
+    <h2>Bad Practice Example</h2>
+    <p class="note">
+      Using bottom-bottom everywhere
+      <br>
+      makes animations feel broken.
+    </p>
+
+    <div
+      class="box red"
+      data-aos="fade-up"
+      data-aos-anchor-placement="bottom-bottom"
+    >
+      ❌ Avoid for normal content
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     AOS INIT
+===================================================== -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+  AOS.init({
+    duration: 1000,
+    easing: 'ease-in-out',
+    offset: 120,
+    once: true,
+    mirror: false
+  });
+</script>
+
+</body>
+</html>

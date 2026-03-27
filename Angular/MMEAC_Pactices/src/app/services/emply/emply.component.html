@@ -1,0 +1,21 @@
+<p>emply works!</p>
+
+<h6> User-data Services Use in multiple components</h6>
+<table border="3">
+  <thead>
+    <tr>
+      <th>Sr No</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let userInfo of users">
+      <td align="center">{{userInfo.id}}</td>
+      <td >{{userInfo.name}}</td>
+      <td align="center">{{userInfo.age}}</td>
+      <td align="center">{{userInfo.email}}</td>
+    </tr>
+  </tbody>
+</table>

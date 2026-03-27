@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>min-width</title>
+    <style>
+        .box{
+            height: 220px;
+            width: 220px;
+            background-color: aqua;
+        }
+
+        @media (min-width:500px) {
+            .box{
+                background-color:blueviolet;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <h2>Min Width (+)</h2>
+        <h3>min-width:500   ( 500 To + ..... )</h3>
+        <h4>blueviolet</h4>
+        <h4>Desktop-first approach (Apply styles for large screens first).</h4>
+    </div>
+
+    <div>
+        <pre>
+            /* Mobile-first (max-width) */
+            @media screen and (max-width: 768px) {}
+        </pre>
+        <pre>
+            /* Desktop-first (min-width) */
+            @media screen and (min-width: 768px) {}
+        </pre>
+    </div>
+    
+</body>
+</html>

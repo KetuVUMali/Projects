@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <pre>
+        Function :  A function is a block of code used to perform a task.
+                    1. Function is a block of code that performs a specific task.
+                    2. Function is a reusable code that can be called multiple times.
+                    3. Function is a way to organize code and make it more readable.
+                    4. Function is a way to break down a problem into smaller parts.
+                    5. Function is a way to avoid code duplication.
+
+                    Syntax : 
+                            function functionName(parameters) {
+                                // code to be executed
+                            }
+
+                    Example :
+                            function add(a, b) {
+                                return a + b;
+                            }
+
+                            let result = add(2, 3);
+                            console.log(result); // 5
+
+
+                    // Types of Functions :
+                            1. Predefined Functions :  
+                                            These are the functions that are already defined in JavaScript. 
+                                                Example : console.log(), alert(), prompt(), etc.
+
+                            2. User Defined Functions :
+                                            These are the functions that are defined by the user.
+                                                Example : 
+                                                        function greet(name) {
+                                                            console.log("Hello " + name);
+                                                        }
+
+                                                        greet("John"); // Hello John
+
+                               i. Normal Fun :  it is a function that does not take any parameters and does not return any value.
+                                            function normalFun() {
+                                                console.log("This is a normal function");
+                                            }
+
+                                            normalFun();
+
+                                ii. Parameterized Fun : it is a function that takes parameters as input and returns a value as output.
+                                            function add(a, b) {                    // parameters : a,b  both are fun local var and Fun inside scope based.
+                                                return a + b;
+                                            }
+ 
+                                            let result = add(2, 3);                // arguments : 2,3
+                                            console.log(result); // 5
+
+                                iii. Arrow Fun : it is a function that is defined using the arrow function syntax.
+                                                 compact way to writing a function. (function var)
+                                            // Normal function
+                                                function add(a, b) {
+                                                    return a + b;
+                                                }
+                                            // Arrow function                                            
+                                                const add = (a, b) => a + b;
+
+                                            console.log(add(2, 3)); // 5
+
+                                iv. Anonymous Fun : it is a function that does not have a name.
+                                            const greet = function(name) {
+                                                console.log("Hello " + name);
+                                            }
+
+                                            greet("John"); // Hello John
+
+                                v. Recursive Fun : it is a function that calls itself.
+                                            function factorial(n) {
+                                                if (n === 0) {
+                                                    return 1;
+                                                } else {
+                                                    return n * factorial(n - 1);
+                                                }
+                                            }
+
+                                            console.log(factorial(5)); // 120
+
+                                vi. Callback Fun : it is a function that is passed as an argument to another function.
+                                            function add(a, b, callback) {
+                                                let result = a + b;
+                                                callback(result);
+                                            }
+
+                                            add(2, 3, function(result) {
+                                                console.log(result); // 5
+                                            });
+
+                                vii. IIFE (Immediately Invoked Function Expression) : it is a function that is executed immediately after it is defined.
+                                            (function() {
+                                                console.log("This is an IIFE");
+                                            })();
+                                            // Output: This is an IIFE
+
+                                
+
+                        
+                        
+
+    </pre>
+
+    <pre>
+              // 1. String vowel count using function
+                // i. Normal Fun with for loop
+                    function countVowels(str) {
+                        let count = 0;
+                        for (let i = 0; i < str.length; i++) {
+                            if (str[i] === 'a' || str[i] === 'e' || str[i] === 'i' || str[i] === 'o' || str[i] === 'u') {
+                                count++;
+                            }
+                        }
+                        console.log(count);         // Output: 3
+                    }
+
+                    countVowels("hello world");
+
+
+                // ii. Normal Fun with for of loop
+                    function countVowels(str) {
+                        let count = 0;
+                        for (let char of str) {
+                                console.log(char);         // Output: h e l l o   w o r l d
+                            if (char === 'a' || char === 'e' || char === 'i' || char === 'o' || char === 'u') {
+                                count++;
+                            }
+                        }
+                        console.log(count);         // Output: 3
+                    }
+                    countVowels("hello world");
+
+                    // Arrow Fun with for of loop
+                    let vowels = (str) => {
+                        let count = 0;
+                        for (let char of str) {
+                                console.log(char);         // Output: h e l l o   w o r l d
+                            if (char === 'a' || char === 'e' || char === 'i' || char === 'o' || char === 'u') {
+                                count++;
+                            }
+                        }
+                        console.log(count);         // Output: 3
+                    }
+                    vowels("hello world");
+
+    </pre>
+
+    <pre>
+                ForEach Loop : it is a method that executes a provided function once for each array element.
+                    Syntax : 
+                            array.forEach(function(currentValue, index, arr) {
+                                // code to be executed
+                            });
+
+                            👉 Parameters:
+                                            value → current item
+                                            index → position
+                                            array → original array
+
+                    Example :
+                            let arr = [1, 2, 3, 4, 5];
+                            arr.forEach(function(element) {
+                                console.log(element);           // Output: 1 2 3 4 5
+                            });
+
+                            arr.forEach(element => console.log(element));    // Output: 1 2 3 4 5
+
+                            let arr = [10, 20, 30];
+                            arr.forEach(function(value, index) {
+                                console.log(index, value);
+                            });
+
+                                // Output:
+                                // 0 10
+                                // 1 20
+                                // 2 30
+
+                            arr.forEach();    // Output: TypeError: arr.forEach is not a function
+                            arr.forEach((val)=>{console.log(val*val)});    // Output: 100 400 900       Square of each element
+
+    
+                // 2. Array of objects : it is an array that contains objects as its elements.
+                    let students = [
+                        { name: "John", age: 20 },
+                        { name: "Jane", age: 21 },
+                        { name: "Jim", age: 22 }
+                    ];
+
+                    students.forEach(function(student) {
+                        console.log(student.name);       // Output: John Jane Jim
+                    });
+
+                    students.forEach(student => console.log(student.name));   // Output: John Jane Jim
+
+                    students.forEach((student, index) => {
+                        console.log(`${index + 1}: ${student.name}`);   // Output: 1: John 2: Jane 3: Jim
+                    });
+
+
+
+    </pre>
+    <pre>
+            Callback Function : 
+                                it is a function that is passed as an argument to another function and is executed after the parent function has completed.
+                                A callback function is a function that is passed as an argument to another function and executed later.
+
+                Example :
+                            function greet(name, callback) {
+                                console.log("Hello " + name);
+                                callback(); // call the function
+                            }
+
+                            function sayBye() {
+                                console.log("Goodbye!");
+                            }
+
+                            greet("Ketan", sayBye);
+
+                🧠 Step-by-Step
+                                greet() called
+                                sayBye passed as argument
+                                Inside greet → callback() runs
+                                sayBye() executes
+
+
+                    // 1. Simulating Asynchronous Behavior with setTimeout
+                            function fetchData(callback) {
+                                setTimeout(() => {
+                                    const data = "Data fetched from server";
+                                    callback(data);                         // Pass data to callback
+                                }, 2000);                                   // Simulate 2-second delay    
+                            }
+
+                            fetchData(data => {
+                                console.log("Data received:", data);
+                            });
+
+                            // Output: Data received: Data fetched from server (after 2 seconds)
+
+                        Explanation: : 
+                                        fetchData() simulates fetching data with a delay. 
+                                        After 2 seconds, it calls the callback with the fetched data. 
+                                        The callback then logs the received data to the console.
+
+                        Why Use Callbacks? : 
+                                        Callbacks allow us to handle asynchronous operations, such as fetching data from a server, without blocking the main thread. 
+                                        They enable us to execute code after a certain task is completed, making our applications more responsive and efficient.
+                                         
+                                
+    </pre>
+
+    <pre>
+                    higher order funcation / method : Means Take another function as an argument(parameter) or return a function as a result.
+                                        A higher-order function is a function that takes another function as an argument or returns a function as a result. 
+                                        Higher-order functions are a powerful tool in JavaScript and are used extensively in functional programming.
+
+                                        Example :
+                                                function add(a, b) {
+                                                    return a + b;
+                                                }
+
+                                                function subtract(a, b) {
+                                                    return a - b;
+                                                }
+
+                                                function calculate(a, b, operation) {
+                                                    return operation(a, b);
+                                                }
+
+                                                console.log(calculate(10, 5, add));    // Output: 15
+                                                console.log(calculate(10, 5, subtract));    // Output: 5
+                                        
+                                        Explanation: 
+                                                        In this example, calculate() is a higher-order function that takes two numbers and an operation (which is a function) as arguments. 
+                                                        It then calls the operation function with the provided numbers. 
+                                                        This allows us to perform different operations (like addition or subtraction) without changing the calculate() function itself.
+    </pre>
+
+    <pre>
+            Map Function : 
+                        The map() : 
+                                    method creates a new array .
+                                    it is perform loop on array to create a new array and modifying each element.
+                                    Old array → change each value → new array.
+
+                        Syntax : 
+                                array.map(function(currentValue, index, arr) {
+                                    // code to be executed
+                                });
+
+                                👉 Parameters:
+                                                value → current item
+                                                index → position
+                                                array → original array
+
+                        Example :
+                                let arr = [1, 2, 3, 4, 5];
+                                let squaredArr = arr.map(function(element) {
+                                    return element * element;                               // Output: [1, 4, 9, 16, 25]
+                                });
+
+                                let squaredArr = arr.map(element => element * element);    // Output: [1, 4, 9, 16, 25]
+
+                            //
+                                let arr = [10, 20, 30];
+                                let newArr = arr.map(function(value, index) {
+                                     value + index;                                   
+                                });
+                                console.log(arr);    // Output: [10, 20, 30]
+                                console.log(newArr);    // Output: [10, 21, 32]
+    </pre>
+
+    <pre>
+            Filter Function : 
+                        The filter() : 
+                                    method creates a new array .
+                                    it is perform loop on array to create a new array with filtered (condition pass) element.
+                                    Old array → change each value → new array.
+
+                        Syntax :
+                                array.filter(function(currentValue, index, arr) {
+                                    // code to be executed
+                                });
+
+                                👉 Parameters:
+                                                value → current item
+                                                index → position
+                                                array → original array
+
+                        Example :
+                                let arr = [1, 2, 3, 4, 5];
+                                let evenArr = arr.filter(function(element) {
+                                    return element % 2 === 0;                               // Output: [2, 4]
+                                });
+
+                                let evenArr = arr.filter(element => element % 2 === 0);    // Output: [2, 4]
+
+                            //
+                                let arr = [10, 20, 30];
+                                let newArr = arr.filter(function(value, index) {
+                                     value + index;                                   
+                                });
+                                console.log(arr);       // Output: [10, 20, 30]
+                                console.log(newArr);    // Output: [10, 21, 32]   filter does not change the original array and it does not create a new array because the condition is not satisfied for any element.
+
+                            // 2. Filter out odd numbers from an array
+                                let arr = [1, 2, 3, 4, 5];
+                                let oddArr = arr.filter(element => element % 2 !== 0);
+                                console.log(oddArr);    // Output: [1, 3, 5]
+                            
+                            // 3. elements greater than 10 from an array
+                                let arr = [5, 10, 15, 20, 25];
+                                let greaterThan10 = arr.filter(element => element > 10);
+                                console.log(greaterThan10);    // Output: [15, 20, 25]
+
+                            
+    </pre>
+
+    <pre>
+            Reduces :
+                        The reduce() : 
+                                    reduce() is used to convert an array into a single value.
+                                    Old array → change each value → single value. 
+                                    Array → process → single value
+                                    Perform operation on array and return single value.
+                                    reduce does not change the original array and it does not create a new array because it returns a single value.
+                                    ex. sum of all elements, average of all elements, product of all elements, etc.
+
+                        Syntax :
+                                array.reduce(function(accumulator, currentValue, index, arr) {
+                                    // code to be executed
+                                }, initialValue);
+
+                                👉 Parameters:
+                                                accumulator → accumulates the callback's return values; it is the accumulated value previously returned in the last invocation of the callback, or initialValue, if supplied.
+                                                                (result store karta hai)
+                                                currentValue → current item
+                                                index → position
+                                                array → original array
+                                                initialValue → starting value (optional)
+
+                        Example :
+                                let arr = [1, 2, 3, 4, 5];
+                                let sum = arr.reduce(function(accumulator, currentValue) {
+                                    return accumulator + currentValue;                               // Output: 15
+                                }, 0);
+
+                                let sum = arr.reduce((accumulator, currentValue) => accumulator + currentValue, 0);    // Output: 15
+
+                            //
+                                let arr = [10, 20, 30];
+                                let newArr = arr.reduce(function(accumulator, value) {
+                                     return accumulator + value;                                   
+                                }, 0);
+                                console.log(arr);       // Output: [10, 20, 30]
+                                console.log(newArr);    // Output: 60   reduce does not change the original array and it does not create a new array because it returns a single value.
+
+                            // 2. Average of all elements in an array
+                                let arr = [10, 20, 30];
+                                let average = arr.reduce((accumulator, value) => accumulator + value, 0) / arr.length;
+                                console.log(average);    // Output: 20
+
+                            //  Total service cost
+
+                                let services = [
+                                    { name: "oil", price: 500 },
+                                    { name: "wash", price: 200 },
+                                    { name: "repair", price: 1500 }
+                                ];
+
+                                let total = services.reduce((acc, s) => acc + s.price, 0);
+                                console.log(total); // 2200
+
+                            // largest number in an array
+
+                                let arr = [10, 20, 30, 5, 15];
+                                let largest = arr.reduce((max, value) => (value > max ? value : max), arr[0]);
+                                console.log(largest); // 30
+
+                            // smallest number in an array
+
+                                let arr = [10, 20, 30, 5, 15];
+                                let smallest = arr.reduce((min, value) => (value < min ? value : min), arr[0]);
+                                console.log(smallest); // 5
+
+                            // Prompt input 1 to 10 any number, make array 1 to that number array element, use reduce to calculate total sum of array after calculate sum of product of array.
+                                // 
+                                let num = prompt("Enter a number between 1 and 10:");   // user input as string
+                                let n = Number(num);                                    // convert string to number
+                                let arr=[];                                             // create an empty array
+                                for(let i=1; i<=n; i++){                                // loop from 1 to n and push each number into the array
+                                    arr[i-1] = i;                                       // arr[0] = 1, arr[1] = 2, arr[2] = 3, ..., arr[n-1] = n
+                                }
+                                console.log(arr);                                       // Output: [1, 2, 3, ..., n]
+
+                                let sum = arr.reduce((acc, value) => acc + value, 0);   // use reduce to calculate the sum of all elements in the array
+                                console.log(sum);                                       // Output: sum of all elements from 1 to n
+
+                                let product = arr.reduce((acc, value) => acc * value, 1);   // use reduce to calculate the product of all elements in the array
+                                console.log(product);                                       // Output: product of all elements from 1 to n
+
+                                // Total Sum : All elements addition
+                                // Total Product : All elements multiplication  (like 5! = 1*2*3*4*5 = 120, factorial of 5)
+
+                               
+
+                                
+
+    </pre>
+</body>
+</html>

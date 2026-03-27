@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: crimson;
+            margin: 40px;
+        }
+
+        button {
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box"></div>
+
+    <button onclick="tl.play()">Play</button>
+    <button onclick="tl.pause()">Pause</button>
+    <button onclick="tl.reverse()">Reverse</button>
+
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+    <script>
+        const tl = gsap.timeline({ paused: true });
+
+        tl.to(".box", { x: 300, duration: 1 })
+            .to(".box", { rotate: 180, duration: 1 });
+    </script>
+
+    <div>
+        <h2>GSAP Timeline with Controls Example : Timeline controls</h2>
+        <p>This example demonstrates a GSAP timeline with play, pause, and reverse controls for a box animation.</p>
+        <ul>
+            <li>The box first moves 300px to the right over 1 second.</li>
+            <li>Then, it rotates 180 degrees over 1 second.</li>
+            <li>Buttons allow you to control the timeline playback.</li>
+        </ul>
+        <p>This showcases how timelines can be controlled interactively.</p>
+    </div>
+    <div>
+        <pre>
+            tl.to(".box", { x: 300, duration: 1 })         // Box moves right for 1 second
+                .to(".box", { rotate: 180, duration: 1 }); // Box rotates 180 degrees for 1 second
+        </pre>
+        <pre>
+            🧠 Explanation (Step-by-step)
+                        Timeline created (paused)
+                        Box moves right for 1 second
+                        After box1 finishes → box rotates 180 degrees
+                        No animation overlaps
+        </pre>
+    </div>
+    <div>
+        ✅ Timeline Controls:
+            tl.play()      → Start or resume the timeline
+            tl.pause()     → Pause the timeline
+            tl.reverse()   → Reverse the timeline direction
+    </div>
+
+</body>
+
+</html>

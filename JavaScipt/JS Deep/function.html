@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> Function </title>
+</head>
+<body>
+	<h1> Function </h1>
+	<script type="text/javascript">
+		
+		// Function Declaraion
+			function greet(name)
+			  {
+			  	console.log("Hello, "+ name + "!");
+			  }
+
+		// call function
+			// string pass
+			  greet("Ketu");
+
+			// number pass
+			  greet(12); 
+
+		// Function with return value
+			  function add(a,b)
+			    {
+			    	return a+b;
+			    }
+
+
+			   let result = add(4,4);
+			   console.log("Result of Addition: ",result);
+
+			   let result1 = add(8,8.4);
+			   console.log("Result of Addition: ",result1);
+
+
+		// Function with default parameter
+			   function multiply(x,y=1)  //y assign value
+			      {
+			      	return x*y;
+			      }
+
+				let product = multiply(); //no value pass
+				console.log("Result Multiplication (0) :",product);
+
+				let product1 = multiply(3);  //x value pass
+				console.log("Result Multiplication 1 :",product1);
+
+				let product2 = multiply(3,3);  //x & y value pass
+				console.log("Result Multiplication 2 :",product2);
+
+		// Arrow Fun
+				const square = (num) => num*num;
+				console.log("Square of 4: ",square(4));
+				console.log("Square of 4.4: ",square(4.4))
+
+		// Anonymous Fun (Without Name Function)
+				let divide=function(num1,num2)
+				    {
+				    	return num1 / num2;
+				     };
+				console.log("Result of Division :",divide(10,2));
+
+		//  Immediately Invoked Fun Expression (IIFE) (type of Anonymous Fun)
+				// 1.no parameter
+				(
+					function()
+					  {
+					  	console.log("This is an IIFE");
+					  }
+				)();
+
+				// 2. parameter pass
+				(
+					function(name)
+					  {
+					  	console.log("This is an IIFE : ",name);
+					  }
+				)("Ketu");
+
+
+		//Fun as a Parameter
+				function saySomething(callback)
+				  {
+				  	callback("Hello from callback Fun");
+				  }
+
+				saySomething(function(message)
+					           {
+					           	console.log(message);
+					           }
+					         );
+
+
+
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>AOS Duration – Real World Project Demo</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+    <style>
+        body {
+            background-color: #f4f6f8;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .box {
+            background: #0d6efd;
+            color: white;
+            padding: 40px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .light-box {
+            background: #198754;
+        }
+
+        .dark-box {
+            background: #212529;
+        }
+
+        .note {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- =====================================================
+     SCENARIO 1: HERO SECTION (FAST BUT SMOOTH)
+     ===================================================== -->
+    <section>
+        <div class="container">
+            <h2 class="text-center mb-3">Hero Section Animation</h2>
+            <p class="note">
+                Hero content should appear FAST. Users should not wait. Duration:
+                <b>600ms – 800ms</b>
+            </p>
+
+            <!-- FAST animation -->
+            <div class="box" data-aos="fade-up" data-aos-duration="600">
+                Hero Heading (600ms – Fast)
+            </div>
+
+            <!-- Slightly smooth -->
+            <div class="box" data-aos="fade-up" data-aos-duration="800">
+                Hero Subheading (800ms – Smooth)
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+     SCENARIO 2: ABOUT SECTION (NORMAL READING SPEED)
+     ===================================================== -->
+    <section>
+        <div class="container">
+            <h2 class="text-center mb-3">About Section Content</h2>
+            <p class="note">
+                Informational content should feel calm. Duration:
+                <b>1000ms</b> (Company standard)
+            </p>
+
+            <div class="box light-box" data-aos="fade-left" data-aos-duration="1000">
+                About Company Text (1000ms)
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+     SCENARIO 3: SERVICES / FEATURES CARDS
+     ===================================================== -->
+    <section>
+        <div class="container">
+            <h2 class="text-center mb-3">Services Cards (Stagger Effect)</h2>
+            <p class="note">
+                Cards appear one-by-one. Same duration, different delays. Duration:
+                <b>900ms</b>
+            </p>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="box" data-aos="fade-up" data-aos-duration="900" data-aos-delay="0">
+                        Service 1 (900ms)
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="box" data-aos="fade-up" data-aos-duration="900" data-aos-delay="200">
+                        Service 2 (900ms)
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="box" data-aos="fade-up" data-aos-duration="900" data-aos-delay="400">
+                        Service 3 (900ms)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+     SCENARIO 4: IMAGE / MEDIA SECTION (SLOW & SMOOTH)
+     ===================================================== -->
+    <section>
+        <div class="container">
+            <h2 class="text-center mb-3">Image / Media Showcase</h2>
+            <p class="note">
+                Visual content needs smooth entry. Duration: <b>1200ms – 1500ms</b>
+            </p>
+
+            <div class="box dark-box" data-aos="zoom-in" data-aos-duration="1200">
+                Image Card (1200ms)
+            </div>
+
+            <div class="box dark-box" data-aos="zoom-in" data-aos-duration="1500">
+                Highlight Image (1500ms – Slow)
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+     SCENARIO 5: TESTIMONIALS / REVIEWS
+     ===================================================== -->
+    <section>
+        <div class="container">
+            <h2 class="text-center mb-3">Testimonials Section</h2>
+            <p class="note">
+                Testimonials should feel gentle & trustworthy. Duration: <b>1100ms</b>
+            </p>
+
+            <div class="box light-box" data-aos="fade-right" data-aos-duration="1100">
+                Customer Review Card
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+     SCENARIO 6: CALL TO ACTION (CTA)
+     ===================================================== -->
+    <section>
+        <div class="container">
+            <h2 class="text-center mb-3">Call To Action (CTA)</h2>
+            <p class="note">
+                CTA must grab attention. Slightly faster animation. Duration:
+                <b>700ms</b>
+            </p>
+
+            <div class="box" data-aos="fade-up" data-aos-duration="700">
+                Get Started Now
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+     SCENARIO 7: BAD PRACTICE (TO UNDERSTAND LIMITS)
+     ===================================================== -->
+    <section>
+        <div class="container">
+            <h2 class="text-center mb-3">Very Slow Animation (Avoid)</h2>
+            <p class="note">
+                This is only for learning. Too slow = bad UX. Duration: <b>2500ms</b>
+            </p>
+
+            <div class="box dark-box" data-aos="fade-up" data-aos-duration="2500">
+                Too Slow – Not Recommended
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+     AOS JS
+     ===================================================== -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+        /*
+      Global initialization
+      Company-level default settings
+    */
+        AOS.init({
+            easing: "ease-in-out",
+            once: true,
+            offset: 120,
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      position: relative;
+      padding-left: 20px;
+    }
+
+    li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+<ul>
+  <li>HTML</li>
+  <li>CSS</li>
+  <li>JavaScript</li>
+</ul>
+
+</body>
+</html>
+
+<pre>
+🔍 Explanation (Step-by-Step)
+    Concept Used
+        position: absolute for pseudo-element
+        position: relative on parent
+        Real-world UI trick
+
+</pre>

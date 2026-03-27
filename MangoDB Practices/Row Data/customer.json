@@ -1,0 +1,153 @@
+[
+    {
+      "name": "John Doe",
+      "age": 10,
+      "email": "john.doe@example.com",
+      "hobbies": [
+        { "type": "reading", "frequency": "daily" },
+        { "type": "traveling", "frequency": "monthly" },
+        { "type": "coding", "frequency": "weekly" }
+      ],
+      "address": {
+        "city": "New York",
+        "state": "NY",
+        "zip": "10001"
+      }
+    },
+    {
+      "name": "Jane Smith",
+      "age": 11,
+      "email": "jane.smith@example.com",
+      "hobbies": [
+        { "type": "photography", "frequency": "weekly" },
+        { "type": "baking", "frequency": "daily" },
+        { "type": "yoga", "frequency": "daily" }
+      ],
+      "address": {
+        "city": "San Francisco",
+        "state": "CA",
+        "zip": "94103"
+      }
+    },
+    {
+      "name": "Michael Johnson",
+      "age": 12,
+      "email": "michael.johnson@example.com",
+      "hobbies": [
+        { "type": "gaming", "frequency": "weekly" },
+        { "type": "cycling", "frequency": "monthly" },
+        { "type": "music", "frequency": "daily" }
+      ],
+      "address": {
+        "city": "Chicago",
+        "state": "IL",
+        "zip": "60601"
+      }
+    },
+    {
+      "name": "Emily Davis",
+      "age": 13,
+      "email": "emily.davis@example.com",
+      "hobbies": [
+        { "type": "painting", "frequency": "weekly" },
+        { "type": "gardening", "frequency": "monthly" },
+        { "type": "hiking", "frequency": "daily" }
+      ],
+      "address": {
+        "city": "Los Angeles",
+        "state": "CA",
+        "zip": "90001"
+      }
+    },
+    {
+      "name": "David Wilson",
+      "age": 14,
+      "email": "david.wilson@example.com",
+      "hobbies": [
+        { "type": "swimming", "frequency": "weekly" },
+        { "type": "writing", "frequency": "daily" },
+        { "type": "traveling", "frequency": "monthly" }
+      ],
+      "address": {
+        "city": "Houston",
+        "state": "TX",
+        "zip": "77001"
+      }
+    },
+    {
+      "name": "Sophia Brown",
+      "age": 15,
+      "email": "sophia.brown@example.com",
+      "hobbies": [
+        { "type": "dancing", "frequency": "daily" },
+        { "type": "reading", "frequency": "weekly" },
+        { "type": "volunteering", "frequency": "monthly" }
+      ],
+      "address": {
+        "city": "Seattle",
+        "state": "WA",
+        "zip": "98101"
+      }
+    },
+    {
+      "name": "James Taylor",
+      "age": 16,
+      "email": "james.taylor@example.com",
+      "hobbies": [
+        { "type": "photography", "frequency": "weekly" },
+        { "type": "fitness", "frequency": "daily" },
+        { "type": "technology", "frequency": "weekly" }
+      ],
+      "address": {
+        "city": "Austin",
+        "state": "TX",
+        "zip": "73301"
+      }
+    },
+    {
+      "name": "Olivia Moore",
+      "age": 17,
+      "email": "olivia.moore@example.com",
+      "hobbies": [
+        { "type": "sketching", "frequency": "weekly" },
+        { "type": "music", "frequency": "daily" },
+        { "type": "traveling", "frequency": "monthly" }
+      ],
+      "address": {
+        "city": "Denver",
+        "state": "CO",
+        "zip": "80201"
+      }
+    },
+    {
+      "name": "Ethan Anderson",
+      "age": 18,
+      "email": "ethan.anderson@example.com",
+      "hobbies": [
+        { "type": "sports", "frequency": "daily" },
+        { "type": "coding", "frequency": "weekly" },
+        { "type": "blogging", "frequency": "monthly" }
+      ],
+      "address": {
+        "city": "Miami",
+        "state": "FL",
+        "zip": "33101"
+      }
+    },
+    {
+      "name": "Isabella Thomas",
+      "age": 19,
+      "email": "isabella.thomas@example.com",
+      "hobbies": [
+        { "type": "writing", "frequency": "daily" },
+        { "type": "photography", "frequency": "weekly" },
+        { "type": "cooking", "frequency": "monthly" }
+      ],
+      "address": {
+        "city": "Boston",
+        "state": "MA",
+        "zip": "02101"
+      }
+    }
+  ]
+  

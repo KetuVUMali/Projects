@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span id="one"> Hellow, </span>     <!-- Hellow  -->
+    <span id="two"></span>              <!-- Hellow  -->
+
+    <script>
+        var a = document.getElementById('one');
+        console.log(a);
+        var b = document.getElementById('two');
+        b.innerHTML = a.innerHTML;
+    </script>
+
+<!--  --><hr>
+    
+    <span class="three"></span>         <!--   -->
+    <span class="three">Three</span>    <!-- Three  -->    <!-- get  -->
+    <span class="four"></span>          <!-- Three  -->    <!-- set  -->
+
+    <script>
+        var c = document.getElementsByClassName('three');
+        console.log(c);
+        var d = document.getElementsByClassName('four');
+        // When same name class is used multi time then used index no to get/set the value
+        d[0].innerHTML = c[1].innerHTML;
+    </script>
+
+<!--  --><hr>
+    
+    <span  name="five"> </span>
+    <span  name="five"> Five</span>     <!-- get -->
+    <span  name="six"> Six</span>
+    <span  name="six"> </span>          <!-- set -->
+
+    <script>
+        var e = document.getElementsByName('five');
+        console.log(e);
+        var f = document.getElementsByName('six');
+        // When same name value is used multi time then used index no to get/set the value
+        f[1].innerHTML = e[1].innerHTML;
+    </script>
+
+<!--  --><hr>
+    
+    <h1>-</h1>
+    <h1>-</h1>
+    <h1>Tag</h1>        <!-- get -->
+    <h1></h1>           <!-- set -->
+
+    <script>
+        var g = document.getElementsByTagName('h1');
+        console.log(g);
+        g[3].innerHTML= g[2].innerHTML;
+        // When Multiple same tag repeat then used index no to get/set the value
+    </script>
+    
+</body>
+</html>

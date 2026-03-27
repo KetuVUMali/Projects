@@ -1,0 +1,119 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(120deg, #ff9a9e, #fad0c4);
+  }
+  
+  /* Navbar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background: #333;
+    color: white;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+  }
+  
+  /* Hero Section */
+  .hero {
+    text-align: center;
+    padding: 100px;
+    color: white;
+    background: url('images/hero.jpg') no-repeat center center/cover;
+  }
+  
+  .explore-btn {
+    padding: 10px 20px;
+    background: white;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+  
+  .explore-btn:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Popup */
+  .popup {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  
+  .popup-content {
+    background: white;
+    padding: 20px;
+    width: 300px;
+    margin: auto;
+    text-align: center;
+  }
+  
+  /* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(120deg, #ff9a9e, #fad0c4);
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background: #333;
+  color: white;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 100px;
+  color: white;
+  background: url('images/hero.jpg') no-repeat center center/cover;
+}
+
+.explore-btn {
+  padding: 10px 20px;
+  background: white;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.explore-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Popup */
+.popup {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.popup-content {
+  background: white;
+  padding: 20px;
+  width: 300px;
+  margin: auto;
+  text-align: center;
+}

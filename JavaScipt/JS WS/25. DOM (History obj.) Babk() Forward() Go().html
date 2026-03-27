@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> DOM Babk() Forward() Go() </title>
+</head>
+<body>
+	<h1> DOM Back() Forward() Go() </h1>
+	<h1> History Object </h1>
+
+	<pre>
+		DOM : Document Object Model
+		  - Dom through we can manipulate the structure, style, and content of web pages (HTML).
+		- Represents the structure of a web page.
+		- JavaScript can access and change all the elements of an HTML document.
+		- When a web page is loaded, the browser creates a Document Object Model of the page.
+		     
+		- The DOM can be manipulated using JavaScript to change the content, structure, and style of a web page.
+		With the object model, JavaScript gets all the power it needs to create dynamic HTML:
+				JavaScript can change all the HTML elements in the page (<p></p>,<div></div>,<h1></h1>)
+				JavaScript can change all the HTML attributes in the page (<a href=""></a>,<img src="">)
+				JavaScript can change all the CSS styles in the page (<style></style>)
+
+		History Object:
+		- In history object store History of browser.
+		- The History object contains the URL visited by the users.
+		- windows.history property through we access browser history
+
+		- all browser  support.
+
+
+		- Method:
+
+		   1. back()     : loads the previous URL in the histry list
+		      windows.history.back()
+
+		   2. forward()  : Loads the next URL in the histry list.
+		      windows.history.forward()
+
+
+		   3. go()       :  Loads a specific URL from the history list.
+		   	   windows.history.go()
+
+	</pre>
+	<br>
+    <h3> Search Multiple Wbesite on this page after history is createted. </h3>
+    <h4>Use Same content on all page for backward process!</h4>
+	<hr>
+
+	<h1></h1>
+	<button onclick="window.history.forward()"> Forward</button>
+
+	<button onclick="window.history.back();"> Backward</button>
+
+	<button onclick="window.history.go('3');"> Go</button>  <!-- 3 ==> for no of search page or put link. -->
+</body>
+	<script type="text/javascript">
+		
+		var c = window.history.length;
+		document.getElementsByTagName('h1')[2].innerText = c; 
+	</script>
+</html>

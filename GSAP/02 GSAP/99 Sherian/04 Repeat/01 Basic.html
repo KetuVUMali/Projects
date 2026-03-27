@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <pre>
+        GSAP Repeat : Repeat Animation Multiple Times.
+
+            syntax :
+                    gsap.to(Selector, duration, animation).repeat(2)
+
+            Example :
+                    gsap.to(".card", {
+                        y: 40,
+                        opacity: 0,
+                        repeat: 2,
+                        duration: 0.6
+                    });
+
+            Note : Take Positive & Negative Number Value 
+                1 Positive Value :
+                    By default animation repeat 1 time. (without mention by default present)
+                    If we "repeat:1" then animation display 2 times because first time automatic and repeat +1 time.
+                    If we "repeat:2" then animation display 3 times because first time automatic and repeat +2 time.
+
+                2 Negative Value :
+                    repeat:-1; Then animation repeat infinite times.
+
+
+    </pre>
+</body>
+</html>

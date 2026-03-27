@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <pre>
+        GSAP scrub : Scrub is a method in GSAP that allows you to control the progress of an animation based on the scroll position of the user.
+
+                     Means when you scroll down then animation work & when you scroll up then animation not work or paused.
+                     Then this problem handheld by "Scrub" Property.
+
+                     Reversed animation work.
+
+                     syntax : gsap.to(element, {duration: 1, scrub: true});
+
+                     Example :
+                            gsap.to(".card", {
+                                y: 40,
+                                opacity: 0,
+                                scrub: true,
+                                duration: 0.6
+                            });
+
+                        Note :
+                            1. Take value True & False
+                                scrub : true
+                                        Means reversed animation work
+
+                                scrub : false
+                                        Means reversed animation not work
+
+
+                            2. It is work between start & end point of animation.
+
+                            3. Take value 1 to 5 to change animation speed or Scrub speed or Scroll smoothness.
+
+
+
+                        
+
+                        
+
+    </pre>
+</body>
+</html>

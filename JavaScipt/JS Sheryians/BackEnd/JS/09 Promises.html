@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+
+            function connectingToServer(){
+                console.log(" Connecting To Server...");
+
+                return new Promise(function(resolve, reject){
+                    setTimeout(function(){
+                        resolve(["Connectd..."]);
+                    },2000)
+                })                
+            }
+
+            function getCourses(){
+                console.log("getting courses...");
+
+                return new Promise(function(resolve, reject){
+                    setTimeout(function(){
+                        resolve(["Course 1", "Course 2", "Course 3"]);
+                    },2000)
+                })
+            }
+
+            connectingToServer()
+            .then(function(responces){
+                console.log(responces);
+                return getCourses()
+            })
+            .then(function(responces){
+                console.log(responces);
+            })
+
+            
+</script>
+</html>

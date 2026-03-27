@@ -1,0 +1,61 @@
+[
+    {
+      "name": "John Doe",
+      "age": 10,
+      "email": "john.doe@example.com",
+      "hobbies": ["reading", "traveling", "coding"]
+    },
+    {
+      "name": "Jane Smith",
+      "age": 11,
+      "hobbies": ["photography", "baking", "yoga"]
+    },
+    {
+      "name": "Michael Johnson",
+      "age": 12,
+      "hobbies": ["gaming", "cycling", "music"]
+    },
+    {
+      "name": "Emily Davis",
+      "age": 13,
+      "email": "emily.davis@example.com",
+      "hobbies": ["painting", "gardening", "hiking"]
+    },
+    {
+      "name": "David Wilson",
+      "age": 14,
+      "email": "david.wilson@example.com",
+      "hobbies": ["swimming", "writing", "traveling"]
+    },
+    {
+      "name": "Sophia Brown",
+      "age": 15,
+      "email": "sophia.brown@example.com",
+      "hobbies": ["dancing", "reading", "volunteering"]
+    },
+    {
+      "name": "James Taylor",
+      "age": 16,
+      "email": "james.taylor@example.com",
+      "hobbies": ["photography", "fitness", "technology"]
+    },
+    {
+      "name": "Olivia Moore",
+      "age": 17,
+      "email": "olivia.moore@example.com",
+      "hobbies": ["sketching", "music", "traveling"]
+    },
+    {
+      "name": "Ethan Anderson",
+      "age": 18,
+      "email": "ethan.anderson@example.com",
+      "hobbies": ["sports", "coding", "blogging"]
+    },
+    {
+      "name": "Isabella Thomas",
+      "age": 19,
+      "email": "isabella.thomas@example.com",
+      "hobbies": ["writing", "photography", "cooking"]
+    }
+  ]
+  

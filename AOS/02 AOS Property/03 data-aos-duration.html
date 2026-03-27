@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>AOS data-aos-duration Complete Demo</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+    <style>
+        body {
+            background-color: #f4f6f8;
+        }
+
+        .section-title {
+            margin-top: 100px;
+            margin-bottom: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .section-desc {
+            text-align: center;
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 40px;
+        }
+
+        .box {
+            height: 120px;
+            background: #0d6efd;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- =====================================================
+       SCENARIO 1: VERY FAST ANIMATION (NOT RECOMMENDED)
+       ===================================================== -->
+
+        <h2 class="section-title">Duration: 300ms (Too Fast)</h2>
+        <p class="section-desc">
+            Logic: Animation is very fast. Used rarely. Feels aggressive and
+            unpolished.
+        </p>
+
+        <div class="box" data-aos="fade-up" data-aos-duration="300">
+            300ms – Too Fast
+        </div>
+
+        <!-- =====================================================
+       SCENARIO 2: NORMAL UI ELEMENT
+       ===================================================== -->
+
+        <h2 class="section-title">Duration: 600ms (Quick UI)</h2>
+        <p class="section-desc">
+            Logic: Used for small UI elements like icons, badges.
+        </p>
+
+        <div class="box" data-aos="fade-up" data-aos-duration="600">
+            600ms – Quick UI
+        </div>
+
+        <!-- =====================================================
+       SCENARIO 3: COMPANY STANDARD (MOST USED)
+       ===================================================== -->
+
+        <h2 class="section-title">Duration: 800ms (Company Standard)</h2>
+        <p class="section-desc">
+            Logic: Perfect balance between speed and smoothness. MOST USED in real
+            projects.
+        </p>
+
+        <div class="box" data-aos="fade-up" data-aos-duration="800">
+            800ms – Company Standard
+        </div>
+
+        <!-- =====================================================
+       SCENARIO 4: CONTENT SECTION (SMOOTH)
+       ===================================================== -->
+
+        <h2 class="section-title">Duration: 1000ms (Smooth Content)</h2>
+        <p class="section-desc">
+            Logic: Used for content sections like About, Services.
+        </p>
+
+        <div class="box" data-aos="fade-up" data-aos-duration="1000">
+            1000ms – Smooth Content
+        </div>
+
+        <!-- =====================================================
+       SCENARIO 5: HERO / IMPORTANT SECTION
+       ===================================================== -->
+
+        <h2 class="section-title">Duration: 1200ms (Hero Section)</h2>
+        <p class="section-desc">
+            Logic: Used for hero text or main headings. Gives premium feel.
+        </p>
+
+        <div class="box" data-aos="fade-up" data-aos-duration="1200">
+            1200ms – Hero Section
+        </div>
+
+        <!-- =====================================================
+       SCENARIO 6: SLOW & PREMIUM LOOK
+       ===================================================== -->
+
+        <h2 class="section-title">Duration: 1500ms (Premium / Luxury)</h2>
+        <p class="section-desc">
+            Logic: Used in luxury brands, storytelling sections.
+        </p>
+
+        <div class="box" data-aos="fade-up" data-aos-duration="1500">
+            1500ms – Premium Feel
+        </div>
+
+        <!-- =====================================================
+       SCENARIO 7: TOO SLOW (AVOID)
+       ===================================================== -->
+
+        <h2 class="section-title">Duration: 2000ms (Too Slow)</h2>
+        <p class="section-desc">
+            Logic: Animation feels lazy. Avoid in professional projects.
+        </p>
+
+        <div class="box" data-aos="fade-up" data-aos-duration="2000">
+            2000ms – Avoid This
+        </div>
+
+        <!-- =====================================================
+       SCENARIO 8: CARDS WITH SAME DURATION (BEST PRACTICE)
+       ===================================================== -->
+
+        <h2 class="section-title">Cards – Same Duration (Best Practice)</h2>
+        <p class="section-desc">
+            Logic: All cards use SAME duration for consistency.
+        </p>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="box" data-aos="fade-up" data-aos-duration="800">
+                    Card 1
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="box" data-aos="fade-up" data-aos-duration="800">
+                    Card 2
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="box" data-aos="fade-up" data-aos-duration="800">
+                    Card 3
+                </div>
+            </div>
+        </div>
+
+        <!-- =====================================================
+       SCENARIO 9: WRONG PRACTICE (DO NOT DO THIS)
+       ===================================================== -->
+
+        <h2 class="section-title">Wrong Practice Example</h2>
+        <p class="section-desc">
+            Logic: Different durations on similar elements looks unprofessional.
+        </p>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="box" data-aos="fade-up" data-aos-duration="400">
+                    Card Fast
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="box" data-aos="fade-up" data-aos-duration="900">
+                    Card Normal
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="box" data-aos="fade-up" data-aos-duration="1500">
+                    Card Slow
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =====================================================
+     AOS JS
+     ===================================================== -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+        /*
+      Global AOS settings
+      Duration here is DEFAULT.
+      Individual elements override it using data-aos-duration.
+    */
+        AOS.init({
+            easing: "ease-in-out",
+            once: true,
+            offset: 120,
+        });
+    </script>
+</body>
+
+</html>

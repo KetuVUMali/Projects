@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Stats Section</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f5f5f5;
+        }
+
+        /* Stats Container */
+        .stats-container11 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            width: 90%;
+            max-width: 1200px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Individual Stat Box */
+        .stat-box11 {
+            text-align: center;
+            padding: 20px;
+            flex: 1;
+            min-width: 200px;
+            border-radius: 10px;
+            background: #f8f8f8;
+            margin: 10px;
+            transition: transform 0.3s ease-in-out, background 0.3s;
+            opacity: 0;
+            animation: fadeIn11 1s forwards;
+        }
+
+        /* Fade-in Animation */
+        @keyframes fadeIn11 {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .stat-box11:hover {
+            transform: scale(1.1);
+            background: rgba(0, 0, 0, 0.05);
+        }
+
+        .stat-number11 {
+            font-size: 2.5vw;
+            font-weight: bold;
+            color: #000;
+            position: relative;
+        }
+
+        .stat-text11 {
+            font-size: 1.2vw;
+            color: #555;
+        }
+
+        /* Animation for rotating plus(+) and star(⭐) */
+        .rotating11 {
+            display: inline-block;
+            animation: rotateSymbol11 3s linear infinite;
+        }
+
+        @keyframes rotateSymbol11 {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Responsive Grid */
+        @media (max-width: 768px) {
+            .stats-container11 {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+            .stat-box11 {
+                padding: 30px;
+            }
+            .stat-number11 {
+                font-size: 5vw;
+            }
+            .stat-text11 {
+                font-size: 2vw;
+            }
+        }
+
+        /* Mobile View: 2x2 Layout */
+        @media (max-width: 480px) {
+            .stats-container11 {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+                padding: 15px;
+            }
+            .stat-box11 {
+                width: 100%;
+                min-width: unset;
+                padding: 15px;
+            }
+            .stat-number11 {
+                font-size: 6vw;
+            }
+            .stat-text11 {
+                font-size: 3vw;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="stats-container11">
+        <div class="stat-box11">
+            <div class="stat-number11">3 Million<span class="rotating11">+</span></div>
+            <div class="stat-text11">Cars Serviced</div>
+        </div>
+        <div class="stat-box11">
+            <div class="stat-number11">25 Lacs<span class="rotating11">+</span></div>
+            <div class="stat-text11">Happy Customers</div>
+        </div>
+        <div class="stat-box11">
+            <div class="stat-number11">4.0 <span class="rotating11">⭐</span></div>
+            <div class="stat-text11">Average Rating</div>
+        </div>
+        <div class="stat-box11">
+            <div class="stat-number11">1000<span class="rotating11">+</span></div>
+            <div class="stat-text11">Touch Points In India</div>
+        </div>
+    </div>
+
+</body>
+</html>

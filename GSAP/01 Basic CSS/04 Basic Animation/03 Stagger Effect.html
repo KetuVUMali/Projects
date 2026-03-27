@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .item {
+            width: 100px;
+            height: 40px;
+            background: #444;
+            color: white;
+            margin: 5px;
+            transform: translateX(-150px);
+            transition: transform 0.5s ease;
+        }
+
+        .list:hover .item:nth-child(1) {
+            transform: translateX(0);
+            transition-delay: 0s;
+        }
+
+        .list:hover .item:nth-child(2) {
+            transform: translateX(0);
+            transition-delay: 0.2s;
+        }
+
+        .list:hover .item:nth-child(3) {
+            transform: translateX(0);
+            transition-delay: 0.4s;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="list">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+    </div>
+
+    <div style="margin-top:20px;">
+        Stagger Effect : transition-delay
+        <br>
+        By using transition-delay on multiple elements, we can create a stagger effect where each element animates in sequence.
+        <br>
+        👉 Elements appear one after another
+        <br><br><br>
+        In this example:
+        <ul>
+            <li>The first item moves in immediately when hovering.</li>
+            <li>The second item starts moving after a 0.2s delay.</li>
+            <li>The third item starts moving after a 0.4s delay.</li>
+        </ul>
+        <br><br>
+        👉 Same animation  <br>
+        👉 Starts one by one
+
+        <br><br><br><br><br>
+
+        duration   :	animation time
+        delay	   :    wait before start
+
+</body>
+
+</html>

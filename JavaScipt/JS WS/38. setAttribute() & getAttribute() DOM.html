@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> 38. setAttribute() & getAttribute() DOM  </title>
+</head>
+<style type="text/css">
+	.redcar
+	{
+		color: red;
+	}
+	.color
+	{
+		color: red;
+	}
+	.blue
+	{
+		color: blue;
+	}
+</style>
+<body> 
+	<h2> Attribute </h2> 
+	<pre>
+		- Attribute means we pass any type of class for any tag.
+
+		- Ex. id="ketu" , class="ketu", title, name, alt, etc.
+
+		- In this example id & class is attribute and ketu is attribute value.
+
+		-  id="ketu"; (attribute="value";)
+
+		-  onclick="testing()"  (event_name="function_name_()")
+	</pre>
+
+	<h3>getAttribute()</h3>
+			<pre> 
+				- to get attribute value.
+				- to used get/collect class(attribute) value.
+
+				- syn:
+				      .getattribute("class/id_name");
+			</pre>
+			<br>
+
+			<div id="test" class="redcar">
+			 	Hello Ketu....!
+			 </div>
+			 <button onclick="testing()">
+			 	Click
+			 </button>
+
+			 <h1 id="res"></h1>
+
+			<script type="text/javascript">
+				function testing()
+					{
+						var demo = document.getElementById('test');
+						console.log(demo);
+						var cls = demo.getAttribute("class");		// to get class name
+						console.log("class value :",cls);			// redcar
+						// var cls = document.getElementById('test')..getAttribute("class");
+
+						
+						// target div tag using id="test" through    &
+						// get attribute value from 'class' attribute through
+
+						
+
+						document.getElementById("res").innerText = cls;
+						// pass text 'cls' to  h1 tag through id="res"	
+
+					}
+			</script>
+	<hr>
+	<br>
+	<br>
+	<hr>
+	<br>
+	<h3>setAttribute()</h3>
+		<pre>
+			- to set attribute value.
+			- to used set/change class(attribute) value.
+
+			- syn: (2 value pass. 1 is which class to set value & 2 is set value)
+				      .setattribute("class/id_name","value");
+		 </pre>
+
+		 <div id="test2" class="color">
+			 	Hello Ketu....!
+			 </div>
+			 <button onclick="testing2()">
+			 	Click
+			 </button>
+
+		 <script type="text/javascript">
+		 	var test = document.getElementById('test');
+		 	function testing2()
+		 		{
+		 			var cls2 = test.getAttribute("class");
+					console.log(test);
+					console.log("cls2 :  ",cls2);
+
+
+		 			if (cls2 === "color") 								// "color" is a CSS class
+		 				{
+		 					test.setAttribute("class","blue");			// change class name
+		 				}
+		 			else
+		 				{
+		 					test.setAttribute("class","blue");			// change class name
+		 				}
+		 		}
+
+		 </script>
+	 
+</body>
+
+</html>

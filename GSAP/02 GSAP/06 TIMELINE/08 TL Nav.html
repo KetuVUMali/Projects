@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .menu {
+            width: 200px;
+            height: 100vh;
+            background: #222;
+            position: fixed;
+            left: -200px;
+            top: 0;
+        }
+
+        button {
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button onclick="menuTL.play()">Open Menu</button>
+    <button onclick="menuTL.reverse()">Close Menu</button>
+
+    <div class="menu"></div>
+
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+    <script>
+        const menuTL = gsap.timeline({ paused: true });
+
+        menuTL.to(".menu", {
+            x: 200,
+            duration: 0.5,
+            ease: "power2.out"
+        });
+    </script>
+    <div>
+        <h2>GSAP Timeline Navigation Example : Open and Close Menu</h2>
+        <p>This example demonstrates a GSAP timeline used to animate a side menu opening and closing.</p>
+        <ul>
+            <li>The menu slides in from the left when the "Open Menu" button is clicked.</li>
+            <li>The menu slides back out when the "Close Menu" button is clicked.</li>
+            <li>The timeline is paused initially and controlled via button clicks.</li>
+        </ul>
+        <p>This showcases how timelines can be used for interactive UI animations.</p>
+    </div>
+    <div>
+        <pre>
+            const menuTL = gsap.timeline({ paused: true });
+        </pre>
+        <pre>
+            menuTL.to(".menu", {
+                x: 200,                  // Slide menu in by 200px
+                duration: 0.5,           // Animation duration of 0.5 seconds
+                ease: "power2.out"       // Easing function for smoothness
+            });
+        </pre>
+
+
+</body>
+
+</html>

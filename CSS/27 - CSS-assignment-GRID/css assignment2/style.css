@@ -1,0 +1,18 @@
+body {
+  background-color: hotpink;
+}
+div.box {
+  border: 6px double white;
+  padding: 10px;
+  margin: 10px;
+  outline: 10px groove blue;
+}
+h1 {
+  text-shadow: 4px 3px 3px hsl(104, 94%, 49%);
+color:white;
+}
+
+
+input {
+  outline: none;
+}

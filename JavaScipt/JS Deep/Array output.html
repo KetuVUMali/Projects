@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Array Operations</title>
+</head>
+<body>
+    <h1>Array Operations</h1>
+
+    <script type="text/javascript">
+        // 1. Create an Array
+        console.log("1. Array Creation");
+        var array = ["A", 1, 1.1, "B"];
+
+        console.log("Array Elements:", array, "\n");        //  Array Elements: [ 'A', 1, 1.1, 'B' ]
+
+        // 2. Accessing Elements in an Array by Index
+        console.log("2. Accessing Elements");
+        console.log("First Element by index:");
+        var firstElement = array[0];
+        console.log(firstElement);                          //  A
+
+        console.log(array[0]);                              // A       Another way to access the first element
+
+        console.log("Last Element using .length:");
+        var lastElement = array[array.length - 1];
+        console.log(lastElement);                           //  B
+        var lastElement2 = array[length - 1];
+        console.log(lastElement2);                           //  A
+        var lastElement3 = array[- 1];
+        console.log(lastElement3);                          // undefined
+
+        // 4. Modifying an Array (Replace)
+        console.log("4. Modifying Array");
+        array[0] = "K";                                      // Modify the first element
+        console.log(array);                                  // Output: [ 'K', 1, 1.1, 'B' ]
+
+        // 5. Adding an New Element to an Array
+        console.log("5. Adding Element to Array");
+        array[4] = 4;                                           // Add an element at index 4
+        console.log(array);                                     // Output: [ 'K', 1, 1.1, 'B', 4 ]
+
+        // 6. Adding an Element at the Last Position
+        console.log("6. Adding Element at Last Position");
+        array.push(10);                                         // Add 10 at the end of the array
+        console.log(array);                                     // Output: [ 'K', 1, 1.1, 'B', 4, 10 ]
+
+        // 7. Removing an Element from the Last Position
+        console.log("7. Removing Element from Last Position");
+        array.pop();                                            // Remove the last element
+        console.log(array);                                     // Output: [ 'K', 1, 1.1, 'B', 4 ]
+
+        // 8. .shift() - Remove First Element
+        console.log("8. .shift() - Remove First Element");
+        array.shift();                                           // Remove the first element
+        console.log(array);                                      // Output: [ 1, 1.1, 'B', 4 ]
+
+        // 9. .unshift() - Add First Element
+        console.log("9. .unshift() - Add First Element");
+        array.unshift("First");                                 // Add an element at the beginning
+        console.log(array);                                     // Output: [ 'First', 1, 1.
+
+
+
+    //// 8. some()
+				// op in true or false
+                // condition satifaction 
+				var arr = [10,20,30,40,50,60];
+				var demo = arr.some(value=>{
+					return value>40;
+				})
+				console.log(demo);                          // true
+
+
+    // 10. const never use for array
+                //const demo1 = [];
+                //demo1[0]=10;
+                //demo1 = [];             // show error
+
+                var demo1 = [];
+                demo1[0]=10;
+                demo1 = [];             // no error 

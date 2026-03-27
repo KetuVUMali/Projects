@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ScrollTrigger</title>
+<style>
+    body { height: 200vh; }
+    .section {
+      margin-top: 150vh;
+      width: 200px;
+      height: 100px;
+      background: purple;
+      margin-left: auto;
+      margin-right: auto;
+    }
+</style>
+</head>
+<body>
+ 
+<div class="section"></div>
+ 
+<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+ 
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+ 
+  gsap.from(".section", {
+    y: 150,
+    opacity: 0,
+    scrollTrigger: {
+      trigger: ".section",
+      start: "top 80%"
+    }
+  });
+</script>
+
+
+<div>
+  <pre>
+    SCROLLTRIGGER – ANIMATE ON SCROLL
+      📌 Concept
+        Animation starts when element enters viewport.
+ 
+      🧠 Logic
+          trigger → watched element
+          start → animation start point
+  </pre>
+  <pre>
+    👉 ScrollTrigger means:
+          Animate elements when you scroll the page.
+
+      Without ScrollTrigger:
+          Animation runs immediately on page load
+
+      With ScrollTrigger:
+          Animation runs when element comes into view
+          Can link animation progress to scrolling
+
+      Real-life uses:
+          Animate sections on scroll
+          Reveal cards, text, images
+          Progress bars
+          Sticky animations
+          Storytelling websites
+  </pre>
+</div>
+<div>
+  <pre>
+    🛠️ ScrollTrigger Properties
+      trigger → element that triggers animation
+      start → when animation starts (e.g., "top 80%")
+      end → when animation ends (optional)
+      scrub → link animation progress to scroll (optional)
+      markers → show start/end markers (optional)
+  </pre>
+</div>
+<div>
+  <pre>
+    🔧 Basic ScrollTrigger Setup
+        gsap.registerPlugin(ScrollTrigger);       // Register the plugin
+ 
+        gsap.from(".section", {
+          y: 150,                                 // Animate from 150px down
+          opacity: 0,                            // Animate from invisible                  
+          scrollTrigger: {                        // ScrollTrigger configuration
+            trigger: ".section",                  // Element that triggers animation  
+            start: "top 80%"               // Animation starts when top of element is 80% down viewport 
+          }
+        });
+
+        Explanation:
+          - The animation moves the element up into view and fades it in as you scroll down to it.
+          - The animation starts when the top of the ".section" element reaches 80% of the viewport height.
+  </pre>
+</div>
+
+ 
+</body>
+</html>
+ 

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body onload="onBodyLoad(event)">
+    
+    <h1 onclick="changePC(event)"> 1. CLick Event</h1>
+    <h1 onmouseover="changeBGCO(event)" onmouseleave="changeBGCI(event)"> 2. Mouse Event</h1>
+
+    <div>
+        <h4> 3. Keybord event </h4>
+        FirstName<input type="text" onkeydown="onKeyDown(event)" onkeyup="onKeyUp(event)" onchange="onChange(event)" name="firstName" id="firstName" />
+        
+        <br>
+        <p id="result"></p>
+    </div>
+    
+
+
+</body>
+
+    <script>
+
+            // 1. Click Event 
+                function changePC(e){
+                    // Extra
+                    console.log(e);
+                    console.log(this);
+                    console.log(e.target);
+
+                    e.target.style.color = "red";    
+                }
+
+
+            // 2.  
+                // i. onmouseover
+                    function changeBGCO(evt){
+                            evt.target.style.backgroundColor = "blue";
+                            evt.target.style.color = "white";    
+                        }
+
+                // ii. onmouseleave
+                    function changeBGCI(demo){
+                            demo.target.style.backgroundColor = "yellow"; 
+                            demo.target.style.color = "black";   
+                        }
+
+
+            // 3. Keybord Event 
+                    // i. onkeydown
+                        function onKeyDown(e){
+                                e.target.style.backgroundColor = 'blue';
+                        }
+
+                    // ii. onkeyup
+                        function onKeyUp(e){
+                            e.target.style.backgroundColor = 'white';
+                        }
+
+                    // iii. onchange
+                    function onChange(e){
+                            console.log(e.target.value);
+                            document.getElementById("result").innerHTML = e.target.value;
+                        }
+
+
+                //  onload (body tag)
+                        function onBodyLoad(e){
+                            //e.target.style.backgroundColor = 'yellow';
+                            document.body.style.backgroundColor = 'yellow';
+                            console.log("Body Is Load")
+                        }
+    </script>
+</html>

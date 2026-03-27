@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoElite | Premium Vehicle Showroom</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- AOS Animation Library CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #e63946;
+            --secondary-color: #1d3557;
+            --accent-color: #457b9d;
+            --light-color: #f1faee;
+            --dark-color: #0d1b2a;
+            --gray-color: #8d99ae;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+            border-radius: 6px;
+        }
+        
+        /* Navigation Bar */
+        .navbar {
+            background-color: rgba(13, 27, 42, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar-brand {
+            font-weight: 900;
+            font-size: 1.8rem;
+            color: white !important;
+        }
+        
+        .navbar-brand span {
+            color: var(--primary-color);
+        }
+        
+        .nav-link {
+            color: white !important;
+            font-weight: 500;
+            margin: 0 8px;
+            position: relative;
+            transition: color 0.3s;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            background-color: var(--primary-color);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s;
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary-color) !important;
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            min-height: 100vh;
+            background: linear-gradient(rgba(13, 27, 42, 0.85), rgba(29, 53, 87, 0.9)), 
+                        url('https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background-color: rgba(230, 57, 70, 0.2);
+            border: 2px solid var(--primary-color);
+            padding: 10px 25px;
+            border-radius: 30px;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+        
+        /* Section Title */
+        .section-title {
+            position: relative;
+            margin-bottom: 50px;
+            color: var(--secondary-color);
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--primary-color);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        .section-title.white {
+            color: white;
+        }
+        
+        .section-title.white::after {
+            background: white;
+        }
+        
+        /* Vehicle Cards */
+        .vehicle-card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            height: 100%;
+            background-color: white;
+        }
+        
+        .vehicle-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .vehicle-img {
+            height: 220px;
+            object-fit: cover;
+            width: 100%;
+        }
+        
+        .vehicle-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        /* Feature Boxes */
+        .feature-box {
+            background-color: white;
+            border-radius: 15px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            height: 100%;
+            transition: all 0.3s;
+        }
+        
+        .feature-box:hover {
+            background-color: var(--secondary-color);
+            color: white;
+            transform: translateY(-10px);
+        }
+        
+        .feature-box:hover h3,
+        .feature-box:hover p {
+            color: white;
+        }
+        
+        .feature-box:hover .feature-icon {
+            background-color: white;
+            color: var(--primary-color);
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(230, 57, 70, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: var(--primary-color);
+            margin: 0 auto 25px;
+            transition: all 0.3s;
+        }
+        
+        /* Testimonial Cards */
+        .testimonial-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            height: 100%;
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            font-size: 100px;
+            color: rgba(230, 57, 70, 0.1);
+            top: -30px;
+            left: 20px;
+            font-family: serif;
+            line-height: 1;
+        }
+        
+        .client-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+        }
+        
+        /* Stats Section */
+        .stats-section {
+            background: linear-gradient(rgba(29, 53, 87, 0.9), rgba(13, 27, 42, 0.9)), 
+                        url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80');
+            background-size: cover;
+            background-attachment: fixed;
+            color: white;
+            padding: 100px 0;
+        }
+        
+        .stat-box {
+            text-align: center;
+            padding: 30px 20px;
+        }
+        
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        /* Services Section */
+        .service-card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            height: 100%;
+            transition: all 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-img {
+            height: 200px;
+            object-fit: cover;
+            width: 100%;
+        }
+        
+        /* Contact Form */
+        .contact-form {
+            background-color: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-control {
+            padding: 15px;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.25rem rgba(230, 57, 70, 0.25);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 80px 0 30px;
+        }
+        
+        .footer h5 {
+            color: white;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer h5::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #b0b7c3;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+        
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            margin-right: 10px;
+            color: white;
+            transition: all 0.3s;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            margin-top: 50px;
+            text-align: center;
+            color: #b0b7c3;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .navbar {
+                padding: 15px 0;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+        
+        /* Vehicle Animation Elements */
+        .wheel-animation {
+            width: 80px;
+            height: 80px;
+            border: 5px solid var(--primary-color);
+            border-radius: 50%;
+            position: relative;
+            margin: 0 auto;
+            animation: rotateWheel 20s linear infinite;
+        }
+        
+        .wheel-animation::before {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        @keyframes rotateWheel {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .road-line {
+            width: 100%;
+            height: 10px;
+            background: repeating-linear-gradient(
+                to right,
+                transparent,
+                transparent 20px,
+                var(--primary-color) 20px,
+                var(--primary-color) 40px
+            );
+            position: absolute;
+            bottom: 0;
+            animation: moveRoad 2s linear infinite;
+        }
+        
+        @keyframes moveRoad {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-40px); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <!-- AOS Animation: Logo slides in from left with bounce effect -->
+            <a class="navbar-brand" href="#" data-aos="fade-right" data-aos-duration="800" data-aos-easing="ease-out-back">
+                <i class="fas fa-car me-2"></i>Auto<span>Elite</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <!-- AOS Animation: Nav items fade in from top with staggered delays -->
+                    <li class="nav-item" data-aos="fade-down" data-aos-delay="100" data-aos-duration="600">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item" data-aos="fade-down" data-aos-delay="200" data-aos-duration="600">
+                        <a class="nav-link" href="#vehicles">Vehicles</a>
+                    </li>
+                    <li class="nav-item" data-aos="fade-down" data-aos-delay="300" data-aos-duration="600">
+                        <a class="nav-link" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item" data-aos="fade-down" data-aos-delay="400" data-aos-duration="600">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item" data-aos="fade-down" data-aos-delay="500" data-aos-duration="600">
+                        <a class="nav-link" href="#testimonials">Testimonials</a>
+                    </li>
+                    <li class="nav-item" data-aos="fade-down" data-aos-delay="600" data-aos-duration="600">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <!-- AOS Animation: Badge zooms in with spring effect -->
+                    <div class="hero-badge mb-4" data-aos="zoom-in" data-aos-duration="800" data-aos-easing="ease-out-back">
+                        <i class="fas fa-crown me-2"></i>Premium Vehicle Collection
+                    </div>
+                    
+                    <!-- AOS Animation: Main heading fades up with cascade effect -->
+                    <h1 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                        Discover Your Perfect <span style="color: var(--primary-color)">Ride</span>
+                    </h1>
+                    
+                    <!-- AOS Animation: Subtitle fades up with longer delay -->
+                    <p class="lead mb-4" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
+                        Explore our exclusive collection of premium vehicles, from luxury sedans to powerful SUVs. 
+                        Experience the thrill of driving with AutoElite.
+                    </p>
+                    
+                    <!-- AOS Animation: Buttons slide in from left and right -->
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#vehicles" class="btn btn-primary btn-lg px-4 py-3" data-aos="fade-right" data-aos-delay="600" data-aos-duration="800">
+                            <i class="fas fa-search me-2"></i>Browse Vehicles
+                        </a>
+                        <a href="#contact" class="btn btn-outline-light btn-lg px-4 py-3" data-aos="fade-left" data-aos-delay="600" data-aos-duration="800">
+                            <i class="fas fa-calendar-alt me-2"></i>Book Test Drive
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <!-- AOS Animation: Vehicle image slides in from right with zoom effect -->
+                    <div class="position-relative" data-aos="fade-left" data-aos-delay="800" data-aos-duration="1200">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                                 alt="Luxury Car" class="img-fluid rounded shadow-lg">
+                            <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                                <!-- AOS Animation: Rotating wheel inside the hero image -->
+                                <div class="wheel-animation" data-aos="rotate-in" data-aos-delay="1200"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- AOS Animation: Animated road line at bottom of hero section -->
+        <div class="road-line" data-aos="fade-up" data-aos-delay="1000"></div>
+    </section>
+
+    <!-- Featured Vehicles Section -->
+    <section id="vehicles" class="py-5">
+        <div class="container py-5">
+            <!-- AOS Animation: Section title with flip-down effect -->
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title display-5" data-aos="flip-down" data-aos-duration="800">Featured Vehicles</h2>
+                    <p class="lead" data-aos="fade-up" data-aos-delay="200">Discover our handpicked selection of premium vehicles</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Vehicle 1 with AOS Animation: Card flips in from left -->
+                <div class="col-lg-4 col-md-6" data-aos="flip-left" data-aos-duration="1000">
+                    <div class="vehicle-card">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1555212697-194d092e3b8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                                 alt="Mercedes-Benz" class="vehicle-img">
+                            <span class="vehicle-badge">New Arrival</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="mb-2">Mercedes-Benz S-Class</h4>
+                            <p class="text-muted mb-3">The epitome of luxury and performance</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="fw-bold fs-4 text-primary">$89,999</span>
+                                </div>
+                                <a href="#" class="btn btn-outline-primary">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Vehicle 2 with AOS Animation: Card flips in with delay -->
+                <div class="col-lg-4 col-md-6" data-aos="flip-left" data-aos-delay="200" data-aos-duration="1000">
+                    <div class="vehicle-card">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                                 alt="Range Rover" class="vehicle-img">
+                            <span class="vehicle-badge">Best Seller</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="mb-2">Range Rover Sport</h4>
+                            <p class="text-muted mb-3">Unmatched luxury SUV performance</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="fw-bold fs-4 text-primary">$94,500</span>
+                                </div>
+                                <a href="#" class="btn btn-outline-primary">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Vehicle 3 with AOS Animation: Card flips in with more delay -->
+                <div class="col-lg-4 col-md-6" data-aos="flip-left" data-aos-delay="400" data-aos-duration="1000">
+                    <div class="vehicle-card">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                                 alt="Porsche 911" class="vehicle-img">
+                            <span class="vehicle-badge">Limited Edition</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="mb-2">Porsche 911 Carrera</h4>
+                            <p class="text-muted mb-3">Iconic sports car with thrilling performance</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="fw-bold fs-4 text-primary">$112,000</span>
+                                </div>
+                                <a href="#" class="btn btn-outline-primary">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- AOS Animation: View all button with zoom-in effect -->
+            <div class="text-center mt-5" data-aos="zoom-in" data-aos-delay="600">
+                <a href="#" class="btn btn-primary btn-lg px-5 py-3">
+                    <i class="fas fa-car me-2"></i>View All Vehicles
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-5 bg-light">
+        <div class="container py-5">
+            <!-- AOS Animation: Section title with bounce effect -->
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title display-5" data-aos="bounce-in" data-aos-duration="800">Why Choose AutoElite</h2>
+                    <p class="lead" data-aos="fade-up" data-aos-delay="200">Experience the difference with our premium services</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Feature 1 with AOS Animation: Box fades up from bottom -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="800">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="mb-3">Warranty & Protection</h3>
+                        <p>Comprehensive warranty packages and vehicle protection plans for complete peace of mind.</p>
+                    </div>
+                </div>
+                
+                <!-- Feature 2 with AOS Animation: Box fades up with delay -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3 class="mb-3">Expert Maintenance</h3>
+                        <p>State-of-the-art service centers with certified technicians using genuine parts.</p>
+                    </div>
+                </div>
+                
+                <!-- Feature 3 with AOS Animation: Box fades up with more delay -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400" data-aos-duration="800">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <h3 class="mb-3">Flexible Financing</h3>
+                        <p>Customized financing options with competitive rates tailored to your budget.</p>
+                    </div>
+                </div>
+                
+                <!-- Feature 4 with AOS Animation: Box zooms in from center -->
+                <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-duration="800">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-car-side"></i>
+                        </div>
+                        <h3 class="mb-3">Test Drive</h3>
+                        <p>Schedule a test drive at your convenience and experience the vehicle firsthand.</p>
+                    </div>
+                </div>
+                
+                <!-- Feature 5 with AOS Animation: Box zooms in with delay -->
+                <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="800">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <h3 class="mb-3">Trade-In Program</h3>
+                        <p>Get the best value for your current vehicle with our competitive trade-in offers.</p>
+                    </div>
+                </div>
+                
+                <!-- Feature 6 with AOS Animation: Box zooms in with more delay -->
+                <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="400" data-aos-duration="800">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3 class="mb-3">24/7 Support</h3>
+                        <p>Round-the-clock customer support for all your queries and assistance needs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <!-- AOS Animation: Section title slides in from top -->
+            <h2 class="section-title white text-center mb-5" data-aos="fade-down" data-aos-duration="800">Our Achievements</h2>
+            
+            <div class="row">
+                <!-- Stat 1 with AOS Animation: Box slides in from left with count-up -->
+                <div class="col-md-3 col-sm-6" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="stat-box">
+                        <div class="stat-number" data-count="2500">0</div>
+                        <h5>Vehicles Sold</h5>
+                        <p>Happy customers driving their dream cars</p>
+                    </div>
+                </div>
+                
+                <!-- Stat 2 with AOS Animation: Box fades in with count-up -->
+                <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+                    <div class="stat-box">
+                        <div class="stat-number" data-count="15">0</div>
+                        <h5>Years Experience</h5>
+                        <p>Industry expertise and trusted service</p>
+                    </div>
+                </div>
+                
+                <!-- Stat 3 with AOS Animation: Box fades in with more delay -->
+                <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
+                    <div class="stat-box">
+                        <div class="stat-number" data-count="98">0</div>
+                        <h5>Customer Satisfaction</h5>
+                        <p>Rated excellent by our clients</p>
+                    </div>
+                </div>
+                
+                <!-- Stat 4 with AOS Animation: Box slides in from right -->
+                <div class="col-md-3 col-sm-6" data-aos="fade-left" data-aos-delay="600" data-aos-duration="1000">
+                    <div class="stat-box">
+                        <div class="stat-number" data-count="50">0</div>
+                        <h5>Brands Available</h5>
+                        <p>Wide selection of premium manufacturers</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-5">
+        <div class="container py-5">
+            <!-- AOS Animation: Section title with roll-in effect -->
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title display-5" data-aos="roll-in" data-aos-duration="1000">Our Services</h2>
+                    <p class="lead" data-aos="fade-up" data-aos-delay="200">Comprehensive automotive solutions for every need</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Service 1 with AOS Animation: Card slides in from right -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-right" data-aos-duration="800">
+                    <div class="service-card">
+                        <img src="https://images.unsplash.com/photo-1565689221354-d87f85d4aee2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                             alt="Vehicle Sales" class="service-img">
+                        <div class="p-4">
+                            <h4 class="mb-3">New Vehicle Sales</h4>
+                            <p class="text-muted">Latest models from top manufacturers with competitive pricing and exclusive offers.</p>
+                            <a href="#" class="btn btn-outline-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 2 with AOS Animation: Card fades in -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+                    <div class="service-card">
+                        <img src="https://images.unsplash.com/photo-1565689221359-0d1f6f5e6e0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                             alt="Certified Pre-Owned" class="service-img">
+                        <div class="p-4">
+                            <h4 class="mb-3">Certified Pre-Owned</h4>
+                            <p class="text-muted">Thoroughly inspected and certified pre-owned vehicles with extended warranties.</p>
+                            <a href="#" class="btn btn-outline-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 3 with AOS Animation: Card slides in from left -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-left" data-aos-delay="400" data-aos-duration="800">
+                    <div class="service-card">
+                        <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                             alt="Vehicle Service" class="service-img">
+                        <div class="p-4">
+                            <h4 class="mb-3">Service & Maintenance</h4>
+                            <p class="text-muted">Comprehensive maintenance services performed by factory-trained technicians.</p>
+                            <a href="#" class="btn btn-outline-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-5 bg-light">
+        <div class="container py-5">
+            <!-- AOS Animation: Section title with zoom-in effect -->
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title display-5" data-aos="zoom-in" data-aos-duration="800">Customer Testimonials</h2>
+                    <p class="lead" data-aos="fade-up" data-aos-delay="200">Hear what our satisfied customers have to say</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Testimonial 1 with AOS Animation: Card flips in horizontally -->
+                <div class="col-lg-4 col-md-6" data-aos="flip-horizontal" data-aos-duration="1000">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-4">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" class="client-img me-3" alt="Client">
+                            <div>
+                                <h5 class="mb-0">Robert Johnson</h5>
+                                <small>Business Executive</small>
+                            </div>
+                        </div>
+                        <p class="mb-0">"The team at AutoElite made my car buying experience seamless. The Mercedes S-Class I purchased has been exceptional in every way."</p>
+                        <div class="text-warning mt-3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 with AOS Animation: Card flips in with delay -->
+                <div class="col-lg-4 col-md-6" data-aos="flip-horizontal" data-aos-delay="200" data-aos-duration="1000">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-4">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" class="client-img me-3" alt="Client">
+                            <div>
+                                <h5 class="mb-0">Sarah Williams</h5>
+                                <small>Marketing Director</small>
+                            </div>
+                        </div>
+                        <p class="mb-0">"Excellent service from start to finish. My Range Rover Sport is perfect for my family and our weekend adventures."</p>
+                        <div class="text-warning mt-3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 with AOS Animation: Card flips in with more delay -->
+                <div class="col-lg-4 col-md-6" data-aos="flip-horizontal" data-aos-delay="400" data-aos-duration="1000">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-4">
+                            <img src="https://randomuser.me/api/portraits/men/67.jpg" class="client-img me-3" alt="Client">
+                            <div>
+                                <h5 class="mb-0">Michael Chen</h5>
+                                <small>Entrepreneur</small>
+                            </div>
+                        </div>
+                        <p class="mb-0">"The Porsche 911 I bought from AutoElite exceeded all expectations. The performance and handling are absolutely incredible."</p>
+                        <div class="text-warning mt-3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container py-5">
+            <!-- AOS Animation: Section title with fade-up effect -->
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title display-5" data-aos="fade-up" data-aos-duration="800">Contact Us</h2>
+                    <p class="lead" data-aos="fade-up" data-aos-delay="200">Get in touch to schedule a test drive or inquire about our vehicles</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <!-- AOS Animation: Contact form with flip-in effect -->
+                    <div class="contact-form" data-aos="flip-in-y" data-aos-duration="1000">
+                        <form id="contactForm">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Full Name</label>
+                                        <input type="text" class="form-control" placeholder="John Smith" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Email Address</label>
+                                        <input type="email" class="form-control" placeholder="john@example.com" required>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label">Phone Number</label>
+                                <input type="tel" class="form-control" placeholder="(123) 456-7890" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label">Vehicle of Interest</label>
+                                <select class="form-control">
+                                    <option>Select a vehicle</option>
+                                    <option>Mercedes-Benz S-Class</option>
+                                    <option>Range Rover Sport</option>
+                                    <option>Porsche 911 Carrera</option>
+                                    <option>BMW 7 Series</option>
+                                    <option>Audi Q8</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="form-label">Message</label>
+                                <textarea class="form-control" rows="5" placeholder="Tell us about your requirements..." required></textarea>
+                            </div>
+                            
+                            <!-- AOS Animation: Submit button with pulse effect -->
+                            <div class="text-center" data-aos="pulse" data-aos-delay="300" data-aos-duration="1500" data-aos-iteration="2">
+                                <button type="submit" class="btn btn-primary btn-lg px-5 py-3">
+                                    <i class="fas fa-paper-plane me-2"></i>Send Message
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact Info with AOS Animation: Staggered fade-up effects -->
+            <div class="row mt-5">
+                <div class="col-md-4 text-center" data-aos="fade-up" data-aos-duration="800">
+                    <div class="p-4">
+                        <i class="fas fa-map-marker-alt fa-2x mb-3 text-primary"></i>
+                        <h4>Our Showroom</h4>
+                        <p>123 Premium Avenue<br>Auto City, AC 10001</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 text-center" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+                    <div class="p-4">
+                        <i class="fas fa-phone fa-2x mb-3 text-primary"></i>
+                        <h4>Contact Number</h4>
+                        <p>+1 (555) 123-4567<br>+1 (555) 987-6543</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 text-center" data-aos="fade-up" data-aos-delay="400" data-aos-duration="800">
+                    <div class="p-4">
+                        <i class="fas fa-clock fa-2x mb-3 text-primary"></i>
+                        <h4>Business Hours</h4>
+                        <p>Mon-Fri: 9AM - 8PM<br>Sat-Sun: 10AM - 6PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <!-- AOS Animation: Footer sections with staggered fade-right effects -->
+                <div class="col-lg-4 mb-5" data-aos="fade-right" data-aos-duration="800">
+                    <h4 class="mb-4">
+                        <i class="fas fa-car me-2"></i>Auto<span style="color: var(--primary-color)">Elite</span>
+                    </h4>
+                    <p class="mb-4">Your premier destination for luxury and performance vehicles. Experience excellence in every drive.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-5" data-aos="fade-right" data-aos-delay="100" data-aos-duration="800">
+                    <h5 class="mb-4">Quick Links</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#vehicles">Vehicles</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-5" data-aos="fade-right" data-aos-delay="200" data-aos-duration="800">
+                    <h5 class="mb-4">Vehicle Brands</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="#">Mercedes-Benz</a></li>
+                        <li><a href="#">Range Rover</a></li>
+                        <li><a href="#">Porsche</a></li>
+                        <li><a href="#">BMW</a></li>
+                        <li><a href="#">Audi</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 mb-5" data-aos="fade-right" data-aos-delay="300" data-aos-duration="800">
+                    <h5 class="mb-4">Newsletter</h5>
+                    <p>Subscribe for exclusive offers and new arrivals.</p>
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control" placeholder="Your Email">
+                        <button class="btn btn-primary" type="button">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- AOS Animation: Copyright with fade-in effect -->
+            <div class="copyright" data-aos="fade-in" data-aos-duration="1000">
+                <p>&copy; 2023 AutoElite. All Rights Reserved. | Luxury Vehicle Showroom</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS Animation Library JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        // Initialize AOS with custom settings for vehicle website
+        AOS.init({
+            duration: 1000, // Default animation duration
+            easing: 'ease-in-out', // Smooth easing for vehicle animations
+            once: false, // Animations happen every time element is in view
+            mirror: true, // Animate out when scrolling past elements
+            anchorPlacement: 'top-bottom', // Trigger when top of element hits bottom of viewport
+            disable: function() {
+                return window.innerWidth < 768; // Disable on mobile for performance
+            }
+        });
+        
+        // AOS Animation Types Used in This Vehicle Website:
+        // 1. fade-right: Logo slides in from left (navigation)
+        // 2. fade-down: Navigation items drop down with staggered delays
+        // 3. zoom-in: Hero badge with bounce effect
+        // 4. fade-up: Main heading and subtitle with cascade effect
+        // 5. fade-right/fade-left: Hero buttons sliding in from sides
+        // 6. fade-left: Hero vehicle image slides in from right
+        // 7. rotate-in: Rotating wheel animation in hero section
+        // 8. fade-up: Animated road line at bottom of hero
+        // 9. flip-down: Section title with flipping effect
+        // 10. flip-left: Vehicle cards flipping in from left with staggered delays
+        // 11. zoom-in: View all vehicles button
+        // 12. bounce-in: Features section title
+        // 13. fade-up: Feature boxes rising up with staggered delays
+        // 14. zoom-in: Feature boxes with zoom effect
+        // 15. fade-down: Stats section title
+        // 16. fade-right/fade-left/fade-up: Stat boxes with different directions
+        // 17. roll-in: Services section title rolling in
+        // 18. fade-right/fade-left/fade-up: Service cards with different directions
+        // 19. zoom-in: Testimonials section title
+        // 20. flip-horizontal: Testimonial cards flipping horizontally
+        // 21. flip-in-y: Contact form with vertical flip
+        // 22. pulse: Submit button with pulsing effect
+        // 23. fade-right: Footer sections sliding in from left
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Navbar background change on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.backgroundColor = 'rgba(13, 27, 42, 0.98)';
+                navbar.style.padding = '15px 0';
+                navbar.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.2)';
+            } else {
+                navbar.style.backgroundColor = 'rgba(13, 27, 42, 0.95)';
+                navbar.style.padding = '20px 0';
+                navbar.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            }
+        });
+        
+        // Animated counter for stats
+        function animateCounter(element) {
+            const target = parseInt(element.getAttribute('data-count'));
+            const current = parseInt(element.textContent);
+            const increment = target > current ? 1 : -1;
+            const step = Math.ceil(target / 100);
+            
+            let count = current;
+            
+            const timer = setInterval(() => {
+                count += increment;
+                element.textContent = count;
+                
+                if ((increment > 0 && count >= target) || (increment < 0 && count <= target)) {
+                    element.textContent = target;
+                    clearInterval(timer);
+                }
+            }, 20);
+        }
+        
+        // Initialize counters when stats section comes into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    document.querySelectorAll('.stat-number').forEach(counter => {
+                        animateCounter(counter);
+                    });
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        const statsSection = document.querySelector('.stats-section');
+        if (statsSection) {
+            observer.observe(statsSection);
+        }
+        
+        // Form submission handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show success message
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            
+            submitBtn.innerHTML = '<i class="fas fa-check me-2"></i>Message Sent!';
+            submitBtn.classList.remove('btn-primary');
+            submitBtn.classList.add('btn-success');
+            
+            // Reset form
+            this.reset();
+            
+            // Revert button after 3 seconds
+            setTimeout(() => {
+                submitBtn.innerHTML = originalText;
+                submitBtn.classList.remove('btn-success');
+                submitBtn.classList.add('btn-primary');
+            }, 3000);
+        });
+        
+        // Vehicle image hover effect
+        document.querySelectorAll('.vehicle-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                const img = this.querySelector('.vehicle-img');
+                img.style.transform = 'scale(1.05)';
+                img.style.transition = 'transform 0.5s ease';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                const img = this.querySelector('.vehicle-img');
+                img.style.transform = 'scale(1)';
+            });
+        });
+        
+        // Add driving sound effect on scroll (conceptual)
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', function() {
+            const st = window.pageYOffset || document.documentElement.scrollTop;
+            
+            // If scrolling down fast, add a subtle visual effect
+            if (st > lastScrollTop && st - lastScrollTop > 10) {
+                // Could add driving sound effect here in a real implementation
+                document.body.style.backgroundPosition = `0px ${st * 0.5}px`;
+            }
+            
+            lastScrollTop = st <= 0 ? 0 : st;
+        }, false);
+    </script>
+</body>
+</html>

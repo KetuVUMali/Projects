@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: dodgerblue;
+            margin: 20px;
+            display: inline-block;
+            transition: transform 0.4s;
+        }
+
+        /* Bigger */
+        .scale-up:hover {
+            transform: scale(1.4);
+        }
+
+        /* Smaller */
+        .scale-down:hover {
+            transform: scale(0.7);
+        }
+
+        /* Stretch width */
+        .scale-x:hover {
+            transform: scaleX(1.6);
+        }
+
+        /* Stretch height */
+        .scale-y:hover {
+            transform: scaleY(1.6);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box scale-up">Scale Up</div>
+    <div class="box scale-down">Scale Down</div>
+    <div class="box scale-x">Scale X</div>
+    <div class="box scale-y">Scale Y</div>
+
+    <div  style="margin-top: 100px;">
+        <pre>
+        2️⃣ scale transforms :
+
+                scale means zoom.  (multiply size)
+
+                scale(1) → normal size
+                scale(1.5) → bigger
+                scale(0.8) → smaller
+
+                scaleX(1.5) → stretch width
+                scaleY(0.5) → compress height
+
+                scale() can take one or two values :
+                    one value → scale both width and height
+                    two values → first value scales width, second value scales height
+
+                    ex : scale(1.5, 0.5) → width 1.5 times, height 0.5 times
+
+                scaleX() : scales only the width of the element.
+                scaleY() : scales only the height of the element.
+
+     Note : Transforms do NOT affect surrounding elements.
+     </pre>
+
+    </div>
+
+</body>
+
+</html>

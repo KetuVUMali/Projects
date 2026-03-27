@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <pre>
+        GSAP Pin : Pin Animation to a section without complete or start you can't move previous or next section.
+
+        syntax :
+                gsap.to(Selector, duration, animation).pin(true)
+
+        Example :
+                gsap.to(".card h1", {
+                    y: 40,
+                    opacity: 0,
+                    pin: true,
+                    duration: 0.6
+                });
+
+
+            Note :
+            1. When we used "Pin" then always trigger parent element.
+               like .card h1 then will trigger .card.
+               to make sticky scrolling effect we use "Pin".
+    </pre>
+</body>
+</html>

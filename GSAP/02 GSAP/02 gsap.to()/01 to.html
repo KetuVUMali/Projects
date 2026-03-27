@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>GSAP Basic</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: red;
+            margin: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box"></div>
+
+    <!-- GSAP CDN -->
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+
+    <script>
+        gsap.to(".box", {
+            x: 200,
+            duration: 1
+        });
+    </script>
+
+
+    <div>
+        gsap.to() Method : original to Animate Movement
+        <br>
+        The gsap.to() method animates an element from its current state to the specified properties.
+        <br><br>
+        Syntax:
+        <pre>
+            gsap.to(target, {vars});
+        </pre>
+        <br>
+        Example:
+        <pre>
+            gsap.to(".box", {x: 200, duration: 1});
+        </pre>
+        This moves the element with class "box" 200 pixels to the right over 1 second.
+    </div>
+    <pre>
+        Explanation:
+            gsap.to() → GSAP method to animate to specified properties
+            .box is selected
+            x: 200 → moves box 200px right
+            duration: 1 → animation takes 1 second
+            Animation runs as soon as page loads
+    </pre>
+
+</body>
+
+</html>

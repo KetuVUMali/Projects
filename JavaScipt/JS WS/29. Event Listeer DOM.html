@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Event Listeer </title>
+</head>
+<body>
+	<h2>Event Listeer  </h2>
+
+	<pre>
+		Add Event Listerner
+		- Event Listener is used to perform any task on an event of any element or  event.
+
+		- using event listener one can add & remove task on the occurrence of any event for an element.
+
+		- It is part of JS DOM
+
+		- syn :
+		       element.addEventListerner(event_name,function);
+
+		- multiple events play at a time!
+
+		- add ele in list
+	</pre>
+
+
+	<div id="counter"></div>
+
+	<button id="btn"> click me</button>
+	<button id="stop" onclick="stop()"> Stop</button>
+
+	<script type="text/javascript">
+		// var i = 0;
+		// document.getElementById('btn').addEventListener("click",function()  // Inline fun
+		// click meases click event
+		// 		{
+		// 			document.getElementById('counter').innerText = i; 
+		// 			i++;
+		// 		})
+
+
+		var i = 0;
+		document.getElementById('btn').addEventListener("click",counter); // counter outline fun.
+
+
+		function counter()
+			{
+				document.getElementById('counter').innerText = i; 
+					i++;
+			}
+
+
+		document.getElementById('btn').addEventListener("mouseenter",colorRed)
+
+		function colorRed()
+				{
+					document.getElementById('counter').style.color = 'red';
+				}
+
+ 
+		document.getElementById('btn').addEventListener("mouseleave",colorChange);  // event 
+
+		function colorChange()
+				{
+					document.getElementById('counter').style.color = 'black';
+				}
+
+
+		function stop()
+			{
+				document.getElementById('btn').removeEventListener("click",counter);
+			}
+
+	</script>
+	<br><br>
+
+	<pre>
+		Remove Event Listener
+
+		- The removeEventListener() method removes an event handler to the specific element.
+
+		- to spot event specific time
+
+		- used to avoid events on specific element.
+
+		- syn :  element.removeEventListerner(event_name,function);
+
+
+	</pre>
+
+	
+
+	<script type="text/javascript">
+		
+		
+
+
+	</script>
+
+</body>
+</html>

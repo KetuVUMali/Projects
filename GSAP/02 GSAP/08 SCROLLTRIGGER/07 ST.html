@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>GSAP ScrollTrigger – Step by Step Study</title>
+
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  /* ===== COMMON SECTION STYLE ===== */
+  .spacer {
+    height: 100vh;
+    background: #111;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .section {
+    height: 100vh;
+    padding: 40px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .title {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .box {
+    width: 120px;
+    height: 120px;
+    background: purple;
+  }
+
+  .green { background: green; }
+  .orange { background: orange; }
+  .blue { background: steelblue; }
+
+  /* Cards */
+  .cards {
+    display: flex;
+    gap: 20px;
+  }
+
+  .card {
+    width: 120px;
+    height: 120px;
+    background: crimson;
+  }
+
+  /* Text animation */
+  .text {
+    font-size: 40px;
+    opacity: 0;
+  }
+</style>
+</head>
+<body>
+
+<!-- INTRO -->
+<div class="spacer">
+  GSAP ScrollTrigger Study Page<br>
+  Scroll Down Slowly ⬇️
+</div>
+
+<!-- ================= EXAMPLE 1 ================= -->
+<div class="section example1">
+  <div class="title">Example 1: Basic ScrollTrigger (Fade + Move)</div>
+  <div class="box"></div>
+</div>
+
+<div class="spacer">Next Example ⬇️</div>
+
+<!-- ================= EXAMPLE 2 ================= -->
+<div class="section example2">
+  <div class="title">Example 2: Start & End Control</div>
+  <div class="box green"></div>
+</div>
+
+<div class="spacer">Next Example ⬇️</div>
+
+<!-- ================= EXAMPLE 3 ================= -->
+<div class="section example3">
+  <div class="title">Example 3: Scrub (Scroll Controls Animation)</div>
+  <div class="box orange"></div>
+</div>
+
+<div class="spacer">Next Example ⬇️</div>
+
+<!-- ================= EXAMPLE 4 ================= -->
+<div class="section example4">
+  <div class="title">Example 4: Stagger Cards on Scroll</div>
+  <div class="cards">
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+  </div>
+</div>
+
+<div class="spacer">Next Example ⬇️</div>
+
+<!-- ================= EXAMPLE 5 ================= -->
+<div class="section example5">
+  <div class="title">Example 5: Pin Section + Transform</div>
+  <div class="box blue"></div>
+</div>
+
+<div class="spacer">Next Example ⬇️</div>
+
+<!-- ================= EXAMPLE 6 ================= -->
+<div class="section example6">
+  <div class="title">Example 6: Text Reveal on Scroll</div>
+  <div class="text">Hello GSAP 👋</div>
+</div>
+
+<div class="spacer">End of Examples ✅</div>
+
+<!-- GSAP -->
+<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  /* =================================================
+     EXAMPLE 1 – BASIC SCROLLTRIGGER
+     Animation starts when box enters viewport
+  ================================================= */
+  gsap.from(".example1 .box", {
+    y: 150,
+    opacity: 0,
+    duration: 1,
+    scrollTrigger: {
+      trigger: ".example1 .box",
+      start: "top 80%"
+    }
+  });
+
+  /* =================================================
+     EXAMPLE 2 – START & END POINTS
+     Control exactly WHEN animation should start
+  ================================================= */
+  gsap.from(".example2 .box", {
+    x: -200,
+    opacity: 0,
+    duration: 1,
+    scrollTrigger: {
+      trigger: ".example2",
+      start: "top 75%",
+      end: "top 30%",
+      markers: true   // learning helper
+    }
+  });
+
+  /* =================================================
+     EXAMPLE 3 – SCRUB
+     Scroll position controls animation progress
+  ================================================= */
+  gsap.to(".example3 .box", {
+    x: 300,
+    rotation: 360,
+    scrollTrigger: {
+      trigger: ".example3",
+      start: "top center",
+      end: "bottom center",
+      scrub: true
+    }
+  });
+
+  /* =================================================
+     EXAMPLE 4 – STAGGER WITH SCROLL
+     Multiple elements animate one-by-one
+  ================================================= */
+  gsap.from(".example4 .card", {
+    y: 100,
+    opacity: 0,
+    duration: 0.6,
+    stagger: 0.3,
+    scrollTrigger: {
+      trigger: ".example4",
+      start: "top 70%"
+    }
+  });
+
+  /* =================================================
+     EXAMPLE 5 – PINNED SECTION (ADVANCED)
+     Section stays fixed while animation runs
+  ================================================= */
+  gsap.to(".example5 .box", {
+    scale: 2,
+    rotation: 360,
+    scrollTrigger: {
+      trigger: ".example5",
+      start: "top top",
+      end: "+=400",
+      scrub: true,
+      pin: true
+    }
+  });
+
+  /* =================================================
+     EXAMPLE 6 – TEXT ANIMATION
+     Simple text reveal when scrolled
+  ================================================= */
+  gsap.to(".example6 .text", {
+    opacity: 1,
+    y: -20,
+    duration: 1,
+    scrollTrigger: {
+      trigger: ".example6",
+      start: "top 70%"
+    }
+  });
+
+</script>
+</body>
+</html>

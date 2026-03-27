@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: purple;
+            margin: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box"></div>
+
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+    <script>
+        gsap.to(".box", {
+            x: 200,
+            duration: 1,
+            delay: 1
+        });
+    </script>
+    <br><br><br>
+    <h4> Animation with Delay </h4>
+    <h6>Take time to start</h6>
+    <pre>
+    Explanation:
+        gsap.to() → GSAP method to animate to specified properties
+        .box is selected
+        x: 200 → moves 200px to the right
+        duration: 1 → animation takes 1 second
+        delay: 1 → waits 1 second before starting the animation
+</pre>
+    <br><br><br>
+    <pre>
+    Explanation : 
+                Box moves to the right
+                Starts after a 1 second pause
+                Used to sequence animations
+</pre>
+</body>
+
+</html>

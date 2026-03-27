@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>AOS Complete All Properties & Animations Demo</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .section-title {
+            margin-top: 100px;
+            margin-bottom: 40px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .box {
+            height: 120px;
+            background: #0d6efd;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .info {
+            font-size: 14px;
+            color: #555;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- =====================================================
+       BASIC FADE ANIMATIONS
+       ===================================================== -->
+
+        <h2 class="section-title">Fade Animations</h2>
+        <p class="info">
+            Fade animations are MOST USED in company projects. Smooth, clean,
+            professional.
+        </p>
+
+        <!-- fade-up -->
+        <!-- Comes from bottom -->
+        <div class="box" data-aos="fade-up">fade-up (from bottom)</div>
+
+        <!-- fade-down -->
+        <!-- Comes from top -->
+        <div class="box" data-aos="fade-down">fade-down (from top)</div>
+
+        <!-- fade-left -->
+        <!-- Comes from right -->
+        <div class="box" data-aos="fade-left">fade-left (from right)</div>
+
+        <!-- fade-right -->
+        <!-- Comes from left -->
+        <div class="box" data-aos="fade-right">fade-right (from left)</div>
+
+        <!-- =====================================================
+       ZOOM ANIMATIONS
+       ===================================================== -->
+
+        <h2 class="section-title">Zoom Animations</h2>
+        <p class="info">Zoom effects are good for cards, highlights, counters.</p>
+
+        <!-- zoom-in -->
+        <div class="box" data-aos="zoom-in">zoom-in</div>
+
+        <!-- zoom-out -->
+        <div class="box" data-aos="zoom-out">zoom-out</div>
+
+        <!-- =====================================================
+       FLIP (3D) ANIMATIONS
+       ===================================================== -->
+
+        <h2 class="section-title">Flip (3D) Animations</h2>
+        <p class="info">
+            Use flip animations carefully. Avoid too much in real projects.
+        </p>
+
+        <!-- flip-left -->
+        <div class="box" data-aos="flip-left">flip-left (3D)</div>
+
+        <!-- flip-right -->
+        <div class="box" data-aos="flip-right">flip-right (3D)</div>
+
+        <!-- =====================================================
+       SLIDE ANIMATIONS
+       (Custom slide-like behavior using fade)
+       ===================================================== -->
+
+        <h2 class="section-title">Slide-Style Animations</h2>
+        <p class="info">
+            AOS does not have pure "slide" keyword, but fade + movement behaves like
+            slide.
+        </p>
+
+        <!-- slide-up (same as fade-up but longer duration) -->
+        <div class="box" data-aos="fade-up" data-aos-duration="1500">
+            slide-up (fade-up + long duration)
+        </div>
+
+        <!-- slide-down -->
+        <div class="box" data-aos="fade-down" data-aos-duration="1500">
+            slide-down (fade-down + long duration)
+        </div>
+
+        <!-- slide-left -->
+        <div class="box" data-aos="fade-left" data-aos-duration="1500">
+            slide-left (fade-left + long duration)
+        </div>
+
+        <!-- slide-right -->
+        <div class="box" data-aos="fade-right" data-aos-duration="1500">
+            slide-right (fade-right + long duration)
+        </div>
+
+        <!-- =====================================================
+       DELAY + STAGGER EXAMPLE (REAL COMPANY USE)
+       ===================================================== -->
+
+        <h2 class="section-title">Delay & Stagger Effect</h2>
+        <p class="info">
+            Cards appearing one by one (VERY IMPORTANT for real projects)
+        </p>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="box" data-aos="fade-up" data-aos-delay="0">
+                    Card 1 (0ms delay)
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="box" data-aos="fade-up" data-aos-delay="200">
+                    Card 2 (200ms delay)
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="box" data-aos="fade-up" data-aos-delay="400">
+                    Card 3 (400ms delay)
+                </div>
+            </div>
+        </div>
+
+        <!-- =====================================================
+       OFFSET & ONCE EXAMPLE
+       ===================================================== -->
+
+        <h2 class="section-title">Offset & Once Property</h2>
+        <p class="info">Control when animation starts and whether it repeats</p>
+
+        <!-- Offset example -->
+        <div class="box" data-aos="fade-up" data-aos-offset="300">
+            Starts early (offset 300px)
+        </div>
+
+        <!-- Once example -->
+        <div class="box" data-aos="fade-up" data-aos-once="true">
+            Animates only once
+        </div>
+    </div>
+
+    <!-- =====================================================
+     AOS JS
+     ===================================================== -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+        /*
+      Global AOS settings
+      These apply to all elements unless overridden
+    */
+        AOS.init({
+            duration: 1000, // animation duration (ms)
+            easing: "ease-in-out", // smooth motion
+            once: false, // repeat animation on scroll
+            offset: 120, // default trigger offset
+        });
+    </script>
+</body>
+
+</html>

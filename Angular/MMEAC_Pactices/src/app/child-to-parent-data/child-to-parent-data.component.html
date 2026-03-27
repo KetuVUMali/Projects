@@ -1,0 +1,12 @@
+<p>child-to-parent-data sharre!</p>
+
+<input type="text" #box/>
+<button (click)="updateDataEvent.emit(box.value)">Update Data</button>
+
+
+
+
+<!-- 1. app.ts : file create function "updateData" -->
+ <!-- 2. app.html : function pass to child component "updateDataEvent"  -->
+  <!-- 3. chld-to-parent  :  "updateData" fun call useing @Input and EventEmitter -->
+   <!-- 4. chld-to-parent  : "updateDataEvent.emit" pass html content-->

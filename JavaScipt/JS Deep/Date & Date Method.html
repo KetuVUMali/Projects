@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Date</title>
+</head>
+<body>
+
+
+	<script type="text/javascript">
+		
+		// 1. Date Constructor
+		   // Date Constructor show Current Date & time Both
+		      var today = new Date();
+		      console.log(today);
+
+		// 2. .getMonth()
+		    // Show today date
+		    // o/p give in index 
+		    // o - Jan  to  11 Dec
+		      var today = new Date();
+		      console.log(today.getMonth());
+
+		// 3. .getDay()
+		    // Show today day
+		    // o/p give in index 
+		    // 
+		      var today = new Date();
+		      console.log(today.getDay()); 
+
+		// 4. .getFullYear()
+			// give current year
+		      var today = new Date();
+		      console.log(today.getFullYear());
+
+		// 5. .getHours()
+		    // Give Current Hour
+		      var today = new Date();
+		      console.log(today.getHours());
+
+		// 6. .getMinutes()
+		    // Give current Minutes
+		      var today = new Date();
+		      console.log(today.getMinutes());
+
+		// 6. .getSeconds()
+		    // Give current getSeconds
+		      var today = new Date();
+		      console.log(today.getSeconds());
+
+		// 7. .toLocalString()
+		    // Time Give in local Format string 
+		    console.log("\n 7: Formatting a date (toLocalString())");
+		    var today = new Date();
+		    var local = today.toLocaleString();
+		    console.log(local);
+
+    		
+
+    	// 8. .getTime()
+    	   // give from 1/1/1970 time to today time in milli-seconds()
+    	   console.log("8. .getTime()");
+    	   var today = new Date();
+    	   let timestamp = today.getTime();
+    	   console.log("Timestamp (milliseconds):",timestamp);
+    	   
+
+    	// 9. setTime()
+    	   //  set date
+    	    console.log("8. setTime()");
+    		let newDate = new Date();
+    		newDate.setTime(timestamp);
+    		console.log("Date after setting time:", newDate);
+
+    	// 10.  valueOf()
+    		//	value of Date 
+    		let valueOfDate = newDate.valueOf();
+    		console.log("Value of the date:", valueOfDate);
+
+    	/* 11. setDate()
+    	 setMonth()
+    	 setDate()
+    	 setMonth()
+    	 SetMinute()
+    	 setHour()
+    	 setSecond()
+    	 */
+    	 	// Set Particular Date()
+    	 	console.log("Set Date")
+    	 	let modifiedDate = new Date();
+    	 	console.log(modifiedDate);
+
+    	 	modifiedDate.setDate(15);
+    	 	console.log(modifiedDate);
+
+    	 	modifiedDate.setMonth(6);
+    	 	console.log(modifiedDate);
+
+    	 	modifiedDate.setFullYear(2022);
+    	 	console.log(modifiedDate);
+
+    	 	modifiedDate.setHours(12);
+    	 	console.log(modifiedDate);
+
+    	 	modifiedDate.setMinutes(30);
+    	 	console.log(modifiedDate);
+			
+    	 	modifiedDate.setSeconds(45);
+    	 	console.log(modifiedDate);
+
+
+        // 12: .toISOString()
+           //To give ISO Formate String
+
+		    console.log("\n12. toISOString()");
+		    var currentDate = new Date();
+		    console.log("Current Date:", currentDate);
+		    var isoString = currentDate.toISOString();
+		    console.log("ISO Date String:", isoString);
+
+    	// 13: .toUTCString()
+           //To convert Universal Time Zone
+           console.log("\n13. toUTCString()");
+		    var currentDate = new Date();
+		    console.log("Current Date:", currentDate);
+		    var isoString = currentDate.toUTCString();
+		    console.log("UTC Date String:", isoString);
+
+
+	</script>
+
+
+<script>
+	
+			//
+		var date = new Date();
+         console.log(date.getDate());			// 
+         console.log(date.getDay());			// 
+         console.log(date.getMonth());			// 
+         console.log(date.getFullYear());		// 
+         console.log(date.getSeconds());		// 
+         console.log(date.getMilliseconds());	// 
+         console.log(date.getMinutes());		// 
+         console.log(date.getHours());			// 
+
+        console.warn("");
+
+        var date1 = new Date();
+         date1.setDate(11);
+          console.log(date1);		// Sat Jan 11 2025 17:59:50
+         date1.setMonth(11)
+          console.log(date1);		// Thu Dec 11 2025 17:59:50
+         date1.setFullYear(1111)
+          console.log(date1);		// Mon Dec 11 1111 17:59:50
+         date1.setHours(11)
+          console.log(date1);		// Mon Dec 11 1111 11:59:50
+         date1.setMinutes(11)
+          console.log(date1);		// Mon Dec 11 1111 11:11:50
+		 date1.setSeconds(11)
+          console.log(date1);		// Mon Dec 11 1111 11:11:11
+         date1.setMilliseconds(11)
+          console.log(date1);		// Mon Dec 11 1111 11:11:11
+          
+
+        console.log("");
+		 var d = date.toLocaleString()
+		 console.log(d);						// 1/7/2025, 5:50:40 PM
+         var d1 = date.toLocaleDateString()
+         console.log(d1);						// 1/7/2025
+         var d2 = date.toLocaleTimeString()
+         console.log(d2);						// 5:50:40 PM
+         var d3 = date.toDateString()
+         console.log(d3);						// Tue Jan 07 2025
+         var d4 = date.toISOString()
+         console.log(d4);						// 2025-01-07T12:20:40.122Z
+         var d5 = date.toTimeString()
+         console.log(d5);						// 17:50:40 GMT+0530 (India Standard Time)
+         var d6 = date.toUTCString()
+         console.log(d6);						// Tue, 07 Jan 2025 12:20:40 GMT
+         var d7 = date.getTimezoneOffset()
+		 console.log(d7);						// -330
+		 var d8 = date.toISOString()
+		 console.log(d8);						// 2025-01-07T12:25:25.155Z
+
+</script>
+
+</body>
+</html>

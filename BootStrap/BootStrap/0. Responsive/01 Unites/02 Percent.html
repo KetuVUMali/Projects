@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>%</title>
+    <style>
+        html,body{
+            height: 100%;
+            width: 100%;
+        }
+
+
+        #box1 {
+            height: 300px;
+            width: 300px;
+            background-color: crimson;
+        }
+
+        #inner1 {
+            height: 50%;
+            /* 300px - 50% =>  150px   */
+            width: 50%;
+            /* 300px - 50% =>  150px   */
+            background-color: royalblue;
+        }
+
+        
+        
+        /* Compair box1 & box2 */
+        /* parent take as window */
+        .box2 {
+            height: 30%;
+            width: 30%;
+            background-color: rgb(20, 220, 63);
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <h4> % means parent X (Guna/multiply)</h4>
+    <h5>If parent height width change then child also change height & width. </h5>
+     <div id="box1">                     <!-- Parent Class -->
+       <div id="inner1"></div>          <!--  Child Class -->
+    </div>
+
+    
+
+    <h4> Take parent as Window(html/body) then it take parent measurment.</h4>
+
+    <div class="box2" > </div>
+
+
+
+</body>
+
+</html>

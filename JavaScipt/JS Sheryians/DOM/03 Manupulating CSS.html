@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom CSS Manupulation</title>
+</head>
+<style>
+    .Demo1
+    {
+        color: burlywood;
+        font-size: x-large;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+</style>
+<body>
+    <div>
+        <strong>In DOM Two Way Manupulation Of CSS </strong>
+        <pre>
+            1. .style
+            2. .classList   (.apply  &  .remove)
+        </pre>
+    </div>
+
+    <h1>1. Hi </h1>
+
+    <h2>2. Hii </h2>
+
+    <h3 class="Demo1">3. Hiii </h3>
+</body>
+<script>
+
+        // 1.  .style                           // Apply Style
+            var h1 = document.querySelector("h1");
+            h1.style.color='red';
+            h1.style.fontFamily='gilary';
+            h1.style.fontSize='12px';
+
+        
+        // 2.  classList      .add()                      // Apply Class
+            // create css class Ex. "Demo1"
+            var h2 = document.querySelector("h2");
+            h2.classList.add('Demo1');
+
+        // 3.  classList      .remove()                   // Remove Class
+            // create css class Ex. "Demo1"
+            var h3 = document.querySelector("h3");
+            h3.classList.remove('Demo1');
+
+</script>
+</html>

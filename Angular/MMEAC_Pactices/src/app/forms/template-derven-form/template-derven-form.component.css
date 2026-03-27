@@ -1,0 +1,5 @@
+.error {
+  color: red; /* Set text color to red */
+  font-size: 14px; /* Set font size */
+  margin-top: 5px; /* Add space above the error message */
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> This Keyword </title>
+</head>
+<body>
+	<h1>This Keyword </h1>
+
+	<pre>
+		- this keyword in javascript is used to refer the object it belongs to. (jya object made banla aahe tya object la refer karto)
+
+		- In a method,this is refers to the owner.
+
+		- this is refers to the global object.
+
+		- In any object we can define some methods or propertys or key:value are access in that function.
+
+		- In this example, this refers to the person object.
+		- Because fullName is a method of the person object.
+		- we can access person object under fname & lname are access in that function, as per follwing ex. 
+	</pre>
+
+
+	
+
+	<p id="demo"></p>
+
+	<script type="text/javascript">
+		// Create an object: Preson
+		const person = 
+		{
+			  firstName: "Ketan",
+			  lastName: "Mali",
+			  id: 5566,
+			  fullName : function()    // access this value in following Fun. 
+				  {
+				    return this.firstName + " " + this.lastName;
+			       }
+		};
+
+		// Display data from the object:
+		document.getElementById("demo").innerHTML = person.fullName();
+
+	</script>
+
+
+	<script type="text/javascript">
+		var x = this;
+		alert(this);
+	</script>
+
+ 	
+ 	<button onclick="this.style.display = 'none'"> Click To Hide Mi</button>
+
+ 	<button onclick="this.style.background = 'red'"> Click To BG Change</button>
+
+ 	<br>
+ 	<br>
+ 	
+
+	
+ 	<button onclick="remove(this)"> Click To Hide Mi2</button> 
+
+ 	<script type="text/javascript">
+ 		function remove(ele)
+ 			{
+ 				ele.style.display = "none"; 
+ 			}
+ 	</script>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Final Clean Stacked Cards</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<style>
+
+body{
+  margin:0;
+  overflow-x:hidden;
+  font-family:Arial, sans-serif;
+}
+
+/* Top & Bottom */
+.normal-section{
+  height:800px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:40px;
+  font-weight:bold;
+  background:#111;
+  color:white;
+}
+
+/* Middle */
+.middle-wrapper{
+  position:relative;
+  background:#f5f5f5;
+}
+
+/* Left */
+.section{
+  height:100vh;
+  padding:120px 80px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  border-bottom:1px solid #ddd;
+}
+
+/* Right */
+.right-pin{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* Card container */
+.image-wrapper{
+  width:300px;
+  height:380px;
+  position:relative;
+  overflow:hidden;
+}
+
+/* Cards */
+.image-wrapper img{
+  position:absolute;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:20px;
+  box-shadow:0 25px 60px rgba(0,0,0,0.25);
+  top:0;
+  left:0;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="normal-section">
+  Top Section
+</div>
+
+<div class="middle-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+
+      <div class="col-md-6">
+        <div class="section"><h2>Section 1</h2></div>
+        <div class="section"><h2>Section 2</h2></div>
+        <div class="section"><h2>Section 3</h2></div>
+        <div class="section"><h2>Section 4</h2></div>
+        <div class="section"><h2>Section 5</h2></div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="right-pin">
+          <div class="image-wrapper">
+            <img src="https://picsum.photos/id/1015/600/800">
+            <img src="https://picsum.photos/id/1016/600/800">
+            <img src="https://picsum.photos/id/1018/600/800">
+            <img src="https://picsum.photos/id/1020/600/800">
+            <img src="https://picsum.photos/id/1024/600/800">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="normal-section">
+  Bottom Section
+</div>
+
+<script>
+
+gsap.registerPlugin(ScrollTrigger);
+
+const sections = document.querySelectorAll(".section");
+const cards = document.querySelectorAll(".image-wrapper img");
+
+/* INITIAL STATE */
+cards.forEach((card, index) => {
+  if(index === 0){
+    gsap.set(card, { y:0, scale:1, opacity:1, zIndex:10 });
+  } else {
+    gsap.set(card, { y:100, scale:1, opacity:0, zIndex:1 });
+  }
+});
+
+/* PIN */
+ScrollTrigger.create({
+  trigger: ".middle-wrapper",
+  start: "top top",
+  end: "bottom bottom",
+  pin: ".right-pin"
+});
+
+/* STACK LOGIC */
+sections.forEach((section, index) => {
+
+  ScrollTrigger.create({
+    trigger: section,
+    start: "top center",
+    onEnter: () => activateCard(index),
+    onEnterBack: () => activateCard(index)
+  });
+
+});
+
+function activateCard(activeIndex){
+
+  cards.forEach((card, index) => {
+
+    if(index === activeIndex){
+
+      gsap.to(card, {
+        y:0,
+        scale:1,
+        opacity:1,
+        zIndex:20,
+        duration:0.5
+      });
+
+    } else if(index < activeIndex){
+
+      gsap.to(card, {
+        y:0,
+        scale:0.85,
+        opacity:0.4,
+        zIndex:5,
+        duration:0.5
+      });
+
+    } else {
+
+      gsap.to(card, {
+        y:100,
+        opacity:0,
+        scale:1,
+        zIndex:1,
+        duration:0.5
+      });
+
+    }
+
+  });
+
+}
+
+</script>
+
+</body>
+</html>

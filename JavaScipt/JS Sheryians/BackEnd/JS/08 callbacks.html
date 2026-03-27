@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h5> callbacks, promises and async/await  all use to run Synchronous code </h5>
+</body>
+
+    <script>
+
+            //
+                // function getSong(){
+                //     setTimeout(function(){
+                //         console.log("Songs aa Gaye");
+                //     },3000)
+                // }
+                // function getMoreSongs(){
+                //     setTimeout(function(){
+                //         console.log("More Songs aa Gaye");
+                //     },1500)
+                // }
+                // getSong();
+                // getMoreSongs();
+
+                // in this senario load proper o/p then we use "callback "
+                // 1 by 1 complete output show
+
+
+                // console.log(" ");
+                // console.log(" ");
+                // console.log(" ");
+
+                // function connectToServer(){
+                //     console.log("Connecting to server...");
+                //     setTimeout(function(){
+                //         console.log("Server Connected");
+                //     },2000)
+                // }
+                // connectToServer();
+
+                //function connectToServer(fun){
+                //     console.log("Connecting to server...");
+                //     setTimeout(function(){
+                //          fun();
+                //         
+                //     },2000)
+                // }
+                //  connectToServer(function(){
+                //     console.log("fetching courses...");
+                //  });
+
+
+                //function connectToServer(fun){
+                //     console.log("Connecting to server...");
+                //     setTimeout(function(){
+                //         console.log("Connected To Server.");
+                //     },2000)
+                // }
+                //  connectToServer(function(){
+                //     
+                //  });
+
+
+
+
+                
+                // callback
+
+                function connectToServer(cbfn){
+                    console.log("Connecting to server...");
+                           setTimeout(function(){
+                           console.log("Connected To Server.");
+                           cbfn();
+                       },2000)
+                }
+
+                function fetchCourse(cbnf){
+                    console.log("Featching Courses...");
+                    setTimeout(()=>{
+                        cbnf(["Course 1", "Course 2", "Course 3"]);
+                    },2000)
+                }
+                
+                connectToServer(function(){
+                    fetchCourse(function(data){
+                        console.log(data);
+                    });
+                  });
+                
+
+    </script>
+</html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AOS Mirror – Deep Understanding</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <style>
+    body {
+      background: #f1f3f6;
+    }
+
+    section {
+      padding: 120px 0;
+      border-bottom: 1px solid #ccc;
+    }
+
+    h2 {
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .note {
+      max-width: 900px;
+      margin: 0 auto 40px;
+      text-align: center;
+      color: #444;
+      font-size: 15px;
+    }
+
+    .box {
+      padding: 40px;
+      border-radius: 8px;
+      color: white;
+      text-align: center;
+      font-size: 18px;
+      margin-bottom: 30px;
+      background: #0d6efd;
+    }
+
+    .green { background: #198754; }
+    .dark { background: #212529; }
+    .orange { background: #fd7e14; }
+    .purple { background: #6f42c1; }
+  </style>
+</head>
+
+<body>
+    <pre>
+data-aos-mirror="true"
+→ Animate on scroll DOWN + UP
+
+data-aos-mirror="false"
+→ Animate only on scroll DOWN
+
+    </pre>
+
+<!-- =====================================================
+     BASIC CONCEPT
+===================================================== -->
+<section>
+  <div class="container">
+    <h2>What is data-aos-mirror?</h2>
+    <p class="note">
+      <b>data-aos-mirror</b> controls animation behavior when you
+      <b>SCROLL BACK UP</b>.
+      <br><br>
+      <b>false</b> → animation happens ONLY when scrolling DOWN  
+      <b>true</b> → animation happens BOTH DOWN & UP
+    </p>
+
+    <div class="box dark">
+      Scroll down first, then scroll UP to see mirror behavior
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     SCENARIO 1: DEFAULT (mirror = false)
+===================================================== -->
+<section>
+  <div class="container">
+    <h2>Default Behavior (mirror = false)</h2>
+    <p class="note">
+      Animation plays when element enters viewport.
+      <br>
+      When scrolling UP → animation does NOT replay.
+      <br><br>
+      ✔ Most common & safe usage.
+    </p>
+
+    <div
+      class="box"
+      data-aos="fade-up"
+      data-aos-mirror="false"
+    >
+      Only animates on scroll DOWN
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     SCENARIO 2: MIRROR = TRUE (BOTH DIRECTIONS)
+===================================================== -->
+<section>
+  <div class="container">
+    <h2>Mirror Enabled (mirror = true)</h2>
+    <p class="note">
+      Animation runs when scrolling DOWN
+      <br>
+      AND again when scrolling UP.
+      <br><br>
+      ⚠ Use carefully – can feel repetitive.
+    </p>
+
+    <div
+      class="box green"
+      data-aos="fade-left"
+      data-aos-mirror="true"
+    >
+      Animates on DOWN & UP scroll
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     SCENARIO 3: CONTENT SECTION (BEST PRACTICE)
+===================================================== -->
+<section>
+  <div class="container">
+    <h2>Reading Content (mirror = false)</h2>
+    <p class="note">
+      Text content should NOT animate again
+      when user scrolls back.
+      <br><br>
+      ✔ Professional UX behavior.
+    </p>
+
+    <div
+      class="box dark"
+      data-aos="fade-up"
+      data-aos-mirror="false"
+    >
+      Reading content – no reverse animation
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     SCENARIO 4: TIMELINE / STORY SECTION
+===================================================== -->
+<section>
+  <div class="container">
+    <h2>Timeline / Story Section (mirror = true)</h2>
+    <p class="note">
+      Timeline sections may animate both ways
+      to reinforce storytelling.
+      <br><br>
+      ✔ Acceptable use-case.
+    </p>
+
+    <div
+      class="box purple"
+      data-aos="fade-right"
+      data-aos-mirror="true"
+    >
+      Timeline Item 1
+    </div>
+
+    <div
+      class="box purple"
+      data-aos="fade-left"
+      data-aos-mirror="true"
+    >
+      Timeline Item 2
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     SCENARIO 5: CARD GRID (PARTIAL MIRROR)
+===================================================== -->
+<section>
+  <div class="container">
+    <h2>Service Cards (mirror = false)</h2>
+    <p class="note">
+      Cards should animate once to introduce content.
+      <br>
+      Repeating animation distracts users.
+    </p>
+
+    <div class="row">
+      <div class="col-md-4">
+        <div
+          class="box"
+          data-aos="zoom-in"
+          data-aos-mirror="false"
+        >
+          Service A
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div
+          class="box"
+          data-aos="zoom-in"
+          data-aos-delay="200"
+          data-aos-mirror="false"
+        >
+          Service B
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div
+          class="box"
+          data-aos="zoom-in"
+          data-aos-delay="400"
+          data-aos-mirror="false"
+        >
+          Service C
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     SCENARIO 6: DASHBOARD / ADMIN PANEL
+===================================================== -->
+<section>
+  <div class="container">
+    <h2>Dashboard Widgets (mirror = true)</h2>
+    <p class="note">
+      In admin panels, repeated animation
+      can give scroll feedback.
+    </p>
+
+    <div
+      class="box orange"
+      data-aos="fade-up"
+      data-aos-mirror="true"
+    >
+      Dashboard Widget
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     SCENARIO 7: BAD PRACTICE (LEARNING ONLY)
+===================================================== -->
+<section>
+  <div class="container">
+    <h2>Bad UX Example</h2>
+    <p class="note">
+      Repeated animation for reading text
+      is annoying and unprofessional.
+    </p>
+
+    <div
+      class="box"
+      data-aos="fade-up"
+      data-aos-mirror="true"
+    >
+      ❌ Avoid using mirror on content text
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     AOS INITIALIZATION
+===================================================== -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+  /*
+    Global configuration
+    Individual elements override this
+  */
+  AOS.init({
+    duration: 1000,
+    easing: 'ease-in-out',
+    offset: 120,
+    once: false,
+    mirror: false // default behavior
+  });
+</script>
+
+</body>
+</html>

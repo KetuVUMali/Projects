@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handling
+
+    </title>
+</head>
+<body>
+    <pre>
+        Mouse Events
+            click: Fired when the mouse button is clicked.
+            dblclick: Fired when the mouse button is double-clicked.
+            mousedown: Fired when the mouse button is pressed down.
+            mouseup: Fired when the mouse button is released.
+            mouseover: Fired when the mouse pointer enters an element.
+            mouseout: Fired when the mouse pointer leaves an element.
+            mousemove: Fired when the mouse pointer is moved within an element.
+            contextmenu: Fired when the right mouse button is clicked.
+            
+        Keyboard Events
+            keydown: Fired when a key is pressed down.
+            keyup: Fired when a key is released.
+            keypress: Fired when a key is pressed (deprecated in some contexts).
+            
+        Form Events
+            submit: Fired when a form is submitted.
+            change: Fired when the value of an input, select, or textarea changes.
+            input: Fired when the value of an input field changes.
+            focus: Fired when an element gains focus.
+            blur: Fired when an element loses focus.
+            select: Fired when text is selected in an input or textarea.
+           
+        Window Events
+            load: Fired when the whole page is loaded.
+            resize: Fired when the window is resized.
+            scroll: Fired when the document is scrolled.
+            unload: Fired when the document is unloaded.
+
+        Touch Events (for mobile devices)
+            touchstart: Fired when a touch point is placed on the touch surface.
+            touchmove: Fired when a touch point is moved along the touch surface.
+            touchend: Fired when a touch point is removed from the touch surface.
+            touchcancel: Fired when a touch point has been interrupted.
+            
+        Pointer Events
+            pointerdown: Fired when a pointer (mouse, touch, stylus) is pressed down.
+            pointerup: Fired when a pointer is released.
+            pointermove: Fired when a pointer is moved.
+            pointerover: Fired when a pointer enters an element.
+            pointerout: Fired when a pointer leaves an element.
+            
+        Clipboard Events
+            copy: Fired when content is copied to the clipboard.
+            cut: Fired when content is cut from an element.
+            paste: Fired when content is pasted into an element.
+            
+        Media Events
+            play: Fired when media playback starts.
+            pause: Fired when media playback is paused.
+            ended: Fired when media playback has finished.
+            volumechange: Fired when the volume of media changes.
+            
+        Animation and Transition Events
+            animationstart: Fired when a CSS animation starts.
+            animationend: Fired when a CSS animation ends.
+            animationiteration: Fired when a CSS animation iterates.
+            transitionend: Fired when a CSS transition ends.
+    </pre>
+
+
+    <div>
+        
+        <button id="btn1"> Click Event</button>
+        <button id="btn2"> Doubble Click Event</button>
+        <button id="btn3"> Click Event</button>
+    </div>
+
+    
+</body>
+
+<script>
+            
+        // 1 Click Event
+            var btn1 = document.querySelector('#btn1');
+            btn1.addEventListener('click',function(){
+                                                        alert("Click Event Perform");
+                                                    });
+
+        
+        // 2 dbclick Event
+             var btn2 = document.querySelector('#btn2');
+            btn2.addEventListener('dblclick',function(){
+                                                        alert("Click Event Perform");
+                                                    });
+
+                                                    
+
+
+        // Mouse Events for btn3
+            var btn3 = document.querySelector('#btn3');
+            btn3.addEventListener('mouseover', function() {
+                                                                btn3.style.backgroundColor = 'red';
+                                                            });
+            btn3.addEventListener('mouseleave', function() {
+                                                                btn3.style.backgroundColor = ''; // Reset to original color
+                                                            });
+
+
+</script>
+</html>

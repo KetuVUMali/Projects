@@ -1,0 +1,28 @@
+<p> Event </p>
+
+<p style="color: red;"> open Console </p>
+
+<button (click)="handleEvent()"> Click Fun call </button>
+
+<br><br>
+<!-- get click value -->
+<button class="btn" name="login" (click)="clickEvent($event)"> Click Event </button>
+
+<br><br>
+
+<div  (mouseenter)="enterMouse($event)"
+     style="background-color: green; width: 100px; height: 100px;">
+
+</div>
+
+<div  (mouseleave)="leaveMouse($event)"
+     style="background-color: rgb(250, 13, 13); width: 100px; height: 100px;">
+
+</div>
+<br><br>
+
+    <input type="text" (input)="inputEvent($event)">
+
+<br><br>
+
+<input type="text" (focus)="focusEvent($event)">

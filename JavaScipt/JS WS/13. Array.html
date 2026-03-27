@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Array </title>
+</head>
+<body>
+	<h3> Array </h3>
+	<pre>
+		-Array is group of continuous memory locations.(memory address)
+		-It is used to store multiple values into Single variable.
+		-Index start from Zero
+		- Array in JS are store multi data Types 
+		- data store in array are key : value pair (key : index no, & value = ele in array)
+		- Array size run time set
+
+	</pre>
+	<pre>
+		Decleare Array
+
+		1. 
+		   Syn.   var_name array_name = [] ;
+		   Ex.    var char = [];
+
+		   Initializing while Declearing 
+		   var char = ["A", "B", "D", 1];
+
+		   Initializing after declearing
+		   Var arr= [];
+
+		   arr[0] = "A";
+		   arr[1] = "B";
+		   arr[3] = 1;
+
+		2. 
+		   Syn.  var_name array_name = new Array();
+		   Ex.   var demo = new Array (10, 20, 30, "A", "B");
+
+
+	</pre>
+
+
+</body>
+		<script type="text/javascript">
+
+
+		console.log("1. Array")
+			var cars = [];		// Array declearation
+			cars = ["c1", "c2", "c3", 1, 2, 3];
+			console.log(cars[0]);					// c1
+			console.log(cars[1]);					// c2
+			console.log(cars[4]);					// 2
+			console.log(cars[1],cars[4]);			// c2  2
+ 
+		console.log("2. Array")
+			var car = new Array();				// var a = new Array([1,2,3,4,5]);
+			car = ["c1", "c2", "c3", 1, 2, 3];
+			console.log(car[1]);					// c2
+			console.log(car[0]);					// c1
+			console.log(car[4]);					// 2
+
+		console.log("3. Array Add data OR Update Array");
+			console.log(car);					// 'c1', 'c2', 'c3', 1, 2, 3
+			car[6] = "New Ele1"
+			console.log(car); 					// 'c1', 'c2', 'c3', 1, 2, 3, 'New Ele1'
+
+		console.log("4. Array length");
+			let arrr = ["A", "B", "C", "D", "E", "F", "H"];
+			console.log(arrr);					//"A", "B", "C", "D", "E", "F", "H"
+			console.log(arrr.length);			// 7
+			console.log(arrr.length-1);			// 6
+			var x = arrr.length-1;
+			console.log(x);						// 6
+
+
+
+
+
+			////////////////////////////////
+			// Array as a Object 
+			// Array of a Object
+			console.log("4. Array as a object");
+			let arr = [
+							{
+								name : "A",
+								no : 1,
+								demo : function(){console.log("Obj 1");}
+							},
+							{
+								name : "B",
+								no : 2
+							},
+							{
+								name : "C",
+								no : 3
+							},
+							{
+								name : "D",
+								no : 4
+							}
+						];
+
+			console.log(arr[0]);				// { name : "A",no : 1,demo : function()}
+			console.log(arr[1]);				// name : "B",no : 2
+			console.log(arr[5]);				// undefine 
+			console.log(arr.length);			// 4
+			console.log(arr[1].name);			// B
+			console.log(arr[3].no);				// 4
+			console.log(arr[0].demo());			// obj1
+			arr[0].demo();						// obj1
+
+
+
+
+
+		</script>
+</html>

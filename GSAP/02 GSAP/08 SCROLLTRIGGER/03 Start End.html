@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section1 { background: lightblue; }
+.section2 { background: lightcoral; }
+
+.box {
+  width: 100px;
+  height: 100px;
+  background: black;
+}
+</style>
+</head>
+<body>
+
+<div class="section section1">Scroll More ⬇️</div>
+
+<div class="section section2">
+  <div class="box"></div>
+</div>
+
+<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.from(".box", {
+  x: -200,
+  opacity: 0,
+  duration: 1,
+  scrollTrigger: {
+    trigger: ".box",
+    start: "top 80%",               // when the top of the box hits 80% of the viewport height
+    end: "top 30%"                  // when the top of the box hits 30% of the viewport height
+  }
+});
+</script>
+<div>
+    <pre>
+    👉 Explanation: Animate a box when it enters the screen
+
+        🧠 WHAT IS HAPPENING?
+
+            Page is scrollable
+            Box is hidden initially
+            When you scroll down and box enters viewport → animation starts
+
+    </pre>
+    <pre>
+        ScrollTrigger Properties Used:
+            trigger → element that triggers the animation
+            start → when the animation should start (box top hits 80% of viewport)
+            end → when the animation should end (box top hits 30% of viewport)
+    </pre>
+    <pre>
+        👉 Animation starts when box reaches 80% viewport height
+        👉 Animation ends when box reaches 30% viewport height
+
+    </pre>
+    <pre>
+        Stop : Animation starts when the box's top edge reaches % of the viewport height.
+        End : The box animates into view as you scroll down past the start point and completes the animation by the end point.
+    </pre>
+</div>
+
+</body>
+</html>

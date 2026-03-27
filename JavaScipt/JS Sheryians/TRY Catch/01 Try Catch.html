@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try Catch</title>
+</head>
+<body>
+    Used to handdle Error
+</body>
+<script>
+
+        // 1 
+            function demo(a,b)
+            {
+                try{}
+                catch(error){}
+            }
+            div(10,0)
+
+
+        // 2 
+            function div(a,b)
+             {
+                try{
+                        if(b==0)
+                        {
+                            throw Error("Zero cant use for Division");
+                        }
+                        console.log(a/b);
+                   }
+
+                 catch(err)
+                  {
+                    console.log(err);
+                  }
+             }
+
+             div(12,13);
+             div(12,0);
+             div(0,12);
+</script>
+</html>

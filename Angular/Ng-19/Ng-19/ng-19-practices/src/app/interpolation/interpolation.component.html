@@ -1,0 +1,45 @@
+<h1>-------------------- Interpolation Component ------------------------------------------------------------</h1>
+<!-- Interpolation -->
+<p>My_Name : {{myname}}</p>                             <!-- My_Name : Ketan Mali -->
+<p>{{10 + 20}}</p>                                      <!-- 30 -->
+<p>{{'ketan'.toUpperCase()}}</p>                        <!-- KETAN (string)-->
+<p>{{myname.toUpperCase()}}</p>                         <!-- KETAN MALI  (var) -->
+
+
+<div>
+  <h2>Opc</h2>
+  <h2>x=10, y=20</h2>                                   <!-- -->
+  <h4>Addition: {{a}}</h4>                              <!-- Addition: 30                   -->
+  <h4>Subtraction: {{b}}</h4>                           <!-- Subtraction: 10                -->
+  <h4>Multiplication: {{c}}</h4>                        <!-- Multiplication: 200            -->
+  <h4>Division: {{d}}</h4>                              <!-- Division: 0.5                  -->
+  <h4>Modulus: {{e}}</h4>                               <!-- Modulus:10                     -->
+  <h4>Ternary: x <= y === {{f}}</h4>                    <!-- Ternary: x <= y === 10 Is Greater-->
+</div>
+
+<div>
+  <h2>Function</h2>
+   <h4>{{name()}}</h4>                                          <!-- Ketu Demo     -->
+  <h4>ADD of 10+20 = {{add(20,10)}}</h4>                        <!-- 30            -->
+  <h4>{{10 > 5 ? "10 Is Greater" : "5 Is Greater"}}</h4>        <!-- 10 Is Greater -->
+  <h4>{{ isLoggedIn ? 'Welcome back!' : 'Please log in' }}</h4> <!-- Welcome back! -->
+</div>
+
+<h3 class="{{hii}}">Apply Class through Interpolation</h3>      <!--   color class apply -->
+<h3 class={{hii}}>Apply Class through Interpolation</h3>        <!--   color class apply -->
+
+
+<p>My name is {{ userName }} and I am {{ age }} years old.</p>               <!-- My name is Ketan and I am 25 years old. -->
+
+<p>{{ getGreeting() }}</p>                                                   <!-- Hello,Ketan! -->
+
+<p>In 5 years, I will be {{ age + 5 }} years old.</p>                         <!-- In 5 years, I will be 30 years old. -->
+
+
+
+<input type="text" name="uname" value="{{uname}}" >
+<br>
+<input type="text" name="uname" placeholder="{{uname}}" >
+<br>
+<h1>--------------------------------------------------------------------------------</h1>
+<br>

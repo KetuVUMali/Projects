@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Laptop Screen */
+        .container{
+            background-color: bisque;
+            border: 2px solid black;
+            display: flex;
+            flex-direction: row;
+            width: 98%;
+            padding: 5px;
+        }
+        .container .box-left{
+            background-color: aquamarine;
+            border: 1px solid blue;
+            width: 50%;
+            margin: 3px;
+            padding: 2px;
+            display: flex;
+            flex-direction: column;
+        }
+        .container .box-left p{
+            border: 1px solid red;
+        }
+        .container .box-right{
+            background-color: yellow;
+            border: 1px soild brown;
+            width: 50%;
+            margin: 3px;
+            padding: 2px;
+        }        
+        .container .box-right img{
+            height: 100%;
+            width: 100%;
+        }
+
+        /* Mobile Screen */
+        @media (max-width:600px) {
+            .container{
+                flex-direction: column;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+        <div class="container">
+
+                <div class="box-left">
+                    <p> Text 1 </p>
+                    <p> Text 2 </p>
+                </div>
+
+                <div class="box-right">
+                    <img src="../01 Template/head.jpg" />
+                </div>
+
+        </div>
+</body>
+</html>

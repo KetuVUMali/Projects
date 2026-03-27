@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .container {
+            margin: 20px;
+        }
+
+        .box {
+            width: 80px;
+            height: 80px;
+            background: orange;
+            margin-bottom: 10px;
+        }
+
+        .container:hover .linear {
+            transform: translateX(200px);
+            transition: transform 1s linear;
+        }
+
+        .container:hover .ease-in {
+            transform: translateX(200px);
+            transition: transform 1s ease-in;
+        }
+
+        .container:hover .ease-out {
+            transform: translateX(200px);
+            transition: transform 1s ease-out;
+        }
+
+        .container:hover .ease-in-out {
+            transform: translateX(200px);
+            transition: transform 1s ease-in-out;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="box linear">Linear</div>
+        <div class="box ease-in">Ease-in</div>
+        <div class="box ease-out">Ease-out</div>
+        <div class="box ease-in-out">Ease-in-out</div>
+    </div>
+
+    <div class="container">
+        Timing Functions (Easing)
+                Easing controls speed feeling of animation.
+                            Easing	     :   Meaning
+                            -------------------------------------------
+                            linear	     :   Same speed (Normal Speed)
+                            ease-in	     :   Slow start - End fast
+                            ease-out	 :   Start Fast - Slow end
+                            ease-in-out	 :   Slow start - Fast middle - Slow end
+                
+            
+    </div>
+
+</body>
+
+</html>

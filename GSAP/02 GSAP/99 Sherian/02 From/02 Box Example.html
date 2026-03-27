@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box2{
+            position: absolute;
+            top:40px;
+            right: 40px;
+            width: 100px;
+            height: 100px;
+            background-color: rgb(0, 4, 255);
+        }
+    </style>
+</head>
+<body>
+
+    <div >
+        <div class="box2"></div>
+    </div>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        gsap.to(".box2", {
+            x: -1200,
+            duration: 3,
+            delay: 1,
+            rotate:360,
+            backgroundColor:"red",
+            borderRadius:"50%"
+        });
+    </script>
+    
+</body>
+</html>

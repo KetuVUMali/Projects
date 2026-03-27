@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Primative and Refernces
+    <br>
+    [] {} ()  => This three Refernces 
+    and Other all Primative  1, 1.2, "a", true, false, "gooo"
+
+
+
+
+</body>
+    <script>
+        // 1. copy var
+
+                // i. Primative
+                    var a = 20;
+                    var b = a;
+                    console.log(a)          // 20
+                    console.log(b)          // 20
+
+                // ii. Refernces
+                    var a = [10,20,30]
+                    var b = a;              // two var store single value
+                    console.log(a);         //  [10,20,30]
+                    console.log(b);         //  [10,20,30]
+
+                    b.pop();                // Effect on both in Refences DT
+                    console.log(a);         // [10,20]
+                    console.log(b);         // [10,20]
+
+                    // to avoid this swichvation use "Spared Opc"
+
+                    var c = [10,20,30]
+                    var d = [...b];         //[...]  spared opc
+                    console.log(c);         // [10,20,30]
+                    console.log(d);         // [10,20,30]
+
+                    d.pop();                // Effect on only d var value
+                    console.log(c);         // [10,20,30]
+                    console.log(d);         // [10,20]
+
+                // 
+                    var a = {name:'a', no:1};
+                    var b = {...a};
+                    console.log(a);         // {name: 'a', no: 1}
+                    console.log(b);         // {name: 'a', no: 1}
+
+                    b.name = "b";
+                    console.log(a);         // {name: 'a', no: 1}
+                    console.log(b);         // {name: 'b', no: 1}
+
+
+    </script>
+</html>

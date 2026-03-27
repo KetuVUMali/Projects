@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: green;
+            margin: 20px;
+            display: inline-block;
+            transition: transform 0.5s;
+        }
+
+        /* Rotate 45 degree */
+        .rotate-45:hover {
+            transform: rotate(45deg);
+        }
+
+        /* Rotate full */
+        .rotate-full:hover {
+            transform: rotate(360deg);
+        }
+
+        /* Rotate + scale */
+        .rotate-scale:hover {
+            transform: rotate(30deg) scale(1.2);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box rotate-45">45°</div>
+    <div class="box rotate-full">360°</div>
+    <div class="box rotate-scale">Mix</div>
+
+    <div>
+        <pre>
+        3️⃣ rotate transforms : Rotate elements.
+
+                rotate() – Rotate elements around a fixed point (default is center).
+
+                rotate(angle) → angle in degrees (deg) or radians (rad).
+
+                Positive values → clockwise rotation
+                Negative values → counter-clockwise rotation
+
+                You can combine rotate with other transforms like scale() or translate().
+
+        Example usages:
+                rotate(45deg) → Rotate 45 degrees clockwise
+                rotate(-30deg) → Rotate 30 degrees counter-clockwise
+                rotate(360deg) → Full rotation back to original position
+
+        </pre>
+    </div>
+
+</body>
+
+</html>

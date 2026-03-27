@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables</title>
+</head>
+<body>
+    <pre>
+        1. var 
+            var variable value always changable 
+
+        2. const 
+            var variable value not changable 
+
+        3. let 
+            value changable but only function base {}
+
+         
+    </pre>
+    <script>
+        //var 
+            var k=10;
+
+            const m=10;
+    </script>
+</body>
+</html>

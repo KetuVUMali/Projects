@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .section {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .section1 {
+            background: #222;
+            color: white;
+        }
+
+        .section2 {
+            background: #ddd;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background: green;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="section section1">Scroll Slowly ⬇️</div>
+
+    <div class="section section2">
+        <div class="box"></div>
+    </div>
+
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.to(".box", {
+            x: 300,
+            rotation: 360,
+            scrollTrigger: {
+                trigger: ".section2",
+                start: "top center",
+                end: "bottom center",
+                scrub: true
+            }
+        });
+    </script>
+    <div>
+        <pre>Animation moves WITH scrolling
+            👉 Explanation: Scrub links animation progress to scroll progress
+
+                🧠 WHAT IS HAPPENING?
+
+                    Page is scrollable
+                    Box is initially at starting position
+                    As you scroll down the section → box moves to the right and rotates
+                    As you scroll back up → box returns to starting position
+
+            </pre>
+        <pre>
+            🧠 What is happening :
+
+                Page has two full-screen sections
+                Box is in the sec   ond section
+                When you scroll through the second section → box moves and rotates
+                Animation progress is tied to scroll position (scrub: true)
+        </pre>
+        <pre>
+            🧠 What is SCRUB?
+                    scrub: true links animation to scroll position
+                    Scroll down → animation forward
+                    Scroll up → animation backward
+
+            📌 Used in:
+                Story websites
+                Scrolling galleries
+                Interactive info-graphics 
+                Product showcases
+        </pre>
+    </div>
+
+</body>
+
+</html>

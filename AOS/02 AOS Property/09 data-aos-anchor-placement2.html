@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AOS Anchor Placement – Master Level</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <style>
+    body {
+      background: #f8f9fa;
+    }
+
+    section {
+      padding: 130px 0;
+      border-bottom: 2px dashed #ccc;
+    }
+
+    h2 {
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .desc {
+      max-width: 900px;
+      margin: 0 auto 50px;
+      text-align: center;
+      color: #555;
+      font-size: 15px;
+    }
+
+    .card-box {
+      padding: 50px;
+      border-radius: 12px;
+      color: white;
+      text-align: center;
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .blue { background: #0d6efd; }
+    .green { background: #198754; }
+    .dark { background: #212529; }
+    .orange { background: #fd7e14; }
+    .purple { background: #6f42c1; }
+    .pink { background: #d63384; }
+    .cyan { background: #0dcaf0; color: #000; }
+  </style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     INTRO
+===================================================== -->
+<section>
+  <div class="container">
+    <h2>data-aos-anchor-placement</h2>
+    <p class="desc">
+      Controls <b>WHEN animation should START</b> during scroll.
+      <br>
+      Scroll slowly to observe each trigger point.
+    </p>
+
+    <div class="card-box dark">
+      Scroll DOWN carefully to understand trigger logic
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     TOP-BOTTOM (DEFAULT)
+===================================================== -->
+<section>
+  <div class="container">
+    <h2>top-bottom (Default)</h2>
+    <p class="desc">
+      Animation starts when
+      <br><b>TOP of element</b> touches <b>BOTTOM of viewport</b>.
+      <br>
+      ✔ Most commonly used in websites.
+    </p>
+
+    <div class="card-box blue"
+         data-aos="fade-up"
+         data-aos-anchor-placement="top-bottom">
+      top-bottom trigger
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     TOP-CENTER
+===================================================== -->
+<section>
+  <div class="container">
+    <h2>top-center</h2>
+    <p class="desc">
+      Animation starts when
+      <br><b>TOP of element</b> hits <b>CENTER of screen</b>.
+      <br>
+      ✔ Balanced & smooth entry.
+    </p>
+
+    <div class="card-box green"
+         data-aos="fade-up"
+         data-aos-anchor-placement="top-center">
+      top-center trigger
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     TOP-TOP
+===================================================== -->
+<section>
+  <div class="container">
+    <h2>top-top</h2>
+    <p class="desc">
+      Animation starts when
+      <br><b>TOP of element</b> touches <b>TOP of viewport</b>.
+      <br>
+      ✔ Late animation trigger.
+    </p>
+
+    <div class="card-box orange"
+         data-aos="fade-up"
+         data-aos-anchor-placement="top-top">
+      top-top trigger
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     CENTER-BOTTOM
+===================================================== -->
+<section>
+  <div class="container">
+    <h2>center-bottom</h2>
+    <p class="desc">
+      Animation starts when
+      <br><b>CENTER of element</b> hits <b>BOTTOM of screen</b>.
+      <br>
+      ✔ Early animation.
+    </p>
+
+    <div class="card-box purple"
+         data-aos="zoom-in"
+         data-aos-anchor-placement="center-bottom">
+      center-bottom trigger
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     CENTER-CENTER
+===================================================== -->
+<section>
+  <div class="container">
+    <h2>center-center (MOST USED)</h2>
+    <p class="desc">
+      Animation starts when
+      <br><b>CENTER of element</b> reaches <b>CENTER of screen</b>.
+      <br>
+      ✔ Perfect for feature highlights.
+    </p>
+
+    <div class="card-box pink"
+         data-aos="zoom-in"
+         data-aos-anchor-placement="center-center">
+      center-center trigger
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     CENTER-TOP
+===================================================== -->
+<section>
+  <div class="container">
+    <h2>center-top</h2>
+    <p class="desc">
+      Animation starts when
+      <br><b>CENTER of element</b> hits <b>TOP of viewport</b>.
+      <br>
+      ✔ Very late trigger.
+    </p>
+
+    <div class="card-box cyan"
+         data-aos="fade-left"
+         data-aos-anchor-placement="center-top">
+      center-top trigger
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     BOTTOM-BOTTOM
+===================================================== -->
+<section>
+  <div class="container">
+    <h2>bottom-bottom</h2>
+    <p class="desc">
+      Animation starts when
+      <br><b>BOTTOM of element</b> touches <b>BOTTOM of screen</b>.
+    </p>
+
+    <div class="card-box blue"
+         data-aos="fade-right"
+         data-aos-anchor-placement="bottom-bottom">
+      bottom-bottom trigger
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     BOTTOM-CENTER
+===================================================== -->
+<section>
+  <div class="container">
+    <h2>bottom-center</h2>
+    <p class="desc">
+      Animation starts when
+      <br><b>BOTTOM of element</b> reaches <b>CENTER of screen</b>.
+    </p>
+
+    <div class="card-box green"
+         data-aos="fade-right"
+         data-aos-anchor-placement="bottom-center">
+      bottom-center trigger
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     BOTTOM-TOP
+===================================================== -->
+<section>
+  <div class="container">
+    <h2>bottom-top</h2>
+    <p class="desc">
+      Animation starts when
+      <br><b>BOTTOM of element</b> touches <b>TOP of viewport</b>.
+      <br>
+      ❌ Rarely used.
+    </p>
+
+    <div class="card-box dark"
+         data-aos="fade-right"
+         data-aos-anchor-placement="bottom-top">
+      bottom-top trigger
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     AOS INIT
+===================================================== -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    easing: 'ease-in-out',
+    once: false,
+    mirror: false
+  });
+</script>
+
+</body>
+</html>

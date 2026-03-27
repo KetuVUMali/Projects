@@ -1,0 +1,39 @@
+ 
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Multiple Events </title>
+	<style type="text/css">
+		h1
+			{
+				font-size: 70px;
+				font-weight: 800;
+			}
+	</style>
+</head>
+<body>
+	<h1> Hello Ji 1</h1>
+	<h1> Hello Ji Ji 2</h1>
+	<h1> Hello Ji Ji Ji 3</h1>
+
+</body>
+
+	<script type="text/javascript">
+			// // ByDefault It select only First Heading 
+			// var h = document.querySelector("h1");
+			// console.log(h);
+
+		// Select All HTML H1 heading
+		var h = document.querySelectorAll("h1");
+		console.log(h);
+
+		h.forEach(
+					function(k)
+						{
+							console.log(k);
+						}
+				  )
+
+
+	</script>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> </title>
+</head>
+<body>
+
+	<section>
+			<h4> getElementsByName()</h4>			<!-- getElementsByName()[] -->
+			<h4> getElementsByTagName()</h4>		<!-- getElementsByTagName()[] -->
+
+				<input type="text" name="uname" >
+ 				<button onclick="getName()"> Submit </button>
+ 				<h1></h1>
+
+	</section>
+	<script type="text/javascript">
+				function getName()
+					{
+						var uname = document.getElementsByName('uname')[0].value;   //  name="uname"  Get Value 
+						document.getElementsByTagName("h1")[0].innerHTML = uname;	// Set Value
+					}
+	</script>
+
+		<section>
+				<input type="" name="uname1">
+ 				<button onclick="getName1()"> Submit </button>
+ 				<h1></h1>
+		</section>
+		<script type="text/javascript">
+			function getName1()
+					{
+						var uname1 = document.getElementsByName('uname1')[0].value;
+						document.getElementsByTagName("h1")[1].innerHTML = uname1;
+						//document.getElementsByName('uname1')[0].value = "";
+
+						// document.write(uname1);     // op show next/new tab/page
+					}
+		</script>
+
+
+
+</body>
+</html>

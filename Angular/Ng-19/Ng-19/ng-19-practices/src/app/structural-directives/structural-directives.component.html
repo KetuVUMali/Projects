@@ -1,0 +1,149 @@
+
+<h1> Structural Directives </h1>
+
+<h1> 1. *ngIf : show hide </h1>
+<b></b><br>
+
+    <p>i.  Hide & Show [display={{display}}] </p><br>
+
+            <p>1. if</p>
+                @if(display){
+                    <div style="width: 100px; height: 100px; background-color: green;">if(display)</div>
+                }
+                <br>
+                @if(x==10){
+                    <div style="width: 100px; height: 100px; background-color: green;">if (x=10)</div>
+                }
+            
+            <p>2. *ngIf </p>
+                <div *ngIf="display" style="width: 100px; height: 100px; background-color: green;">*ngIf=display</div>
+<br>   
+<p> ii. Hide & Show  Button Click </p>
+        <h6>display2 : {{display2}}</h6>
+        <p>1. if</p>
+            @if(display2){
+                <div style="width: 100px; height: 100px; background-color: green;">if(display2)</div>
+            }
+
+            <button (click)="hidediv()" > Hide Div </button>
+            <button (click)="showdiv()" > Show Div </button>
+            <button (click)="toggle()" > Toggle Div </button>
+
+        <p>2. *ngIf </p>
+            <div *ngIf="display2" style="width: 100px; height: 100px; background-color: green;">*ngIf=display</div>
+ 
+<br> <hr> <br> 
+<p> i. Change On Click </p>
+        <h4> If-Else</h4>
+                <p> change on condition </p>
+                    @if(toggles){ <p style="height: 100px; width: 100px; background-color: blueviolet;"> </p>}
+                    @else{ <p style="height: 100px; width: 100px; background-color: orange;"> </p> }
+                    <button (click)="togleTwo()" > 2 Toggle Div </button>
+
+        <h4>*ngIf-Else</h4>
+                    <p>Text Change</p>
+                        <div *ngIf="isLoggedIn; else notisLoggedIn">
+                            Welcome back, user!
+                        </div>
+                        <ng-template #notisLoggedIn>
+                            <p>Please log in.</p>
+                        </ng-template>
+                    <button (click)="login()" > 2 Toggle Div </button>
+
+
+<br> <hr> <br> 
+<p> Else-If </p>
+<h4> </h4>
+
+<button (click)="handleColorChange(1)" >Red</button>
+<button (click)="handleColorChange(2)" >Blue</button>
+<button (click)="handleColorChange(3)" >Green</button>
+<button (click)="handleColorChange(4)" >Other</button>
+
+<input type="text" placeholder="Enter a Digit Between 1 To 4" (input)="handleInput($event)"  />
+
+@if(color==1){ <div style="background-color: red; width: 100px; height: 100px; "></div> }
+@else if (color==2) { <div style="background-color: blue; width: 100px; height: 100px; "></div> }
+@else if (color==3) { <div style="background-color: green; width: 100px; height: 100px; "></div> }
+@else { <div style="background-color: black; width: 100px; height: 100px; "></div> }
+
+
+  <br><br><hr><br><br>
+        <h4>Switch Case </h4>
+
+        <style>
+            button{ margin-left: 10px;}
+        </style>
+
+        <button (click)="handleColorsChange('red')" >Red</button>
+        <button (click)="handleColorsChange('blue')" >Blue</button>
+        <button (click)="handleColorsChange('green')" >Green</button>
+        <button (click)="handleColorsChange('black')" >Black</button>
+        <button (click)="handleColorsChange('gold')" >Gold</button>
+        <button (click)="handleColorsChange('yellow')" >Yellow</button>
+        <button (click)="handleColorsChange('pink')" >Gold</button>
+        <button (click)="handleColorsChange('')" >No Color</button>
+        <br><br>
+        <input  type="text" placeholder="Enter Color NamevFrom Buttons" (input)="inputColors($event)" />
+        <br><br>
+
+
+@switch (colors) 
+    {
+        @case ('red') { <div style="background-color: red; width: 100px; height: 100px; "></div> }
+        @case ('blue') { <div style="background-color: blue; width: 100px; height: 100px; "></div> }
+        @case ('green') { <div style="background-color: green; width: 100px; height: 100px; "></div> }
+        @case ('black') { <div style="background-color: black; width: 100px; height: 100px; "></div> }
+        @case ('gold') { <div style="background-color: gold; width: 100px; height: 100px; "></div> }
+        @case ('yellow') { <div style="background-color: yellow; width: 100px; height: 100px; "></div> }
+        @case ('pink') { <div style="background-color: pink; width: 100px; height: 100px; "></div> }
+        @default () { <div style="background-color: white; width: 100px; height: 100px; ">No Color Match </div> }
+    }
+
+
+    <br><br><hr><br><br>
+    <h4>For Loop  </h4>
+
+    <p>{{user[0]}},{{user[1]}},{{user[2]}},{{user[3]}},{{user[4]}}</p>
+
+    @for (item of user; track user ) 
+        {
+            <h3>{{item}}</h3>
+        }
+
+    @for (student of students; track students; let id=$index) 
+    {
+        <!-- <table>
+            <thead>
+                <tr>
+                    <th>Sr. No.</th>
+                    <th>Name </th>
+                    <th>Percentage</th>
+                    <th>Education</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{$index}}</td>
+                    <td>{{student.name}}</td>
+                    <td>{{student.per}}</td>
+                    <td>{{student.course}}</td>
+                    <td>{{student.email}}</td>
+                </tr>
+            </tbody>
+        
+        </table> -->
+
+        <h2>
+            <span>{{id+1}}</span>
+            <span>{{student.name}}</span>
+            <span>{{student.per}}</span>
+            <span>{{student.course}}</span>
+            <span>{{student.email}}</span>
+            <button (click)="getName(student.name)"> Get Name </button>
+            <button (click)="getData($index+1)"> ID </button>
+        </h2>
+
+    }
+
