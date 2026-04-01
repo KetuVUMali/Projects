@@ -8,9 +8,10 @@
 <body>
     <pre>
 
-         Data Types in JS
-             1. Primitive Data Types
-             2. Non-Primitive Data Types
+         Data Types in JS : 
+            Data types are containers that hold different types of values and their two types are:
+                1. Primitive Data Types
+                2. Non-Primitive Data Types
 
          1. Primitive Data Types
              1. String      : "" or ''
@@ -19,17 +20,45 @@
 
              3. Boolean     : true or false
 
-             4. Null        : You are intentionally saying: "this value is empty"
+             4. Null        : null means empty value, it is intentional set by developer to after assigning new value to variable
+                               You are intentionally saying: "this value is empty"
                                let a = null;
                                console.log(a); // null   
                                // "Is variable me abhi koi value nahi hai"
                                // Value not assigned but we are saying that this variable is empty.
+                            Ex : 
+                                let response = null;
+                                // later after API call
+                                response = { name: "Amit" };    // response is now having a value
+                               
 
              5. Undefined   : A variable is declared but value is not assigned yet
-                               let a;
+                               let a;                                           // variable is declared but not assigned
                                console.log(a); // undefined               
                                // "Value abhi tak diya nahi hai"
                                // JS automatically assigns undefined to uninitialized variables
+                            Ex :
+                                let response;
+                                // later after API call
+                                response = { name: "Amit" };    // response is now having a value
+
+                                    1. Variable declared but not assigned
+                                        let a;
+                                        console.log(a);    // undefined
+
+                                    2. Function without return
+                                        function test() {}
+                                        test();                     // undefined
+
+                                    3. Accessing non-existing property
+                                        let obj = {};
+                                        console.log(obj.name);      // undefined
+
+                                    4. Missing function parameter
+                                        function greet(name) {
+                                            console.log(name);
+                                        }
+                                        greet();                    // undefined
 
              6. Symbol      : unique values used as identifiers
                               Symbol always creates unique values
@@ -119,17 +148,23 @@
 
 
 		<pre>
-			Var :  Var can be re-declared & up dated. A global scope var. 
+            Scope : 
+                    1. Global Scope : can be accessed anywhere in the program.
+                    2. Function Scope : can be accessed only inside the function.
+                    3. Block Scope : can be accessed only inside the block.
+
+
+			Var :  Var can be re-declared & up dated. A fun scope var. 
 					var name = 'demo';  ✅ allowed
 					var name = "one";   ✅ allowed
 
-			let : Var cannot be re-declared but can be updated. A block{fun} scope var.
+			let : Var cannot be re-declared but can be updated. A block scope var.
 					let age = 20;
 					let age = 22;  ❌ error
 					age = 22;      ✅ allowed
 					age = 50;      ✅ allowed
 
-			const : var cannot be re-declared or updated. A block {fun} scope var.
+			const : var cannot be re-declared or updated. A block scope var.
 					const no = 20; 
 					const no = 25;  ❌ error
 					no = 23;        ❌ error
@@ -137,19 +172,21 @@
 
 
         <pre>
-            Var :  It is function scoped, NOT purely global.
+            Var :  It is function scoped (function outside can not access). 
              
-                1.
+                1. Fun
                     function test() {
                                 var x = 10;
                                 console.log(x); // 10
                             }
                     console.log(x); // ❌ error (function scope)
-                2.
+
+                2.Block : out side we access var
                     if (true) {
                                 var y = 20;
                             }
                     console.log(y); // ✅ works (this is problem)
+                    
                 3. Hoisting : var is hoisted to the top of the scope
                         console.log(a); // undefined
                         var a = 10;
@@ -161,7 +198,6 @@
                 1.
                     function test() {
                                 let x = 10;
-                                console.log(x); // 10
                             }
                     console.log(x); // ❌ error (block scope)
                 2.
@@ -170,7 +206,7 @@
                             }
                     console.log(y); // ❌ error (block scope)
 
-                    👉 let respects {} block
+                    👉 let, const : respects {} block
                 3. Hoisting
                     console.log(b); // ❌ error
                     let b = 10;
