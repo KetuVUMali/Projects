@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom - Documnt Object Model</title>
+</head>
+<body>
+    
+
+    <section>
+        <h2>1. Window Object</h2>
+        <p> It is represent the open browser window, created by browser and it is global object & not created by JS</p>
+        <p>The Window Object is the main (top-level) object created automatically by the browser. </p>
+        <p>It represents the browser window and provides many built-in properties and methods.</p>
+        <p>Everything belongs to window, by default present</p>
+
+        <script>
+            console.log(window);
+            console.log("Hello 1");
+            window.console.log("Hello 2");
+            window.alert("Hello 3");
+        </script>
+    </section>
+
+    <section>
+        <h2>2. Document Object Model - Dom</h2>
+        <p> When web page load on browser, the browser creates a Document Object Model (DOM) that represents the structure of the HTML document.</p>
+        <p> When a browser loads HTML page, it converts the HTML into JavaScript objects.Then JavaScript can control those objects.</p>
+        <p> Means HTML loads on brower then browser html convert into DOM object formate to interact/communicate with them.</p>
+        <p> DOM It allows JavaScript to access, read, modify, add, or remove HTML elements dynamically. </p>
+        <p> Run time website modify we do using DOM. Dynamic changes / manupulation update, edite, delete elements</p>
+        <pre>
+                HTML File
+                    ↓
+                Browser Reads HTML
+                    ↓
+                Creates DOM
+                    ↓
+                JavaScript Controls DOM
+        </pre>
+
+        <script>
+            console.log(document);
+            console.log(document.body);
+            console.log(document.head);
+            console.log(document.title);                
+            console.log(document.URL);
+        </script>
+    </section>
+
+    <section>
+        <h2>3. Dom Manipulation </h2>
+        <p> Dom Manipulation means we can change the content of HTML page using JS.</p>
+        <p> We can update the content of HTML page using JS.</p>
+        <p> change contetn, style, attributes, theme, button click actions, etc </p>
+
+        <h4> 3.1. Get Element By Id </h4>
+            <p> Id throught we can access specific elements in the DOM. </p>
+            <p id="myfirst">This is a paragraph with an id.</p>
+            <script>
+                let element = document.getElementById('myfirst');
+                console.log(element);
+                console.log(element.innerText);
+                console.log(element.innerHTML);
+                console.log(element.style.color);
+                console.log(element.style.backgroundColor);
+                element.style.color = "red";
+                element.style.backgroundColor = "lightgray";
+            </script>
+
+        <h4> 3.2. Get Element By Class Name </h4>
+            <p> Class through we can access specific elements in the DOM. </p>
+            <p class="myclass">This is a paragraph with a class.</p>
+            <p class="myclass">This is another paragraph with the same class.</p>
+            <script>
+                let elements = document.getElementsByClassName('myclass');
+                console.log(elements);
+                console.log(elements[0].innerText);
+                console.log(elements[1].innerText);
+            </script>
+            <pre>Note : same name of class repeated again and again then all elements with that class will be selected,
+                        and we can access them using index number like array to access specific element.  
+            </pre> 
+
+        <h4>3.3. Get Element By Tag Name </h4>
+            <p> Tag name through we can access specific elements in the DOM. </p>
+            <p>This is a paragraph.</p>
+            <p>This is another paragraph.</p>
+            <script>
+                let elements1  = document.getElementsByTagName('p');
+                console.log(elements1);
+                console.log(elements1[0].innerText);
+                console.log(elements1[1].innerText);
+            </script>
+            <pre>
+                Note : same name of tag repeated again and again then all elements with that tag will be selected,
+                        and we can access them using index number like array to access specific element.
+            </pre>
+
+        <h4>3.4 Get Element By Name (name attribute)</h4>
+            <p> Name attribute through we can access specific elements in the DOM. </p>
+            <input type="text" name="myname" value="John">
+            <input type="text" name="myname" value="Doe">
+            <script>
+                let elements2 = document.getElementsByName('myname');
+                console.log(elements2);
+                console.log(elements2[0].value);
+                console.log(elements2[1].value);
+            </script>
+            <pre>
+                Note : same name of attribute repeated again and again then all elements with that attribute will be selected,
+                        and we can access them using index number like array to access specific element.
+            </pre>
+
+        <h1>3.5 Query Selector</h1>
+            <p> Query Selector through we can access specific elements in the DOM. </p>
+            <p id="myclass">This is a paragraph with a class.</p>
+            <p class="myclass">This is another paragraph with the same class.</p>
+            <script>
+                let element3 = document.querySelector('#myclass');   // Class access
+                let element4 = document.querySelector('.myclass');   // Id access
+                console.log(element3,+" "+ element4);
+                console.log(element3.innerText, + " " + element4.innerText);
+            </script>
+            <pre>
+                querySelector() method returns the first element that matches a specified CSS selector(s) in the document.
+                querySelectorAll() method returns all elements that match a specified CSS selector(s) in the document.
+            </pre>
+
+            <pre>
+                Note : Now as per examples, undersanding why #id are unique set/used to easily access any element 
+                        and .class are used to access multiple elements with same class name.
+            </pre>
+
+            <section>
+                Name : <input type="text" name="name" value="name">
+                Password : <input type="password" name="password" value="password">
+                <button onclick="myFunction()">Click Me</button>
+                <script>
+                    function myFunction() {
+                        let name = document.querySelector('input[name="name"]').value;
+                        let password = document.querySelector('input[name="password"]').value;
+                        console.log("Name: " + name);
+                        console.log("Password: " + password);
+                        alert("Name: " + name + "\nPassword: " + password);
+                    }
+                </script>
+            </section>
+    </section>
+ 
+    <section>
+        <h2>4. DOM Element Properties</h2>
+        <p> The DOM provides various properties that allow you to access and manipulate elements in the document. </p>
+        <p> Some commonly used DOM element properties include: </p>
+        <ul>
+            <li>innerHTML: Gets or sets the HTML + Content of an element.</li>
+            <li>innerText: Gets or sets the visible text content of an element.</li>
+            <li>textContent: Gets or sets the text content of an element, including hidden text.</li>
+            <li>value: Gets or sets the value of form elements (input, textarea, select).</li>
+            <li>style: Provides access to the inline styles of an element.</li>
+            <li>className: Gets or sets the class attribute of an element.</li>
+            <li>id: Gets or sets the id attribute of an element.</li>
+            <li>src: Gets or sets the source URL of an image or media element.</li>
+            <li>href: Gets or sets the URL of a link (anchor) element.</li>              
+        </ul>
+
+        <script>
+            // 1.innerHTML Example
+            let element5 = document.querySelector('p');
+            console.log(element5.innerHTML);
+
+            // 2.innerText Example
+            let element6 = document.querySelector('p');
+            console.log(element6.innerText);
+
+            // 3.textContent Example
+            let element7 = document.querySelector('p');
+            console.log(element7.textContent);
+
+            // 4.value Example
+            let inputElement = document.querySelector('input[name="name"]');
+            console.log(inputElement.value);
+
+            // 5.style Example
+            let element8 = document.querySelector('p');
+            console.log(element8.style);
+
+            // 6.className Example
+            let element9 = document.querySelector('p');
+            console.log(element9.className);
+
+            // 7.id Example
+            let element10 = document.querySelector('p');
+            console.log(element10.id);
+
+            // 8.src Example
+            let imgElement = document.querySelector('img');
+            console.log(imgElement.src);
+
+            // 9.href Example
+            let linkElement = document.querySelector('a');
+            console.log(linkElement.href);
+
+            // 10. setAttribute Example
+            let element11 = document.querySelector('p');
+            element11.setAttribute('data-custom', 'customValue');
+
+            // 11. getAttribute Example
+            let customValue = element11.getAttribute('data-custom');
+            console.log(customValue);
+
+            // 12. removeAttribute Example
+            element11.removeAttribute('data-custom');
+            console.log(element11.getAttribute('data-custom')); // null
+
+            // 13. classList Example
+            let element12 = document.querySelector('p');
+            console.log(element12.classList);
+
+            // 14. classList.add Example
+            element12.classList.add('new-class');
+            console.log(element12.classList);
+
+            // 15. classList.remove Example
+            element12.classList.remove('new-class');
+            console.log(element12.classList);
+
+            // 16. classList.toggle Example
+            element12.classList.toggle('toggle-class');
+            console.log(element12.classList);
+            element12.classList.toggle('toggle-class');
+            console.log(element12.classList);
+
+            // 17. classList.contains Example
+            let hasClass = element12.classList.contains('myclass');
+            console.log(hasClass);
+
+            // 18. parentNode Example
+            let parentElement = element12.parentNode;
+            console.log(parentElement);
+
+            // 19. childNodes Example
+            let childElements = parentElement.childNodes;
+            console.log(childElements);
+
+            // 20. firstChild Example
+            let firstChild = parentElement.firstChild;
+            console.log(firstChild);
+
+        </script>              
+    </section>
+
+
+    <section>
+        <h2>5. Attributes</h2>
+        <p> Attributes are additional information or properties that can be added to HTML elements to provide more context or functionality. </p>
+        <p> Attributes are specified within the opening tag of an HTML element and consist of a name-value pair. </p>
+        <p> For example, in the following HTML element, "src" and "alt" are attributes of the <img> tag:</p>
+        <pre>
+            <img src="image.jpg" alt="Description of the image">
+        </pre>
+        <p> Commonly used attributes include:</p>
+        <ul>
+            <li>src: Specifies the URL of an image or media file.</li>
+            <li>alt: Provides alternative text for an image.</li>
+            <li>href: Specifies the URL of a link.</li>
+            <li>title: Provides additional information about an element.</li>
+        </ul>
+
+        <script>
+            var imgElements = document.querySelector('img');
+            console.log(imgElements.getAttribute('src'));
+            console.log(imgElements.getAttribute('alt'));
+            console.log(imgElements.getAttribute('title'));
+
+            imgElements.setAttribute('src', 'new-image.jpg');
+            imgElements.setAttribute('alt', 'New description of the image');
+            imgElements.setAttribute('title', 'New title for the image');
+
+            console.log(imgElements.getAttribute('src'));
+            console.log(imgElements.getAttribute('alt'));
+            console.log(imgElements.getAttribute('title'));
+        </script>
+
+        <div id="id_Demo">ID</div>
+        <script>
+            let id_div = document.querySelector('#id_Demo');  // selecting the element with id "id_Demo"
+            console.log(id_div);
+            let getId = id_div.getAttribute('id');            // getting the value of the id attribute
+            console.log(getId);
+        </script>
+
+        <p id="style_Demo" style="color:red; font-size:10px; background: white;">Demo Para</p>
+        <script>
+            let style1 = document.querySelector('#style_Demo');  // selecting the paragraph element with id "style_Demo"
+            console.log(style1);
+            let getStyle = style1.getAttribute('style');       // getting the value of the style attribute
+            console.log(getStyle);
+
+            // change the style attribute
+            style1.style.color = "blue";
+            style1.style.fontSize = "20px";
+            style1.style.background = "lightgray";
+        </script>
+    </section>
+
+
+    <section>
+        <h2> 6. Node Elements</h2>
+        <p> In the DOM, every element, attribute, and piece of text is represented as a node. </p>
+        <p> Nodes are the building blocks of the DOM tree structure, and they allow JavaScript to interact with and manipulate the content of a web page. </p>
+        <p> There are several types of nodes in the DOM, including:</p>
+        <ul>
+            <li>Element Nodes: Represent HTML elements (e.g., <div>, <p>, <img>). They can have attributes and child nodes.</li>
+            <li>Text Nodes: Represent the text content within an element. They do not have attributes or child nodes.</li>
+            <li>Attribute Nodes: Represent the attributes of an element (e.g., id, class, src). They are associated with element nodes.</li>
+            <li>Comment Nodes: Represent comments in the HTML code. They are not displayed on the web page.</li>
+        </ul>
+        <p>Create, modify, and remove nodes in the DOM tree using JavaScript methods.</p>
+        <script>
+            // Create a new element node
+            let newElement = document.createElement('p');
+            newElement.innerText = "This is a new paragraph created using JavaScript.";
+            document.body.appendChild(newElement);
+
+            // Create a new text node
+            let newText = document.createTextNode("This is a new text node.");
+            newElement.appendChild(newText);
+
+            // Create a new attribute node
+            let newAttribute = document.createAttribute('class');
+            newAttribute.value = 'new-class';
+            newElement.setAttributeNode(newAttribute);
+
+            // update the text content of the new paragraph
+            newElement.innerText = "This is an updated paragraph created using JavaScript.";
+
+            // Create a comment node
+            let commentNode = document.createComment("This is a comment node.");
+            document.body.appendChild(commentNode);
+
+            // <img src="image.jpg" alt="Description of the image">
+            let imgElement2 = document.createElement('img');
+            imgElement2.setAttribute('src', 'image.jpg');
+            imgElement2.setAttribute('alt', 'Description of the image');
+            document.body.appendChild(imgElement2);
+
+            
+
+            // 
+        </script>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
